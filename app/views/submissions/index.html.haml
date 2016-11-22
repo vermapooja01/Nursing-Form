@@ -1,0 +1,31 @@
+%h1 Listing submissions
+
+%table
+  %thead
+    %tr
+      %th Patient initials
+      %th Age
+      %th Gender
+      %th Admitting primary medical diagnosis
+      %th User
+      %th Week
+      %th
+      %th
+      %th
+
+  %tbody
+    - @submissions.each do |submission|
+      %tr
+        %td= submission.patient_initials
+        %td= submission.age
+        %td= submission.gender
+        %td= submission.admitting_primary_medical_diagnosis
+        %td= submission.user_id
+        %td= submission.week
+        %td= link_to 'Show', submission
+        %td= link_to 'Edit', edit_submission_path(submission)
+        %td= link_to 'Destroy', submission, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Submission', new_submission_path

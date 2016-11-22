@@ -1,0 +1,369 @@
+
+.container
+  %form
+    .row
+      %p{:align => "center"}
+        %b PUPILS:
+      .col-sm-6
+        .table-responsive
+          %table.table
+            %tr
+              %th
+              %th R
+              %th L
+            %tr
+              %th Brisk(B)
+              %td
+                %select.form-control
+                  %option 2
+                  %option 3
+                  %option 4
+                  %option 5
+                  %option 6
+                  %option 7
+                  %option 8
+                  %option 9
+              %td
+                %select.form-control
+                  %option 2
+                  %option 3
+                  %option 4
+                  %option 5
+                  %option 6
+                  %option 7
+                  %option 8
+                  %option 9
+              %td
+                -# %img.img-thumbnail{:alt => "", :src => "C:\\Users\\vermapooja\\Pictures\\first.PNG"}/
+                = image_tag('/assets/first.PNG', :class => "img-thumbnail")
+            %tr
+              %th Sluggish(S)
+              %td
+                %select.form-control
+                  %option 2
+                  %option 3
+                  %option 4
+                  %option 5
+                  %option 6
+                  %option 7
+                  %option 8
+                  %option 9
+              %td
+                %select.form-control
+                  %option 2
+                  %option 3
+                  %option 4
+                  %option 5
+                  %option 6
+                  %option 7
+                  %option 8
+                  %option 9
+            %tr
+              %th Fixed(F)
+              %td
+                %select.form-control
+                  %option 2
+                  %option 3
+                  %option 4
+                  %option 5
+                  %option 6
+                  %option 7
+                  %option 8
+                  %option 9
+              %td
+                %select.form-control
+                  %option 2
+                  %option 3
+                  %option 4
+                  %option 5
+                  %option 6
+                  %option 7
+                  %option 8
+                  %option 9
+            %tr
+              %th Size(mm)
+              %td
+                %select.form-control
+                  %option 2
+                  %option 3
+                  %option 4
+                  %option 5
+                  %option 6
+                  %option 7
+                  %option 8
+                  %option 9
+              %td
+                %select.form-control
+                  %option 2
+                  %option 3
+                  %option 4
+                  %option 5
+                  %option 6
+                  %option 7
+                  %option 8
+                  %option 9
+.container
+  %form
+    .row
+      %p{:align => "center"}
+        %b GLASGOW COMA SCORE:
+      .col-sm-12
+        .table-responsive
+          %table.table
+            %tr
+              %th Best Eye Opening Response
+              %th Best Verbal Response
+              %th Best Motor Response
+              %th Patient's Total Score
+            %tr
+              %td 4= Spontaneous
+              %td 5= Oriented
+              %td 6= obeys Commands
+              %td
+                E =
+                %input{:name => "E", :type => "text"}/
+            %tr
+              %td 3= To Speech
+              %td 4= Confused
+              %td 5= Localizes Pain
+              %td
+                V =
+                %input{:name => "V", :type => "text"}/
+            %tr
+              %td 2= To Pain
+              %td 3= Inappropriate Words
+              %td 4= Withdraws(Pain)
+              %td
+                M =
+                %input{:name => "M", :type => "text"}/
+            %tr
+              %td 1= None
+              %td 2= Incomprehensible Sounds
+              %td 3= Flexion(Pain)
+            %tr
+              %td C= Eyes Closed by Edema
+              %td 1= None
+              %td 2= Extension(Pain)
+            %tr
+              %td
+              %td T= ETT/Trach
+              %td 1= None
+              %td
+                Total =
+                %input{:name => "Total", :type => "text"}/
+              %td
+.container
+  %form
+    .checkbox-inline
+      %label
+        %input{:type => "checkbox", :value => ""}>/
+        Alert
+    .checkbox-inline
+      %label
+        %input{:type => "checkbox", :value => ""}>/
+        Lethargic
+    .checkbox-inline
+      %label
+        %input{:type => "checkbox", :value => ""}>/
+        Confused
+    .checkbox-inline
+      %label
+        %input{:type => "checkbox", :value => ""}>/
+        Follows Commands
+    .checkbox-inline
+      %label
+        %input{:type => "checkbox", :value => ""}>/
+        Comatose
+    .checkbox-inline
+      %label
+        %input{:type => "checkbox", :value => ""}>/
+        Sedated
+    .checkbox-inline
+      %label
+        %input{:type => "checkbox", :value => ""}>/
+        Unable to assess
+.container
+  %form
+    %p
+      %b Gag Reflex:
+    .radio
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Present
+    .radio
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Absent
+.container
+  %form
+    %p
+      %b SPEECH:
+    .checkbox-inline
+      %label
+        %input{:type => "checkbox", :value => ""}>/
+        Clear
+    .checkbox-inline
+      %label
+        %input{:type => "checkbox", :value => ""}>/
+        Slurred
+    .checkbox-inline
+      %label
+        %input{:type => "checkbox", :value => ""}>/
+        No Response
+    .checkbox-inline
+      %label
+        %input{:type => "checkbox", :value => ""}>/
+        Inappropriate
+    .checkbox-inline
+      %label
+        %input{:type => "checkbox", :value => ""}>/
+        Incomprehensible
+    .checkbox-inline
+      %label
+        %input{:type => "checkbox", :value => ""}>/
+        Aphasic
+    .checkbox-inline
+      %label
+        %input{:type => "checkbox", :value => ""}>/
+        ETT/Tranch
+.container
+  %form
+    %p
+      %b HEARING:
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        No Obvious Deficit
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        HOH
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Unable to Assess
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Deaf
+.container
+  %form
+    %p
+      %b FACE:
+    .radio
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Symmetrical
+    .radio
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Asymmetrical
+    .radio
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        R
+    .radio
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        L
+.container
+  %form
+    %p
+      %b TONGUE:
+    .radio
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Midline
+    .radio
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        R
+    .radio
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        L
+.container
+  %form
+    %p
+      %b STRENGTH:
+    .radio
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        No Obvious Deficit
+.container
+  %form
+    .row
+      .col-sm-12
+        .table-responsive
+          %table.table
+            %tr
+              %th
+              %th RUE
+              %th LUE
+              %th RLE
+              %th LLE
+            %tr
+              %th Weakness
+              %td
+                %input{:name => "", :type => "text"}/
+              %td
+                %input{:name => "", :type => "text"}/
+              %td
+                %input{:name => "", :type => "text"}/
+              %td
+                %input{:name => "", :type => "text"}/
+            %tr
+              %th Contracture
+              %td
+                %input{:name => "", :type => "text"}/
+              %td
+                %input{:name => "", :type => "text"}/
+              %td
+                %input{:name => "", :type => "text"}/
+              %td
+                %input{:name => "", :type => "text"}/
+            %tr
+              %th Flaccid
+              %td
+                %input{:name => "", :type => "text"}/
+              %td
+                %input{:name => "", :type => "text"}/
+              %td
+                %input{:name => "", :type => "text"}/
+              %td
+                %input{:name => "", :type => "text"}/
+            %tr
+              %th Spastic
+              %td
+                %input{:name => "", :type => "text"}/
+              %td
+                %input{:name => "", :type => "text"}/
+              %td
+                %input{:name => "", :type => "text"}/
+              %td
+                %input{:name => "", :type => "text"}/
+            %tr
+              %th Paresis
+              %td
+                %input{:name => "", :type => "text"}/
+              %td
+                %input{:name => "", :type => "text"}/
+              %td
+                %input{:name => "", :type => "text"}/
+              %td
+                %input{:name => "", :type => "text"}/
+            %tr
+              %th Other
+              %td
+                %input{:name => "", :type => "text"}/
+              %td
+                %input{:name => "", :type => "text"}/
+              %td
+                %input{:name => "", :type => "text"}/
+              %td
+                %input{:name => "", :type => "text"}/
+.container
+  %form
+    %button.btn.btn-primary.btn-md{:type => "button"} Previous
+    %button.btn.btn-primary.btn-md{:type => "button"} Next
+    %button.btn.btn-primary.btn-md{:type => "button"} Save
