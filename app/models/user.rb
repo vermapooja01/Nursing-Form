@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  #a user has many submissions
+  has_many :submissions
+
   def self.from_sso(utepse, utepsa)
     #store user information from single sign on into variable
     sso_user = UTEPSSO.authenticate(utepse, utepsa)

@@ -69,6 +69,6 @@ class SubmissionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def submission_params
-      params.require(:submission).permit(:patient_initials, :age, :gender, :admitting_primary_medical_diagnosis, :user_id, :week)
+      params.require(:submission).permit(:patient_initials, :age, :gender, :admitting_primary_medical_diagnosis, :user_id, :week, :best_eye_opening_response, :best_verbal_response, :best_motor_response, :patient_total_score, :glasgow_coma_score_quality, :gag_reflex, :speech, :hearing, :face, :tongue, :strength, :weakness, :contracture, :flaccid, :spastic, :paresis, :other)
     end
 end

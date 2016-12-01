@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129234514) do
+ActiveRecord::Schema.define(version: 20161201221808) do
 
   create_table "submissions", force: :cascade do |t|
     t.string   "patient_initials"
@@ -21,6 +21,23 @@ ActiveRecord::Schema.define(version: 20161129234514) do
     t.datetime "week"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "best_eye_opening_response"
+    t.string   "best_verbal_response"
+    t.string   "best_motor_response"
+    t.integer  "patient_total_score"
+    t.string   "glasgow_coma_score_quality"
+    t.string   "gag_reflex"
+    t.string   "speech"
+    t.string   "hearing"
+    t.string   "face"
+    t.string   "tongue"
+    t.string   "strength"
+    t.string   "weakness"
+    t.string   "contracture"
+    t.string   "flaccid"
+    t.string   "spastic"
+    t.string   "paresis"
+    t.string   "other"
   end
 
   create_table "users", force: :cascade do |t|
