@@ -14,9 +14,9 @@
   = @submission.admitting_primary_medical_diagnosis
 %p
   %b User:
-  = @submission.user_id
+  = @submission.user.first_name
 %p
-  %b Week:
+  %b week:
   = @submission.week
 
 = link_to 'Edit', edit_submission_path(@submission)

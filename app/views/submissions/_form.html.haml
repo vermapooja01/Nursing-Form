@@ -1,28 +1,19 @@
-= form_for @submission do |f|
-  - if @submission.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@submission.errors.count, "error")} prohibited this submission from being saved:"
-      %ul
-        - @submission.errors.full_messages.each do |msg|
-          %li= msg
+.container
+  = simple_form_for @submission, html: {class: 'form-horizontal'} do |f|
+    - if @submission.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@submission.errors.count, "error")} prohibited this submission from being saved:"
+        %ul
+          - @submission.errors.full_messages.each do |msg|
+            %li= msg
+    = f.hidden_field :user_id, :value => current_user.id
+    = f.input :patient_initials
+    = f.input :age
+    = f.input :gender
+    = f.input :admitting_primary_medical_diagnosis
+    = f.input :week
 
-  .field
-    = f.label :patient_initials
-    = f.text_field :patient_initials
-  .field
-    = f.label :age
-    = f.number_field :age
-  .field
-    = f.label :gender
-    = f.text_field :gender
-  .field
-    = f.label :admitting_primary_medical_diagnosis
-    = f.text_field :admitting_primary_medical_diagnosis
-  .field
-    = f.label :user_id
-    = f.number_field :user_id
-  .field
-    = f.label :week
-    = f.datetime_select :week
-  .actions
-    = f.submit 'Save'
+    -# Display the Neurological/Muscular partial
+    .well
+      = render :partial => "submissions/partials/neurological_muscular", :locals => {:f => f}
+    = f.submit
