@@ -7,13 +7,13 @@ class AddRespiratoryO2therapyToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :sputum, :string
     add_column :submissions, :consistency, :string
     add_column :submissions, :amount, :string
-    add_column :submissions, :comments_two, :string
+    add_column :submissions, :comments_two, :text
     add_column :submissions, :o2_protocol_in_place, :string
     add_column :submissions, :ventilator_settings, :string
-    add_column :submissions, :ett_placement, :string
+    add_column :submissions, :ett_placement, :integer
     add_column :submissions, :trach, :string
     add_column :submissions, :chest_tube, :string
-    add_column :submissions, :comments_three, :string
+    add_column :submissions, :comments_three, :text
 
   end
 end

@@ -59,14 +59,6 @@ class AddSkinRiskAssessmentScreenToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :patient_refuses_to_wear_red_slippers_in_bed, :string
     add_column :submissions, :unable_to_wear_slippers, :string
     add_column :submissions, :sign_on_door, :string
-    add_column :submissions, :mediacation, :string
-    add_column :submissions, :anti_seizure_meds, :string
-    add_column :submissions, :laxatives, :string
-    add_column :submissions, :sedatives_hypnotics, :string
-    add_column :submissions, :benzodiazepines, :string
-    add_column :submissions, :narcotic_analgesics, :string
-    add_column :submissions, :blood_thinners, :string
-    add_column :submissions, :diuretics, :string
-    add_column :submissions, :psychotropics, :string
+    add_column :submissions, :medications, :string
   end
 end

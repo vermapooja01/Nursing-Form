@@ -9,9 +9,9 @@ class AddPsychosocialToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :comments, :text
     add_column :submissions, :motion_strength, :text
     add_column :submissions, :grip, :text
-    add_column :submissions, :icp_device, :text
-    add_column :submissions, :prescribed_level, :text
-    add_column :submissions, :monitor, :text
+    add_column :submissions, :icp_device, :string
+    add_column :submissions, :prescribed_level, :integer
+    add_column :submissions, :monitor, :string
     add_column :submissions, :comments_one, :text
   end
 end

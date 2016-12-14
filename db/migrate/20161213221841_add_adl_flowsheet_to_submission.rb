@@ -40,10 +40,10 @@ class AddAdlFlowsheetToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :k_pad, :string
     add_column :submissions, :nibp, :string
     add_column :submissions, :continuous_passive_motion, :string
-    add_column :submissions, :traction_type, :string
+    add_column :submissions, :traction_type, :text
     add_column :submissions, :mattress_overlay, :string
     add_column :submissions, :walker, :string
-    add_column :submissions, :speciality_bed, :string
+    add_column :submissions, :speciality_bed, :text
     add_column :submissions, :hypo_hyperthemia_blanket, :string
     add_column :submissions, :bedside_commode, :string
     add_column :submissions, :abductor_pillow, :string
@@ -51,6 +51,6 @@ class AddAdlFlowsheetToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :humidifier, :string
     add_column :submissions, :heat_lamp, :string
     add_column :submissions, :o2_tank, :string
-    add_column :submissions, :other, :string
+    add_column :submissions, :other, :text
   end
 end
