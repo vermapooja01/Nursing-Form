@@ -51,6 +51,6 @@ class AddAdlFlowsheetToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :humidifier, :string
     add_column :submissions, :heat_lamp, :string
     add_column :submissions, :o2_tank, :string
-    add_column :submissions, :other, :text
+    add_column :submissions, :other_two, :text
   end
 end

@@ -17,7 +17,7 @@ class AddCardiovascularToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :waveform, :string
     add_column :submissions, :comments_five, :text
     add_column :submissions, :pa_catcher, :string
-    add_column :submissions, :waveform, :string
+    add_column :submissions, :waveform_two, :string
     add_column :submissions, :comments_six, :text
     add_column :submissions, :iabp, :string
     add_column :submissions, :trigger, :string
