@@ -1,0 +1,150 @@
+
+.container
+  %form
+    %h3{:align => "center"} IV Therapy
+    .radio
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        NA
+    .Textbox
+      %label Current IV Insertion Date/Time
+      %input.form-control{:type => "text", :value => ""}/
+  %form
+    %p
+      %strong TYPE:
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Peripheral
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        PICC
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Port a Cath
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Saline Lock
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Heparin Lock
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Central Line
+    .radio
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Dressing Change Date/Time
+    .Textbox
+      %input.form-control{:type => "text", :value => ""}/
+  %form
+    %p
+      %b IV SITE:
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        R
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        L
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Hand
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Forearm
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Antecubital
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Subclavian
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Jugular
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Other
+    .Textbox
+      %input.form-control{:type => "text", :value => ""}/
+  %form
+    %p
+      %b CONDITION:
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Patent
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        No Pain, Redness, Swelling
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Tenderness
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Redness
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Swelling
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Palpable Cord
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Purulent Drainage
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Warmth
+  %form
+    %p
+      %b START/CHANGE:
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Tubing
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Dressing
+    .radio-inline
+      %label
+        %input{:name => "optradio", :type => "radio"}>/
+        Site
+    .Textbox
+      %label Gauge
+      %input.form-control{:type => "Text", :value => ""}/
+      %label #Attempts
+      %input.form-control{:type => "Text", :value => ""}/
+      %label Location
+      %input.form-control{:type => "Text", :value => ""}/
+    .Textbox
+      %label Gauge
+      %input.form-control{:type => "Text", :value => ""}/
+      %label #Attempts
+      %input.form-control{:type => "Text", :value => ""}/
+      %label Location
+      %input.form-control{:type => "Text", :value => ""}/
+.container
+  %form
+    %button.btn.btn-primary.btn-md{:type => "button"} Previous
+    %button.btn.btn-primary.btn-md{:type => "button"} Next
+    %button.btn.btn-primary.btn-md{:type => "button"} Save
