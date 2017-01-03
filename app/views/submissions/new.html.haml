@@ -1,5 +1,31 @@
 %h1 New submission
 
-= render 'form'
+.wizard#nursing-form-wizard{"data-title" => "New Nursing Entry"}
+  = simple_form_for @submission, html: {class: 'form-horizontal'} do |f|
+    - if @submission.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@submission.errors.count, "error")} prohibited this submission from being saved:"
+        %ul
+          - @submission.errors.full_messages.each do |msg|
+            %li= msg
+
+    .wizard-card.nursing-form-card{"data-cardname" => "Page 1"}
+      %h3 first page
+      .form-group
+        -# = f.hidden_field :user_id, :value => current_user.id
+        = f.input :patient_initials
+        = f.input :age
+        = f.input :gender
+        = f.input :admitting_primary_medical_diagnosis
+        = f.input :week
+        -# Display the Neurological/Muscular partial
+        -# .well
+        -#   = render :partial => "submissions/partials/neurological_muscular", :locals => {:f => f}
+
+
+    .wizard-card.nursing-form-card{"data-cardname" => "Page 2"}
+      %h3 new page
+
+-# = render 'form'
 
 = link_to 'Back', submissions_path

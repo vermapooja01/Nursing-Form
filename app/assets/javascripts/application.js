@@ -16,3 +16,6 @@
 //= require_tree .
 
 //= require bootstrap-sprockets
+
+// Load Vendor files
+//= require bootstrap-wizard.min
