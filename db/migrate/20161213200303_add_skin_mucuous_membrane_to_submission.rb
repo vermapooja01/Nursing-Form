@@ -14,6 +14,6 @@ class AddSkinMucuousMembraneToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :diaphoretic, :string
     add_column :submissions, :dry, :string
     add_column :submissions, :turgor, :string
-    add_column :submissions, :comments_nine, :text
+    add_column :submissions, :turgor_comments, :text
   end
 end

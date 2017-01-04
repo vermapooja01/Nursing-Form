@@ -1,0 +1,160 @@
+
+.container
+  %form
+    %h3{:align => "center"} Pain Assessment
+    .row
+      %p{:align => "center"}
+        %b PAIN ASSESSMENT(Circle appropriate parameters)
+      .col-sm-12
+        .table-responsive
+          .table-bordered
+            %table.table
+              %tr
+                %th VERBAL
+                %th NON-VERBAL
+                %th SCALE USED
+                %th OTHER SYMPTOMS PRESENT
+                %th ADDITIONAL MEASURES
+              %tr
+                %td Dull
+                %td Use FLACC
+                %td Numeric
+                %td SOB
+                %td Remedicate
+              %tr
+                %td Sharp
+                %td
+                %td Faces
+                %td Vomiting
+                %td Notify MD
+              %tr
+                %td Burning
+                %td
+                %td FLACC
+                %td Guarding
+                %td Ice
+              %tr
+                %td Ache
+                %td
+                %td CPOT
+                %td Paresthesia
+                %td Heat
+              %tr
+                %td Throbbing
+                %td
+                %td
+                %td None
+                %td Relaxation, Distraction, Imagery
+              %tr
+                %td None
+                %td
+                %td
+                %td
+                %td Patient Declines
+    .container
+      %form
+        %figure.figure
+          %img.figure-img.img-fluid.rounded{:alt => "", :src => "C:\\Users\\vermapooja\\Pictures\\5.PNG"}/
+          %figcaption.figure-caption Circle appropriate parameter
+    .container
+      %form
+        %figure.figure
+          %img.figure-img.img-fluid.rounded{:alt => "", :src => "C:\\Users\\vermapooja\\Pictures\\4.PNG"}/
+          %figcaption.figure-caption Circle appropriate parameter
+    .container
+      %form
+        .row
+          %p.text-center
+            %b FLACC SCALE (For Non-Verbal patients)(Circle appropriate parameters)
+          .col-sm-12
+            .table-responsive
+              .table-bordered
+                %table.table
+                  %tr
+                    %th Criteria
+                    %th Score 0
+                    %th Score 1
+                    %th Score 2
+                  %tr
+                    %td Face
+                    %td No Particular expression or smile
+                    %td Occaasional grimace or frown, withdrawn, uninterested
+                    %td Frequent to constant quivering chin, clenched jaw
+                  %tr
+                    %td Legs
+                    %td Normal position or relaxed
+                    %td Uneasy, restless, tense
+                    %td Kicking, or legs drawn up
+                  %tr
+                    %td Activity
+                    %td Lying quietly, normal position, moves easily
+                    %td Squirming, shifting back and forth, tense
+                    %td Arched, rigid or jerking
+                  %tr
+                    %td Cry
+                    %td No Cry (Awake or asleep)
+                    %td Moans or whimpers; occasional complaint
+                    %td Crying steadily, screams or sobs, frequent complaints
+                  %tr
+                    %td Consolability
+                    %td Content, relaxed
+                    %td Reassured by occasional touching, hugging or being talked to, distractible
+                    %td Difficult to console or comfort
+                  %tr
+                    %td
+                    %td
+                    %td
+                    %td
+                      %b Total Score:
+                      %input.form-control{:type => "Text", :value => ""}/
+        .container
+          %form
+            .row
+              %p.text-center
+                %b Critical Care Pain Observation Tool(CPOT)(Document "Ventilator Compliance", but not both)
+              .col-sm-12
+                .table-responsive
+                  .table-bordered
+                    %table.table
+                      %tr
+                        %th Indicator
+                        %th Score 0
+                        %th Score 1
+                        %th Score 2
+                      %tr
+                        %td Facial Expression
+                        %td Relaxed; neutral
+                        %td Tense
+                        %td Grimacing
+                      %tr
+                        %td Body movements
+                        %td Absence of movements
+                        %td Protection
+                        %td Restlessness
+                      %tr
+                        %td Ventilator compliance(intubated patients)
+                        %td Tolerating ventilator
+                        %td Coughing but tolerating the ventilator
+                        %td Fighting ventilator
+                      %tr
+                        %td Vocalization(extubated patients)
+                        %td Talking in normal tone
+                        %td Sighing; moaning
+                        %td Crying out; sobbing
+                      %tr
+                        %td Muscle tension
+                        %td Relaxed; neutral
+                        %td Tense; rigid
+                        %td Very tense; rigid
+                      %tr
+                        %td
+                        %td
+                        %td
+                        %td
+                          %b Total Score:
+                          %input.form-control{:type => "Text", :value => ""}/
+            .container
+              %form
+                %button.btn.btn-primary.btn-md{:type => "button"} Previous
+                %button.btn.btn-primary.btn-md{:type => "button"} Next
+                %button.btn.btn-primary.btn-md{:type => "button"} Save

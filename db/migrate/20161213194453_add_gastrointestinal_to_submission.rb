@@ -10,6 +10,6 @@ class AddGastrointestinalToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :size, :string
     add_column :submissions, :position, :string
     add_column :submissions, :drainage_color, :string
-    add_column :submissions, :comments_seven, :string
+    add_column :submissions, :drainage_color_comments, :string
   end
 end

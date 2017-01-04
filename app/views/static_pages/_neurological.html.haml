@@ -34,8 +34,7 @@
                   %option 8
                   %option 9
               %td
-                -# %img.img-thumbnail{:alt => "", :src => "C:\\Users\\vermapooja\\Pictures\\first.PNG"}/
-                = image_tag('/assets/first.PNG', :class => "img-thumbnail")
+                %img.img-thumbnail{:alt => "", :src => "C:\\Users\\vermapooja\\Pictures\\first.PNG"}/
             %tr
               %th Sluggish(S)
               %td
@@ -116,41 +115,75 @@
               %th Best Motor Response
               %th Patient's Total Score
             %tr
-              %td 4= Spontaneous
-              %td 5= Oriented
-              %td 6= obeys Commands
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                4= Spontaneous
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                5= Oriented
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                6= obeys Commands
               %td
                 E =
-                %input{:name => "E", :type => "text"}/
+                %input.form-control{:name => "E", :type => "text"}/
             %tr
-              %td 3= To Speech
-              %td 4= Confused
-              %td 5= Localizes Pain
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                3= To Speech
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                4= Confused
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                5= Localizes Pain
               %td
                 V =
-                %input{:name => "V", :type => "text"}/
+                %input.form-control{:name => "V", :type => "text"}/
             %tr
-              %td 2= To Pain
-              %td 3= Inappropriate Words
-              %td 4= Withdraws(Pain)
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                2= To Pain
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                3= Inappropriate Words
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                4= Withdraws(Pain)
               %td
                 M =
-                %input{:name => "M", :type => "text"}/
-            %tr
-              %td 1= None
-              %td 2= Incomprehensible Sounds
-              %td 3= Flexion(Pain)
-            %tr
-              %td C= Eyes Closed by Edema
-              %td 1= None
-              %td 2= Extension(Pain)
+                %input.form-control{:name => "M", :type => "text"}/
             %tr
               %td
-              %td T= ETT/Trach
-              %td 1= None
+                %input{:type => "checkbox", :value => ""}/
+                1= None
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                2= Incomprehensible Sounds
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                3= Flexion(Pain)
+            %tr
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                C= Eyes Closed by Edema
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                1= None
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                2= Extension(Pain)
+            %tr
+              %td
+              %td
+                %input{:type => "checkbox", :value => ""}>/
+                T= ETT/Trach
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                1= None
               %td
                 Total =
-                %input{:name => "Total", :type => "text"}/
+                %input.form-control{:name => "Total", :type => "text"}/
               %td
 .container
   %form
@@ -305,65 +338,88 @@
             %tr
               %th Weakness
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
             %tr
               %th Contracture
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
             %tr
               %th Flaccid
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
             %tr
               %th Spastic
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
             %tr
               %th Paresis
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
             %tr
               %th Other
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
               %td
-                %input{:name => "", :type => "text"}/
+                .checkbox-inline
+                  %input{:type => "checkbox", :value => ""}/
 .container
   %form
-    %button.btn.btn-primary.btn-md{:type => "button"} Previous
     %button.btn.btn-primary.btn-md{:type => "button"} Next
     %button.btn.btn-primary.btn-md{:type => "button"} Save

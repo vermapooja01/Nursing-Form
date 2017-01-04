@@ -9,6 +9,6 @@ class AddNutritionToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :tf, :string
     add_column :submissions, :residual, :string
     add_column :submissions, :placement, :string
-    add_column :submissions, :comments_eight, :text
+    add_column :submissions, :placement_comments, :text
   end
 end

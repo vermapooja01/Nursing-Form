@@ -7,18 +7,18 @@ class AddSkinRiskAssessmentScreenToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :no_impairment, :integer
     add_column :submissions, :moisture, :string
     add_column :submissions, :constantly_moist, :integer
-    add_column :submissions, :moist_two, :integer
+    add_column :submissions, :moist_moisture, :integer
     add_column :submissions, :occasionally_moist, :integer
     add_column :submissions, :rarely_moist, :integer
-    add_column :submissions, :activity_two, :string
+    add_column :submissions, :activity_skin_assessment_screen, :string
     add_column :submissions, :bedfast, :integer
     add_column :submissions, :chairfast, :integer
     add_column :submissions, :walks_occasionally, :integer
     add_column :submissions, :walks_frequently, :integer
     add_column :submissions, :mobility, :string
     add_column :submissions, :completely_immobile, :integer
-    add_column :submissions, :very_limited_two, :integer
-    add_column :submissions, :slightly_limited_two, :integer
+    add_column :submissions, :very_limited_mobility, :integer
+    add_column :submissions, :slightly_limited_mobility, :integer
     add_column :submissions, :no_limitations, :integer
     add_column :submissions, :nutrition_score, :string
     add_column :submissions, :very_poor, :integer
@@ -29,24 +29,24 @@ class AddSkinRiskAssessmentScreenToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :problem, :integer
     add_column :submissions, :potential_problem, :integer
     add_column :submissions, :no_apparent_problem, :integer
-    add_column :submissions, :total_score_three, :integer
+    add_column :submissions, :total_score_skin_assessment_screen, :integer
     add_column :submissions, :skin_intact, :string
     add_column :submissions, :pressure_ulcer_prevention_protocol_in_place, :string
     add_column :submissions, :see_presssure_ulcer_documentation_form, :string
     add_column :submissions, :fall_scale_risk, :string
     add_column :submissions, :history_of_falling, :string
-    add_column :submissions, :no, :integer
+    add_column :submissions, :no_history_of_falling, :integer
     add_column :submissions, :immediate_or_within_three_months, :integer
     add_column :submissions, :presence_of_secondary_diagnosis, :string
-    add_column :submissions, :no_two, :integer
-    add_column :submissions, :yes, :integer
+    add_column :submissions, :no_presence_of_secondary_diagnosis, :integer
+    add_column :submissions, :yes_presence_of_secondary_diagnosis, :integer
     add_column :submissions, :ambulatory_aid, :string
     add_column :submissions, :none_bedrest_nurse_assist, :integer
     add_column :submissions, :cane_walker_crutches, :integer
     add_column :submissions, :furniture, :integer
     add_column :submissions, :iv_heparin_lock, :string
-    add_column :submissions, :no_three, :integer
-    add_column :submissions, :yes_two, :integer
+    add_column :submissions, :no_iv_heparin_lock, :integer
+    add_column :submissions, :yes_iv_heparin_lock, :integer
     add_column :submissions, :gait_transferring, :string
     add_column :submissions, :normal_bedrest_wheelchair, :integer
     add_column :submissions, :weak, :integer
@@ -54,7 +54,7 @@ class AddSkinRiskAssessmentScreenToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :mental_status, :string
     add_column :submissions, :oriented_to_own_ability, :integer
     add_column :submissions, :overstimates_forgets_limitations, :integer
-    add_column :submissions, :total_score_four, :integer
+    add_column :submissions, :total_score_fall_scale_risk, :integer
     add_column :submissions, :greater_than_25_initiate_fall_risk_measures, :string
     add_column :submissions, :patient_refuses_to_wear_red_slippers_in_bed, :string
     add_column :submissions, :unable_to_wear_slippers, :string

@@ -20,3 +20,6 @@
 //= require bootstrap-sprockets
 //= require moment
 //= require bootstrap-datetimepicker
+
+// Load Vendor files
+//= require bootstrap-wizard.min
