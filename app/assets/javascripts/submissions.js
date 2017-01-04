@@ -7,15 +7,15 @@ $(document).on('turbolinks:load', function () {
         jQuery.browser.msie = true;
         jQuery.browser.version = RegExp.$1;
    }
-   var sketchpad = Raphael.sketchpad("editor", {
-      width: 400,
-      height: 400,
-      editing: true
-    });
-
   })();
+
+  var sketchpad = Raphael.sketchpad("editor", {
+     width: 400,
+     height: 400,
+     editing: true
+   });
+  // When the sketchpad changes, update the input field.
+  sketchpad.change(function() {
+    $("#sketch_data").val(sketchpad.json());
+  });
 });
-// // When the sketchpad changes, update the input field.
-// sketchpad.change(function() {
-//   $("#sketch_data").val(sketchpad.json());
-// });
