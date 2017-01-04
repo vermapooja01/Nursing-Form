@@ -1,6 +1,12 @@
 // Place all the styles related to the submissions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#editor {
+  width: 400px;
+  height: 400px;
+  background-image: url("http://static.giantbomb.com/uploads/scale_small/0/6087/2437349-pikachu.png");
+}
+
 .nursing-form-card {
   height: 700px;
   overflow-y: scroll;

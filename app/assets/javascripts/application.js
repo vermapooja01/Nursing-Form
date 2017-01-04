@@ -14,8 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
+//= require sketchpad/json2.min
+//= require sketchpad/raphael.min
+//= require sketchpad/raphael.sketchpad
 //= require bootstrap-sprockets
+//= require moment
+//= require bootstrap-datetimepicker
 
 // Load Vendor files
 //= require bootstrap-wizard.min
