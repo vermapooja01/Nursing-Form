@@ -18,3 +18,5 @@
 //= require sketchpad/raphael.min
 //= require sketchpad/raphael.sketchpad
 //= require bootstrap-sprockets
+//= require moment
+//= require bootstrap-datetimepicker

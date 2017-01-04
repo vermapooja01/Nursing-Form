@@ -18,4 +18,11 @@ $(document).on('turbolinks:load', function () {
   sketchpad.change(function() {
     $("#sketch_data").val(sketchpad.json());
   });
+
+  $(function () {
+      $('#datetime-picker').datetimepicker({
+        inline: true,
+        sideBySide: true,
+      });
+  });
 });

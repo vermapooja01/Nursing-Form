@@ -1,5 +1,11 @@
 .container
   = hidden_field :sketch, :data
+
+  .form-group
+    .row
+      .col-md-8
+        #datetime-picker
+
   = simple_form_for @submission, html: {class: 'form-horizontal'} do |f|
     - if @submission.errors.any?
       #error_explanation
