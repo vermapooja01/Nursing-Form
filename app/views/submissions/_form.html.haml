@@ -1,4 +1,5 @@
 .container
+  = hidden_field :sketch, :data
   = simple_form_for @submission, html: {class: 'form-horizontal'} do |f|
     - if @submission.errors.any?
       #error_explanation
@@ -6,7 +7,8 @@
         %ul
           - @submission.errors.full_messages.each do |msg|
             %li= msg
-    = f.hidden_field :user_id, :value => current_user.id
+    -# = f.hidden_field :user_id, :value => current_user.id
+    #editor
     = f.input :patient_initials
     = f.input :age
     = f.input :gender
