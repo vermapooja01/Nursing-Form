@@ -27,23 +27,431 @@
       %h3 Neurological/Muscular
       .form-group
 
-        = f.input :best_eye_opening_response
-        = f.input :best_verbal_response
-        = f.input :best_motor_response
-        = f.input :patient_total_score
-        = f.input :glasgow_coma_score_quality
-        = f.input :gag_reflex
-        = f.input :speech
-        = f.input :hearing
-        = f.input :face
-        = f.input :tongue
-        = f.input :strength
-        = f.input :weakness
-        = f.input :contracture
-        = f.input :flaccid
-        = f.input :spastic
-        = f.input :paresis
-        = f.input :other
+
+
+        .container
+          %form
+            .row
+              %p{:align => "center"}
+                %b PUPILS:
+              .col-sm-6
+                .table-responsive
+                  %table.table
+                    %tr
+                      %th
+                      %th R
+                      %th L
+                    %tr
+                      %th Brisk(B)
+                      %td
+                        %select.form-control
+                          %option 2
+                          %option 3
+                          %option 4
+                          %option 5
+                          %option 6
+                          %option 7
+                          %option 8
+                          %option 9
+                      %td
+                        %select.form-control
+                          %option 2
+                          %option 3
+                          %option 4
+                          %option 5
+                          %option 6
+                          %option 7
+                          %option 8
+                          %option 9
+                      %td
+                        %img.img-thumbnail{:alt => "", :src => "C:\\Users\\vermapooja\\Pictures\\first.PNG"}/
+                    %tr
+                      %th Sluggish(S)
+                      %td
+                        %select.form-control
+                          %option 2
+                          %option 3
+                          %option 4
+                          %option 5
+                          %option 6
+                          %option 7
+                          %option 8
+                          %option 9
+                      %td
+                        %select.form-control
+                          %option 2
+                          %option 3
+                          %option 4
+                          %option 5
+                          %option 6
+                          %option 7
+                          %option 8
+                          %option 9
+                    %tr
+                      %th Fixed(F)
+                      %td
+                        %select.form-control
+                          %option 2
+                          %option 3
+                          %option 4
+                          %option 5
+                          %option 6
+                          %option 7
+                          %option 8
+                          %option 9
+                      %td
+                        %select.form-control
+                          %option 2
+                          %option 3
+                          %option 4
+                          %option 5
+                          %option 6
+                          %option 7
+                          %option 8
+                          %option 9
+                    %tr
+                      %th Size(mm)
+                      %td
+                        %select.form-control
+                          %option 2
+                          %option 3
+                          %option 4
+                          %option 5
+                          %option 6
+                          %option 7
+                          %option 8
+                          %option 9
+                      %td
+                        %select.form-control
+                          %option 2
+                          %option 3
+                          %option 4
+                          %option 5
+                          %option 6
+                          %option 7
+                          %option 8
+                          %option 9
+        .container
+          %form
+            .row
+              %p{:align => "center"}
+                %b GLASGOW COMA SCORE:
+              .col-sm-12
+                .table-responsive
+                  %table.table
+                    %tr
+                      %th Best Eye Opening Response
+                      %th Best Verbal Response
+                      %th Best Motor Response
+                      %th Patient's Total Score
+                    %tr
+                      %td
+                        %input{:type => "checkbox", :value => ""}/
+                        4= Spontaneous
+                      %td
+                        %input{:type => "checkbox", :value => ""}/
+                        5= Oriented
+                      %td
+                        %input{:type => "checkbox", :value => ""}/
+                        6= obeys Commands
+                      %td
+                        E =
+                        %input.form-control{:name => "E", :type => "text"}/
+                    %tr
+                      %td
+                        %input{:type => "checkbox", :value => ""}/
+                        3= To Speech
+                      %td
+                        %input{:type => "checkbox", :value => ""}/
+                        4= Confused
+                      %td
+                        %input{:type => "checkbox", :value => ""}/
+                        5= Localizes Pain
+                      %td
+                        V =
+                        %input.form-control{:name => "V", :type => "text"}/
+                    %tr
+                      %td
+                        %input{:type => "checkbox", :value => ""}/
+                        2= To Pain
+                      %td
+                        %input{:type => "checkbox", :value => ""}/
+                        3= Inappropriate Words
+                      %td
+                        %input{:type => "checkbox", :value => ""}/
+                        4= Withdraws(Pain)
+                      %td
+                        M =
+                        %input.form-control{:name => "M", :type => "text"}/
+                    %tr
+                      %td
+                        %input{:type => "checkbox", :value => ""}/
+                        1= None
+                      %td
+                        %input{:type => "checkbox", :value => ""}/
+                        2= Incomprehensible Sounds
+                      %td
+                        %input{:type => "checkbox", :value => ""}/
+                        3= Flexion(Pain)
+                    %tr
+                      %td
+                        %input{:type => "checkbox", :value => ""}/
+                        C= Eyes Closed by Edema
+                      %td
+                        %input{:type => "checkbox", :value => ""}/
+                        1= None
+                      %td
+                        %input{:type => "checkbox", :value => ""}/
+                        2= Extension(Pain)
+                    %tr
+                      %td
+                      %td
+                        %input{:type => "checkbox", :value => ""}>/
+                        T= ETT/Trach
+                      %td
+                        %input{:type => "checkbox", :value => ""}/
+                        1= None
+                      %td
+                        Total =
+                        %input.form-control{:name => "Total", :type => "text"}/
+                      %td
+        .container
+          %form
+            .checkbox-inline
+              %label
+                %input{:type => "checkbox", :value => ""}>/
+                Alert
+            .checkbox-inline
+              %label
+                %input{:type => "checkbox", :value => ""}>/
+                Lethargic
+            .checkbox-inline
+              %label
+                %input{:type => "checkbox", :value => ""}>/
+                Confused
+            .checkbox-inline
+              %label
+                %input{:type => "checkbox", :value => ""}>/
+                Follows Commands
+            .checkbox-inline
+              %label
+                %input{:type => "checkbox", :value => ""}>/
+                Comatose
+            .checkbox-inline
+              %label
+                %input{:type => "checkbox", :value => ""}>/
+                Sedated
+            .checkbox-inline
+              %label
+                %input{:type => "checkbox", :value => ""}>/
+                Unable to assess
+        .container
+          %form
+            %p
+              %b Gag Reflex:
+            .radio
+              %label
+                %input{:name => "optradio", :type => "radio"}>/
+                Present
+            .radio
+              %label
+                %input{:name => "optradio", :type => "radio"}>/
+                Absent
+        .container
+          %form
+            %p
+              %b SPEECH:
+            .checkbox-inline
+              %label
+                %input{:type => "checkbox", :value => ""}>/
+                Clear
+            .checkbox-inline
+              %label
+                %input{:type => "checkbox", :value => ""}>/
+                Slurred
+            .checkbox-inline
+              %label
+                %input{:type => "checkbox", :value => ""}>/
+                No Response
+            .checkbox-inline
+              %label
+                %input{:type => "checkbox", :value => ""}>/
+                Inappropriate
+            .checkbox-inline
+              %label
+                %input{:type => "checkbox", :value => ""}>/
+                Incomprehensible
+            .checkbox-inline
+              %label
+                %input{:type => "checkbox", :value => ""}>/
+                Aphasic
+            .checkbox-inline
+              %label
+                %input{:type => "checkbox", :value => ""}>/
+                ETT/Tranch
+        .container
+          %form
+            %p
+              %b HEARING:
+            .radio-inline
+              %label
+                %input{:name => "optradio", :type => "radio"}>/
+                No Obvious Deficit
+            .radio-inline
+              %label
+                %input{:name => "optradio", :type => "radio"}>/
+                HOH
+            .radio-inline
+              %label
+                %input{:name => "optradio", :type => "radio"}>/
+                Unable to Assess
+            .radio-inline
+              %label
+                %input{:name => "optradio", :type => "radio"}>/
+                Deaf
+        .container
+          %form
+            %p
+              %b FACE:
+            .radio
+              %label
+                %input{:name => "optradio", :type => "radio"}>/
+                Symmetrical
+            .radio
+              %label
+                %input{:name => "optradio", :type => "radio"}>/
+                Asymmetrical
+            .radio
+              %label
+                %input{:name => "optradio", :type => "radio"}>/
+                R
+            .radio
+              %label
+                %input{:name => "optradio", :type => "radio"}>/
+                L
+        .container
+          %form
+            %p
+              %b TONGUE:
+            .radio
+              %label
+                %input{:name => "optradio", :type => "radio"}>/
+                Midline
+            .radio
+              %label
+                %input{:name => "optradio", :type => "radio"}>/
+                R
+            .radio
+              %label
+                %input{:name => "optradio", :type => "radio"}>/
+                L
+        .container
+          %form
+            %p
+              %b STRENGTH:
+            .radio
+              %label
+                %input{:name => "optradio", :type => "radio"}>/
+                No Obvious Deficit
+        .container
+          %form
+            .row
+              .col-sm-12
+                .table-responsive
+                  %table.table
+                    %tr
+                      %th
+                      %th RUE
+                      %th LUE
+                      %th RLE
+                      %th LLE
+                    %tr
+                      %th Weakness
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                    %tr
+                      %th Contracture
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                    %tr
+                      %th Flaccid
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                    %tr
+                      %th Spastic
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                    %tr
+                      %th Paresis
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                    %tr
+                      %th Other
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+                      %td
+                        .checkbox-inline
+                          %input{:type => "checkbox", :value => ""}/
+        
+
+
 
 
 

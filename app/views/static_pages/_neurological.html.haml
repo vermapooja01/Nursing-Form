@@ -1,7 +1,6 @@
 
 .container
   %form
-    %h3{:align => "center"} Neurological
     .row
       %p{:align => "center"}
         %b PUPILS:
@@ -116,38 +115,72 @@
               %th Best Motor Response
               %th Patient's Total Score
             %tr
-              %td 4= Spontaneous
-              %td 5= Oriented
-              %td 6= obeys Commands
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                4= Spontaneous
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                5= Oriented
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                6= obeys Commands
               %td
                 E =
                 %input.form-control{:name => "E", :type => "text"}/
             %tr
-              %td 3= To Speech
-              %td 4= Confused
-              %td 5= Localizes Pain
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                3= To Speech
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                4= Confused
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                5= Localizes Pain
               %td
                 V =
                 %input.form-control{:name => "V", :type => "text"}/
             %tr
-              %td 2= To Pain
-              %td 3= Inappropriate Words
-              %td 4= Withdraws(Pain)
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                2= To Pain
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                3= Inappropriate Words
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                4= Withdraws(Pain)
               %td
                 M =
                 %input.form-control{:name => "M", :type => "text"}/
             %tr
-              %td 1= None
-              %td 2= Incomprehensible Sounds
-              %td 3= Flexion(Pain)
-            %tr
-              %td C= Eyes Closed by Edema
-              %td 1= None
-              %td 2= Extension(Pain)
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                1= None
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                2= Incomprehensible Sounds
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                3= Flexion(Pain)
             %tr
               %td
-              %td T= ETT/Trach
-              %td 1= None
+                %input{:type => "checkbox", :value => ""}/
+                C= Eyes Closed by Edema
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                1= None
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                2= Extension(Pain)
+            %tr
+              %td
+              %td
+                %input{:type => "checkbox", :value => ""}>/
+                T= ETT/Trach
+              %td
+                %input{:type => "checkbox", :value => ""}/
+                1= None
               %td
                 Total =
                 %input.form-control{:name => "Total", :type => "text"}/
