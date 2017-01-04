@@ -2,784 +2,114 @@
 
 .wizard#nursing-form-wizard{"data-title" => "New Nursing Entry"}
   = simple_form_for @submission, html: {class: 'form-horizontal'} do |f|
-    - if @submission.errors.any?
-      #error_explanation
-        %h2= "#{pluralize(@submission.errors.count, "error")} prohibited this submission from being saved:"
-        %ul
-          - @submission.errors.full_messages.each do |msg|
-            %li= msg
-
+    -# Basic Information Wizard Card
     .wizard-card.nursing-form-card{"data-cardname" => "Page 1"}
       %h3 Basic Information
-      .form-group
+      .form-group.form-group-lg
         -# = f.hidden_field :user_id, :value => current_user.id
-        = f.input :patient_initials
-        = f.input :age
-        = f.input :gender
-        = f.input :admitting_primary_medical_diagnosis
-        = f.input :week
-        -# Display the Neurological/Muscular partial
-        -# .well
-        -#   = render :partial => "submissions/partials/neurological_muscular", :locals => {:f => f}
+        .col-md-3
+          = f.input :patient_initials
+          = f.input :age
+          = f.input :gender
+          = f.input :admitting_primary_medical_diagnosis
+        -# Selection of week
+        .form-group
+          .row
+            .col-md-8
+              #datetime-picker
 
-
+    -# Nurological Muscular Wizard Card
     .wizard-card.nursing-form-card{"data-cardname" => "Page 2"}
       %h3 Neurological/Muscular
       .form-group
-
-
-
-        .container
-          %form
-            .row
-              %p{:align => "center"}
-                %b PUPILS:
-              .col-sm-6
-                .table-responsive
-                  %table.table
-                    %tr
-                      %th
-                      %th R
-                      %th L
-                    %tr
-                      %th Brisk(B)
-                      %td
-                        %select.form-control
-                          %option 2
-                          %option 3
-                          %option 4
-                          %option 5
-                          %option 6
-                          %option 7
-                          %option 8
-                          %option 9
-                      %td
-                        %select.form-control
-                          %option 2
-                          %option 3
-                          %option 4
-                          %option 5
-                          %option 6
-                          %option 7
-                          %option 8
-                          %option 9
-                      %td
-                        %img.img-thumbnail{:alt => "", :src => "C:\\Users\\vermapooja\\Pictures\\first.PNG"}/
-                    %tr
-                      %th Sluggish(S)
-                      %td
-                        %select.form-control
-                          %option 2
-                          %option 3
-                          %option 4
-                          %option 5
-                          %option 6
-                          %option 7
-                          %option 8
-                          %option 9
-                      %td
-                        %select.form-control
-                          %option 2
-                          %option 3
-                          %option 4
-                          %option 5
-                          %option 6
-                          %option 7
-                          %option 8
-                          %option 9
-                    %tr
-                      %th Fixed(F)
-                      %td
-                        %select.form-control
-                          %option 2
-                          %option 3
-                          %option 4
-                          %option 5
-                          %option 6
-                          %option 7
-                          %option 8
-                          %option 9
-                      %td
-                        %select.form-control
-                          %option 2
-                          %option 3
-                          %option 4
-                          %option 5
-                          %option 6
-                          %option 7
-                          %option 8
-                          %option 9
-                    %tr
-                      %th Size(mm)
-                      %td
-                        %select.form-control
-                          %option 2
-                          %option 3
-                          %option 4
-                          %option 5
-                          %option 6
-                          %option 7
-                          %option 8
-                          %option 9
-                      %td
-                        %select.form-control
-                          %option 2
-                          %option 3
-                          %option 4
-                          %option 5
-                          %option 6
-                          %option 7
-                          %option 8
-                          %option 9
-        .container
-          %form
-            .row
-              %p{:align => "center"}
-                %b GLASGOW COMA SCORE:
-              .col-sm-12
-                .table-responsive
-                  %table.table
-                    %tr
-                      %th Best Eye Opening Response
-                      %th Best Verbal Response
-                      %th Best Motor Response
-                      %th Patient's Total Score
-                    %tr
-                      %td
-                        %input{:type => "checkbox", :value => ""}/
-                        4= Spontaneous
-                      %td
-                        %input{:type => "checkbox", :value => ""}/
-                        5= Oriented
-                      %td
-                        %input{:type => "checkbox", :value => ""}/
-                        6= obeys Commands
-                      %td
-                        E =
-                        %input.form-control{:name => "E", :type => "text"}/
-                    %tr
-                      %td
-                        %input{:type => "checkbox", :value => ""}/
-                        3= To Speech
-                      %td
-                        %input{:type => "checkbox", :value => ""}/
-                        4= Confused
-                      %td
-                        %input{:type => "checkbox", :value => ""}/
-                        5= Localizes Pain
-                      %td
-                        V =
-                        %input.form-control{:name => "V", :type => "text"}/
-                    %tr
-                      %td
-                        %input{:type => "checkbox", :value => ""}/
-                        2= To Pain
-                      %td
-                        %input{:type => "checkbox", :value => ""}/
-                        3= Inappropriate Words
-                      %td
-                        %input{:type => "checkbox", :value => ""}/
-                        4= Withdraws(Pain)
-                      %td
-                        M =
-                        %input.form-control{:name => "M", :type => "text"}/
-                    %tr
-                      %td
-                        %input{:type => "checkbox", :value => ""}/
-                        1= None
-                      %td
-                        %input{:type => "checkbox", :value => ""}/
-                        2= Incomprehensible Sounds
-                      %td
-                        %input{:type => "checkbox", :value => ""}/
-                        3= Flexion(Pain)
-                    %tr
-                      %td
-                        %input{:type => "checkbox", :value => ""}/
-                        C= Eyes Closed by Edema
-                      %td
-                        %input{:type => "checkbox", :value => ""}/
-                        1= None
-                      %td
-                        %input{:type => "checkbox", :value => ""}/
-                        2= Extension(Pain)
-                    %tr
-                      %td
-                      %td
-                        %input{:type => "checkbox", :value => ""}>/
-                        T= ETT/Trach
-                      %td
-                        %input{:type => "checkbox", :value => ""}/
-                        1= None
-                      %td
-                        Total =
-                        %input.form-control{:name => "Total", :type => "text"}/
-                      %td
-        .container
-          %form
-            .checkbox-inline
-              %label
-                %input{:type => "checkbox", :value => ""}>/
-                Alert
-            .checkbox-inline
-              %label
-                %input{:type => "checkbox", :value => ""}>/
-                Lethargic
-            .checkbox-inline
-              %label
-                %input{:type => "checkbox", :value => ""}>/
-                Confused
-            .checkbox-inline
-              %label
-                %input{:type => "checkbox", :value => ""}>/
-                Follows Commands
-            .checkbox-inline
-              %label
-                %input{:type => "checkbox", :value => ""}>/
-                Comatose
-            .checkbox-inline
-              %label
-                %input{:type => "checkbox", :value => ""}>/
-                Sedated
-            .checkbox-inline
-              %label
-                %input{:type => "checkbox", :value => ""}>/
-                Unable to assess
-        .container
-          %form
-            %p
-              %b Gag Reflex:
-            .radio
-              %label
-                %input{:name => "optradio", :type => "radio"}>/
-                Present
-            .radio
-              %label
-                %input{:name => "optradio", :type => "radio"}>/
-                Absent
-        .container
-          %form
-            %p
-              %b SPEECH:
-            .checkbox-inline
-              %label
-                %input{:type => "checkbox", :value => ""}>/
-                Clear
-            .checkbox-inline
-              %label
-                %input{:type => "checkbox", :value => ""}>/
-                Slurred
-            .checkbox-inline
-              %label
-                %input{:type => "checkbox", :value => ""}>/
-                No Response
-            .checkbox-inline
-              %label
-                %input{:type => "checkbox", :value => ""}>/
-                Inappropriate
-            .checkbox-inline
-              %label
-                %input{:type => "checkbox", :value => ""}>/
-                Incomprehensible
-            .checkbox-inline
-              %label
-                %input{:type => "checkbox", :value => ""}>/
-                Aphasic
-            .checkbox-inline
-              %label
-                %input{:type => "checkbox", :value => ""}>/
-                ETT/Tranch
-        .container
-          %form
-            %p
-              %b HEARING:
-            .radio-inline
-              %label
-                %input{:name => "optradio", :type => "radio"}>/
-                No Obvious Deficit
-            .radio-inline
-              %label
-                %input{:name => "optradio", :type => "radio"}>/
-                HOH
-            .radio-inline
-              %label
-                %input{:name => "optradio", :type => "radio"}>/
-                Unable to Assess
-            .radio-inline
-              %label
-                %input{:name => "optradio", :type => "radio"}>/
-                Deaf
-        .container
-          %form
-            %p
-              %b FACE:
-            .radio
-              %label
-                %input{:name => "optradio", :type => "radio"}>/
-                Symmetrical
-            .radio
-              %label
-                %input{:name => "optradio", :type => "radio"}>/
-                Asymmetrical
-            .radio
-              %label
-                %input{:name => "optradio", :type => "radio"}>/
-                R
-            .radio
-              %label
-                %input{:name => "optradio", :type => "radio"}>/
-                L
-        .container
-          %form
-            %p
-              %b TONGUE:
-            .radio
-              %label
-                %input{:name => "optradio", :type => "radio"}>/
-                Midline
-            .radio
-              %label
-                %input{:name => "optradio", :type => "radio"}>/
-                R
-            .radio
-              %label
-                %input{:name => "optradio", :type => "radio"}>/
-                L
-        .container
-          %form
-            %p
-              %b STRENGTH:
-            .radio
-              %label
-                %input{:name => "optradio", :type => "radio"}>/
-                No Obvious Deficit
-        .container
-          %form
-            .row
-              .col-sm-12
-                .table-responsive
-                  %table.table
-                    %tr
-                      %th
-                      %th RUE
-                      %th LUE
-                      %th RLE
-                      %th LLE
-                    %tr
-                      %th Weakness
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                    %tr
-                      %th Contracture
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                    %tr
-                      %th Flaccid
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                    %tr
-                      %th Spastic
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                    %tr
-                      %th Paresis
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                    %tr
-                      %th Other
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-                      %td
-                        .checkbox-inline
-                          %input{:type => "checkbox", :value => ""}/
-        
-
-
-
-
+        = render :partial => "submissions/partials/neurological_muscular", :locals => {:f => f}
 
     .wizard-card.nursing-form-card{"data-cardname" => "Page 3"}
       %h3 Psychosocial
       .form-group
-        = f.input :marital_status
-        = f.input :affect
-        = f.input :spiritual_needs
-        = f.input :social_support
-        = f.input :advanced_directive
-        = f.input :resuscitation_status
-        = f.input :resuscitation_comments
-        = f.input :motion_strength
-        = f.input :grip
-        = f.input :icp_device
-        = f.input :prescribed_level
-        = f.input :monitor
-        = f.input :monitor_comments
+        = render :partial => "submissions/partials/psychosocial", :locals => {:f => f}
 
 
     .wizard-card.nursing-form-card{"data-cardname" => "Page 4"}
       %h3 Respiratory/O2 Therapy
       .form-group
-        = f.input :ventilation
-        = f.input :pattern
-        = f.input :breath_sounds
-        = f.input :cough
-        = f.input :sputum
-        = f.input :consistency
-        = f.input :amount
-        -# = f.input :amount_comments
-        = f.input :o2_protocol_in_place
-        = f.input :ventilator_settings
-        = f.input :ett_placement
-        = f.input :trach
-        = f.input :chest_tube
-        -# = f.input :chest_tube_comments
+        = render :partial => "submissions/partials/respiratory_o2therapy", :locals => {:f => f}
 
 
     .wizard-card.nursing-form-card{"data-cardname" => "Page 5"}
       %h3 Cardiovascular
       .form-group
-        = f.input :pulses
-        = f.input :radial
-        = f.input :femoral
-        = f.input :popliteal
-        = f.input :dorsalis_pedis
-        = f.input :posterior_tibialis
-        = f.input :heart_sounds
-        = f.input :edema
-        = f.input :capillary_refill
-        = f.input :cardiac_rhythm
-        -# = f.input :cardiac_rhythm_comments
-        = f.input :pacemaker
-        = f.input :pacemaker_settings
-        = f.input :arterial_line
-        = f.input :waveform
-        -# = f.input :waveform_comments
-        = f.input :pa_catcher
-        = f.input :waveform_two
-        -# = f.input :waveform_two_comments
-        = f.input :iabp
-        = f.input :trigger
-        = f.input :freq
-
+        = render :partial => "submissions/partials/cardiovascular", :locals => {:f => f}
 
 
     .wizard-card.nursing-form-card{"data-cardname" => "Page 6"}
       %h3 Gastrointestinal
       .form-group
-        = f.input :abdomen
-        = f.input :bowel_sounds
-        = f.input :ngt
-        = f.input :gastronomy
-        = f.input :jejunostomy
-        = f.input :feeding_tube
-        = f.input :type
-        = f.input :size
-        = f.input :position
-        = f.input :drainage_color
-        -# = f.input :drainage_color_comments
-
+        = render :partial => "submissions/partials/gastrointestinal", :locals => {:f => f}
 
 
     .wizard-card.nursing-form-card{"data-cardname" => "Page 7"}
       %h3 Nutrition
       .form-group
-        = f.input :diet
-        = f.input :diet_type
-        = f.input :breakfast
-        = f.input :lunch
-        = f.input :dinner
-        = f.input :taken_type
-        = f.input :tf
-        = f.input :residual
-        = f.input :placement
-        -# = f.input :placement_comments
+        = render :partial => "submissions/partials/nutrition", :locals => {:f => f}
 
 
 
     .wizard-card.nursing-form-card{"data-cardname" => "Page 8"}
       %h3 Skin/Mucuous Membranes
       .form-group
-        -# = f.input :ashen
-        = f.input :pink
-        = f.input :pale
-        = f.input :cyanotic
-        = f.input :jaundiced
-        = f.input :mottled
-        = f.input :flushed
-        = f.input :cool
-        = f.input :warm
-        = f.input :hot
-        = f.input :moist
-        = f.input :diaphoretic
-        = f.input :dry
-        = f.input :turgor
-        -# = f.input :turgor_comments
-
+        = render :partial => "submissions/partials/skin_mucuous_membrane", :locals => {:f => f}
 
 
     .wizard-card.nursing-form-card{"data-cardname" => "Page 9"}
       %h3 IV Therapy
       .form-group
-        = f.input :na
-        = f.input :current_iv_insertion_date_and_time
-        -# = f.input :therapy_type
-        = f.input :iv_site
-        = f.input :condition
-        = f.input :start_change
+        = render :partial => "submissions/partials/iv_therapy", :locals => {:f => f}
 
 
 
     .wizard-card.nursing-form-card{"data-cardname" => "Page 10"}
       %h3 Genitourinary
       .form-group
-        = f.input :urine
-        = f.input :color
-        = f.input :dialysis
+        = render :partial => "submissions/partials/genitourinary", :locals => {:f => f}
+
 
 
     .wizard-card.nursing-form-card{"data-cardname" => "Page 11"}
       %h3 Skin Assessment
       .form-group
-        = f.input :wound_assessment
-        = f.input :stage
-        = f.input :other_wounds
-        -# = f.input :wound_size
-        = f.input :depth
-        = f.input :undermining
-        = f.input :drainage
-        -# = f.input :wound_amount
-        = f.input :color_of_wound
-        = f.input :periwound_surrounding_skin
-        -# = f.input :location_image1
-        -# = f.input :location_image2
-
+        = render :partial => "submissions/partials/skin_assessment", :locals => {:f => f}
 
 
 
     .wizard-card.nursing-form-card{"data-cardname" => "Page 12"}
       %h3 Pain Assessment
       .form-group
-        = f.input :pain_assessment
-        = f.input :verbal
-        = f.input :non_verbal
-        = f.input :scale_used
-        = f.input :other_symptoms_present
-        = f.input :additional_measures
-        -# = f.input :pain_scale
-        -# = f.input :pain_scale_rating_scale
-        = f.input :flacc_scale
-        = f.input :criteria
-        -# = f.input :score_0_flacc
-        -# = f.input :score_1_flacc
-        -# = f.input :score_2_flacc
-        -# = f.input :total_score_flacc
-        = f.input :critical_care_pain_observation_tool
-        = f.input :indicator
-        -# = f.input :score_0_cpot
-        -# = f.input :score_1_cpot
-        -# = f.input :score_2_cpot
-        -# = f.input :total_score_cpot
-
+        = render :partial => "submissions/partials/pain_assessment", :locals => {:f => f}
 
 
     .wizard-card.nursing-form-card{"data-cardname" => "Page 13"}
       %h3 ADL Flowsheet
       .form-group
-        = f.input :hygiene
-        = f.input :oral_care
-        = f.input :dentures_present
-        = f.input :perifoley_care
-        = f.input :linen_change
-        = f.input :bath
-        = f.input :trach_care
-        = f.input :activity
-        = f.input :bed_rest
-        = f.input :dangle
-        = f.input :ambulate
-        = f.input :transfer_chair
-        = f.input :bathroom_privileges_bsc
-        = f.input :position_change
-        = f.input :ad_lib
-        = f.input :safety
-        = f.input :name_allergy_band
-        = f.input :bed_low_position_locked
-        = f.input :side_rails_up1234
-        = f.input :non_skid_footwear
-        = f.input :call_light_in_reach
-        = f.input :fall_precautions
-        = f.input :seizure_precautions
-        = f.input :isolation
-        = f.input :bed_check
-        = f.input :posey_wrap
-        = f.input :ambu_bag
-        = f.input :suction_correct_setup
-        = f.input :alarms_limits
-        = f.input :equipment
-        = f.input :iv_pumps
-        = f.input :feeding_pump
-        = f.input :pca_pump
-        = f.input :incentive_spirometer
-        = f.input :pulse_oximeter
-        = f.input :trapeze
-        = f.input :sequential_compression_device
-        = f.input :k_pad
-        = f.input :nibp
-        = f.input :continuous_passive_motion
-        = f.input :traction_type
-        = f.input :mattress_overlay
-        = f.input :walker
-        = f.input :speciality_bed
-        = f.input :hypo_hyperthemia_blanket
-        = f.input :bedside_commode
-        = f.input :abductor_pillow
-        = f.input :wound_vac
-        = f.input :humidifier
-        = f.input :heat_lamp
-        = f.input :o2_tank
-        -# = f.input :adl_other
-
-
-
+        = render :partial => "submissions/partials/adl_flowsheet", :locals => {:f => f}
 
 
     .wizard-card.nursing-form-card{"data-cardname" => "Page 14"}
       %h3 Skin Risk Assessment Screen
       .form-group
-        = f.input :sensory_perception
-        = f.input :completely_limited
-        = f.input :very_limited
-        = f.input :slightly_limited
-        = f.input :no_impairment
-        = f.input :moisture
-        = f.input :constantly_moist
-        -# = f.input :moist_moisture
-        = f.input :occasionally_moist
-        = f.input :rarely_moist
-        -# = f.input :activity_skin_assessment_screen
-        = f.input :bedfast
-        = f.input :chairfast
-        = f.input :walks_occasionally
-        = f.input :walks_frequently
-        = f.input :mobility
-        = f.input :completely_immobile
-        -# = f.input :very_limited_mobility
-        -# = f.input :slightly_limited_mobility
-        = f.input :no_limitations
-        = f.input :nutrition_score
-        = f.input :very_poor
-        = f.input :probably_inadequate
-        = f.input :adequate
-        = f.input :excellent
-        = f.input :friction_shear
-        = f.input :problem
-        = f.input :potential_problem
-        = f.input :no_apparent_problem
-        -# = f.input :total_score_skin_assessment_screen
-        = f.input :skin_intact
-        = f.input :pressure_ulcer_prevention_protocol_in_place
-        = f.input :see_presssure_ulcer_documentation_form
-        = f.input :fall_scale_risk
-        = f.input :history_of_falling
-        -# = f.input :no_history_of_falling
-        = f.input :immediate_or_within_three_months
-        = f.input :presence_of_secondary_diagnosis
-        -# = f.input :no_presence_of_secondary_diagnosis
-        -# = f.input :yes_presence_of_secondary_diagnosis
-        = f.input :ambulatory_aid
-        = f.input :none_bedrest_nurse_assist
-        = f.input :cane_walker_crutches
-        = f.input :furniture
-        = f.input :iv_heparin_lock
-        -# = f.input :no_iv_heparin_lock
-        -# = f.input :yes_iv_heparin_lock
-        = f.input :gait_transferring
-        = f.input :normal_bedrest_wheelchair
-        = f.input :weak
-        = f.input :impaired
-        = f.input :mental_status
-        = f.input :oriented_to_own_ability
-        = f.input :overstimates_forgets_limitations
-        -# = f.input :total_score_fall_scale_risk
-        = f.input :greater_than_25_initiate_fall_risk_measures
-        = f.input :patient_refuses_to_wear_red_slippers_in_bed
-        = f.input :unable_to_wear_slippers
-        = f.input :sign_on_door
-        = f.input :medications
-
-
+        = render :partial => "submissions/partials/skin_risk_assessment_screen", :locals => {:f => f}
 
 
     .wizard-card.nursing-form-card{"data-cardname" => "Page 15"}
       %h3 VTE Risk Assessment
       .form-group
-        = f.input :each_risk_factor_represents_one_point
-        = f.input :each_risk_factor_represents_two_point
-        = f.input :each_risk_factor_represents_three_point
-        = f.input :each_risk_factor_represents_five_point
-        = f.input :patients_total_score
-
+        = render :partial => "submissions/partials/vte_risk_assessment", :locals => {:f => f}
 
 
     .wizard-card.nursing-form-card{"data-cardname" => "Page 16"}
       %h3 Last Page
-
+      .form-group
+        = render :partial => "submissions/partials/page_9", :locals => {:f => f}
 
 
 = link_to 'Back', submissions_path

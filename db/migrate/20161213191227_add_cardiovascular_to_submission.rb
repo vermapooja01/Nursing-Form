@@ -6,6 +6,12 @@ class AddCardiovascularToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :popliteal, :string
     add_column :submissions, :dorsalis_pedis, :string
     add_column :submissions, :posterior_tibialis, :string
+    add_column :submissions, :pulses_absent, :string
+    add_column :submissions, :pulses_weak, :string
+    add_column :submissions, :pulses_normal, :string
+    add_column :submissions, :pulses_full, :string
+    add_column :submissions, :pulses_bounding, :string
+    add_column :submissions, :pulses_dp_doppler, :string
     add_column :submissions, :heart_sounds, :string
     add_column :submissions, :edema, :string
     add_column :submissions, :capillary_refill, :string

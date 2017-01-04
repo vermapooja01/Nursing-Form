@@ -1,6 +1,12 @@
 class AddNeurologicalMuscularToSubmission < ActiveRecord::Migration[5.0]
   def change
     # Neurological
+    add_column :submissions, :brisk, :string
+    add_column :submissions, :sluggish, :string
+    add_column :submissions, :fixed, :string
+    add_column :submissions, :size, :string
+    add_column :submissions, :pupils_left, :integer
+    add_column :submissions, :pupils_right, :integer
     add_column :submissions, :best_eye_opening_response, :string
     add_column :submissions, :best_verbal_response, :string
     add_column :submissions, :best_motor_response, :string
@@ -18,6 +24,11 @@ class AddNeurologicalMuscularToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :spastic, :string
     add_column :submissions, :paresis, :string
     add_column :submissions, :other, :string
+    add_column :submissions, :strength_rue, :string
+    add_column :submissions, :strength_lue, :string
+    add_column :submissions, :strength_rle, :string
+    add_column :submissions, :strength_lle, :string
+
 
   end
 end

@@ -6,8 +6,8 @@ class AddGastrointestinalToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :gastronomy, :string
     add_column :submissions, :jejunostomy, :string
     add_column :submissions, :feeding_tube, :string
-    add_column :submissions, :type, :string
-    add_column :submissions, :size, :string
+    add_column :submissions, :feeding_tube_type, :string
+    add_column :submissions, :feeding_tube_size, :string
     add_column :submissions, :position, :string
     add_column :submissions, :drainage_color, :string
     add_column :submissions, :drainage_color_comments, :string

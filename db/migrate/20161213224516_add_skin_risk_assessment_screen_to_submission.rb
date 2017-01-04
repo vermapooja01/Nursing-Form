@@ -1,5 +1,8 @@
 class AddSkinRiskAssessmentScreenToSubmission < ActiveRecord::Migration[5.0]
   def change
+    add_column :submissions, :skin_risk_assessment_screen, :string
+    add_column :submissions, :skin_risk_assessment_screen_score, :integer
+    add_column :submissions, :skin_risk_assessment_screen_patients_score, :integer
     add_column :submissions, :sensory_perception, :string
     add_column :submissions, :completely_limited, :integer
     add_column :submissions, :very_limited, :integer
@@ -34,6 +37,8 @@ class AddSkinRiskAssessmentScreenToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :pressure_ulcer_prevention_protocol_in_place, :string
     add_column :submissions, :see_presssure_ulcer_documentation_form, :string
     add_column :submissions, :fall_scale_risk, :string
+    add_column :submissions, :fall_scale_risk_score, :integer
+    add_column :submissions, :fall_scale_risk_patients_score, :integer
     add_column :submissions, :history_of_falling, :string
     add_column :submissions, :no_history_of_falling, :integer
     add_column :submissions, :immediate_or_within_three_months, :integer
