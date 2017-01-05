@@ -53,17 +53,16 @@
 
         #a.tab-pane.active
           %h3 Basic Information
-          .form-group.form-group-lg
-            .row
-              -# = f.hidden_field :user_id, :value => current_user.id
-              .col-md-3
-                = f.input :patient_initials
-                = f.input :age
-                = f.input :gender
-                = f.input :admitting_primary_medical_diagnosis
-              -# Selection of week
-              .col-md-8
-                #datetime-picker
+          .form-group.custom-fields
+            -# = f.hidden_field :user_id, :value => current_user.id
+            .col-md-3
+              = f.input :patient_initials, :class => "form-control"
+              = f.input :age
+              = f.input :gender
+              = f.input :admitting_primary_medical_diagnosis
+            -# Selection of week
+            -# .col-md-8
+            -#   #datetime-picker
 
         #b.tab-pane
           %h3 Neurological/Muscular

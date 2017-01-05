@@ -9,22 +9,24 @@ $(document).on('turbolinks:load', function () {
    }
   })();
 
-  var sketchpad = Raphael.sketchpad("editor", {
-     width: 400,
-     height: 400,
-     editing: true
-   });
-  // When the sketchpad changes, update the input field.
-  sketchpad.change(function() {
-    $("#sketch_data").val(sketchpad.json());
-  });
+  if ($('#editor').length) {
+    var sketchpad = Raphael.sketchpad("editor", {
+       width: 400,
+       height: 400,
+       editing: true
+     });
+    // When the sketchpad changes, update the input field.
+    sketchpad.change(function() {
+      $("#sketch_data").val(sketchpad.json());
+    });
+  }
 
-  $(function () {
-      $('#datetime-picker').datetimepicker({
-        inline: true,
-        sideBySide: true,
-      });
-  });
+  // $(function () {
+  //     $('#datetime-picker').datetimepicker({
+  //       inline: true,
+  //       sideBySide: true,
+  //     });
+  // });
 
   // var wizard = $("#nursing-form-wizard").wizard({
   //   progressBarCurrent: true,
