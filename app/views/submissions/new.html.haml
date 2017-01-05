@@ -101,37 +101,44 @@
             = render :partial => "submissions/partials/skin_mucuous_membrane", :locals => {:f => f}
 
         #i.tab-pane
-          %h3 Skin/Mucuous Membranes
-          .form-group
-            = render :partial => "submissions/partials/skin_mucuous_membrane", :locals => {:f => f}
-
-        #j.tab-pane
-          %h3 Skin/Mucuous Membranes
-          .form-group
-            = render :partial => "submissions/partials/skin_mucuous_membrane", :locals => {:f => f}
-
-        #k.tab-pane
           %h3 IV Therapy
           .form-group
             = render :partial => "submissions/partials/iv_therapy", :locals => {:f => f}
 
-        #l.tab-pane
+        #j.tab-pane
           %h3 Genitourinary
           .form-group
             = render :partial => "submissions/partials/genitourinary", :locals => {:f => f}
 
-        #m.tab-pane
+        #k.tab-pane
           %h3 Skin Assessment
           .form-group
             = render :partial => "submissions/partials/skin_assessment", :locals => {:f => f}
 
-        #n.tab-pane
+        #l.tab-pane
           %h3 Pain Assessment
           .form-group
             = render :partial => "submissions/partials/pain_assessment", :locals => {:f => f}
 
-        #o.tab-pane Settings Tab.
-        #p.tab-pane Settings Tab.
+        #m.tab-pane
+          %h3 ADL Flowsheet
+          .form-group
+            = render :partial => "submissions/partials/adl_flowsheet", :locals => {:f => f}
+
+        #n.tab-pane
+          %h3 Skin Risk Assessment Screen
+          .form-group
+            = render :partial => "submissions/partials/skin_risk_assessment_screen", :locals => {:f => f}
+
+        #o.tab-pane
+          %h3 VTE Risk Assessment
+          .form-group
+            = render :partial => "submissions/partials/vte_risk_assessment", :locals => {:f => f}
+
+        #p.tab-pane
+          %h3 Last Page
+          .form-group
+            = render :partial => "submissions/partials/page_9", :locals => {:f => f}
 
 -# %ul.pager.wizard
 -#   %li.previous.first{:style => "display:none;"}
@@ -142,36 +149,6 @@
 -#     %a{:href => "#"} Last
 -#   %li.next
 -#     %a{:href => "#"} Next
--#
--#
-
--#
--#
-
--#
--#
--#     .wizard-card.nursing-form-card{"data-cardname" => "Page 13"}
--#       %h3 ADL Flowsheet
--#       .form-group
--#         = render :partial => "submissions/partials/adl_flowsheet", :locals => {:f => f}
--#
--#
--#     .wizard-card.nursing-form-card{"data-cardname" => "Page 14"}
--#       %h3 Skin Risk Assessment Screen
--#       .form-group
--#         = render :partial => "submissions/partials/skin_risk_assessment_screen", :locals => {:f => f}
--#
--#
--#     .wizard-card.nursing-form-card{"data-cardname" => "Page 15"}
--#       %h3 VTE Risk Assessment
--#       .form-group
--#         = render :partial => "submissions/partials/vte_risk_assessment", :locals => {:f => f}
--#
--#
--#     .wizard-card.nursing-form-card{"data-cardname" => "Page 16"}
--#       %h3 Last Page
--#       .form-group
--#         = render :partial => "submissions/partials/page_9", :locals => {:f => f}
 
 
 -# = link_to 'Back', submissions_path
