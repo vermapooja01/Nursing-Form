@@ -9,28 +9,42 @@ $(document).on('turbolinks:load', function () {
    }
   })();
 
-  var sketchpad = Raphael.sketchpad("editor", {
-     width: 400,
-     height: 400,
-     editing: true
-   });
-  // When the sketchpad changes, update the input field.
-  sketchpad.change(function() {
-    $("#sketch_data").val(sketchpad.json());
-  });
+  if ($('#editor').length) {
+    var sketchpad = Raphael.sketchpad("editor", {
+       width: 400,
+       height: 400,
+       editing: true
+     });
+    // When the sketchpad changes, update the input field.
+    sketchpad.change(function() {
+      $("#sketch_data").val(sketchpad.json());
+    });
+  }
 
-  $(function () {
-      $('#datetime-picker').datetimepicker({
-        inline: true,
-        sideBySide: true,
-      });
-  });
+  $('#submission_week').daterangepicker();
 
-  var wizard = $("#nursing-form-wizard").wizard({
-    progressBarCurrent: true,
-    contentHeight: 800,
-    contentWidth: 1500,
-  });
-  wizard.show();
+  // $(function () {
+  //     $('#datetime-picker').datetimepicker({
+  //       inline: true,
+  //       sideBySide: true,
+  //     });
+  // });
 
+  // var wizard = $("#nursing-form-wizard").wizard({
+  //   progressBarCurrent: true,
+  //   contentHeight: 400,
+  //   contentWidth: 900,
+  // });
+  // wizard.show();
+
+
+  $('#rootwizard').bootstrapWizard({
+    onTabShow: function(tab, navigation, index) {
+      var $total = navigation.find('li').length;
+  		var $current = index+1;
+  		var $percent = ($current/$total) * 100;
+  		$('#rootwizard .progress-bar').css({width:$percent+'%'});
+  	},
+    'tabClass': 'nav nav-tabs tabs-left'
+  });
 });

@@ -17,10 +17,11 @@
 //= require sketchpad/raphael.min
 //= require sketchpad/raphael.sketchpad
 //= require bootstrap-sprockets
-//= require moment
-//= require bootstrap-datetimepicker
+//= require moment.min
 
 // Load Vendor files
-//= require bootstrap-wizard.min
+//= require jquery.bootstrap.wizard.min
+//= require daterangepicker
+
 
 //= require submissions
