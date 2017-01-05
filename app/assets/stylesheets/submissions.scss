@@ -12,6 +12,45 @@
   overflow-y: scroll;
 }
 
+.form-control {
+  height: 50px;
+  font-size: 30px;
+}
+
+.gender-selector {
+  padding-bottom: 25px;
+  span.radio {
+    label {
+      float: left;
+      padding-right: 20px;
+      height: 45px;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 45px;
+      margin-right: 10px;
+      background-color: #eeeeee;
+    }
+    input {
+      // visibility: hidden;
+    }
+  }
+}
+.date-selector {
+  padding-top: 50px;
+}
+
+.tab-pane {
+  // padding: 0 15px;
+}
+// .tabs-left > li.active > a, .tabs-left > li.active > a:focus, .tabs-left > li.active > a:hover {
+//   border: none;
+// }
+// .left-tabs {
+//   .nav-tabs > li > a:hover {
+//     border: none;
+//   }
+// }
+
 // .custom-fields {
 //   input {
 //     display: block !important;

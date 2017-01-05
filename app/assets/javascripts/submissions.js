@@ -21,6 +21,8 @@ $(document).on('turbolinks:load', function () {
     });
   }
 
+  $('#submission_week').daterangepicker();
+
   // $(function () {
   //     $('#datetime-picker').datetimepicker({
   //       inline: true,

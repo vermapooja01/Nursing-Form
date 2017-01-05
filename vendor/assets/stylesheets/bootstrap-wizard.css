@@ -1,6 +1,6 @@
 /* WIZARD GENERAL */
 .wizard {
-	display:none;	
+	display:none;
 }
 
 .wizard-dialog {}
@@ -125,7 +125,7 @@ li.wizard-nav-item {
 	padding:35px;
 	padding-top:20px;
 	overflow-y:auto;
-	
+
 	/*
 	position:relative;
 	height:300px;
