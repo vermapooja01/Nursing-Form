@@ -21,6 +21,6 @@
 //= require bootstrap-datetimepicker
 
 // Load Vendor files
-//= require bootstrap-wizard.min
+//= require jquery.bootstrap.wizard.min
 
 //= require submissions

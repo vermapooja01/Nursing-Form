@@ -26,11 +26,21 @@ $(document).on('turbolinks:load', function () {
       });
   });
 
-  var wizard = $("#nursing-form-wizard").wizard({
-    progressBarCurrent: true,
-    contentHeight: 800,
-    contentWidth: 1500,
-  });
-  wizard.show();
+  // var wizard = $("#nursing-form-wizard").wizard({
+  //   progressBarCurrent: true,
+  //   contentHeight: 400,
+  //   contentWidth: 900,
+  // });
+  // wizard.show();
 
+
+  $('#rootwizard').bootstrapWizard({
+    onTabShow: function(tab, navigation, index) {
+      var $total = navigation.find('li').length;
+  		var $current = index+1;
+  		var $percent = ($current/$total) * 100;
+  		$('#rootwizard .progress-bar').css({width:$percent+'%'});
+  	},
+    'tabClass': 'nav nav-tabs tabs-left'
+  });
 });
