@@ -1,5 +1,5 @@
 class SubmissionsController < ApplicationController
-  before_action :set_submission, only: [:show, :edit, :update, :destroy]
+  before_action :set_submission, only: [:show, :edit, :update, :destroy, :complete_submission]
 
   # GET /submissions
   # GET /submissions.json
@@ -14,11 +14,23 @@ class SubmissionsController < ApplicationController
 
   # GET /submissions/new
   def new
-    @submission = Submission.new
+    # Create a brand new submission and set the state of it to be incomplete
+    @submission = Submission.new(:completed => false)
   end
 
   # GET /submissions/1/edit
   def edit
+  end
+
+  def complete_submission
+    # Set the submission to be completed
+    @submission.completed = true;
+    # Save the submission
+    @submission.save
+    # Redirect to the logged in home with notice of success
+    respond_to do |format|
+      format.html { redirect_to submissions_path, notice: 'You have successfully completed the entry form!' }
+    end
   end
 
   # POST /submissions
