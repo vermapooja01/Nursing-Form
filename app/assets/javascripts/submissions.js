@@ -45,6 +45,8 @@ $(document).on('turbolinks:load', function () {
   		var $percent = ($current/$total) * 100;
   		$('#rootwizard .progress-bar').css({width:$percent+'%'});
   	},
-    'tabClass': 'nav nav-tabs tabs-left'
+    'tabClass': 'nav nav-tabs tabs-left',
+    'nextSelector': '.button-next',
+    'previousSelector': '.button-previous'
   });
 });

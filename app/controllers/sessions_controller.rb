@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  include SessionsHelper
   def new
     cookies[:referrer] = request.referrer
     byebug
@@ -11,7 +12,7 @@ class SessionsController < ApplicationController
     redirect_url = cookies.fetch(:referrer) {root_url}
     redirect_to redirect_url
   end
-  
+
   def destroy
     log_out
     UTEPSSO.deauthenticate(cookies[:UTEP_SE], cookies[:UTEP_SA])

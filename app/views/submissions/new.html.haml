@@ -3,6 +3,20 @@
 #rootwizard
   #bar.progress
     .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "0", :role => "progressbar", :style => "width: 0%;"}
+
+  .col-md-12.pager-buttons.no-padding
+    %div{:style => "float:right"}
+      %button.btn.btn-default.button-next{:type => "button"}
+        %i.fa.fa-floppy-o{"aria-hidden" => "true"}
+      %button.btn.btn-default.button-next{:type => "button"}
+        %i.fa.fa-arrow-right.pull-right{"aria-hidden" => "true"}
+        Next
+
+    %div{:style => "float:left"}
+      %button.btn.btn-default.button-previous{:type => "button"}
+        %i.fa.fa-arrow-left.pull-left{"aria-hidden" => "true"}
+        Previous
+
   .col-md-3.left-tabs
     %ul.nav.nav-tabs.tabs-left
       %li.active
@@ -41,16 +55,6 @@
   .col-md-9
     = simple_form_for @submission, html: {class: ''} do |f|
       .tab-content
-
-        %ul.pager.wizard
-          %li.previous.first{:style => "display:none;"}
-            %a{:href => "#"} First
-          %li.previous
-            %a{:href => "#"} Previous
-          %li.next.last{:style => "display:none;"}
-            %a{:href => "#"} Last
-          %li.next
-            %a{:href => "#"} Next
 
         #a.tab-pane.active
           %h3 Basic Information
@@ -141,6 +145,8 @@
           %h3 Last Page
           .form-group
             = render :partial => "submissions/partials/page_9", :locals => {:f => f}
+
+
 
 -# %ul.pager.wizard
 -#   %li.previous.first{:style => "display:none;"}
