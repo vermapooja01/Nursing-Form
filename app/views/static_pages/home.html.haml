@@ -1,17 +1,10 @@
-%h1 Welcome to Nursing form
-= link_to 'New Submssion', new_submission_path
+%h1
+  Welcome
+  = current_user.first_name
+  !
+%hr
+%h3 In-Progress
+- if !current_user.submissions.empty?
+  %p You have the following submissions in progress:
 
--# = render "neurological"
--# = render "psychosocial"
--# = render "respiratory"
--# = render "cardiovascular"
--# = render "gastrointestinal"
--# = render "nutrition"
--# = render "skin_mucuous_membranes"
--# = render "iv_therapy"
--# = render "genitourinary"
--# = render "skin_assessment"
--# = render "pain_assessment"
--# = render "adl_flowsheet"
--# = render "skin_assessment_screen"
--# = render "vte_risk_assessment"
+= link_to 'New Submssion', new_submission_path

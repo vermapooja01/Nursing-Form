@@ -14,21 +14,35 @@ class SubmissionsController < ApplicationController
 
   # GET /submissions/new
   def new
-    @submission = Submission.new
+    # Create a brand new submission and set the state of it to be incomplete
+    @submission = Submission.new(:completed => false)
   end
 
   # GET /submissions/1/edit
   def edit
   end
 
+  def complete_submission
+    @submission = Submission.find(params[:submission_id])
+    byebug
+    # Set the submission to be completed
+    @submission.completed = true;
+    # Save the submission
+    byebug
+    @submission.save
+    # Redirect to the logged in home with notice of success
+    respond_to do |format|
+      format.html { redirect_to submissions_path, notice: 'You have successfully completed the entry form!' }
+    end
+  end
+
   # POST /submissions
   # POST /submissions.json
   def create
     @submission = Submission.new(submission_params)
-
     respond_to do |format|
       if @submission.save
-        format.html { redirect_to @submission, notice: 'Submission was successfully created.' }
+        format.html { redirect_to edit_submission_path(@submission), notice: 'Submission was successfully created.' }
         format.json { render :show, status: :created, location: @submission }
       else
         format.html { render :new }
@@ -42,7 +56,7 @@ class SubmissionsController < ApplicationController
   def update
     respond_to do |format|
       if @submission.update(submission_params)
-        format.html { redirect_to @submission, notice: 'Submission was successfully updated.' }
+        format.html { redirect_to edit_submission_path(@submission), notice: 'Submission was successfully updated.' }
         format.json { render :show, status: :ok, location: @submission }
       else
         format.html { render :edit }
@@ -69,6 +83,7 @@ class SubmissionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def submission_params
-      params.require(:submission).permit(:patient_initials, :age, :gender, :admitting_primary_medical_diagnosis, :user_id, :week, best_eye_opening_response, :best_verbal_response, :best_motor_response, :patient_total_score, :glasgow_coma_score_quality, :gag_reflex, :speech, :hearing, :face, :tongue, :strength, :weakness, :contracture, :flaccid, :spastic, :paresis, :other)
+      params.require(:submission).permit(:patient_initials, :user_id)
+      #:age, :gender, :admitting_primary_medical_diagnosis, :user_id, :week, best_eye_opening_response, :best_verbal_response, :best_motor_response, :patient_total_score, :glasgow_coma_score_quality, :gag_reflex, :speech, :hearing, :face, :tongue, :strength, :weakness, :contracture, :flaccid, :spastic, :paresis, :other)
     end
 end
