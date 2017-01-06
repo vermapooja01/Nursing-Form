@@ -23,6 +23,11 @@ $(document).on('turbolinks:load', function () {
 
   $('#submission_week').daterangepicker();
 
+  // Function to save the form whenever the save button is clicked
+  $("button.button-save").click(function() {
+    $("form#new_submission").submit();
+  });
+
   // $(function () {
   //     $('#datetime-picker').datetimepicker({
   //       inline: true,

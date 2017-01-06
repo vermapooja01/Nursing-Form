@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :users
-  resources :submissions
+  resources :submissions do
+    get :complete_form, to: "submissions#complete_submission"
+  end
+  
   root to: "static_pages#home"
   # Route for the about Us
   get "aboutus", to: "static_pages#aboutus"
