@@ -24,11 +24,9 @@ class SubmissionsController < ApplicationController
 
   def complete_submission
     @submission = Submission.find(params[:submission_id])
-    byebug
     # Set the submission to be completed
     @submission.completed = true;
     # Save the submission
-    byebug
     @submission.save
     # Redirect to the logged in home with notice of success
     respond_to do |format|
