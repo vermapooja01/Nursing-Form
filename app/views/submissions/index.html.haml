@@ -1,4 +1,14 @@
-%h1 Listing submissions
+%h1
+  Welcome
+  = current_user.first_name
+  !
+%hr
+%h3 In-Progress
+- if !current_user.submissions.empty?
+  %p You have the following submissions in progress:
+
+%h3 Completed Forms
+%p Completed forms
 
 %table
   %thead
