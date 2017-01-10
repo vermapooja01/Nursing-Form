@@ -27,18 +27,9 @@
   .col-md-4
     = image_tag "pupil-gauge.jpg"
 
--# .col-md-4
--#   = f.input :brisk, collection: 2..9, prompt: "Select value"
--# .col-md-4
--#   = f.input :sluggish, collection: 2..9, prompt: "Select value"
--# .col-md-4
--#   = f.input :fixed, collection: 2..9, prompt: "Select value"
--# .col-md-4
--#   = f.input :size, collection: 2..9, prompt: "Select value"
 
 %h3 Glasgow Comma Score
 %hr
-
 .col-md-4
   %h4 Best Eye Opening Response
   -# Best Eye Opening response addition system
@@ -62,6 +53,7 @@
   = f.hidden_field :best_eye_opening_response, :value => ""
   = f.input :best_eye_opening_response, :class => "form-control", :disabled => true, :label => "Best Eye Opening ResponseScore"
 -# ========================
+
 .col-md-4
   %h4 Best Verbal Response
   -# Best Eye Opening response addition system
@@ -123,22 +115,22 @@
 
 %hr
 
--# = f.input :glasgow_coma_score_quality, :collection => [['alert', 'Alert'], ['lethargic', 'Lethargic'], ['confused', 'Confused'], ['follows commands', 'Follows Commands'], ['comatose', 'Comatose'], ['sedated', 'Sedated'], ['unable to assess', 'Unable to Asses']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+= f.input :glasgow_coma_score_quality, :collection => [['Alert', 'Alert'], ['Lethargic', 'Lethargic'], ['Confused', 'Confused'], ['Follows Commands', 'Follows Commands'], ['Comatose', 'Comatose'], ['Sedated', 'Sedated'], ['Unable to Assess', 'Unable to Asses']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
 
 .col-md-12
-  = f.input :gag_reflex, :collection => [['present', 'Present'], ['absent', 'Absent']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :gag_reflex, :collection => [['Present', 'Present'], ['Absent', 'Absent']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.gag_reflex, :class => "form-control"
 
 .col-md-12
-  = f.input :speech, :collection => [['clear', 'Clear'], ['slurred', 'Slurred'], ['no response', 'No Response'], ['inappropriate', 'Inappropriate'], ['incomprehensible', 'Incomprehensible'], ['aphasic', 'Aphasic'], ['ett/trach', 'ETT/Trach']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :speech, :collection => [['Clear', 'Clear'], ['Slurred', 'Slurred'], ['No Response', 'No Response'], ['Inappropriate', 'Inappropriate'], ['Incomprehensible', 'Incomprehensible'], ['Aphasic', 'Aphasic'], ['ETT/Trach', 'ETT/Trach']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
 
 .col-md-12
-  = f.input :hearing, :collection => [['no obvious deficit', 'No Obvious Deficit'], ['hoh', 'HOH'], ['unable to assess', 'Unable to Assess'], ['deaf', 'Deaf']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :hearing, :collection => [['no obvious deficit', 'No Obvious Deficit'], ['hoh', 'HOH'], ['unable to assess', 'Unable to Assess'], ['deaf', 'Deaf']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.hearing, :class => "form-control"
 
 .col-md-12
-  = f.input :face, :collection => [['symmetrical', 'Symmetrical'], ['asymmetrical', 'Asymmetrical'], ['r', 'R'], ['l', 'L']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :face, :collection => [['symmetrical', 'Symmetrical'], ['asymmetrical', 'Asymmetrical'], ['r', 'R'], ['l', 'L']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.face, :class => "form-control"
 
 .col-md-12
-  = f.input :tongue, :collection => [['midline', 'Midline'], ['r', 'R'], ['l', 'L']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :tongue, :collection => [['Midline', 'Midline'], ['R', 'R'], ['L', 'L']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.tongue, :class => "form-control"
 
 
 

@@ -65,7 +65,7 @@
           .col-md-2
             = f.input :age
           .col-md-12.gender-selector
-            = f.input :gender, :collection => [['male', 'Male'], ['female', 'Female']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+            = f.input :gender, :collection => [['Male', 'Male'], ['Female', 'Female']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.gender, :class => "form-control"
           .col-md-12
             = f.label :admitting_primary_medical_diagnosis
             = f.text_area :admitting_primary_medical_diagnosis, :placeholder => "Enter text here...", :class => "tinymce form-control", :rows => 4, :cols => 120
@@ -77,75 +77,75 @@
           .form-group
             = render :partial => "submissions/partials/neurological_muscular", :locals => {:f => f}
 
-        #c.tab-pane
-          %h3 Psychosocial
-          .form-group
-            = render :partial => "submissions/partials/psychosocial", :locals => {:f => f}
-
-        #d.tab-pane
-          %h3 Respiratory/O2 Therapy
-          .form-group
-            = render :partial => "submissions/partials/respiratory_o2therapy", :locals => {:f => f}
-
-        #e.tab-pane
-          %h3 Cardiovascular
-          .form-group
-            = render :partial => "submissions/partials/cardiovascular", :locals => {:f => f}
-
-        #f.tab-pane
-          %h3 Gastrointestinal
-          .form-group
-            = render :partial => "submissions/partials/gastrointestinal", :locals => {:f => f}
-
-        #g.tab-pane
-          %h3 Nutrition
-          .form-group
-            = render :partial => "submissions/partials/nutrition", :locals => {:f => f}
-
-        #h.tab-pane
-          %h3 Skin/Mucuous Membranes
-          .form-group
-            = render :partial => "submissions/partials/skin_mucuous_membrane", :locals => {:f => f}
-
-        #i.tab-pane
-          %h3 IV Therapy
-          .form-group
-            = render :partial => "submissions/partials/iv_therapy", :locals => {:f => f}
-
-        #j.tab-pane
-          %h3 Genitourinary
-          .form-group
-            = render :partial => "submissions/partials/genitourinary", :locals => {:f => f}
-
-        #k.tab-pane
-          %h3 Skin Assessment
-          .form-group
-            = render :partial => "submissions/partials/skin_assessment", :locals => {:f => f}
-
-        #l.tab-pane
-          %h3 Pain Assessment
-          .form-group
-            = render :partial => "submissions/partials/pain_assessment", :locals => {:f => f}
-
-        #m.tab-pane
-          %h3 ADL Flowsheet
-          .form-group
-            = render :partial => "submissions/partials/adl_flowsheet", :locals => {:f => f}
-
-        #n.tab-pane
-          %h3 Skin Risk Assessment Screen
-          .form-group
-            = render :partial => "submissions/partials/skin_risk_assessment_screen", :locals => {:f => f}
-
-        #o.tab-pane
-          %h3 VTE Risk Assessment
-          .form-group
-            = render :partial => "submissions/partials/vte_risk_assessment", :locals => {:f => f}
-
-        #p.tab-pane
-          %h3 Last Page
-          .form-group
-            = render :partial => "submissions/partials/page_9", :locals => {:f => f}
+        -# #c.tab-pane
+        -#   %h3 Psychosocial
+        -#   .form-group
+        -#     = render :partial => "submissions/partials/psychosocial", :locals => {:f => f}
+        -#
+        -# #d.tab-pane
+        -#   %h3 Respiratory/O2 Therapy
+        -#   .form-group
+        -#     = render :partial => "submissions/partials/respiratory_o2therapy", :locals => {:f => f}
+        -#
+        -# #e.tab-pane
+        -#   %h3 Cardiovascular
+        -#   .form-group
+        -#     = render :partial => "submissions/partials/cardiovascular", :locals => {:f => f}
+        -#
+        -# #f.tab-pane
+        -#   %h3 Gastrointestinal
+        -#   .form-group
+        -#     = render :partial => "submissions/partials/gastrointestinal", :locals => {:f => f}
+        -#
+        -# #g.tab-pane
+        -#   %h3 Nutrition
+        -#   .form-group
+        -#     = render :partial => "submissions/partials/nutrition", :locals => {:f => f}
+        -#
+        -# #h.tab-pane
+        -#   %h3 Skin/Mucuous Membranes
+        -#   .form-group
+        -#     = render :partial => "submissions/partials/skin_mucuous_membrane", :locals => {:f => f}
+        -#
+        -# #i.tab-pane
+        -#   %h3 IV Therapy
+        -#   .form-group
+        -#     = render :partial => "submissions/partials/iv_therapy", :locals => {:f => f}
+        -#
+        -# #j.tab-pane
+        -#   %h3 Genitourinary
+        -#   .form-group
+        -#     = render :partial => "submissions/partials/genitourinary", :locals => {:f => f}
+        -#
+        -# #k.tab-pane
+        -#   %h3 Skin Assessment
+        -#   .form-group
+        -#     = render :partial => "submissions/partials/skin_assessment", :locals => {:f => f}
+        -#
+        -# #l.tab-pane
+        -#   %h3 Pain Assessment
+        -#   .form-group
+        -#     = render :partial => "submissions/partials/pain_assessment", :locals => {:f => f}
+        -#
+        -# #m.tab-pane
+        -#   %h3 ADL Flowsheet
+        -#   .form-group
+        -#     = render :partial => "submissions/partials/adl_flowsheet", :locals => {:f => f}
+        -#
+        -# #n.tab-pane
+        -#   %h3 Skin Risk Assessment Screen
+        -#   .form-group
+        -#     = render :partial => "submissions/partials/skin_risk_assessment_screen", :locals => {:f => f}
+        -#
+        -# #o.tab-pane
+        -#   %h3 VTE Risk Assessment
+        -#   .form-group
+        -#     = render :partial => "submissions/partials/vte_risk_assessment", :locals => {:f => f}
+        -#
+        -# #p.tab-pane
+        -#   %h3 Last Page
+        -#   .form-group
+        -#     = render :partial => "submissions/partials/page_9", :locals => {:f => f}
 
           - if !@submission.id.nil?
             = link_to 'Complete the form', submission_complete_form_path(@submission), :class => "btn btn-primary"

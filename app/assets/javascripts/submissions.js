@@ -26,6 +26,7 @@ $(document).on('turbolinks:load', function () {
   // Function to save the form whenever the save button is clicked
   $("button.button-save").click(function() {
     $("form#new_submission").submit();
+    $("form.simple_form").submit();
   });
 
   // $(function () {
