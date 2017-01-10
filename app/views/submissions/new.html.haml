@@ -123,31 +123,31 @@
           %h3 Skin Assessment
           .form-group
             = render :partial => "submissions/partials/skin_assessment", :locals => {:f => f}
-        -#
-        -# #l.tab-pane
-        -#   %h3 Pain Assessment
-        -#   .form-group
-        -#     = render :partial => "submissions/partials/pain_assessment", :locals => {:f => f}
-        -#
-        -# #m.tab-pane
-        -#   %h3 ADL Flowsheet
-        -#   .form-group
-        -#     = render :partial => "submissions/partials/adl_flowsheet", :locals => {:f => f}
-        -#
-        -# #n.tab-pane
-        -#   %h3 Skin Risk Assessment Screen
-        -#   .form-group
-        -#     = render :partial => "submissions/partials/skin_risk_assessment_screen", :locals => {:f => f}
-        -#
-        -# #o.tab-pane
-        -#   %h3 VTE Risk Assessment
-        -#   .form-group
-        -#     = render :partial => "submissions/partials/vte_risk_assessment", :locals => {:f => f}
-        -#
-        -# #p.tab-pane
-        -#   %h3 Last Page
-        -#   .form-group
-        -#     = render :partial => "submissions/partials/page_9", :locals => {:f => f}
+        
+        #l.tab-pane
+          %h3 Pain Assessment
+          .form-group
+            = render :partial => "submissions/partials/pain_assessment", :locals => {:f => f}
+
+        #m.tab-pane
+          %h3 ADL Flowsheet
+          .form-group
+            = render :partial => "submissions/partials/adl_flowsheet", :locals => {:f => f}
+
+        #n.tab-pane
+          %h3 Skin Risk Assessment Screen
+          .form-group
+            = render :partial => "submissions/partials/skin_risk_assessment_screen", :locals => {:f => f}
+
+        #o.tab-pane
+          %h3 VTE Risk Assessment
+          .form-group
+            = render :partial => "submissions/partials/vte_risk_assessment", :locals => {:f => f}
+
+        #p.tab-pane
+          %h3 Last Page
+          .form-group
+            = render :partial => "submissions/partials/page_9", :locals => {:f => f}
 
           - if !@submission.id.nil?
             = link_to 'Complete the form', submission_complete_form_path(@submission), :class => "btn btn-primary"
