@@ -1,13 +1,73 @@
-= f.input :marital_status
-= f.input :affect
-= f.input :spiritual_needs
-= f.input :social_support
-= f.input :advanced_directive
-= f.input :resuscitation_status
-= f.input :resuscitation_comments
-= f.input :motion_strength
-= f.input :grip
-= f.input :icp_device
-= f.input :prescribed_level
-= f.input :monitor
-= f.input :monitor_comments
+.col-md-12
+  = f.input :marital_status, :collection => [['single', 'Single'], ['partnered', 'Partnered'], ['married', 'Married'], ['separated', 'Separated'], ['divorced', 'Divorced'], ['widowed', 'Widowed']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+.col-md-12
+  = f.input :affect, :collection => [['pleasant', 'Pleasant'], ['calm', 'Calm'], ['talkative', 'Talkative'], ['angry', 'Angry'], ['anxious', 'Anxious'], ['withdrawn', 'Withdrawn'], ['crying', 'Crying'], ['depressed', 'Depressed'], ['agitated', 'Agitated'], ['ett/trach', 'ETT/Trach']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+.col-md-12
+  = f.input :spiritual_needs, :collection => [['roman catholic', 'Roman Catholic'], ['protestant', 'Protestant'], ['jewish', 'Jewish'], ['islam', 'Islam'], ['buddhist', 'Buddhist'], ['hindu', 'Hindu'], ['other', 'Other']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  -# = f.text_box :admitting_primary_medical_diagnosis, :placeholder => "Enter text here...", :class => "tinymce form-control", :rows => 4, :cols => 120
+  = f.input :other_spiritual_needs, :class => "form-control"
+
+.col-md-12
+  = f.input :bereaving_support_given, :collection => [['breaving support given', 'Bereaving Support Given']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+.col-md-12
+  = f.input :hospice_care, :collection => [['yes', 'Yes'], ['no', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+.col-md-12
+  = f.input :affect, :collection => [['pleasant', 'Pleasant'], ['calm', 'Calm'], ['talkative', 'Talkative'], ['angry', 'Angry'], ['anxious', 'Anxious'], ['withdrawn', 'Withdrawn'], ['crying', 'Crying'], ['depressed', 'Depressed'], ['agitated', 'Agitated'], ['ett/trach', 'ETT/Trach']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+.col-md-12
+  = f.input :substance_abuse_history, :collection => [['substance abuse history', 'Substance Abuse History']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :substance_abuse_history_type, :class => "form-control"
+
+.col-md-12
+  = f.input :social_support, :collection => [['family', 'Family'], ['spouse', 'Spouse'], ['significant other', 'Significant Other']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :other_social_support, :class => "form-control"
+
+.col-md-12
+  = f.input :advanced_directive, :collection => [['yes', 'Yes'], ['no', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+.col-md-12
+  = f.input :resuscitation_status, :collection => [['full code', 'Full Code'], ['dnr', 'DNR']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :other_resuscitation_status, :class => "form-control"
+  = f.input :resuscitation_comments, :class => "form-control"
+
+.col-md-12
+  = f.input :movement, :class => "form-control"
+
+.col-md-12
+  = f.input :gait, :class => "form-control"
+
+.col-md-12
+  = f.input :grip, :collection => [['strong', 'Strong'], ['equal', 'Equal'], ['weak', 'Weak']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+.col-md-12
+  = f.input :icp_device, :collection => [['ventriculostomy', 'Ventriculostomy'], ['fiberoptic cath', 'Fiberoptic Cath'], ['subarachnoid bolt', 'Subarachnoid Bolt'], ['epidural cath', 'Epidural Cath'], ['epiduaral sensor', 'Epiduaral Sensor']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+.col-md-12
+  = f.input :prescribed_level, :class => "form-control"
+
+.col-md-12
+  = f.input :monitor, :collection => [['regular', 'Regular'], ['camino', 'Camino'], ['codman', 'Codman']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :other_resuscitation_status, :class => "form-control"
+
+
+
+
+
+
+-# = f.input :marital_status
+-# = f.input :affect
+-# = f.input :spiritual_needs
+-# = f.input :social_support
+-# = f.input :advanced_directive
+-# = f.input :resuscitation_status
+-# = f.input :resuscitation_comments
+-# = f.input :motion_strength
+-# = f.input :grip
+-# = f.input :icp_device
+-# = f.input :prescribed_level
+-# = f.input :monitor
+-# = f.input :monitor_comments

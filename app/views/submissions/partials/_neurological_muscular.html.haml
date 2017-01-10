@@ -1,26 +1,54 @@
 -# #editor
 -# = hidden_field :sketch, :data
 
-= f.input :brisk
-= f.input :sluggish
-= f.input :fixed
-= f.input :size
-= f.input :pupils_left
-= f.input :pupils_right
-= f.input :best_eye_opening_response
-= f.input :best_verbal_response
-= f.input :best_motor_response
-= f.input :patient_total_score
-= f.input :glasgow_coma_score_quality
-= f.input :gag_reflex
-= f.input :speech
-= f.input :hearing
-= f.input :face
-= f.input :tongue
-= f.input :strength
-= f.input :weakness
-= f.input :contracture
-= f.input :flaccid
-= f.input :spastic
-= f.input :paresis
-= f.input :other
+.col-md-4
+  = f.input :brisk, collection: 2..9, prompt: "Select value"
+.col-md-4
+  = f.input :sluggish, collection: 2..9, prompt: "Select value"
+.col-md-4
+  = f.input :fixed, collection: 2..9, prompt: "Select value"
+.col-md-4
+  = f.input :size, collection: 2..9, prompt: "Select value"
+
+.col-md-12
+  = f.input :glasgow_coma_score_quality, :collection => [['alert', 'Alert'], ['lethargic', 'Lethargic'], ['confused', 'Confused'], ['follows commands', 'Follows Commands'], ['comatose', 'Comatose'], ['sedated', 'Sedated'], ['unable to assess', 'Unable to Asses']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+.col-md-12
+  = f.input :gag_reflex, :collection => [['present', 'Present'], ['absent', 'Absent']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+.col-md-12
+  = f.input :speech, :collection => [['clear', 'Clear'], ['slurred', 'Slurred'], ['no response', 'No Response'], ['inappropriate', 'Inappropriate'], ['incomprehensible', 'Incomprehensible'], ['aphasic', 'Aphasic'], ['ett/trach', 'ETT/Trach']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+.col-md-12
+  = f.input :hearing, :collection => [['no obvious deficit', 'No Obvious Deficit'], ['hoh', 'HOH'], ['unable to assess', 'Unable to Assess'], ['deaf', 'Deaf']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+.col-md-12
+  = f.input :face, :collection => [['symmetrical', 'Symmetrical'], ['asymmetrical', 'Asymmetrical'], ['r', 'R'], ['l', 'L']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+.col-md-12
+  = f.input :tongue, :collection => [['midline', 'Midline'], ['r', 'R'], ['l', 'L']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+
+
+
+-# = f.input :fixed
+-# = f.input :size
+-# = f.input :pupils_left
+-# = f.input :pupils_right
+-# = f.input :best_eye_opening_response
+-# = f.input :best_verbal_response
+-# = f.input :best_motor_response
+-# = f.input :patient_total_score
+-# = f.input :glasgow_coma_score_quality
+-# = f.input :gag_reflex
+-# = f.input :speech
+-# = f.input :hearing
+-# = f.input :face
+-# = f.input :tongue
+-# = f.input :strength
+-# = f.input :weakness
+-# = f.input :contracture
+-# = f.input :flaccid
+-# = f.input :spastic
+-# = f.input :paresis
+-# = f.input :other
