@@ -14,18 +14,24 @@ class AddCardiovascularToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :pulses_dp_doppler, :string
     add_column :submissions, :heart_sounds, :string
     add_column :submissions, :edema, :string
+    add_column :submissions, :edema_where, :string
     add_column :submissions, :capillary_refill, :string
     add_column :submissions, :cardiac_rhythm, :string
+    add_column :submissions, :specify_ectopy, :string
+    add_column :submissions, :other_cardiac_rhythm, :string
     add_column :submissions, :cardiac_rhythm_comments, :text
     add_column :submissions, :pacemaker, :string
-    add_column :submissions, :pacemaker_settings, :string
-    add_column :submissions, :arterial_line, :string
+    add_column :submissions, :ma, :string
+    add_column :submissions, :rate, :string
+    add_column :submissions, :sens, :string
+    add_column :submissions, :pacemaker_site, :string
+    add_column :submissions, :site, :string
     add_column :submissions, :waveform, :string
     add_column :submissions, :waveform_comments, :text
-    add_column :submissions, :pa_catcher, :string
-    add_column :submissions, :waveform_two, :string
-    add_column :submissions, :waveform_two_comments, :text
-    add_column :submissions, :iabp, :string
+    add_column :submissions, :pa_catheter_site, :string
+    add_column :submissions, :waveform_for_pa_catheter, :string
+    add_column :submissions, :waveform_pa_catheter_comments, :text
+    add_column :submissions, :insertion_site, :string
     add_column :submissions, :trigger, :string
     add_column :submissions, :freq, :string
   end

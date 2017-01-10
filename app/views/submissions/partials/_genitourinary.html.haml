@@ -1,124 +1,21 @@
-= f.input :urine
-= f.input :color
-= f.input :dialysis
+.col-md-12
+  = f.input :urine, :collection => [['voids', 'Voids'], ['incontinent', 'Incontinent'], ['external condom cath', 'External (Condom) Cath'], ['foley', 'Foley'], ['suprapubic', 'Suprapubic']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :suprapubic_type, :class => "form-control"
+  = f.input :suprapubic_size, :class => "form-control"
+  = f.input :insertion_date, :class => "form-control"
+
+.col-md-12
+  = f.input :color, :collection => [['straw', 'Straw'], ['yellow', 'Yellow'], ['amber', 'Amber'], ['clear', 'Clear'], ['cloudy', 'Cloudy'], ['mucus', 'Mucus'], ['clots', 'Clots'], ['hematuria', 'Hematuria'], ['sediment', 'Sediment'], ['anuric', 'Anuric']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+.col-md-12
+  = f.input :dialysis, :collection => [['na', 'NA'], ['hemo', 'Hemo'], ['capd', 'CAPD'], ['catheter', 'Catheter'], ['fistula', 'Fistula'], ['shunt', 'Shunt'], ['bruit', 'Bruit'], ['thrill', 'Thrill']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :dialysis_location, :class => "form-control"
+  
 
 
-.container
-  %form
-    %h3{:align => "center"} Genitourinary
-    %p
-      %b URINE:
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Voids
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Incontinent
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        External (Condom)cath
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Foley
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Suprapubic
-    .Textbox
-      %label Type
-      %input.form-control{:type => "Text", :value => ""}/
-      %label Size
-      %input.form-control{:type => "Text", :value => ""}/
-    .Textbox
-      %label Insertion Date
-      %input.form-control{:type => "Text", :value => ""}/
-  %form
-    %p
-      %b COLOR:
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Straw
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Yellow
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Amber
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Clear
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Cloudy
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Mucus
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Clots
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Hematuria
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Sediment
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Anuric
-  %form
-    %p
-      %b DIALYSIS:
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        NA
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Hemo
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        CAPD
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Catheter
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Fistula
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Shunt
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Bruit
-    .radio-inline
-      %label
-        %input{:name => "optradio", :type => "radio"}>/
-        Thrill
-    .Textbox
-      %label Location
-      %input.form-control{:type => "Text", :value => ""}/
-.container
-  %form
-    %button.btn.btn-primary.btn-md{:type => "button"} Previous
-    %button.btn.btn-primary.btn-md{:type => "button"} Next
-    %button.btn.btn-primary.btn-md{:type => "button"} Save
+
+
+
+-# = f.input :urine
+-# = f.input :color
+-# = f.input :dialysis
