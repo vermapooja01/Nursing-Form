@@ -38,6 +38,7 @@ class SubmissionsController < ApplicationController
   # POST /submissions.json
   def create
     @submission = Submission.new(submission_params)
+    byebug
     respond_to do |format|
       if @submission.save
         format.html { redirect_to edit_submission_path(@submission), notice: 'Submission was successfully created.' }
@@ -81,7 +82,7 @@ class SubmissionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def submission_params
-      params.require(:submission).permit(:patient_initials, :user_id)
+      params.require(:submission).permit(:patient_initials, :user_id, :age, :gender, :admitting_primary_medical_diagnosis, :week, :pupils_brisk_left, :pupils_sluggish_left, :pupils_fixed_left, :pupils_size_left, :pupils_brisk_right, :pupils_sluggish_right, :pupils_fixed_right, :pupils_size_right, :best_eye_opening_response, :best_verbal_response, :best_motor_response, :patient_total_score)
       #:age, :gender, :admitting_primary_medical_diagnosis, :user_id, :week, best_eye_opening_response, :best_verbal_response, :best_motor_response, :patient_total_score, :glasgow_coma_score_quality, :gag_reflex, :speech, :hearing, :face, :tongue, :strength, :weakness, :contracture, :flaccid, :spastic, :paresis, :other)
     end
 end

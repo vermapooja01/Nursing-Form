@@ -1,17 +1,129 @@
 -# #editor
 -# = hidden_field :sketch, :data
 
-.col-md-4
-  = f.input :brisk, collection: 2..9, prompt: "Select value"
-.col-md-4
-  = f.input :sluggish, collection: 2..9, prompt: "Select value"
-.col-md-4
-  = f.input :fixed, collection: 2..9, prompt: "Select value"
-.col-md-4
-  = f.input :size, collection: 2..9, prompt: "Select value"
-
+%h3 Pupils
+%hr
 .col-md-12
-  = f.input :glasgow_coma_score_quality, :collection => [['alert', 'Alert'], ['lethargic', 'Lethargic'], ['confused', 'Confused'], ['follows commands', 'Follows Commands'], ['comatose', 'Comatose'], ['sedated', 'Sedated'], ['unable to assess', 'Unable to Asses']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  .col-md-4.well
+    %h4 Left Eye
+    = f.label :pupils_brisk_left, "Brisk"
+    = f.input :pupils_brisk_left, collection: 2..9, prompt: "Select value", label: false
+    = f.label :pupils_sluggish_left, "Sluggish"
+    = f.input :pupils_sluggish_left, collection: 2..9, prompt: "Select value", label: false
+    = f.label :pupils_fixed_left, "Fixed"
+    = f.input :pupils_fixed_left, collection: 2..9, prompt: "Select value", label: false
+    = f.label :pupils_size_left, "Size (mm)"
+    = f.input :pupils_size_left, collection: 2..9, prompt: "Select value", label: false
+  .col-md-4.well
+    %h4 Right Eye
+    = f.label :pupils_brisk_right, "Brisk"
+    = f.input :pupils_brisk_right, collection: 2..9, prompt: "Select value", label: false
+    = f.label :pupils_sluggish_right, "Sluggish"
+    = f.input :pupils_sluggish_right, collection: 2..9, prompt: "Select value", label: false
+    = f.label :pupils_fixed_right, "Fixed"
+    = f.input :pupils_fixed_right, collection: 2..9, prompt: "Select value", label: false
+    = f.label :pupils_size_right, "Size (mm)"
+    = f.input :pupils_size_right, collection: 2..9, prompt: "Select value", label: false
+  .col-md-4
+    = image_tag "pupil-gauge.jpg"
+
+-# .col-md-4
+-#   = f.input :brisk, collection: 2..9, prompt: "Select value"
+-# .col-md-4
+-#   = f.input :sluggish, collection: 2..9, prompt: "Select value"
+-# .col-md-4
+-#   = f.input :fixed, collection: 2..9, prompt: "Select value"
+-# .col-md-4
+-#   = f.input :size, collection: 2..9, prompt: "Select value"
+
+%h3 Glasgow Comma Score
+%hr
+
+.col-md-4
+  %h4 Best Eye Opening Response
+  -# Best Eye Opening response addition system
+  .form-group
+    = check_box_tag(:eye_4, 4, false, class: "eye")
+    = label_tag(:eye_4, "Spontaneous")
+  .form-group
+    = check_box_tag(:eye_3, 3, false, class: "eye")
+    = label_tag(:eye_3, "To Speech")
+  .form-group
+    = check_box_tag(:eye_2, 2, false, class: "eye")
+    = label_tag(:eye_2, "To Pain")
+  .form-group
+    = check_box_tag(:eye_1, 1, false, class: "eye")
+    = label_tag(:eye_1, "None")
+  .form-group
+    = check_box_tag(:eye_0, 0, false, class: "eye")
+    = label_tag(:eye_0, "Eyes Closed by Edema")
+
+  -# Total Score
+  = f.hidden_field :best_eye_opening_response, :value => ""
+  = f.input :best_eye_opening_response, :class => "form-control", :disabled => true, :label => "Best Eye Opening ResponseScore"
+-# ========================
+.col-md-4
+  %h4 Best Verbal Response
+  -# Best Eye Opening response addition system
+  .form-group
+    = check_box_tag(:best_verbal_response_5, 5, false, class: "verbal")
+    = label_tag(:best_verbal_response_5, "Oriented")
+  .form-group
+    = check_box_tag(:best_verbal_response_4, 4, false, class: "verbal")
+    = label_tag(:best_verbal_response_4, "Confused")
+  .form-group
+    = check_box_tag(:best_verbal_response_3, 3, false, class: "verbal")
+    = label_tag(:best_verbal_response_3, "Inappropriate Words")
+  .form-group
+    = check_box_tag(:best_verbal_response_2, 2, false, class: "verbal")
+    = label_tag(:best_verbal_response_2, "Incomprehensible Sounds")
+  .form-group
+    = check_box_tag(:best_verbal_response_1, 1, false, class: "verbal")
+    = label_tag(:best_verbal_response_1, "None")
+  .form-group
+    = check_box_tag(:best_verbal_response_T, 0, false, class: "verbal")
+    = label_tag(:best_verbal_response_T, "ETT/Trach")
+
+  -# Total Score
+  = f.hidden_field :best_verbal_response, :value => ""
+  = f.input :best_verbal_response, :class => "form-control", :disabled => true, :label => "Best Verbal Response Total Score"
+-# ===================================
+
+.col-md-4
+  %h4 Best Motor Response
+  -# Best Eye Opening response addition system
+  .form-group
+    = check_box_tag(:best_motor_response_6, 5, false, class: "motor")
+    = label_tag(:best_motor_response_6, "Obeys Commands")
+  .form-group
+    = check_box_tag(:best_motor_response_5, 4, false, class: "motor")
+    = label_tag(:best_motor_response_5, "Localizes (Pain)")
+  .form-group
+    = check_box_tag(:best_motor_response_4, 3, false, class: "motor")
+    = label_tag(:best_motor_response_4, "Withdraws (Pain)")
+  .form-group
+    = check_box_tag(:best_motor_response_3, 2, false, class: "motor")
+    = label_tag(:best_motor_response_3, "Flexion (Pain)")
+  .form-group
+    = check_box_tag(:best_motor_response_2, 1, false, class: "motor")
+    = label_tag(:best_motor_response_2, "Extension (Pain)")
+  .form-group
+    = check_box_tag(:best_motor_response_1, 0, false, class: "motor")
+    = label_tag(:best_motor_response_1, "None")
+
+  -# Total Score
+  = f.hidden_field :best_motor_response, :value => ""
+  = f.input :best_motor_response, :class => "form-control", :disabled => true, :label => "Best Motor Response Total Score"
+-# =====================
+
+.col-md-12.has-success
+  .col-md-3.col-md-offset-9
+    = f.input :patient_total_score, :class => "form-control", :label => "Patient's Total Score"
+    = f.hidden_field :patient_total_score, :value => ""
+
+%hr
+
+-# = f.input :glasgow_coma_score_quality, :collection => [['alert', 'Alert'], ['lethargic', 'Lethargic'], ['confused', 'Confused'], ['follows commands', 'Follows Commands'], ['comatose', 'Comatose'], ['sedated', 'Sedated'], ['unable to assess', 'Unable to Asses']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
 
 .col-md-12
   = f.input :gag_reflex, :collection => [['present', 'Present'], ['absent', 'Absent']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"

@@ -25,3 +25,4 @@
 
 
 //= require submissions
+//= require comma_score_calculation

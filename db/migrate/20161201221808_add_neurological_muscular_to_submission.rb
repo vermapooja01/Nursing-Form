@@ -16,6 +16,7 @@ class AddNeurologicalMuscularToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :best_motor_response, :string
     add_column :submissions, :patient_total_score, :integer
     add_column :submissions, :glasgow_coma_score_quality, :string
+
     add_column :submissions, :gag_reflex, :string
     add_column :submissions, :speech, :string
     add_column :submissions, :hearing, :string
@@ -28,7 +29,7 @@ class AddNeurologicalMuscularToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :strength_weakness_lle, :boolean
     add_column :submissions, :strength_contracture_rue, :boolean
     add_column :submissions, :strength_contracture_lue, :boolean
-    add_column :submissions, :strength_contracture_lle, :boolean
+    add_column :submissions, :strength_contracture_rle, :boolean
     add_column :submissions, :strength_contracture_lle, :boolean
     add_column :submissions, :strength_flaccid_rue, :boolean
     add_column :submissions, :strength_flaccid_lue, :boolean
