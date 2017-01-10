@@ -55,6 +55,7 @@
 
   .col-md-9
     = simple_form_for @submission, html: {class: ''} do |f|
+      = hidden_field_tag(:selected_tab, params[:tab])
       .tab-content
 
         #a.tab-pane.active

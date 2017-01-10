@@ -1,4 +1,8 @@
 $(document).on('turbolinks:load', function () {
+  // Open up the tab
+  var selectedTab = $('#selected_tab').val();
+  $("a[href=" + "'" + selectedTab + "'" + "]").tab('show')
+  // ---------------
   jQuery.browser = {};
   (function () {
      jQuery.browser.msie = false;
@@ -55,4 +59,14 @@ $(document).on('turbolinks:load', function () {
     'nextSelector': '.button-next',
     'previousSelector': '.button-previous'
   });
+
+  // Selected tab history
+  // var selectedTab = $('#selected_tab').val();
+  // Select all the tabs
+  $("a[data-toggle='tab']").on('shown.bs.tab', function (e) {
+    // console.log($(e.target).attr('href'));
+    // Change the selected tab value
+    $('#selected_tab').val($(e.target).attr('href'))
+  });
+  // ---------------------
 });
