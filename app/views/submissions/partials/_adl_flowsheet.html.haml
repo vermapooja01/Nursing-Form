@@ -1,52 +1,112 @@
-= f.input :hygiene
-= f.input :oral_care
-= f.input :dentures_present
-= f.input :perifoley_care
-= f.input :linen_change
-= f.input :bath
-= f.input :trach_care
-= f.input :activity
-= f.input :bed_rest
-= f.input :dangle
-= f.input :ambulate
-= f.input :transfer_chair
-= f.input :bathroom_privileges_bsc
-= f.input :position_change
-= f.input :ad_lib
-= f.input :safety
-= f.input :name_allergy_band
-= f.input :bed_low_position_locked
-= f.input :side_rails_up1234
-= f.input :non_skid_footwear
-= f.input :call_light_in_reach
-= f.input :fall_precautions
-= f.input :seizure_precautions
-= f.input :isolation
-= f.input :bed_check
-= f.input :posey_wrap
-= f.input :ambu_bag
-= f.input :suction_correct_setup
-= f.input :alarms_limits
-= f.input :equipment
-= f.input :iv_pumps
-= f.input :feeding_pump
-= f.input :pca_pump
-= f.input :incentive_spirometer
-= f.input :pulse_oximeter
-= f.input :trapeze
-= f.input :sequential_compression_device
-= f.input :k_pad
-= f.input :nibp
-= f.input :continuous_passive_motion
-= f.input :traction_type
-= f.input :mattress_overlay
-= f.input :walker
-= f.input :speciality_bed
-= f.input :hypo_hyperthemia_blanket
-= f.input :bedside_commode
-= f.input :abductor_pillow
-= f.input :wound_vac
-= f.input :humidifier
-= f.input :heat_lamp
-= f.input :o2_tank
-= f.input :adl_other
+..col-md-12
+  %h3 Insert Code, Initials, Date and Time
+  %h5 Hygiene
+  = f.input :oral_care, :class => "form-control"
+  = f.input :dentures_present, :class => "form-control"
+  = f.input :perifoley_care, :class => "form-control"
+  = f.input :linen_change, :class => "form-control"
+  = f.input :bath, :class => "form-control"
+  = f.input :trach_care, :class => "form-control"
+  %h5 C = Complete P = Partial I = Independent A = Assist S = Shower SB = Sitz bath
+  %h3 Activity
+  = f.input :bed_rest, :class => "form-control"
+  = f.input :dangle, :class => "form-control"
+  = f.input :ambulate, :class => "form-control"
+  = f.input :transfer_chair, :class => "form-control"
+  = f.input :bathroom_privileges_bsc, :class => "form-control"
+  = f.input :position_change, :class => "form-control"
+  = f.input :ad_lib, :class => "form-control"
+  %h5 Indicate below by Initials I = Independent A = Assist
+  %h5 Safety
+  = f.input :name_allergy_band, :class => "form-control"
+  = f.input :bed_low_position_locked, :class => "form-control"
+  = f.input :side_rails_up1234, :class => "form-control"
+  = f.input :non_skid_footwear, :class => "form-control"
+  = f.input :call_light_in_reach, :class => "form-control"
+  = f.input :fall_precautions, :class => "form-control"
+  = f.input :seizure_precautions, :class => "form-control"
+  = f.input :isolation, :class => "form-control"
+  = f.input :bed_check, :class => "form-control"
+  = f.input :posey_wrap, :class => "form-control"
+  = f.input :ambu_bag, :class => "form-control"
+  = f.input :suction_and_correct_setup, :class => "form-control"
+  = f.input :alarms_and_limits, :class => "form-control"
+  %h5 equipment
+  %h5 Below: Indicate by Initials
+  = f.input :iv_pumps, :class => "form-control"
+  = f.input :feeding_pump, :class => "form-control"
+  = f.input :pca_pump, :class => "form-control"
+  = f.input :incentive_spirometer, :class => "form-control"
+  = f.input :pulse_oximeter, :class => "form-control"
+  = f.input :trapeze, :class => "form-control"
+  = f.input :sequential_compression_device, :class => "form-control"
+  = f.input :k_pad, :class => "form-control"
+  = f.input :nibp, :class => "form-control"
+  = f.input :continuous_passive_motion, :class => "form-control"
+  = f.input :traction_type, :class => "form-control"
+  = f.input :mattress_overlay, :class => "form-control"
+  = f.input :walker, :class => "form-control"
+  = f.input :speciality_bed, :class => "form-control"
+  = f.input :hypo_hyperthemia_blanket, :class => "form-control"
+  = f.input :bedside_commode, :class => "form-control"
+  = f.input :abductor_pillow, :class => "form-control"
+  = f.input :wound_vac, :class => "form-control"
+  = f.input :humidifier, :class => "form-control"
+  = f.input :heat_lamp, :class => "form-control"
+  = f.input :o2_tank, :class => "form-control"
+  = f.input :other_equipment, :class => "form-control"
+
+
+
+-# = f.input :hygiene
+-# = f.input :oral_care
+-# = f.input :dentures_present
+-# = f.input :perifoley_care
+-# = f.input :linen_change
+-# = f.input :bath
+-# = f.input :trach_care
+-# = f.input :activity
+-# = f.input :bed_rest
+-# = f.input :dangle
+-# = f.input :ambulate
+-# = f.input :transfer_chair
+-# = f.input :bathroom_privileges_bsc
+-# = f.input :position_change
+-# = f.input :ad_lib
+-# = f.input :safety
+-# = f.input :name_allergy_band
+-# = f.input :bed_low_position_locked
+-# = f.input :side_rails_up1234
+-# = f.input :non_skid_footwear
+-# = f.input :call_light_in_reach
+-# = f.input :fall_precautions
+-# = f.input :seizure_precautions
+-# = f.input :isolation
+-# = f.input :bed_check
+-# = f.input :posey_wrap
+-# = f.input :ambu_bag
+-# = f.input :suction_correct_setup
+-# = f.input :alarms_limits
+-# = f.input :equipment
+-# = f.input :iv_pumps
+-# = f.input :feeding_pump
+-# = f.input :pca_pump
+-# = f.input :incentive_spirometer
+-# = f.input :pulse_oximeter
+-# = f.input :trapeze
+-# = f.input :sequential_compression_device
+-# = f.input :k_pad
+-# = f.input :nibp
+-# = f.input :continuous_passive_motion
+-# = f.input :traction_type
+-# = f.input :mattress_overlay
+-# = f.input :walker
+-# = f.input :speciality_bed
+-# = f.input :hypo_hyperthemia_blanket
+-# = f.input :bedside_commode
+-# = f.input :abductor_pillow
+-# = f.input :wound_vac
+-# = f.input :humidifier
+-# = f.input :heat_lamp
+-# = f.input :o2_tank
+-# = f.input :adl_other
