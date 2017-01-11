@@ -2,7 +2,7 @@
   = f.input :marital_status, :collection => [['single', 'Single'], ['partnered', 'Partnered'], ['married', 'Married'], ['separated', 'Separated'], ['divorced', 'Divorced'], ['widowed', 'Widowed']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
 
 .col-md-12
-  = f.input :affect, :collection => [['Pleasant', 'Pleasant'], ['Calm', 'Calm'], ['Talkative', 'Talkative'], ['Angry', 'Angry'], ['Anxious', 'Anxious'], ['Withdrawn', 'Withdrawn'], ['Crying', 'Crying'], ['Depressed', 'Depressed'], ['Agitated', 'Agitated'], ['ETT/Trach', 'ETT/Trach']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :affect, :collection => [['Pleasant', 'Pleasant'], ['Calm', 'Calm'], ['Talkative', 'Talkative'], ['Angry', 'Angry'], ['Anxious', 'Anxious'], ['Withdrawn', 'Withdrawn'], ['Crying', 'Crying'], ['Depressed', 'Depressed'], ['Agitated', 'Agitated'], ['ETT/Trach', 'ETT/Trach']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => @submission.affect, :class => "form-control"
 
 .col-md-12
   = f.input :spiritual_needs, :collection => [['roman catholic', 'Roman Catholic'], ['protestant', 'Protestant'], ['jewish', 'Jewish'], ['islam', 'Islam'], ['buddhist', 'Buddhist'], ['hindu', 'Hindu'], ['other', 'Other']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.spiritual_needs
@@ -16,10 +16,7 @@
   = f.input :hospice_care, :collection => [['yes', 'Yes'], ['no', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.hospice_care
 
 .col-md-12
-  = f.input :affect, :collection => [['pleasant', 'Pleasant'], ['calm', 'Calm'], ['talkative', 'Talkative'], ['angry', 'Angry'], ['anxious', 'Anxious'], ['withdrawn', 'Withdrawn'], ['crying', 'Crying'], ['depressed', 'Depressed'], ['agitated', 'Agitated'], ['ett/trach', 'ETT/Trach']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.affect
-
-.col-md-12
-  = f.input :substance_abuse_history, :collection => [['substance abuse history', 'Substance Abuse History']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.substance_abuse_history
+  = f.input :substance_abuse_history, :collection => [['Substance Abuse History', 'Substance Abuse History']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.substance_abuse_history
   = f.input :substance_abuse_history_type, :class => "form-control"
 
 .col-md-12
@@ -27,10 +24,10 @@
   = f.input :other_social_support, :class => "form-control"
 
 .col-md-12
-  = f.input :advanced_directive, :collection => [['yes', 'Yes'], ['no', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :advanced_directive, :collection => [['Yes', 'Yes'], ['No', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.advanced_directive, :class => "form-control"
 
 .col-md-12
-  = f.input :resuscitation_status, :collection => [['full code', 'Full Code'], ['dnr', 'DNR']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :resuscitation_status, :collection => [['Full Code', 'Full Code'], ['DNR', 'DNR']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => @submission.resuscitation_status, :class => "form-control"
   = f.input :other_resuscitation_status, :class => "form-control"
   = f.input :resuscitation_comments, :class => "form-control"
 
