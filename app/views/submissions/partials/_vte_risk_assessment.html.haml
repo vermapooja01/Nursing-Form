@@ -1,5 +1,25 @@
-= f.input :each_risk_factor_represents_one_point
-= f.input :each_risk_factor_represents_two_point
-= f.input :each_risk_factor_represents_three_point
-= f.input :each_risk_factor_represents_five_point
-= f.input :patients_total_score
+.col-md-12
+  = f.input :each_risk_factor_represents_one_point, :collection => [['age 41-60', 'Age 41-60'], ['abesity(bmi>30)', 'Obesity (BMI > 30)'], ['acute mi (< 1 month)', 'Acute MI (< 1 Month)'], ['chf (<1  month)', 'CHF ( < 1 month)'], ['sepsis (<1 month)', 'Sepsis (< 1 month)'], ['lung disease, including pneumonia (< 1 month)', 'Lung Disease, including pneumonia (< 1 month)'], ['medical patient currently on bedrest', 'Medical patient currently on bedrest'], ['leg plaster cast or brace', 'Leg Plaster cast or brace'], ['oral contraceptives or hormone replacement therapy', 'Oral Contraceptives or hormone replacement therapy'], ['pregnancy or postpartum', 'Pregnancy or postpartum']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+.col-md-12
+  = f.input :each_risk_factor_represents_two_point, :collection => [['age 61-74', 'Age 61-74'], ['morbid obesity (bmi >40)', 'Morbid Obesity (BMI > 40)'], ['central venous access', 'Central Venous Access'], ['surgical procedure (>30 minutes) requiring inhospital stay (>24 hours) post op', 'Surgical procedure ( > 30 minutes) requiring inhospital stay ( > 24 hours) post op'], ['previous cancer malignancy', 'Previous Cancer/Malignancy']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+.col-md-12
+  = f.input :each_risk_factor_represents_three_point, :collection => [['age over 75', 'Age over 75'], ['bmi >75', 'BMI > 75'], ['history of dvt pe', 'History of DVT/PE'], ['present cancer malignancy and chemotherapy', 'Present Cancer/Malignancy and/or chemotherapy'], ['hypercoaguable states: factor v leiden mutation antithrombin iii deficiency protein c or protein s deficiency antiphospholipid antibodies lupus anticoagulant', 'Hypercoaguable states: Factor V leiden mutation, Antithrombin III deficiency, Protein C or Protein S deficiency, Antiphospholipid antibodies, Lupus anticoagulant']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+.col-md-12
+  = f.input :each_risk_factor_represents_five_point, :collection => [['stroke', 'Stroke'], ['multiple trauma (<1 month)', 'Multiple Trauma ( < 1 month)'], ['hip pelvis or leg fracture ( <1 month) acute spinal cord injury (< 1 month)', 'Hip, pelvis or leg fracture ( < 1 month) Acute spinal cord injury ( < 1 month)'], ['elective major lower extremity arthroplasty', 'Elective major lower extremity arthroplasty']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+.col-md-12
+  = f.input :patients_total_score, :collection => [['low risk 0-1', 'Low risk 0-1'], ['moderate risk: 2', 'Moderate Risk: 2'], ['high risk :3 or >', 'High Risk : 3 or >'], ['Already on prophylaxis', 'Already on prophylaxis']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+
+
+
+
+
+-# = f.input :each_risk_factor_represents_one_point
+-# = f.input :each_risk_factor_represents_two_point
+-# = f.input :each_risk_factor_represents_three_point
+-# = f.input :each_risk_factor_represents_five_point
+-# = f.input :patients_total_score
