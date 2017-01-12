@@ -67,7 +67,7 @@
           .col-md-2
             = f.input :age
           .col-md-12.gender-selector
-            = f.input :gender, :collection => [['male', 'Male'], ['female', 'Female']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+            = f.input :gender, :collection => [['Male', 'Male'], ['Female', 'Female']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.gender, :class => "form-control"
           .col-md-12
             = f.label :admitting_primary_medical_diagnosis
             = f.text_area :admitting_primary_medical_diagnosis, :placeholder => "Enter text here...", :class => "tinymce form-control", :rows => 4, :cols => 120
@@ -123,7 +123,7 @@
           %h3 Skin Assessment
           .form-group
             = render :partial => "submissions/partials/skin_assessment", :locals => {:f => f}
-        
+
         #l.tab-pane
           %h3 Pain Assessment
           .form-group
