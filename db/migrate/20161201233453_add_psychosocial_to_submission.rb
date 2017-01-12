@@ -4,9 +4,9 @@ class AddPsychosocialToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :affect, :json
     add_column :submissions, :spiritual_needs, :string
     add_column :submissions, :other_spiritual_needs, :string
-    add_column :submissions, :bereaving_support_given, :json
+    add_column :submissions, :bereaving_support_given, :boolean
     add_column :submissions, :hospice_care, :string
-    add_column :submissions, :substance_abuse_history, :json
+    add_column :submissions, :substance_abuse_history, :boolean
     add_column :submissions, :substance_abuse_history_type, :string
     add_column :submissions, :social_support, :string
     add_column :submissions, :other_social_support, :string
