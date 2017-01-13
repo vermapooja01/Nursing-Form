@@ -1,12 +1,68 @@
-= f.input :wound_assessment
-= f.input :stage
-= f.input :other_wounds
-= f.input :wound_size
-= f.input :depth
-= f.input :undermining
-= f.input :drainage
-= f.input :wound_amount
-= f.input :color_of_wound
-= f.input :periwound_surrounding_skin
-= f.input :location_image1
-= f.input :location_image2
+%h2 WOUND ASSESSMENT
+.col-md-4
+  = f.input :stage, :collection => [['i', 'I'], ['ii', 'II'], ['iii', 'III'], ['iv', 'IV'], ['unable to determine', 'Unable to Determine'], ['deep tissue injury', 'Deep Tissue Injury']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+
+.col-md-4
+  = f.input :other_wounds, :collection => [['venous ulcer', 'Venous Ulcer'], ['burn', 'Burn'], ['maceration', 'Maceration'], ['excoriation', 'Excoriation'], ['diabetic ulcer', 'Diabetic Ulcer'], ['arterial ulcer', 'Arterial Ulcer'], ['incision', 'Incision'], ['scar', 'Scar'], ['skin tears', 'Skin Tears']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+
+.col-md-4
+  %h4 Wound Size (Choose L X W)
+  = f.input :venous_ulcer, :class => "form-control"
+  = f.input :burn, :class => "form-control"
+  = f.input :maceration, :class => "form-control"
+  = f.input :excoriation, :class => "form-control"
+  = f.input :diabetic_ulcer, :class => "form-control"
+  = f.input :arterial_ulcer, :class => "form-control"
+  = f.input :incision, :class => "form-control"
+  = f.input :scar, :class => "form-control"
+  = f.input :skin_tears, :class => "form-control"
+
+.col-md-4
+  %h4 Depth of Wound (cm only)
+  = f.label :venous_ulcer, "Venous Ulcer"
+  = f.input :venous_ulcer_depth, :class => "form-control"
+  = f.label :burn, "Burn"
+  = f.input :burn_depth, :class => "form-control"
+  = f.label :maceration, "Maceration"
+  = f.input :maceration_depth, :class => "form-control"
+  = f.label :excoriation, "Excoriation"
+  = f.input :excoriation_depth, :class => "form-control"
+  = f.label :diabetic_ulcer, "Diabetic Ulcer"
+  = f.input :diabetic_ulcer_depth, :class => "form-control"
+  = f.label :arterial_ulcer, "Arterial Ulcer"
+  = f.input :arterial_ulcer_depth, :class => "form-control"
+  = f.label :incision, "Incision"
+  = f.input :incision_depth, :class => "form-control"
+  = f.label :scar, "Scar"
+  = f.input :scar_depth, :class => "form-control"
+  = f.label :skin_tears, "Completely Limited (1)"
+  = f.input :skin_tears_depth, :class => "form-control"
+
+.col-md-4
+  = f.input :undermining, :collection => [['present', 'Present'], ['absent', 'Absent'], ['unable to determine', 'Unable to Determine']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+
+.col-md-4
+  = f.input :drainage, :collection => [['none', 'None'], ['serous', 'Serous'], ['serosanguinous', 'Serosanguinous'], ['sanguineous', 'Sanguineous'], ['purulent', 'Purulent'], ['other', 'Other']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+  = f.input :other_drainage, :class => "form-control"
+
+.col-md-4
+  = f.input :wound_amount, :collection => [['scant', 'Scant'], ['moderate', 'Moderate'], ['copious', 'Copious']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+
+.col-md-4
+  = f.input :color_of_wound, :collection => [['red', 'Red'], ['pink', 'Pink'], ['yellow slough', 'Yellow Slough'], ['black escar', 'Black Escar']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+
+.col-md-4
+  = f.input :periwound_surrounding_skin, :collection => [['intact', 'Intact'], ['induration', 'Induration'], ['erythema', 'Erythema'], ['maceration', 'Maceration'], ['pale', 'Pale'], ['dark purle', 'Dark Purple']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+
+-# = f.input :wound_assessment
+-# = f.input :stage
+-# = f.input :other_wounds
+-# = f.input :wound_size
+-# = f.input :depth
+-# = f.input :undermining
+-# = f.input :drainage
+-# = f.input :wound_amount
+-# = f.input :color_of_wound
+-# = f.input :periwound_surrounding_skin
+-# = f.input :location_image1
+-# = f.input :location_image2
