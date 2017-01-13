@@ -11,11 +11,17 @@ class AddNeurologicalMuscularToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :pupils_size_left, :string
     add_column :submissions, :pupils_size_right, :string
     # Comma Score
+    # Eye Opening Response
+    add_column :submissions, :best_eye_opening_response_values, :json
+    add_column :submissions, :best_verbal_response_values, :json
+    add_column :submissions, :best_motor_response_values, :json
+
     add_column :submissions, :best_eye_opening_response, :string
     add_column :submissions, :best_verbal_response, :string
     add_column :submissions, :best_motor_response, :string
     add_column :submissions, :patient_total_score, :integer
     add_column :submissions, :glasgow_coma_score_quality, :json
+    # -----------------------
 
     add_column :submissions, :gag_reflex, :string
     add_column :submissions, :speech, :json
