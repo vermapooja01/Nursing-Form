@@ -34,20 +34,7 @@
   %h4 Best Eye Opening Response
   -# Best Eye Opening response addition system
   .form-group
-    = check_box_tag(:eye_4, 4, false, class: "eye")
-    = label_tag(:eye_4, "Spontaneous")
-  .form-group
-    = check_box_tag(:eye_3, 3, false, class: "eye")
-    = label_tag(:eye_3, "To Speech")
-  .form-group
-    = check_box_tag(:eye_2, 2, false, class: "eye")
-    = label_tag(:eye_2, "To Pain")
-  .form-group
-    = check_box_tag(:eye_1, 1, false, class: "eye")
-    = label_tag(:eye_1, "None")
-  .form-group
-    = check_box_tag(:eye_0, 0, false, class: "eye")
-    = label_tag(:eye_0, "Eyes Closed by Edema")
+    = f.input :best_eye_opening_response_values, :collection => [[4, 'Spontaneous'], [3, 'To Speech'], [2, 'To Pain'], [1, 'None'], [0, 'Eyes Closed by Edema']], :label_method => :last, :value_method => :first, :as => :check_boxes, :class => "form-control", :checked => @submission.best_eye_opening_response_values, :label => false
 
   -# Total Score
   = f.hidden_field :best_eye_opening_response, :value => ""
@@ -58,23 +45,7 @@
   %h4 Best Verbal Response
   -# Best Eye Opening response addition system
   .form-group
-    = check_box_tag(:best_verbal_response_5, 5, false, class: "verbal")
-    = label_tag(:best_verbal_response_5, "Oriented")
-  .form-group
-    = check_box_tag(:best_verbal_response_4, 4, false, class: "verbal")
-    = label_tag(:best_verbal_response_4, "Confused")
-  .form-group
-    = check_box_tag(:best_verbal_response_3, 3, false, class: "verbal")
-    = label_tag(:best_verbal_response_3, "Inappropriate Words")
-  .form-group
-    = check_box_tag(:best_verbal_response_2, 2, false, class: "verbal")
-    = label_tag(:best_verbal_response_2, "Incomprehensible Sounds")
-  .form-group
-    = check_box_tag(:best_verbal_response_1, 1, false, class: "verbal")
-    = label_tag(:best_verbal_response_1, "None")
-  .form-group
-    = check_box_tag(:best_verbal_response_T, 0, false, class: "verbal")
-    = label_tag(:best_verbal_response_T, "ETT/Trach")
+    = f.input :best_verbal_response_values, :collection => [[5, 'Oriented'], [4, 'Confused'], [3, 'Inappropriate Words'], [2, 'Incomprehensible Sounds'], [1, 'None'], [0, 'ETT/Trach']], :label_method => :last, :value_method => :first, :as => :check_boxes, :class => "form-control", :checked => @submission.best_verbal_response_values, :label => false
 
   -# Total Score
   = f.hidden_field :best_verbal_response, :value => ""
@@ -85,23 +56,7 @@
   %h4 Best Motor Response
   -# Best Eye Opening response addition system
   .form-group
-    = check_box_tag(:best_motor_response_6, 5, false, class: "motor")
-    = label_tag(:best_motor_response_6, "Obeys Commands")
-  .form-group
-    = check_box_tag(:best_motor_response_5, 4, false, class: "motor")
-    = label_tag(:best_motor_response_5, "Localizes (Pain)")
-  .form-group
-    = check_box_tag(:best_motor_response_4, 3, false, class: "motor")
-    = label_tag(:best_motor_response_4, "Withdraws (Pain)")
-  .form-group
-    = check_box_tag(:best_motor_response_3, 2, false, class: "motor")
-    = label_tag(:best_motor_response_3, "Flexion (Pain)")
-  .form-group
-    = check_box_tag(:best_motor_response_2, 1, false, class: "motor")
-    = label_tag(:best_motor_response_2, "Extension (Pain)")
-  .form-group
-    = check_box_tag(:best_motor_response_1, 0, false, class: "motor")
-    = label_tag(:best_motor_response_1, "None")
+    = f.input :best_motor_response_values, :collection => [[5, 'Obeys Commands'], [4, 'Localizes (Pain)'], [3, 'Withdraws (Pain)'], [2, 'Flexion (Pain)'], [1, 'Extension (Pain)'], [0, 'None']], :label_method => :last, :value_method => :first, :as => :check_boxes, :class => "form-control", :checked => @submission.best_motor_response_values, :label => false
 
   -# Total Score
   = f.hidden_field :best_motor_response, :value => ""

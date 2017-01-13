@@ -60,8 +60,7 @@
 
         #a.tab-pane.active
           %h2 Basic Information
-          -# = f.hidden_field :user_id, :value => current_user.id
-          = f.hidden_field :user_id, :value => 1
+          = f.hidden_field :user_id, :value => current_user.id
           .col-md-4
             = f.input :patient_initials, :class => "form-control"
           .col-md-2
