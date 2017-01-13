@@ -2,15 +2,18 @@ $(document).on('turbolinks:load', function () {
   var sumE=0;
   var sumV=0;
   var sumM=0;
+  checkTotalE();
+  checkTotalV();
+  checkTotalM();
 
   // Event Listeners
-  $('input.eye').click(function() {
+  $('.submission_best_eye_opening_response_values input.check_boxes').click(function() {
     checkTotalE();
   });
-  $('input.verbal').click(function() {
+  $('.submission_best_verbal_response_values input.check_boxes').click(function() {
     checkTotalV();
   });
-  $('input.motor').click(function() {
+  $('.submission_best_motor_response_values input.check_boxes').click(function() {
     checkTotalM();
   });
 
@@ -18,9 +21,9 @@ $(document).on('turbolinks:load', function () {
     sumE = 0;
     $('input#submission_best_eye_opening_response').value = '';
 
-    for (i=0; i < $('input.eye').length; i++) {
-      if ($('input.eye')[i].checked) {
-        sumE = sumE + parseInt($('input.eye')[i].value);
+    for (i=0; i < $('.submission_best_eye_opening_response_values input.check_boxes').length; i++) {
+      if ($('.submission_best_eye_opening_response_values input.check_boxes')[i].checked) {
+        sumE = sumE + parseInt($('.submission_best_eye_opening_response_values input.check_boxes')[i].value);
       }
     }
 
@@ -32,21 +35,22 @@ $(document).on('turbolinks:load', function () {
     sumV = 0;
     $('input#submission_best_verbal_response').value = '';
 
-    for (i=0; i < $('input.verbal').length; i++) {
-      if ($('input.verbal')[i].checked) {
-        sumV = sumV + parseInt($('input.verbal')[i].value);
+    for (i=0; i < $('.submission_best_verbal_response_values input.check_boxes').length; i++) {
+      if ($('.submission_best_verbal_response_values input.check_boxes')[i].checked) {
+        sumV = sumV + parseInt($('.submission_best_verbal_response_values input.check_boxes')[i].value);
       }
     }
     $('input#submission_best_verbal_response').val(sumV.toString());
     checkTotal();
   }
+
   function checkTotalM() {
     sumM = 0;
     $('input#submission_best_motor_response').value = '';
 
-    for (i=0; i < $('input.motor').length; i++) {
-      if ($('input.motor')[i].checked) {
-        sumM = sumM + parseInt($('input.motor')[i].value);
+    for (i=0; i < $('.submission_best_motor_response_values input.check_boxes').length; i++) {
+      if ($('.submission_best_motor_response_values input.check_boxes')[i].checked) {
+        sumM = sumM + parseInt($('.submission_best_motor_response_values input.check_boxes')[i].value);
       }
     }
     $('input#submission_best_motor_response').val(sumM.toString());
