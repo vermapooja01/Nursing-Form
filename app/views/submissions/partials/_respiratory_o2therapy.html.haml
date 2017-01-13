@@ -1,11 +1,11 @@
 .col-md-12
-  = f.input :ventilation, :collection => [['spontaneous', 'Spontaneous'], ['mechanical assist', 'Mechanical Assist']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :ventilation, :collection => [['spontaneous', 'Spontaneous'], ['mechanical assist', 'Mechanical Assist']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.ventilation, :class => "form-control"
 
 .col-md-12
-  = f.input :pattern, :collection => [['regular', 'Regular'], ['irregular', 'Irregular'], ['shallow', 'Shallow'], ['sob', 'SOB'], ['doe', 'DOE'], ['labored', 'Labored']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :pattern, :collection => [['regular', 'Regular'], ['irregular', 'Irregular'], ['shallow', 'Shallow'], ['sob', 'SOB'], ['doe', 'DOE'], ['labored', 'Labored']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.pattern, :class => "form-control"
 
 .col-md-12
-  = f.input :breath_sounds, :collection => [['clear', 'Clear'], ['bilateral', 'Bilateral'], ['r', 'R'], ['l', 'L'], ['diminished', 'Diminished']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :breath_sounds, :collection => [['clear', 'Clear'], ['bilateral', 'Bilateral'], ['r', 'R'], ['l', 'L'], ['diminished', 'Diminished']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.breath_sounds, :class => "form-control"
   = f.input :diminished_where, :class => "form-control"
   = f.input :absent, :collection => [['absent', 'Absent']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
   = f.input :absent_where, :class => "form-control"
