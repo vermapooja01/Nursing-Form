@@ -5,21 +5,28 @@
   = f.input :pattern, :collection => [['regular', 'Regular'], ['irregular', 'Irregular'], ['shallow', 'Shallow'], ['sob', 'SOB'], ['doe', 'DOE'], ['labored', 'Labored']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.pattern, :class => "form-control"
 
 .col-md-12
-  = f.input :breath_sounds, :collection => [['clear', 'Clear'], ['bilateral', 'Bilateral'], ['r', 'R'], ['l', 'L'], ['diminished', 'Diminished']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.breath_sounds, :class => "form-control"
+  = f.input :breath_sounds, :collection => [['Clear', 'Clear'], ['Bilateral', 'Bilateral'], ['R', 'R'], ['L', 'L'], ['Diminished', 'Diminished']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.breath_sounds, :class => "form-control"
+
+  -# = f.input :diminished
   = f.input :diminished_where, :class => "form-control"
-  = f.input :absent, :collection => [['absent', 'Absent']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+  = f.input :absent, :class => "form-control"
   = f.input :absent_where, :class => "form-control"
-  = f.input :crackles, :collection => [['crackles', 'crackles']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
-  = f.input :crackles_where, :class => "form-control"
-  = f.input :wheezes, :collection => [['wheezes', 'Wheezes']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
-  = f.input :crackles_where, :class => "form-control"
-  = f.input :stridor, :collection => [['stridor', 'Stridor']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
-  = f.input :crackles_where, :class => "form-control"
-  = f.input :ronchi, :collection => [['ronchi', 'Ronchi']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+
+  = f.input :crackles, :class => "form-control"
   = f.input :crackles_where, :class => "form-control"
 
+  = f.input :wheezes, :class => "form-control"
+  = f.input :wheezes_where, :class => "form-control"
+
+  = f.input :stridor, :class => "form-control"
+  = f.input :stridor_where, :class => "form-control"
+
+  = f.input :ronchi, :class => "form-control"
+  = f.input :ronchi_where, :class => "form-control"
+
 .col-md-12
-  = f.input :cough, :collection => [['na', 'NA'], ['dry', 'Dry'], ['productive', 'Productive']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :cough, :collection => [['N/A', 'N/A'], ['Dry', 'Dry'], ['Productive', 'Productive']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.cough, :class => "form-control"
 
 .col-md-12
   = f.input :sputum, :collection => [['na', 'NA']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
@@ -53,7 +60,6 @@
   = f.input :other_settings, :class => "form-control"
 
 .col-md-12
-
   = f.input :ett_placement, :class => "form-control"
 
 .col-md-12

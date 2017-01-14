@@ -3,16 +3,17 @@ class AddRespiratoryO2therapyToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :ventilation, :string
     add_column :submissions, :pattern, :string
     add_column :submissions, :breath_sounds, :string
+    add_column :submissions, :diminished, :boolean
     add_column :submissions, :diminished_where, :string
-    add_column :submissions, :absent, :string
+    add_column :submissions, :absent, :boolean
     add_column :submissions, :absent_where, :string
-    add_column :submissions, :crackles, :string
+    add_column :submissions, :crackles, :boolean
     add_column :submissions, :crackles_where, :string
-    add_column :submissions, :wheezes, :string
+    add_column :submissions, :wheezes, :boolean
     add_column :submissions, :wheezes_where, :string
-    add_column :submissions, :stridor, :string
+    add_column :submissions, :stridor, :boolean
     add_column :submissions, :stridor_where, :string
-    add_column :submissions, :ronchi, :string
+    add_column :submissions, :ronchi, :boolean
     add_column :submissions, :ronchi_where, :string
     add_column :submissions, :cough, :string
     add_column :submissions, :sputum, :string
