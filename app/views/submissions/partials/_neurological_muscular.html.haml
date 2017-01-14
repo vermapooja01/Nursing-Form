@@ -101,48 +101,40 @@
       %tbody
         %tr
           %th{:scope => "row"} Weakness
-          %td Mark
-          %td Otto
-          %td @mdo
-          %td @mdo
+          %td= f.input :strength_weakness_rue, :label => false
+          %td= f.input :strength_weakness_lue, :label => false
+          %td= f.input :strength_weakness_rle, :label => false
+          %td= f.input :strength_weakness_lle, :label => false
         %tr
           %th{:scope => "row"} Contracture
-          %td Jacob
-          %td Thornton
-          %td @fat
-          %td @fat
+          %td= f.input :strength_contracture_rue, :label => false
+          %td= f.input :strength_contracture_lue, :label => false
+          %td= f.input :strength_contracture_rle, :label => false
+          %td= f.input :strength_contracture_lle, :label => false
         %tr
           %th{:scope => "row"} Flaccid
-          %td Larry
-          %td the Bird
-          %td @twitter
-          %td @twitter
+          %td= f.input :strength_flaccid_rue, :label => false
+          %td= f.input :strength_flaccid_lue, :label => false
+          %td= f.input :strength_flaccid_rle, :label => false
+          %td= f.input :strength_flaccid_lle, :label => false
         %tr
           %th{:scope => "row"} Spastic
-          %td Larry
-          %td the Bird
-          %td @twitter
-          %td @twitter
+          %td= f.input :strength_spastic_rue, :label => false
+          %td= f.input :strength_spastic_lue, :label => false
+          %td= f.input :strength_spastic_rle, :label => false
+          %td= f.input :strength_spastic_lle, :label => false
         %tr
           %th{:scope => "row"} Paresis
-          %td Larry
-          %td the Bird
-          %td @twitter
-          %td @twitter
+          %td= f.input :strength_paresis_rue, :label => false
+          %td= f.input :strength_paresis_lue, :label => false
+          %td= f.input :strength_paresis_rle, :label => false
+          %td= f.input :strength_paresis_lle, :label => false
         %tr
           %th{:scope => "row"} Other
-          %td Larry
-          %td the Bird
-          %td @twitter
-          %td @twitter
-
-
-
-
--# = f.input :strength
--# = f.input :weakness
--# = f.input :contracture
--# = f.input :flaccid
--# = f.input :spastic
--# = f.input :paresis
--# = f.input :other
+          %td= f.input :strength_other_rue, :label => false
+          %td= f.input :strength_other_lue, :label => false
+          %td= f.input :strength_other_rle, :label => false
+          %td= f.input :strength_other_lle, :label => false
+.col-md-12
+  = f.label :strength_comments, :label => "Comments"
+  = f.text_area :strength_comments, :class => "form-control"
