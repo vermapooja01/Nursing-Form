@@ -1,9 +1,66 @@
 %h3 PULSES
 %hr
+
 .col-md-12
-  %h5 Indiacate R (right), L (left), or B (bilateral)
-.col-md-4.well
-  %h4 Absent (0)
+  %h4 Indicate R (right), L (left), or B (bilateral)
+  .table-responsive
+    %table.table.table-striped.cardiovascular-table
+      %thead
+        %tr
+          %th
+          %th (0) Absent
+          %th (+1) Weak
+          %th (+2) Normal
+          %th (+3) Full
+          %th (+4) Bounding
+          %th DP Doppler
+      %tbody
+        %tr
+          %th{:scope => "row"} Radial
+          %td
+            = f.input :radial_absent, :label => false
+          %td= f.input :radial_weak, :label => false
+          %td= f.input :radial_normal, :label => false
+          %td= f.input :radial_full, :label => false
+          %td= f.input :radial_bounding, :label => false
+          %td= f.input :radial_dp_doppler, :label => false
+        %tr
+          %th{:scope => "row"} Femoral
+          %td= f.input :femoral_absent, :label => false
+          %td= f.input :femoral_weak, :label => false
+          %td= f.input :femoral_normal, :label => false
+          %td= f.input :femoral_full, :label => false
+          %td= f.input :femoral_bounding, :label => false
+          %td= f.input :femoral_dp_doppler, :label => false
+        %tr
+          %th{:scope => "row"} Popliteal
+          %td= f.input :popliteal_absent, :label => false
+          %td= f.input :popliteal_weak, :label => false
+          %td= f.input :popliteal_normal, :label => false
+          %td= f.input :popliteal_full, :label => false
+          %td= f.input :popliteal_bounding, :label => false
+          %td= f.input :popliteal_dp_doppler, :label => false
+        %tr
+          %th{:scope => "row"} Dorsalis Pedis
+          %td= f.input :dorsalis_pedis_absent, :label => false
+          %td= f.input :dorsalis_pedis_weak, :label => false
+          %td= f.input :dorsalis_pedis_normal, :label => false
+          %td= f.input :dorsalis_pedis_full, :label => false
+          %td= f.input :dorsalis_pedis_bounding, :label => false
+          %td= f.input :dorsalis_pedis_dp_doppler, :label => false
+        %tr
+          %th{:scope => "row"} Posterior Tibialis
+          %td= f.input :posterior_tibialis_absent, :label => false
+          %td= f.input :posterior_tibialis_weak, :label => false
+          %td= f.input :posterior_tibialis_normal, :label => false
+          %td= f.input :posterior_tibialis_full, :label => false
+          %td= f.input :posterior_tibialis_bounding, :label => false
+          %td= f.input :posterior_tibialis_dp_doppler, :label => false
+
+-# .col-md-12
+-#   %h5 Indiacate R (right), L (left), or B (bilateral)
+-# .col-md-4.well
+-#   %h4 Absent (0)
   -# = f.label :radial_absent, "Radial"
   -# = f.input :radial_absent, collection: [[R], [L], [B]], prompt: "Select value", label: false
   -# = f.label :femoral_absent, "Femoral"
@@ -23,6 +80,7 @@
 -#   = f.input :popliteal_weak, collection: R, L, B, prompt: "Select value", label: false
 -#   = f.label :dorsalis_pedis_weak, "Dorsalis Pedis"
 -#   = f.input :dorsalis_pedis_weak, collection: R, L, B, prompt: "Select value", label: false
+
 -# .col-md-4.well
 -#   %h4 Normal (+2)
 -#   = f.label :radial_normal, "Radial"
@@ -33,6 +91,7 @@
 -#   = f.input :popliteal_normal, collection: R, L, B, prompt: "Select value", label: false
 -#   = f.label :dorsalis_pedis_normal, "Dorsalis Pedis"
 -#   = f.input :dorsalis_pedis_normal, collection: R, L, B, prompt: "Select value", label: false
+
 -# .col-md-4.well
 -#   %h4 Full (+3)
 -#   = f.label :radial_full, "Radial"
@@ -43,6 +102,7 @@
 -#   = f.input :popliteal_full, collection: R, L, B, prompt: "Select value", label: false
 -#   = f.label :dorsalis_pedis_full, "Dorsalis Pedis"
 -#   = f.input :dorsalis_pedis_full, collection: R, L, B, prompt: "Select value", label: false
+
 -# .col-md-4.well
 -#   %h4 Bounding (+4)
 -#   = f.label :radial_bounding, "Radial"
@@ -53,6 +113,7 @@
 -#   = f.input :popliteal_bounding, collection: R, L, B, prompt: "Select value", label: false
 -#   = f.label :dorsalis_pedis_bounding, "Dorsalis Pedis"
 -#   = f.input :dorsalis_pedis_bounding, collection: R, L, B, prompt: "Select value", label: false
+
 -# .col-md-4.well
 -#   %h4 DP Doppler
 -#    = f.label :radial_dp_doppler, "Radial"
@@ -64,8 +125,8 @@
 -#    = f.label :dorsalis_pedis_dp_doppler, "Dorsalis Pedis"
 -#    = f.input :dorsalis_pedis_dp_doppler, collection: R, L, B, prompt: "Select value", label: false
 -#
--# .col-md-12
--#   = f.input :heart_sounds, :collection => [['s1', 'S1'], ['s2', 'S2'], ['s3', 'S3'], ['s4', 'S4'], ['regular', 'Regular'], ['irregular', 'Irregular'], ['distant', 'Distant'], ['murmur', 'Murmur'], ['rub', 'Rub']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+.col-md-12
+  = f.input :heart_sounds, :collection => [['s1', 'S1'], ['s2', 'S2'], ['s3', 'S3'], ['s4', 'S4'], ['regular', 'Regular'], ['irregular', 'Irregular'], ['distant', 'Distant'], ['murmur', 'Murmur'], ['rub', 'Rub']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.heart_sounds, :class => "form-control"
 -#
 -# .col-md-12
 -#   = f.input :edema, :collection => [['na', 'NA'], ['pitting', 'Pitting'], ['non pitting', 'Non Pitting']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"

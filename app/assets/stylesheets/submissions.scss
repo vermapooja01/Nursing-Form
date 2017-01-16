@@ -82,3 +82,21 @@ i.fa {
 //     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s !important;
 //   }
 // }
+
+table.cardiovascular-table {
+  thead {
+    th {
+      text-align: center;
+    }
+  }
+  tbody {
+    tr {
+      th {
+        vertical-align: middle;
+      }
+      td {
+        text-align: center;
+      }
+    }
+  }
+}
