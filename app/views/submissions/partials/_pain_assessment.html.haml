@@ -1,47 +1,25 @@
 %h2 PAIN ASSESSMENT
-  .col-md-4
-    = f.input :verbal, :collection => [['dull', 'Dull'], ['sharp', 'Sharp'], ['burning', 'Burning'], ['ache', 'Ache'], ['throbbing', 'Throbbing'], ['none', 'None']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+.col-md-4
+  = f.input :verbal, :collection => [['dull', 'Dull'], ['sharp', 'Sharp'], ['burning', 'Burning'], ['ache', 'Ache'], ['throbbing', 'Throbbing'], ['none', 'None']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
 
-  .col-md-4
-    = f.input :non_verbal, :collection => [['use flacc', 'Use FLACC']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+.col-md-4
+  = f.input :non_verbal, :collection => [['use flacc', 'Use FLACC']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
 
-  .col-md-4
-    = f.input :scale_used, :collection => [['numeric', 'Numeric'], ['faces', 'Faces'], ['flacc', 'FLACC'], ['cpot', 'CPOT']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+.col-md-4
+  = f.input :scale_used, :collection => [['numeric', 'Numeric'], ['faces', 'Faces'], ['flacc', 'FLACC'], ['cpot', 'CPOT']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
 
-  .col-md-4
-    = f.input :other_symptoms_present, :collection => [['sob', 'SOB'], ['vomiting', 'Vomiting'], ['guarding', 'Guarding'], ['paresthesia', 'Paresthesia'], ['none', 'None']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+.col-md-4
+  = f.input :other_symptoms_present, :collection => [['sob', 'SOB'], ['vomiting', 'Vomiting'], ['guarding', 'Guarding'], ['paresthesia', 'Paresthesia'], ['none', 'None']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
 
-  .col-md-4
-    = f.input :additional_measures, :collection => [['remedicate', 'Remedicate'], ['notify md', 'Notify MD'], ['ice', 'ice'], ['heat', 'Heat'], ['relaxation distraction imagery', 'Relaxation Distraction Imagery'], ['patient declines', 'Patient Declines']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+.col-md-4
+  = f.input :additional_measures, :collection => [['remedicate', 'Remedicate'], ['notify md', 'Notify MD'], ['ice', 'ice'], ['heat', 'Heat'], ['relaxation distraction imagery', 'Relaxation Distraction Imagery'], ['patient declines', 'Patient Declines']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
 
 %h2 FLACC SCALE (For Non-Verbal Patients)
-  .col-md-4
-    = f.input :criteria, :collection => [['face', 'Face'], ['legs', 'Legs'], ['activity', 'Activity'], ['cry', 'Cry'], ['consolability', 'Consolability']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+.col-md-4
+  = f.input :criteria, :collection => [['face', 'Face'], ['legs', 'Legs'], ['activity', 'Activity'], ['cry', 'Cry'], ['consolability', 'Consolability']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
 
-  .col-md-4
-    = f.input :flacc_score_0, :collection => [['no particular expression or smile', 'No Particular Expression or Smile'], ['normal position or relaxed', 'Normal Position or Relaxed'], ['lying quietly, normal position, moves easily', 'Lying Quietly, Normal Position, Moves Easily'], ['no cry(awake or asleep)', 'No cry(awake or asleep)'], ['content, relaxed', 'Content, Relaxed']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+.col-md-4
+  = f.input :flacc_score_0, :collection => [['no particular expression or smile', 'No Particular Expression or Smile'], ['normal position or relaxed', 'Normal Position or Relaxed'], ['lying quietly, normal position, moves easily', 'Lying Quietly, Normal Position, Moves Easily'], ['no cry(awake or asleep)', 'No cry(awake or asleep)'], ['content, relaxed', 'Content, Relaxed']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
 
-  .col-md-4
-    = f.input :flacc_score_1, :collection => [['occasional grimace or frown, withdrawn, uninterested', 'Occasional grimace or frown, withdrawn, uninterested'], ['uneasy, restless, tense', 'Uneasy, Restless, Tense'], ['squirming, shifting back and forth, tense', 'Squirming, Shifting back and forth, Tense'], ['moans or whimpers; occasional complaint', 'Moans or Whimpers; occasional complaint'], ['reassured by occasional touching, hugging or being talked to, distractible', 'Reassured by occasional touching, hugging or being talked to, distractible']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
-
-
--# = f.input :pain_assessment
--# = f.input :verbal
--# = f.input :non_verbal
--# = f.input :scale_used
--# = f.input :other_symptoms_present
--# = f.input :additional_measures
--# = f.input :pain_scale
--# = f.input :pain_scale_rating_scale
--# = f.input :flacc_scale
--# = f.input :criteria
--# = f.input :score_0_flacc
--# = f.input :score_1_flacc
--# = f.input :score_2_flacc
--# = f.input :total_score_flacc
--# = f.input :critical_care_pain_observation_tool
--# = f.input :indicator
--# = f.input :score_0_cpot
--# = f.input :score_1_cpot
--# = f.input :score_2_cpot
--# = f.input :total_score_cpot
+.col-md-4
+  = f.input :flacc_score_1, :collection => [['occasional grimace or frown, withdrawn, uninterested', 'Occasional grimace or frown, withdrawn, uninterested'], ['uneasy, restless, tense', 'Uneasy, Restless, Tense'], ['squirming, shifting back and forth, tense', 'Squirming, Shifting back and forth, Tense'], ['moans or whimpers; occasional complaint', 'Moans or Whimpers; occasional complaint'], ['reassured by occasional touching, hugging or being talked to, distractible', 'Reassured by occasional touching, hugging or being talked to, distractible']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
