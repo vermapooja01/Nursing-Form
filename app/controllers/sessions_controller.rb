@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
   include SessionsHelper
   def new
     cookies[:referrer] = request.referrer
-    byebug
     redirect_to "https://adminapps.utep.edu/sso?redirectURL=#{create_session_url}"
   end
 

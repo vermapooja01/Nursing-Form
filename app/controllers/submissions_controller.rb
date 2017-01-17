@@ -53,7 +53,6 @@ class SubmissionsController < ApplicationController
   # PATCH/PUT /submissions/1.json
   def update
     respond_to do |format|
-      byebug
       if @submission.update(submission_params)
         format.html { redirect_to edit_submission_path(@submission, :tab => params[:selected_tab]), notice: 'Submission was successfully updated.' }
         format.json { render :show, status: :ok, location: @submission }
