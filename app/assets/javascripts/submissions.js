@@ -13,16 +13,32 @@ $(document).on('turbolinks:load', function () {
    }
   })();
 
-  if ($('#editor').length) {
-    var sketchpad = Raphael.sketchpad("editor", {
+  if ($('#pain-location-image1').length) {
+    var sketchpad = Raphael.sketchpad("pain-location-image1", {
        width: 400,
        height: 400,
        editing: true
      });
     // When the sketchpad changes, update the input field.
     sketchpad.change(function() {
-      $("#sketch_data").val(sketchpad.json());
+      $("#submission_location_image1").val(sketchpad.json());
     });
+
+    var strokes = [{
+      type:"path",
+      path:[["M",10,10],["L",390,390]],
+      fill:"none", "stroke":"#000000"
+      // stroke-opacity:1,
+      // stroke-width:5,
+      // stroke-linecap:"round",
+      // stroke-linejoin:"round"
+    }];
+    // var sketchpad = Raphael.sketchpad("viewer", {
+    //   width: 400,
+    //   height: 356,
+    //   strokes: strokes,
+    //   editing: false
+    // });
   }
 
   $('#submission_week').daterangepicker();

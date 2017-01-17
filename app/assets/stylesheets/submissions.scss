@@ -1,11 +1,27 @@
 // Place all the styles related to the submissions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#editor {
+
+// #editor {
+//   width: 400px;
+//   height: 400px;
+//   background-image: url("http://static.giantbomb.com/uploads/scale_small/0/6087/2437349-pikachu.png");
+// }
+
+#pain-location-image1 {
   width: 400px;
-  height: 400px;
-  background-image: url("http://static.giantbomb.com/uploads/scale_small/0/6087/2437349-pikachu.png");
+  height: 356px;
+  background-image: url("/assets/body.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2;
 }
+#pain-location-image1-viewer {
+  width: 400px;
+  height: 356px;
+  z-index: 1;
+}
+
 
 .nursing-form-card {
   height: 700px;
