@@ -13,6 +13,15 @@ $(document).on('turbolinks:load', function () {
    }
   })();
 
+  var strokes = JSON.parse($("#submission_location_image1").val());
+
+  var sketchpad_view = Raphael.sketchpad("pain-location-image1-viewer", {
+    width: 400,
+    height: 356,
+    strokes: strokes,
+    editing: false
+  });
+
   if ($('#pain-location-image1').length) {
     var sketchpad = Raphael.sketchpad("pain-location-image1", {
        width: 400,
@@ -24,21 +33,6 @@ $(document).on('turbolinks:load', function () {
       $("#submission_location_image1").val(sketchpad.json());
     });
 
-    var strokes = [{
-      type:"path",
-      path:[["M",10,10],["L",390,390]],
-      fill:"none", "stroke":"#000000"
-      // stroke-opacity:1,
-      // stroke-width:5,
-      // stroke-linecap:"round",
-      // stroke-linejoin:"round"
-    }];
-    // var sketchpad = Raphael.sketchpad("viewer", {
-    //   width: 400,
-    //   height: 356,
-    //   strokes: strokes,
-    //   editing: false
-    // });
   }
 
   $('#submission_week').daterangepicker();

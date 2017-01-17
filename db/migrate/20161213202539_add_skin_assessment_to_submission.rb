@@ -29,7 +29,7 @@ class AddSkinAssessmentToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :wound_amount, :string
     add_column :submissions, :color_of_wound, :string
     add_column :submissions, :periwound_surrounding_skin, :string
-    add_column :submissions, :location_image1, :string
-    add_column :submissions, :location_image2, :string
+    add_column :submissions, :location_image1, :json
+    add_column :submissions, :location_image2, :json
   end
 end
