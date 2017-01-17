@@ -13,14 +13,17 @@ $(document).on('turbolinks:load', function () {
    }
   })();
 
-  var strokes = JSON.parse($("#submission_location_image1").val());
+  if ($('#submission_location_image1').val() != null) {
+    var strokes = JSON.parse($("#submission_location_image1").val());
 
-  var sketchpad_view = Raphael.sketchpad("pain-location-image1-viewer", {
-    width: 400,
-    height: 356,
-    strokes: strokes,
-    editing: false
-  });
+    var sketchpad_view = Raphael.sketchpad("pain-location-image1-viewer", {
+      width: 400,
+      height: 356,
+      strokes: strokes,
+      editing: false
+    });
+  }
+
 
   if ($('#pain-location-image1').length) {
     var sketchpad = Raphael.sketchpad("pain-location-image1", {
