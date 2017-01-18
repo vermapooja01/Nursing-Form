@@ -8,6 +8,10 @@
 //   background-image: url("http://static.giantbomb.com/uploads/scale_small/0/6087/2437349-pikachu.png");
 // }
 
+.block-container {
+  display: block;
+}
+
 #pain-location-image1 {
   width: 400px;
   height: 356px;
@@ -69,6 +73,9 @@
 
 i.fa {
   line-height: 20px;
+}
+.left-tabs {
+  min-height: 2500px;
 }
 // .tabs-left > li.active > a, .tabs-left > li.active > a:focus, .tabs-left > li.active > a:hover {
 //   border: none;
