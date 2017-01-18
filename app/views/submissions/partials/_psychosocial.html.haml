@@ -27,23 +27,23 @@
 .col-md-12
   = f.input :resuscitation_status, :collection => [['Full Code', 'Full Code'], ['DNR', 'DNR']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => @submission.resuscitation_status, :class => "form-control"
 
-.col-md-12.well
+.col-md-6.well
   = f.input :other_resuscitation_status, :class => "form-control"
   = f.input :resuscitation_comments, :class => "form-control"
 
-.col-md-12
+.col-md-6
   = f.input :movement, :class => "form-control"
 
 .col-md-12.well
   = f.input :gait, :class => "form-control"
 
-.col-md-12
+.col-md-6
   = f.input :grip, :collection => [['strong', 'Strong'], ['equal', 'Equal'], ['weak', 'Weak']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.grip, :class => "form-control"
 
-.col-md-12.well
+.col-md-6.well
   = f.input :icp_device, :collection => [['ventriculostomy', 'Ventriculostomy'], ['fiberoptic cath', 'Fiberoptic Cath'], ['subarachnoid bolt', 'Subarachnoid Bolt'], ['epidural cath', 'Epidural Cath'], ['epiduaral sensor', 'Epiduaral Sensor']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.icp_device, :class => "form-control", :label => "ICP Device"
   = f.input :prescribed_level, :class => "form-control"
 
-.col-md-12.well
+.col-md-6.well
   = f.input :monitor, :collection => [['regular', 'Regular'], ['camino', 'Camino'], ['codman', 'Codman']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.monitor, :class => "form-control"
   = f.input :other_resuscitation_status, :class => "form-control"

@@ -61,21 +61,21 @@
   = f.input :heart_sounds, :collection => [['s1', 'S1'], ['s2', 'S2'], ['s3', 'S3'], ['s4', 'S4'], ['regular', 'Regular'], ['irregular', 'Irregular'], ['distant', 'Distant'], ['murmur', 'Murmur'], ['rub', 'Rub']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.heart_sounds, :class => "form-control"
 
 .col-md-12
-  = f.input :edema, :collection => [['na', 'NA'], ['pitting', 'Pitting'], ['non pitting', 'Non Pitting']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :edema, :collection => [['na', 'NA'], ['pitting', 'Pitting'], ['non pitting', 'Non Pitting']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.edema, :class => "form-control"
   = f.input :edema_where, :class => "form-control"
 
 .col-md-12
-  = f.input :capillary_refill, :collection => [['>3 sec', '>3 sec'], ['<3 sec', '<3 sec']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :capillary_refill, :collection => [['>3 sec', '>3 sec'], ['<3 sec', '<3 sec']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.capillary_refill, :class => "form-control"
 
 .col-md-12
-  = f.input :cardiac_rhythm, :collection => [['nsr', 'NSR'], ['sinus tachy', 'Sinus Tachy'], ['sinus brady', 'Sinus Brady'], ['a fib', 'A-Fib'], ['a flutter', 'A-Flutter'], ['junctional', 'Junctional'], ['paced rhythm', 'Paced Rhythm'], ['ectopy', 'Ectopy(specify)']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :cardiac_rhythm, :collection => [['nsr', 'NSR'], ['sinus tachy', 'Sinus Tachy'], ['sinus brady', 'Sinus Brady'], ['A-Fib', 'A-Fib'], ['A-Flutter', 'A-Flutter'], ['junctional', 'Junctional'], ['paced rhythm', 'Paced Rhythm'], ['ectopy', 'Ectopy(specify)']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.cardiac_rhythm, :class => "form-control"
   = f.input :specify_ectopy, :class => "form-control"
   -# = f.input :, :collection => [['paced rhythm', 'Paced Rhythm']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
   = f.input :other_cardiac_rhythm, :class => "form-control"
   = f.input :cardiac_rhythm_comments, :class => "form-control"
 
 .col-md-12
-  = f.input :pacemaker, :collection => [['na', 'NA'], ['temporary', 'Temporary'], ['permanent', 'Permanent'], ['implanted icd', 'Implanted ICD']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :pacemaker, :collection => [['na', 'NA'], ['temporary', 'Temporary'], ['permanent', 'Permanent'], ['implanted icd', 'Implanted ICD']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.pacemaker, :class => "form-control"
 
 .col-md-12
   %h4 Pacemaker Settings
@@ -89,7 +89,7 @@
   = f.input :site, :class => "form-control"
 
 .col-md-12
-  = f.input :waveform, :collection => [['square wave tested', 'Square Wave Tested'], ['dampened', 'Dampened'], ['positional', 'Positional']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :waveform, :collection => [['square wave tested', 'Square Wave Tested'], ['dampened', 'Dampened'], ['positional', 'Positional']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.waveform, :class => "form-control"
   = f.input :waveform_comments, :class => "form-control"
 
 .col-md-12
@@ -97,8 +97,8 @@
   = f.input :pa_catheter_site, :class => "form-control"
 
 .col-md-12
-  = f.input :waveform_for_pa_catheter, :collection => [['square wave tested', 'Square Wave Tested'], ['dampened', 'Dampened'], ['positional', 'Positional']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
-  = f.input :wedges, :collection => [['yes', 'Yes'], ['no', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :waveform_for_pa_catheter, :collection => [['square wave tested', 'Square Wave Tested'], ['dampened', 'Dampened'], ['positional', 'Positional']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.waveform_for_pa_catheter, :class => "form-control"
+  -# = f.input :wedges, :collection => [['yes', 'Yes'], ['no', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.wedges, :class => "form-control"
   = f.input :waveform_pa_catheter_comments, :class => "form-control"
 
 .col-md-12
@@ -106,7 +106,7 @@
   = f.input :insertion_site, :class => "form-control"
 
 .col-md-12
-  = f.input :trigger, :collection => [['ekg', 'EKG'], ['a line', 'A-Line'], ['afib', 'Afib'], ['apace', 'Apace'], ['vpace', 'Vpace']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :trigger, :collection => [['ekg', 'EKG'], ['a line', 'A-Line'], ['afib', 'Afib'], ['apace', 'Apace'], ['vpace', 'Vpace']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.trigger, :class => "form-control"
 
 .col-md-12
-  = f.input :freq, :collection => [['1:1', '1:1'], ['1:2', '1:2'], ['1:3', '1:3'], ['1:4', '1:4'], ['1:8', '1:8']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :freq, :collection => [['1:1', '1:1'], ['1:2', '1:2'], ['1:3', '1:3'], ['1:4', '1:4'], ['1:8', '1:8']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.freq, :class => "form-control"
