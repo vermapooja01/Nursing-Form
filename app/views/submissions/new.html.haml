@@ -150,3 +150,18 @@
 
           - if !@submission.id.nil?
             = link_to 'Complete the form', submission_complete_form_path(@submission), :class => "btn btn-primary"
+
+.col-md-12.pager-buttons.no-padding
+  %div{:style => "float:right"}
+    = render("autosave")
+
+    %button.btn.btn-default.button-save{:type => "button"}
+      %i.fa.fa-floppy-o{"aria-hidden" => "true"}
+    %button.btn.btn-default.button-next{:type => "button"}
+      %i.fa.fa-arrow-right.pull-right{"aria-hidden" => "true"}
+      Next
+
+  %div{:style => "float:left"}
+    %button.btn.btn-default.button-previous{:type => "button"}
+      %i.fa.fa-arrow-left.pull-left{"aria-hidden" => "true"}
+      Previous

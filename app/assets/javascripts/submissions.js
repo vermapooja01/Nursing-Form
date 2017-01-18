@@ -13,7 +13,7 @@ $(document).on('turbolinks:load', function () {
    }
   })();
 
-  if ($('#submission_location_image1').val() != "") {
+  if ($('#submission_location_image1').val() != null) {
     var strokes = JSON.parse($("#submission_location_image1").val());
 
     var sketchpad_view = Raphael.sketchpad("pain-location-image1-viewer", {
@@ -28,7 +28,7 @@ $(document).on('turbolinks:load', function () {
   if ($('#pain-location-image1').length) {
     var sketchpad = Raphael.sketchpad("pain-location-image1", {
        width: 400,
-       height: 356,
+       height: 400,
        editing: true
      });
     // When the sketchpad changes, update the input field.
