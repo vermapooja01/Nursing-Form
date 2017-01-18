@@ -46,12 +46,20 @@ $(document).on('turbolinks:load', function () {
     $("form.simple_form").submit();
   });
 
-  // $(function () {
-  //     $('#datetime-picker').datetimepicker({
-  //       inline: true,
-  //       sideBySide: true,
-  //     });
-  // });
+
+  $('#iv-insertion-datetime-picker').datetimepicker({
+    inline: true,
+    sideBySide: true,
+    defaultDate: $('#submission_current_iv_insertion_date_and_time').val()
+  });
+
+
+  $("#iv-insertion-datetime-picker").on("dp.change", function (e) {
+    // Conversion to momentjs data object
+    var browserDate = moment(e.date._d);
+    var mountain = browserDate.tz('America/Denver').format();
+    $('#submission_current_iv_insertion_date_and_time').val(mountain)
+  });
 
   // var wizard = $("#nursing-form-wizard").wizard({
   //   progressBarCurrent: true,
