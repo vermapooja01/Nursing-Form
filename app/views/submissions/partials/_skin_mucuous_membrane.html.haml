@@ -1,6 +1,8 @@
 .col-md-12
-  = f.input :skin_type, :collection => [['ashen', 'Ashen'], ['pink', 'Pink'], ['pale', 'Pale'], ['cyanotic', 'Cyanotic'], ['jaundiced', 'Jaundiced'], ['mottled', 'Mottled'], ['flushed', 'Flushed'], ['cool', 'Cool'], ['warm', 'Warm'], ['hot', 'Hot'], ['moist', 'Moist'], ['diaphoretic', 'Diaphoretic'], ['dry', 'dry']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
-  = f.input :turgor, :collection => [['adequate', 'Adequate'], ['decreased', 'Decreased']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
+  = f.input :skin_type, :collection => [['ashen', 'Ashen'], ['pink', 'Pink'], ['pale', 'Pale'], ['cyanotic', 'Cyanotic'], ['jaundiced', 'Jaundiced'], ['mottled', 'Mottled'], ['flushed', 'Flushed'], ['cool', 'Cool'], ['warm', 'Warm'], ['hot', 'Hot'], ['moist', 'Moist'], ['diaphoretic', 'Diaphoretic'], ['dry', 'dry']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.skin_type, :class => "form-control"
+
+  = f.input :turgor, :collection => [['adequate', 'Adequate'], ['decreased', 'Decreased']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.turgor, :class => "form-control"
+
   = f.input :turgor_comments, :class => "form-control"
 
 
