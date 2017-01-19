@@ -73,6 +73,11 @@
   // right: 143px;
   // z-index: 1;
 }
+.pager-buttons-fixed {
+  position: fixed;
+  right: 140px;
+  z-index: 10;
+}
 
 i.fa {
   line-height: 20px;

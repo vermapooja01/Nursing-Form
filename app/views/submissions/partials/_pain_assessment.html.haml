@@ -21,7 +21,58 @@
 
 .col-md-12
   %h4{:style => "margin-bottom: 50px;"} Pain Scale
-  = f.input :pain_scale_rating_scale, :class => 'form-control', :input_html => {"data-slider-id" => "painScaleSlider", "data-slider-max" => "10", "data-slider-min" => "0", "data-slider-step" => "1", "data-slider-value" => @submission.pain_scale}, :label => false
+  - if @submission.pain_scale_rating_scale.nil?
+    = f.input :pain_scale_rating_scale, :class => 'form-control', :input_html => {"data-slider-id" => "painScaleSlider", "data-slider-max" => "5", "data-slider-min" => "0", "data-slider-step" => "1", "data-slider-value" => "0"}, :label => false
+  - else
+    = f.input :pain_scale_rating_scale, :class => 'form-control', :input_html => {"data-slider-id" => "painScaleSlider", "data-slider-max" => "5", "data-slider-min" => "0", "data-slider-step" => "1", "data-slider-value" => @submission.pain_scale_rating_scale}, :label => false
+
+
+.col-md-12
+  %h4 FLACC SCALE (For Non-Verbal Patients)
+  .table-responsive
+    %table.table.table-striped.cardiovascular-table
+      %thead
+        %tr
+          %th Criteria
+          %th Score 0
+          %th Score 1
+          %th Score 2
+          %th
+      %tbody
+        %tr
+          %th{:scope => "row"} Face
+          %td= f.input :strength_weakness_rue, input_html: { value: '4' }
+          %td= f.input :radial_weak, :label => false
+          %td= f.input :radial_normal, :label => false
+        %tr
+          %th{:scope => "row"} Legs
+          %td= f.input :femoral_absent, :label => false
+          %td= f.input :femoral_weak, :label => false
+          %td= f.input :femoral_normal, :label => false
+
+        %tr
+          %th{:scope => "row"} Activity
+          %td= f.input :popliteal_absent, :label => false
+          %td= f.input :popliteal_weak, :label => false
+          %td= f.input :popliteal_normal, :label => false
+
+        %tr
+          %th{:scope => "row"} Cry
+          %td= f.input :dorsalis_pedis_absent, :label => false
+          %td= f.input :dorsalis_pedis_weak, :label => false
+          %td= f.input :dorsalis_pedis_normal, :label => false
+
+        %tr
+          %th{:scope => "row"} Consolability
+          %td= f.input :posterior_tibialis_absent, :label => false
+          %td= f.input :posterior_tibialis_weak, :label => false
+          %td= f.input :posterior_tibialis_normal, :label => false
+        %tr
+          %th
+          %td
+          %td
+          %td Total
+
 
 
 

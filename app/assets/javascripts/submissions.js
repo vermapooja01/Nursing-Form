@@ -84,7 +84,15 @@ $(document).on('turbolinks:load', function () {
   });
   // ---------------------
 
+  // Slider for the pain scale
   $('#submission_pain_scale').slider({
+    tooltip: 'always',
+  	formatter: function(value) {
+  		return value;
+  	}
+  });
+  // Slider for the pain scale rating
+  $('#submission_pain_scale_rating_scale').slider({
     tooltip: 'always',
   	formatter: function(value) {
   		return value;
