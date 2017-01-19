@@ -4,7 +4,7 @@
 .form-group
   .row
     .col-md-8
-      %h4 Current IV Insertion Date
+      %h4 Current IV Insertion Date and Time
       #iv-insertion-datetime-picker
       - if @submission.current_iv_insertion_date_and_time.nil?
         = f.hidden_field :current_iv_insertion_date_and_time, :value => DateTime.now

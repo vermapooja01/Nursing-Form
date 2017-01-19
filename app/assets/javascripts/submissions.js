@@ -61,13 +61,6 @@ $(document).on('turbolinks:load', function () {
     $('#submission_current_iv_insertion_date_and_time').val(mountain)
   });
 
-  // var wizard = $("#nursing-form-wizard").wizard({
-  //   progressBarCurrent: true,
-  //   contentHeight: 400,
-  //   contentWidth: 900,
-  // });
-  // wizard.show();
-
 
   $('#rootwizard').bootstrapWizard({
     onTabShow: function(tab, navigation, index) {
@@ -90,4 +83,11 @@ $(document).on('turbolinks:load', function () {
     $('#selected_tab').val($(e.target).attr('href'))
   });
   // ---------------------
+
+  $('#submission_pain_scale').slider({
+    tooltip: 'always',
+  	formatter: function(value) {
+  		return value;
+  	}
+  });
 });

@@ -24,6 +24,7 @@
 //= require jquery.bootstrap.wizard.min
 //= require daterangepicker
 //= require bootstrap-datetimepicker
+//= require slider/bootstrap-slider.min
 
 
 //= require submissions

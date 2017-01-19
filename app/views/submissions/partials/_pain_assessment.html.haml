@@ -1,18 +1,29 @@
 %h2 PAIN ASSESSMENT
-.col-md-4
-  = f.input :verbal, :collection => [['dull', 'Dull'], ['sharp', 'Sharp'], ['burning', 'Burning'], ['ache', 'Ache'], ['throbbing', 'Throbbing'], ['none', 'None']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
 
 .col-md-4
-  = f.input :non_verbal, :collection => [['use flacc', 'Use FLACC']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+  = f.input :verbal, :collection => [['dull', 'Dull'], ['sharp', 'Sharp'], ['burning', 'Burning'], ['ache', 'Ache'], ['throbbing', 'Throbbing'], ['none', 'None']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.verbal
 
 .col-md-4
-  = f.input :scale_used, :collection => [['numeric', 'Numeric'], ['faces', 'Faces'], ['flacc', 'FLACC'], ['cpot', 'CPOT']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+  = f.input :non_verbal, :collection => [['use flacc', 'Use FLACC']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.non_verbal
 
 .col-md-4
-  = f.input :other_symptoms_present, :collection => [['sob', 'SOB'], ['vomiting', 'Vomiting'], ['guarding', 'Guarding'], ['paresthesia', 'Paresthesia'], ['none', 'None']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+  = f.input :scale_used, :collection => [['numeric', 'Numeric'], ['faces', 'Faces'], ['flacc', 'FLACC'], ['cpot', 'CPOT']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.scale_used
 
 .col-md-4
-  = f.input :additional_measures, :collection => [['remedicate', 'Remedicate'], ['notify md', 'Notify MD'], ['ice', 'ice'], ['heat', 'Heat'], ['relaxation distraction imagery', 'Relaxation Distraction Imagery'], ['patient declines', 'Patient Declines']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+  = f.input :other_symptoms_present, :collection => [['sob', 'SOB'], ['vomiting', 'Vomiting'], ['guarding', 'Guarding'], ['paresthesia', 'Paresthesia'], ['none', 'None']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.other_symptoms_present
+
+.col-md-4
+  = f.input :additional_measures, :collection => [['remedicate', 'Remedicate'], ['notify md', 'Notify MD'], ['ice', 'ice'], ['heat', 'Heat'], ['relaxation distraction imagery', 'Relaxation Distraction Imagery'], ['patient declines', 'Patient Declines']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.additional_measures
+
+.col-md-12
+  %h4{:style => "margin-bottom: 50px;"} Pain Scale
+  = f.input :pain_scale, :class => 'form-control', :input_html => {"data-slider-id" => "painScaleSlider", "data-slider-max" => "10", "data-slider-min" => "0", "data-slider-step" => "1", "data-slider-value" => @submission.pain_scale}, :label => false
+
+.col-md-12
+  %h4{:style => "margin-bottom: 50px;"} Pain Scale
+  = f.input :pain_scale_rating_scale, :class => 'form-control', :input_html => {"data-slider-id" => "painScaleSlider", "data-slider-max" => "10", "data-slider-min" => "0", "data-slider-step" => "1", "data-slider-value" => @submission.pain_scale}, :label => false
+
+
 
 %h2 FLACC SCALE (For Non-Verbal Patients)
 .col-md-4
