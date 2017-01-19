@@ -38,6 +38,19 @@ $(document).on('turbolinks:load', function () {
 
   }
 
+  if ($('#pain-location-image2').length) {
+    var sketchpad = Raphael.sketchpad("pain-location-image2", {
+       width: 400,
+       height: 400,
+       editing: true
+     });
+    // When the sketchpad changes, update the input field.
+    sketchpad.change(function() {
+      $("#submission_location_image1").val(sketchpad.json());
+    });
+
+  }
+
   $('#submission_week').daterangepicker();
 
   // Function to save the form whenever the save button is clicked
@@ -46,19 +59,20 @@ $(document).on('turbolinks:load', function () {
     $("form.simple_form").submit();
   });
 
-  // $(function () {
-  //     $('#datetime-picker').datetimepicker({
-  //       inline: true,
-  //       sideBySide: true,
-  //     });
-  // });
 
-  // var wizard = $("#nursing-form-wizard").wizard({
-  //   progressBarCurrent: true,
-  //   contentHeight: 400,
-  //   contentWidth: 900,
-  // });
-  // wizard.show();
+  $('#iv-insertion-datetime-picker').datetimepicker({
+    inline: true,
+    sideBySide: true,
+    defaultDate: $('#submission_current_iv_insertion_date_and_time').val()
+  });
+
+
+  $("#iv-insertion-datetime-picker").on("dp.change", function (e) {
+    // Conversion to momentjs data object
+    var browserDate = moment(e.date._d);
+    var mountain = browserDate.tz('America/Denver').format();
+    $('#submission_current_iv_insertion_date_and_time').val(mountain)
+  });
 
 
   $('#rootwizard').bootstrapWizard({
@@ -82,4 +96,19 @@ $(document).on('turbolinks:load', function () {
     $('#selected_tab').val($(e.target).attr('href'))
   });
   // ---------------------
+
+  // Slider for the pain scale
+  $('#submission_pain_scale').slider({
+    tooltip: 'always',
+  	formatter: function(value) {
+  		return value;
+  	}
+  });
+  // Slider for the pain scale rating
+  $('#submission_pain_scale_rating_scale').slider({
+    tooltip: 'always',
+  	formatter: function(value) {
+  		return value;
+  	}
+  });
 });

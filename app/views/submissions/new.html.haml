@@ -62,13 +62,13 @@
           %h2 Basic Information
           = f.hidden_field :user_id, :value => current_user.id
           .col-md-4
-            = f.input :patient_initials, :class => "form-control"
+            = f.input :patient_initials, :class => "form-control", required: true
           .col-md-2
-            = f.input :age
+            = f.input :age, required: true
           .col-md-12.gender-selector
-            = f.input :gender, :collection => [['Male', 'Male'], ['Female', 'Female']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.gender, :class => "form-control"
+            = f.input :gender, required: true, :collection => [['Male', 'Male'], ['Female', 'Female']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.gender, :class => "form-control"
           .col-md-12
-            = f.label :admitting_primary_medical_diagnosis
+            = f.label :admitting_primary_medical_diagnosis, required: true
             = f.text_area :admitting_primary_medical_diagnosis, :placeholder => "Enter text here...", :class => "tinymce form-control", :rows => 4, :cols => 120
           .col-md-6.date-selector
             = f.input :week, :class => "daterange-picker", :as => :string
@@ -150,18 +150,3 @@
 
           - if !@submission.id.nil?
             = link_to 'Complete the form', submission_complete_form_path(@submission), :class => "btn btn-primary"
-
-.col-md-12.pager-buttons.no-padding
-  %div{:style => "float:right"}
-    = render("autosave")
-
-    %button.btn.btn-default.button-save{:type => "button"}
-      %i.fa.fa-floppy-o{"aria-hidden" => "true"}
-    %button.btn.btn-default.button-next{:type => "button"}
-      %i.fa.fa-arrow-right.pull-right{"aria-hidden" => "true"}
-      Next
-
-  %div{:style => "float:left"}
-    %button.btn.btn-default.button-previous{:type => "button"}
-      %i.fa.fa-arrow-left.pull-left{"aria-hidden" => "true"}
-      Previous

@@ -1,13 +1,13 @@
 class AddPainAssessmentToSubmission < ActiveRecord::Migration[5.0]
   def change
     # add_column :submissions, :pain_assessment, :string
-    add_column :submissions, :verbal, :string
-    add_column :submissions, :non_verbal, :string
-    add_column :submissions, :scale_used, :string
-    add_column :submissions, :other_symptoms_present, :string
-    add_column :submissions, :additional_measures, :string
-    add_column :submissions, :pain_scale, :string
-    add_column :submissions, :pain_scale_rating_scale, :string
+    add_column :submissions, :verbal, :json
+    add_column :submissions, :non_verbal, :json
+    add_column :submissions, :scale_used, :json
+    add_column :submissions, :other_symptoms_present, :json
+    add_column :submissions, :additional_measures, :json
+    add_column :submissions, :pain_scale, :string, :default => 0
+    add_column :submissions, :pain_scale_rating_scale, :string, :default => 0
     # add_column :submissions, :flacc_scale, :string
     add_column :submissions, :criteria, :string
     add_column :submissions, :flacc_score_0, :string
