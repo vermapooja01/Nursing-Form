@@ -299,6 +299,8 @@ class SubmissionsController < ApplicationController
         :color,
         :dialysis,
         :dialysis_location,
+
+
         :venous_ulcer,
         :burn,
         :maceration,
@@ -320,20 +322,6 @@ class SubmissionsController < ApplicationController
         :other_drainage,
         :location_image1,
 
-        :pain_scale,
-        :pain_scale_rating_scale,
-        :criteria,
-        :flacc_score_0,
-        :flacc_score_1,
-        :score_2_flacc,
-        :total_score_flacc,
-        :critical_care_pain_observation_tool,
-        :indicator,
-        :score_0_cpot,
-        :score_1_cpot,
-        :score_2_cpot,
-        :total_score_cpot,
-
         best_eye_opening_response_values:[],
         best_verbal_response_values:[],
         best_motor_response_values:[],
@@ -347,12 +335,7 @@ class SubmissionsController < ApplicationController
         drainage:[],
         wound_amount:[],
         color_of_wound:[],
-        periwound_surrounding_skin:[],
-        verbal:[],
-        non_verbal:[],
-        scale_used:[],
-        other_symptoms_present:[],
-        additional_measures:[]
+        periwound_surrounding_skin:[]
       )
     end
 end

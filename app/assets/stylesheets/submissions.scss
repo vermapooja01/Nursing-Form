@@ -8,9 +8,6 @@
 //   background-image: url("http://static.giantbomb.com/uploads/scale_small/0/6087/2437349-pikachu.png");
 // }
 
-.slider.slider-horizontal {
-  width: 100% !important;
-}
 .block-container {
   display: block;
 }
@@ -25,21 +22,6 @@
 }
 #pain-location-image1-viewer {
   position: absolute;
-  width: 400px;
-  height: 356px;
-  z-index: 0;
-}
-
-#pain-location-image2 {
-  width: 400px;
-  height: 356px;
-  background-image: url("/assets/3.PNG");
-  background-size: contain;
-  background-repeat: no-repeat;
-  z-index: 2;
-}
-#pain-location-image2-viewer {
-  position: fixed;
   width: 400px;
   height: 356px;
   z-index: 0;
@@ -87,11 +69,6 @@
   // position: fixed;
   // right: 143px;
   // z-index: 1;
-}
-.pager-buttons-fixed {
-  position: fixed;
-  right: 140px;
-  z-index: 10;
 }
 
 i.fa {
@@ -146,8 +123,4 @@ table.cardiovascular-table {
       }
     }
   }
-}
-
-#painScaleSlider .slider-selection {
-    background: #BABABA;
 }
