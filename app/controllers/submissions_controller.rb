@@ -52,6 +52,7 @@ class SubmissionsController < ApplicationController
   # PATCH/PUT /submissions/1
   # PATCH/PUT /submissions/1.json
   def update
+    byebug
     respond_to do |format|
       if @submission.update(submission_params)
         format.html { redirect_to edit_submission_path(@submission, :tab => params[:selected_tab]), notice: 'Submission was successfully updated.' }
@@ -333,6 +334,22 @@ class SubmissionsController < ApplicationController
         :score_1_cpot,
         :score_2_cpot,
         :total_score_cpot,
+        :flacc_scale_face_0,
+        :flacc_scale_face_1,
+        :flacc_scale_face_2,
+        :flacc_scale_legs_0,
+        :flacc_scale_legs_1,
+        :flacc_scale_legs_2,
+        :flacc_scale_activity_0,
+        :flacc_scale_activity_1,
+        :flacc_scale_activity_2,
+        :flacc_scale_activity_0,
+        :flacc_scale_activity_1,
+        :flacc_scale_activity_2,
+        :flacc_scale_consolability_0,
+        :flacc_scale_consolability_1,
+        :flacc_scale_consolability_2,
+        :flacc_scale_total_score,
 
         best_eye_opening_response_values:[],
         best_verbal_response_values:[],

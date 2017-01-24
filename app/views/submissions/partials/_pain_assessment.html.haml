@@ -37,51 +37,54 @@
           %th Score 0
           %th Score 1
           %th Score 2
-          %th
-      %tbody
+
+      %tbody.flacc-scoring
         %tr
           %th{:scope => "row"} Face
-          %td= f.input :strength_weakness_rue, input_html: { value: '4' }
-          %td= f.input :radial_weak, :label => false
-          %td= f.input :radial_normal, :label => false
+          %td=f.check_box :flacc_scale_face_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_face_0}, 0
+          %td=f.check_box :flacc_scale_face_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_face_1}, 1
+          %td=f.check_box :flacc_scale_face_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_face_2}, 2
         %tr
           %th{:scope => "row"} Legs
-          %td= f.input :femoral_absent, :label => false
-          %td= f.input :femoral_weak, :label => false
-          %td= f.input :femoral_normal, :label => false
+          %td=f.check_box :flacc_scale_legs_0, {:class => "calculable_checkbox"}, 0
+          %td=f.check_box :flacc_scale_legs_1, {:class => "calculable_checkbox"}, 1
+          %td=f.check_box :flacc_scale_legs_2, {:class => "calculable_checkbox"}, 2
 
         %tr
           %th{:scope => "row"} Activity
-          %td= f.input :popliteal_absent, :label => false
-          %td= f.input :popliteal_weak, :label => false
-          %td= f.input :popliteal_normal, :label => false
+          %td=f.check_box :flacc_scale_activity_0, {:class => "calculable_checkbox"}, 0
+          %td=f.check_box :flacc_scale_activity_1, {:class => "calculable_checkbox"}, 1
+          %td=f.check_box :flacc_scale_activity_2, {:class => "calculable_checkbox"}, 2
 
         %tr
           %th{:scope => "row"} Cry
-          %td= f.input :dorsalis_pedis_absent, :label => false
-          %td= f.input :dorsalis_pedis_weak, :label => false
-          %td= f.input :dorsalis_pedis_normal, :label => false
+          %td=f.check_box :flacc_scale_activity_0, {:class => "calculable_checkbox"}, 0
+          %td=f.check_box :flacc_scale_activity_1, {:class => "calculable_checkbox"}, 1
+          %td=f.check_box :flacc_scale_activity_2, {:class => "calculable_checkbox"}, 2
 
         %tr
           %th{:scope => "row"} Consolability
-          %td= f.input :posterior_tibialis_absent, :label => false
-          %td= f.input :posterior_tibialis_weak, :label => false
-          %td= f.input :posterior_tibialis_normal, :label => false
+          %td=f.check_box :flacc_scale_consolability_0, {:class => "calculable_checkbox"}, 0
+          %td=f.check_box :flacc_scale_consolability_1, {:class => "calculable_checkbox"}, 1
+          %td=f.check_box :flacc_scale_consolability_2, {:class => "calculable_checkbox"}, 2
         %tr
           %th
           %td
           %td
-          %td Total
+          -# %td= f.input :flacc_scale_total_score
+          %td
+            = f.hidden_field :flacc_scale_total_score, :value => "", :class => "calculated_total_field"
+            = label_tag 'Total Score'
+            = f.text_field("flacc_total_score", class: "form-control calculated_total_field", disabled: true, value: @submission.flacc_scale_total_score)
 
 
 
-
-%h2 FLACC SCALE (For Non-Verbal Patients)
-.col-md-4
-  = f.input :criteria, :collection => [['face', 'Face'], ['legs', 'Legs'], ['activity', 'Activity'], ['cry', 'Cry'], ['consolability', 'Consolability']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
-
-.col-md-4
-  = f.input :flacc_score_0, :collection => [['no particular expression or smile', 'No Particular Expression or Smile'], ['normal position or relaxed', 'Normal Position or Relaxed'], ['lying quietly, normal position, moves easily', 'Lying Quietly, Normal Position, Moves Easily'], ['no cry(awake or asleep)', 'No cry(awake or asleep)'], ['content, relaxed', 'Content, Relaxed']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
-
-.col-md-4
-  = f.input :flacc_score_1, :collection => [['occasional grimace or frown, withdrawn, uninterested', 'Occasional grimace or frown, withdrawn, uninterested'], ['uneasy, restless, tense', 'Uneasy, Restless, Tense'], ['squirming, shifting back and forth, tense', 'Squirming, Shifting back and forth, Tense'], ['moans or whimpers; occasional complaint', 'Moans or Whimpers; occasional complaint'], ['reassured by occasional touching, hugging or being talked to, distractible', 'Reassured by occasional touching, hugging or being talked to, distractible']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+-# %h2 FLACC SCALE (For Non-Verbal Patients)
+-# .col-md-4
+-#   = f.input :criteria, :collection => [['face', 'Face'], ['legs', 'Legs'], ['activity', 'Activity'], ['cry', 'Cry'], ['consolability', 'Consolability']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+-#
+-# .col-md-4
+-#   = f.input :flacc_score_0, :collection => [['no particular expression or smile', 'No Particular Expression or Smile'], ['normal position or relaxed', 'Normal Position or Relaxed'], ['lying quietly, normal position, moves easily', 'Lying Quietly, Normal Position, Moves Easily'], ['no cry(awake or asleep)', 'No cry(awake or asleep)'], ['content, relaxed', 'Content, Relaxed']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
+-#
+-# .col-md-4
+-#   = f.input :flacc_score_1, :collection => [['occasional grimace or frown, withdrawn, uninterested', 'Occasional grimace or frown, withdrawn, uninterested'], ['uneasy, restless, tense', 'Uneasy, Restless, Tense'], ['squirming, shifting back and forth, tense', 'Squirming, Shifting back and forth, Tense'], ['moans or whimpers; occasional complaint', 'Moans or Whimpers; occasional complaint'], ['reassured by occasional touching, hugging or being talked to, distractible', 'Reassured by occasional touching, hugging or being talked to, distractible']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
