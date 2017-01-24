@@ -17,14 +17,11 @@
 //= require sketchpad/raphael.min
 //= require sketchpad/raphael.sketchpad
 //= require bootstrap-sprockets
+//= require moment.min
 
 // Load Vendor files
-//= require moment.js/moment.min
-//= require moment.js/moment-timezone-with-data-2010-2020.min
 //= require jquery.bootstrap.wizard.min
 //= require daterangepicker
-//= require bootstrap-datetimepicker
-//= require slider/bootstrap-slider.min
 
 
 //= require submissions
