@@ -4,163 +4,150 @@
   #bar.progress
     .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "0", :role => "progressbar", :style => "width: 0%;"}
 
-  .col-md-12.pager-buttons.no-padding
-    %div{:style => "float:right"}
-      = render("autosave")
-      %button.btn.btn-default.button-save{:type => "button"}
-        %i.fa.fa-floppy-o{"aria-hidden" => "true"}
-      %button.btn.btn-default.button-next{:type => "button"}
-        %i.fa.fa-arrow-right.pull-right{"aria-hidden" => "true"}
-        Next
+  .pager-buttons-fixed.no-padding
+    .page-buttons
+      %div{:style => "float:right"}
+        = render("autosave")
+        %button.btn.btn-default.button-save{:type => "button"}
+          %i.fa.fa-floppy-o{"aria-hidden" => "true"}
+        %button.btn.btn-default.button-next{:type => "button"}
+          %i.fa.fa-arrow-right.pull-right{"aria-hidden" => "true"}
+          Next
 
-    %div{:style => "float:left"}
-      %button.btn.btn-default.button-previous{:type => "button"}
-        %i.fa.fa-arrow-left.pull-left{"aria-hidden" => "true"}
-        Previous
+      %div{:style => "float:right"}
+        %button.btn.btn-default.button-previous{:type => "button"}
+          %i.fa.fa-arrow-left.pull-left{"aria-hidden" => "true"}
+          Previous
 
-  .col-sm-3.left-tabs
-    %ul.nav.nav-tabs.tabs-left
-      %li.active
-        %a{"data-toggle" => "tab", :href => "#a"} Basic Information
-      %li
-        %a{"data-toggle" => "tab", :href => "#b"} Neurological Muscular
-      %li
-        %a{"data-toggle" => "tab", :href => "#c"} Psychosocial
-      %li
-        %a{"data-toggle" => "tab", :href => "#d"} Respiratory/O2 Therapy
-      %li
-        %a{"data-toggle" => "tab", :href => "#e"} Cardiovascular
-      %li
-        %a{"data-toggle" => "tab", :href => "#f"} Gastrointestinal
-      %li
-        %a{"data-toggle" => "tab", :href => "#g"} Nutrition
-      %li
-        %a{"data-toggle" => "tab", :href => "#h"} Skin/Mucuous Membranes
-      %li
-        %a{"data-toggle" => "tab", :href => "#i"} IV Therapy
-      %li
-        %a{"data-toggle" => "tab", :href => "#j"} Genitourinary
-      %li
-        %a{"data-toggle" => "tab", :href => "#k"} Skin Assessment
-      %li
-        %a{"data-toggle" => "tab", :href => "#l"} Pain Assessment
-      %li
-        %a{"data-toggle" => "tab", :href => "#m"} ADL Flowsheet
-      %li
-        %a{"data-toggle" => "tab", :href => "#n"} Skin Risk Assessment Screen
-      %li
-        %a{"data-toggle" => "tab", :href => "#o"} VTE Risk Assessment
-      %li
-        %a{"data-toggle" => "tab", :href => "#p"} Last Page
+  .col-md-12{:style => "margin-top:70px;"}
+    .col-sm-3.left-tabs
+      %ul.nav.nav-tabs.tabs-left
+        %li.active
+          %a{"data-toggle" => "tab", :href => "#a"} Basic Information
+        %li
+          %a{"data-toggle" => "tab", :href => "#b"} Neurological Muscular
+        %li
+          %a{"data-toggle" => "tab", :href => "#c"} Psychosocial
+        %li
+          %a{"data-toggle" => "tab", :href => "#d"} Respiratory/O2 Therapy
+        %li
+          %a{"data-toggle" => "tab", :href => "#e"} Cardiovascular
+        %li
+          %a{"data-toggle" => "tab", :href => "#f"} Gastrointestinal
+        %li
+          %a{"data-toggle" => "tab", :href => "#g"} Nutrition
+        %li
+          %a{"data-toggle" => "tab", :href => "#h"} Skin/Mucuous Membranes
+        %li
+          %a{"data-toggle" => "tab", :href => "#i"} IV Therapy
+        %li
+          %a{"data-toggle" => "tab", :href => "#j"} Genitourinary
+        %li
+          %a{"data-toggle" => "tab", :href => "#k"} Skin Assessment
+        %li
+          %a{"data-toggle" => "tab", :href => "#l"} Pain Assessment
+        %li
+          %a{"data-toggle" => "tab", :href => "#m"} ADL Flowsheet
+        %li
+          %a{"data-toggle" => "tab", :href => "#n"} Skin Risk Assessment Screen
+        %li
+          %a{"data-toggle" => "tab", :href => "#o"} VTE Risk Assessment
+        %li
+          %a{"data-toggle" => "tab", :href => "#p"} Last Page
 
-  .col-sm-9
-    = simple_form_for @submission, html: {class: ''} do |f|
-      = hidden_field_tag(:selected_tab, params[:tab])
-      .tab-content
+    .col-sm-9
+      = simple_form_for @submission, html: {class: ''} do |f|
+        = hidden_field_tag(:selected_tab, params[:tab])
+        .tab-content
 
-        #a.tab-pane.active
-          %h3 Basic Information
-          .col-md-4
-            = f.input :patient_initials, :class => "form-control"
-          .col-md-2
-            = f.input :age
-          .col-md-12.gender-selector
-            = f.input :gender, :collection => [['Male', 'Male'], ['Female', 'Female']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.gender, :class => "form-control"
-          .col-md-12
-            = f.label :admitting_primary_medical_diagnosis
-            = f.text_area :admitting_primary_medical_diagnosis, :placeholder => "Enter text here...", :class => "tinymce form-control", :rows => 4, :cols => 120
-          .col-md-6.date-selector
-            = f.input :week, :class => "daterange-picker", :as => :string
+          #a.tab-pane.active
+            %h3 Basic Information
+            .col-md-4
+              = f.input :patient_initials, :class => "form-control"
+            .col-md-2
+              = f.input :age
+            .col-md-12.gender-selector
+              = f.input :gender, :collection => [['Male', 'Male'], ['Female', 'Female']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.gender, :class => "form-control"
+            .col-md-12
+              = f.label :admitting_primary_medical_diagnosis
+              = f.text_area :admitting_primary_medical_diagnosis, :placeholder => "Enter text here...", :class => "tinymce form-control", :rows => 4, :cols => 120
+            .col-md-6.date-selector
+              = f.input :week, :class => "daterange-picker", :as => :string
 
-        #b.tab-pane
-          %h3 Neurological/Muscular
-          .form-group
-            = render :partial => "submissions/partials/neurological_muscular", :locals => {:f => f}
+          #b.tab-pane
+            %h3 Neurological/Muscular
+            .form-group
+              = render :partial => "submissions/partials/neurological_muscular", :locals => {:f => f}
 
-        #c.tab-pane
-          %h3 Psychosocial
-          .form-group
-            = render :partial => "submissions/partials/psychosocial", :locals => {:f => f}
-        -#
-        #d.tab-pane
-          %h3 Respiratory/O2 Therapy
-          .form-group
-            = render :partial => "submissions/partials/respiratory_o2therapy", :locals => {:f => f}
+          #c.tab-pane
+            %h3 Psychosocial
+            .form-group
+              = render :partial => "submissions/partials/psychosocial", :locals => {:f => f}
+          -#
+          #d.tab-pane
+            %h3 Respiratory/O2 Therapy
+            .form-group
+              = render :partial => "submissions/partials/respiratory_o2therapy", :locals => {:f => f}
 
-        #e.tab-pane
-          %h3 Cardiovascular
-          .form-group
-            = render :partial => "submissions/partials/cardiovascular", :locals => {:f => f}
+          #e.tab-pane
+            %h3 Cardiovascular
+            .form-group
+              = render :partial => "submissions/partials/cardiovascular", :locals => {:f => f}
 
-        #f.tab-pane
-          %h3 Gastrointestinal
-          .form-group
-            = render :partial => "submissions/partials/gastrointestinal", :locals => {:f => f}
+          #f.tab-pane
+            %h3 Gastrointestinal
+            .form-group
+              = render :partial => "submissions/partials/gastrointestinal", :locals => {:f => f}
 
-        #g.tab-pane
-          %h3 Nutrition
-          .form-group
-            = render :partial => "submissions/partials/nutrition", :locals => {:f => f}
+          #g.tab-pane
+            %h3 Nutrition
+            .form-group
+              = render :partial => "submissions/partials/nutrition", :locals => {:f => f}
 
-        #h.tab-pane
-          %h3 Skin/Mucuous Membranes
-          .form-group
-            = render :partial => "submissions/partials/skin_mucuous_membrane", :locals => {:f => f}
+          #h.tab-pane
+            %h3 Skin/Mucuous Membranes
+            .form-group
+              = render :partial => "submissions/partials/skin_mucuous_membrane", :locals => {:f => f}
 
-        #i.tab-pane
-          %h3 IV Therapy
-          .form-group
-            = render :partial => "submissions/partials/iv_therapy", :locals => {:f => f}
+          #i.tab-pane
+            %h3 IV Therapy
+            .form-group
+              = render :partial => "submissions/partials/iv_therapy", :locals => {:f => f}
 
-        #j.tab-pane
-          %h3 Genitourinary
-          .form-group
-            = render :partial => "submissions/partials/genitourinary", :locals => {:f => f}
+          #j.tab-pane
+            %h3 Genitourinary
+            .form-group
+              = render :partial => "submissions/partials/genitourinary", :locals => {:f => f}
 
-        #k.tab-pane
-          %h3 Skin Assessment
-          .form-group
-            = render :partial => "submissions/partials/skin_assessment", :locals => {:f => f}
+          #k.tab-pane
+            %h3 Skin Assessment
+            .form-group
+              = render :partial => "submissions/partials/skin_assessment", :locals => {:f => f}
 
-        #l.tab-pane
-          %h3 Pain Assessment
-          .form-group
-            = render :partial => "submissions/partials/pain_assessment", :locals => {:f => f}
+          #l.tab-pane
+            %h3 Pain Assessment
+            .form-group
+              = render :partial => "submissions/partials/pain_assessment", :locals => {:f => f}
 
-        #m.tab-pane
-          %h3 ADL Flowsheet
-          .form-group
-            = render :partial => "submissions/partials/adl_flowsheet", :locals => {:f => f}
+          #m.tab-pane
+            %h3 ADL Flowsheet
+            .form-group
+              = render :partial => "submissions/partials/adl_flowsheet", :locals => {:f => f}
 
-        #n.tab-pane
-          %h3 Skin Risk Assessment Screen
-          .form-group
-            = render :partial => "submissions/partials/skin_risk_assessment_screen", :locals => {:f => f}
+          #n.tab-pane
+            %h3 Skin Risk Assessment Screen
+            .form-group
+              = render :partial => "submissions/partials/skin_risk_assessment_screen", :locals => {:f => f}
 
-        #o.tab-pane
-          %h3 VTE Risk Assessment
-          .form-group
-            = render :partial => "submissions/partials/vte_risk_assessment", :locals => {:f => f}
+          #o.tab-pane
+            %h3 VTE Risk Assessment
+            .form-group
+              = render :partial => "submissions/partials/vte_risk_assessment", :locals => {:f => f}
 
-        #p.tab-pane
-          %h3 Last Page
-          .form-group
-            = render :partial => "submissions/partials/page_9", :locals => {:f => f}
+          #p.tab-pane
+            %h3 Last Page
+            .form-group
+              = render :partial => "submissions/partials/page_9", :locals => {:f => f}
 
-          - if !@submission.id.nil?
-            = link_to 'Complete the form', submission_complete_form_path(@submission), :class => "btn btn-primary"
-            
-.col-md-12.pager-buttons.no-padding
-  %div{:style => "float:right"}
-    = render("autosave")
-
-    %button.btn.btn-default.button-save{:type => "button"}
-      %i.fa.fa-floppy-o{"aria-hidden" => "true"}
-    %button.btn.btn-default.button-next{:type => "button"}
-      %i.fa.fa-arrow-right.pull-right{"aria-hidden" => "true"}
-      Next
-
-  %div{:style => "float:left"}
-    %button.btn.btn-default.button-previous{:type => "button"}
-      %i.fa.fa-arrow-left.pull-left{"aria-hidden" => "true"}
-      Previous
+            - if !@submission.id.nil?
+              = link_to 'Complete the form', submission_complete_form_path(@submission), :class => "btn btn-primary"
