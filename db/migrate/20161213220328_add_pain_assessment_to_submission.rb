@@ -49,7 +49,7 @@ class AddPainAssessmentToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :cpot_score_vocalization_2, :integer
     add_column :submissions, :cpot_score_muscle_tension_2, :integer
     # Total Score
-    add_column :submissions, :cpot_total_score, :float
+    add_column :submissions, :cpot_total_score, :integer, :default => 0
     # -----------------------------------------------------------------------------
   end
 end
