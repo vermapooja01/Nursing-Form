@@ -330,6 +330,7 @@ class SubmissionsController < ApplicationController
         :total_score_flacc,
         :critical_care_pain_observation_tool,
         :indicator,
+        
         :score_0_cpot,
         :score_1_cpot,
         :score_2_cpot,

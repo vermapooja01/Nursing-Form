@@ -14,14 +14,19 @@ $(document).on('turbolinks:load', function () {
   })();
 
   if ($('#submission_location_image1').val() != "") {
-    var strokes = JSON.parse($("#submission_location_image1").val());
+    try {
+      var strokes = JSON.parse($("#submission_location_image1").val());
 
-    var sketchpad_view = Raphael.sketchpad("pain-location-image1-viewer", {
-      width: 400,
-      height: 356,
-      strokes: strokes,
-      editing: false
-    });
+      var sketchpad_view = Raphael.sketchpad("pain-location-image1-viewer", {
+        width: 400,
+        height: 356,
+        strokes: strokes,
+        editing: false
+      });
+    }
+    catch(err) {
+        console.log("There was an error with the JSON, please draw something" + " " + err);
+    }
   }
 
 

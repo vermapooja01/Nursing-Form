@@ -46,32 +46,31 @@
           %td=f.check_box :flacc_scale_face_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_face_2}, 2
         %tr
           %th{:scope => "row"} Legs
-          %td=f.check_box :flacc_scale_legs_0, {:class => "calculable_checkbox"}, 0
-          %td=f.check_box :flacc_scale_legs_1, {:class => "calculable_checkbox"}, 1
-          %td=f.check_box :flacc_scale_legs_2, {:class => "calculable_checkbox"}, 2
+          %td=f.check_box :flacc_scale_legs_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_legs_0}, 0
+          %td=f.check_box :flacc_scale_legs_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_legs_1}, 1
+          %td=f.check_box :flacc_scale_legs_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_legs_2}, 2
 
         %tr
           %th{:scope => "row"} Activity
-          %td=f.check_box :flacc_scale_activity_0, {:class => "calculable_checkbox"}, 0
-          %td=f.check_box :flacc_scale_activity_1, {:class => "calculable_checkbox"}, 1
-          %td=f.check_box :flacc_scale_activity_2, {:class => "calculable_checkbox"}, 2
+          %td=f.check_box :flacc_scale_activity_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_activity_0}, 0
+          %td=f.check_box :flacc_scale_activity_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_activity_1}, 1
+          %td=f.check_box :flacc_scale_activity_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_activity_2}, 2
 
         %tr
           %th{:scope => "row"} Cry
-          %td=f.check_box :flacc_scale_activity_0, {:class => "calculable_checkbox"}, 0
-          %td=f.check_box :flacc_scale_activity_1, {:class => "calculable_checkbox"}, 1
-          %td=f.check_box :flacc_scale_activity_2, {:class => "calculable_checkbox"}, 2
+          %td=f.check_box :flacc_scale_activity_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_activity_0}, 0
+          %td=f.check_box :flacc_scale_activity_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_activity_1}, 1
+          %td=f.check_box :flacc_scale_activity_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_activity_2}, 2
 
         %tr
           %th{:scope => "row"} Consolability
-          %td=f.check_box :flacc_scale_consolability_0, {:class => "calculable_checkbox"}, 0
-          %td=f.check_box :flacc_scale_consolability_1, {:class => "calculable_checkbox"}, 1
-          %td=f.check_box :flacc_scale_consolability_2, {:class => "calculable_checkbox"}, 2
+          %td=f.check_box :flacc_scale_consolability_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_consolability_0}, 0
+          %td=f.check_box :flacc_scale_consolability_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_consolability_1}, 1
+          %td=f.check_box :flacc_scale_consolability_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_consolability_2}, 2
         %tr
           %th
           %td
           %td
-          -# %td= f.input :flacc_scale_total_score
           %td
             = f.hidden_field :flacc_scale_total_score, :value => "", :class => "calculated_total_field"
             = label_tag 'Total Score'

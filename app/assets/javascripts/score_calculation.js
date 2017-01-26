@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function () {
   // Set the initial value
-  
+
   // Set event listeners
   $('input.calculable_checkbox').click(function(e) {
     calculate_sum(e);
@@ -18,7 +18,9 @@ $(document).on('turbolinks:load', function () {
       total_score = total_score - parseInt(object.target.value);
     }
     // Render the new value
+    $('input#submission_flacc_scale_total_score').val(total_score.toString());
     $('input#submission_flacc_total_score').val(total_score.toString());
+
   }
 
 
