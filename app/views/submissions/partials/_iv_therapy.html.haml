@@ -18,11 +18,11 @@
   = f.input :dressing_change_date_and_time, :class => "form-control"
 
 .col-md-12
-  = f.input :iv_site, :collection => [['r', 'R'],['l', 'L'], ['hand', 'Hand'], ['forearm', 'Forearm'], ['antecubital', 'Antecubital'], ['subclavian', 'Subclavian'], ['jugular', 'Jugular'], ['other', 'Other']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.iv_site, :class => "form-control"
+  = f.input :iv_site, :collection => [['r', 'R'],['l', 'L'], ['hand', 'Hand'], ['forearm', 'Forearm'], ['antecubital', 'Antecubital'], ['subclavian', 'Subclavian'], ['jugular', 'Jugular'], ['other', 'Other']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => @submission.iv_site, :class => "form-control"
   = f.input :other_iv_site, :class => "form-control"
 
 .col-md-12
-  = f.input :condition, :collection => [['patent', 'Patent'],['no pain redness swelling', 'No Pain Redness Swelling'], ['tenderness', 'Tenderness'], ['redness', 'Redness'], ['swelling', 'Swelling'], ['palpable cord', 'Palpable Cord'], ['purulent drainage', 'Purulent Drainage'], ['warmth', 'Warmth']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.condition, :class => "form-control"
+  = f.input :condition, :collection => [['patent', 'Patent'],['no pain redness swelling', 'No Pain Redness Swelling'], ['tenderness', 'Tenderness'], ['redness', 'Redness'], ['swelling', 'Swelling'], ['palpable cord', 'Palpable Cord'], ['purulent drainage', 'Purulent Drainage'], ['warmth', 'Warmth']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => @submission.condition, :class => "form-control"
 
 .col-md-12
   = f.input :start_change, :collection => [['tubing', 'Tubing'],['dressing', 'Dressing'], ['site', 'Site']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.start_change, :class => "form-control"

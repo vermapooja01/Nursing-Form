@@ -5,7 +5,7 @@
   = f.input :insertion_date, :class => "form-control"
 
 .col-md-12
-  = f.input :color, :collection => [['straw', 'Straw'], ['yellow', 'Yellow'], ['amber', 'Amber'], ['clear', 'Clear'], ['cloudy', 'Cloudy'], ['mucus', 'Mucus'], ['clots', 'Clots'], ['hematuria', 'Hematuria'], ['sediment', 'Sediment'], ['anuric', 'Anuric']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.color, :class => "form-control"
+  = f.input :color, :collection => [['straw', 'Straw'], ['yellow', 'Yellow'], ['amber', 'Amber'], ['clear', 'Clear'], ['cloudy', 'Cloudy'], ['mucus', 'Mucus'], ['clots', 'Clots'], ['hematuria', 'Hematuria'], ['sediment', 'Sediment'], ['anuric', 'Anuric']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => @submission.color, :class => "form-control"
 
 .col-md-12
   = f.input :dialysis, :collection => [['na', 'NA'], ['hemo', 'Hemo'], ['capd', 'CAPD'], ['catheter', 'Catheter'], ['fistula', 'Fistula'], ['shunt', 'Shunt'], ['bruit', 'Bruit'], ['thrill', 'Thrill']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.dialysis, :class => "form-control"

@@ -8,8 +8,8 @@ class AddIvTherapyToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :other_iv_site, :string
     add_column :submissions, :condition, :string
     add_column :submissions, :start_change, :string
-    add_column :submissions, :gauge, :string
-    add_column :submissions, :number_of_attempts, :string
+    add_column :submissions, :gauge, :integer
+    add_column :submissions, :number_of_attempts, :integer
     add_column :submissions, :location, :string
   end
 end

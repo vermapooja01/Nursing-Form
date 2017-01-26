@@ -18,7 +18,7 @@
   = f.input :substance_abuse_history_type, :class => "form-control"
 
 .col-md-6
-  = f.input :social_support, :collection => [['Family', 'Family'], ['Spouse', 'Spouse'], ['Significant Other', 'Significant Other']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.social_support
+  = f.input :social_support, :collection => [['Family', 'Family'], ['Spouse', 'Spouse'], ['Significant Other', 'Significant Other']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.social_support
   = f.input :other_social_support, :class => "form-control"
 
 .col-md-12
