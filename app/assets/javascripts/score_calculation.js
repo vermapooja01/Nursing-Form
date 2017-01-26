@@ -24,6 +24,8 @@ $(document).on('turbolinks:load', function () {
   }
 
 
+  
+
   // var sumE=0;
   // var sumV=0;
   // var sumM=0;
