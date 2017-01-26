@@ -52,7 +52,6 @@ class SubmissionsController < ApplicationController
   # PATCH/PUT /submissions/1
   # PATCH/PUT /submissions/1.json
   def update
-    byebug
     respond_to do |format|
       if @submission.update(submission_params)
         format.html { redirect_to edit_submission_path(@submission, :tab => params[:selected_tab]), notice: 'Submission was successfully updated.' }
@@ -330,7 +329,7 @@ class SubmissionsController < ApplicationController
         :total_score_flacc,
         :critical_care_pain_observation_tool,
         :indicator,
-        
+
         :score_0_cpot,
         :score_1_cpot,
         :score_2_cpot,
