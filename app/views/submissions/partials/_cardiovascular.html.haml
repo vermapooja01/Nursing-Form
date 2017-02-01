@@ -104,6 +104,7 @@
 .col-md-12
   %h4 IABP
   = f.input :insertion_site, :class => "form-control"
+  = f.input :IABP_number_of_days, :class => "form-control"
 
 .col-md-12
   = f.input :trigger, :collection => [['ekg', 'EKG'], ['a line', 'A-Line'], ['afib', 'Afib'], ['apace', 'Apace'], ['vpace', 'Vpace']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.trigger, :class => "form-control"

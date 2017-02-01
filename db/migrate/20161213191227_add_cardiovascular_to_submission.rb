@@ -41,7 +41,7 @@ class AddCardiovascularToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :posterior_tibialis_full, :string
     add_column :submissions, :posterior_tibialis_bounding, :string
     add_column :submissions, :posterior_tibialis_dp_doppler, :string
-    
+
     add_column :submissions, :heart_sounds, :string
     add_column :submissions, :edema, :string
     add_column :submissions, :edema_where, :string
@@ -62,6 +62,7 @@ class AddCardiovascularToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :waveform_for_pa_catheter, :string
     add_column :submissions, :waveform_pa_catheter_comments, :text
     add_column :submissions, :insertion_site, :string
+    add_column :submissions, :IABP_number_of_days, :integer
     add_column :submissions, :trigger, :string
     add_column :submissions, :freq, :string
   end

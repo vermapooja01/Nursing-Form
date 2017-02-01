@@ -1,4 +1,4 @@
-%h2 PAIN ASSESSMENT
+%h4{:align => "center"} PAIN ASSESSMENT
 
 .col-md-4
   = f.input :verbal, :collection => [['dull', 'Dull'], ['sharp', 'Sharp'], ['burning', 'Burning'], ['ache', 'Ache'], ['throbbing', 'Throbbing'], ['none', 'None']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.verbal
@@ -28,7 +28,7 @@
 
 
 .col-md-12
-  %h4 FLACC SCALE (For Non-Verbal Patients)
+  %h4{:align => "center"} FLACC SCALE (For Non-Verbal Patients)
   .table-responsive
     %table.table.table-striped.cardiovascular-table
       %thead
@@ -109,7 +109,7 @@
 
 
 .col-md-12
-  %h4 Critical Care Pain Observation Tool (CPOT)(Document "Ventilator Compliance" or "Vocalization", but not both)
+  %h4{:align => "center"} Critical Care Pain Observation Tool (CPOT)(Document "Ventilator Compliance" or "Vocalization", but not both)
   .table-responsive
     %table.table.table-striped.cardiovascular-table
       %thead
