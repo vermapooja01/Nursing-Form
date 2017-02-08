@@ -1,12 +1,11 @@
-.col-md-4
+.col-md-4.well
   = f.input :marital_status, :collection => [['single', 'Single'], ['partnered', 'Partnered'], ['married', 'Married'], ['separated', 'Separated'], ['divorced', 'Divorced'], ['widowed', 'Widowed']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
 
-.col-md-4
+.col-md-4.well
   = f.input :affect, :collection => [['Pleasant', 'Pleasant'], ['Calm', 'Calm'], ['Talkative', 'Talkative'], ['Angry', 'Angry'], ['Anxious', 'Anxious'], ['Withdrawn', 'Withdrawn'], ['Crying', 'Crying'], ['Depressed', 'Depressed'], ['Agitated', 'Agitated'], ['ETT/Trach', 'ETT/Trach']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => @submission.affect, :class => "form-control"
 
-.col-md-4
+.col-md-4.well
   = f.input :spiritual_needs, :collection => [['roman catholic', 'Roman Catholic'], ['protestant', 'Protestant'], ['jewish', 'Jewish'], ['islam', 'Islam'], ['buddhist', 'Buddhist'], ['hindu', 'Hindu'], ['other', 'Other']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.spiritual_needs
-  -# = f.text_box :admitting_primary_medical_diagnosis, :placeholder => "Enter text here...", :class => "tinymce form-control", :rows => 4, :cols => 120
   = f.input :other_spiritual_needs, :class => "form-control col-md-6"
 
 .col-md-6.well
@@ -17,27 +16,27 @@
   = f.input :substance_abuse_history, :checked => @submission.substance_abuse_history
   = f.input :substance_abuse_history_type, :class => "form-control"
 
-.col-md-6
+.col-md-6.well
   = f.input :social_support, :collection => [['Family', 'Family'], ['Spouse', 'Spouse'], ['Significant Other', 'Significant Other']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.social_support
   = f.input :other_social_support, :class => "form-control"
 
-.col-md-12
+.col-md-12.well
   = f.input :advanced_directive, :collection => [['Yes', 'Yes'], ['No', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.advanced_directive, :class => "form-control"
 
-.col-md-12
+.col-md-12.well
   = f.input :resuscitation_status, :collection => [['Full Code', 'Full Code'], ['DNR', 'DNR']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => @submission.resuscitation_status, :class => "form-control"
 
 .col-md-6.well
   = f.input :other_resuscitation_status, :class => "form-control"
   = f.input :resuscitation_comments, :class => "form-control"
 
-.col-md-6
+.col-md-6.well
   = f.input :movement, :class => "form-control"
 
 .col-md-12.well
   = f.input :gait, :class => "form-control"
 
-.col-md-6
+.col-md-6.well
   = f.input :grip, :collection => [['strong', 'Strong'], ['equal', 'Equal'], ['weak', 'Weak']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.grip, :class => "form-control"
 
 .col-md-6.well
