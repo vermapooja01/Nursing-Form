@@ -1,23 +1,25 @@
-.col-md-12
+.col-md-12.well
   = f.input :diet, :class => "form-control"
   = f.input :diet_type, :collection => [['pureed', 'Pureed'], ['mechanical soft', 'Mechanical Soft'], ['thickened liquids', 'Thickned Liquids'], ['low residue', 'Low Residue']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.diet_type, :class => "form-control"
 
-.col-md-12
-  %h3 Percentage of Diet Taken
+.col-md-12.well
+  %h4 Percentage of Diet Taken
   = f.input :breakfast, :class => "form-control"
   = f.input :lunch, :class => "form-control"
   = f.input :dinner, :class => "form-control"
 
-.col-md-12
+.col-md-12.well
   = f.input :taken_method, :collection => [['self', 'Self'], ['assist', 'Assist'], ['feed', 'Feed'], ['npo', 'NPO']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.taken_method, :class => "form-control"
 
-.col-md-12
-  %h3 TF
+.col-md-12.well
+  %h4 TF
   = f.input :product, :class => "form-control"
   = f.input :strength_of_tf, :class => "form-control"
   = f.input :rate_of_tf, :class => "form-control"
   = f.input :tf_type, :collection => [['intermittent', 'Intermittent'], ['continuous', 'Continuous']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.tf_type, :class => "form-control"
   = f.input :residual, :class => "form-control"
+
+.col-md-12.well
   = f.input :placement, :collection => [['stomach', 'Stomach'], ['duodenum', 'Duodenum'], ['other', 'Other']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.placement, :class => "form-control"
   = f.input :other_placement, :class => "form-control"
   = f.input :placement_comments, :class => "form-control"

@@ -1,10 +1,11 @@
-.col-md-12
+.col-md-12.well
   = f.input :iv_therapy_not_applicable, :collection => [['na', 'NA']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.iv_therapy_not_applicable, :class => "form-control"
 
 .form-group
   .row
-    .col-md-8
-      %h4 Current IV Insertion Date and Time
+    .col-md-8.well
+      %h4{:align => "center"}
+        %b Current IV Insertion Date and Time
       #iv-insertion-datetime-picker
       - if @submission.current_iv_insertion_date_and_time.nil?
         = f.hidden_field :current_iv_insertion_date_and_time, :value => DateTime.now
@@ -13,18 +14,18 @@
 
 
 
-.col-md-12
+.col-md-12.well
   = f.input :therapy_type, :collection => [['peripheral', 'Peripheral'],['picc', 'PICC'], ['port a cath', 'Port a Cath'], ['saline lock', 'Saline Lock'], ['heparin lock', 'Heparin Lock'], ['central line', 'Central Line']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.therapy_type, :class => "form-control"
   = f.input :dressing_change_date_and_time, :class => "form-control"
 
-.col-md-12
+.col-md-12.well
   = f.input :iv_site, :collection => [['r', 'R'],['l', 'L'], ['hand', 'Hand'], ['forearm', 'Forearm'], ['antecubital', 'Antecubital'], ['subclavian', 'Subclavian'], ['jugular', 'Jugular'], ['other', 'Other']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => @submission.iv_site, :class => "form-control"
   = f.input :other_iv_site, :class => "form-control"
 
-.col-md-12
+.col-md-12.well
   = f.input :condition, :collection => [['patent', 'Patent'],['no pain redness swelling', 'No Pain Redness Swelling'], ['tenderness', 'Tenderness'], ['redness', 'Redness'], ['swelling', 'Swelling'], ['palpable cord', 'Palpable Cord'], ['purulent drainage', 'Purulent Drainage'], ['warmth', 'Warmth']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => @submission.condition, :class => "form-control"
 
-.col-md-12
+.col-md-12.well
   = f.input :start_change, :collection => [['tubing', 'Tubing'],['dressing', 'Dressing'], ['site', 'Site']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.start_change, :class => "form-control"
   = f.input :gauge, :class => "form-control"
   = f.input :number_of_attempts, :class => "form-control"

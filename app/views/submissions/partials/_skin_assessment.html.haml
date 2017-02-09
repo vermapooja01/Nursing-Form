@@ -1,5 +1,7 @@
-%h4 Wound Assessment
-%p Click on appropriate parameters
+%h4{:align => "center"}
+  %b Wound Assessment
+  %p
+    %b (Click on appropriate parameters)
 .table-responsive
   %table.table.table-striped
     %thead
@@ -62,7 +64,7 @@
 %h3 Location
 %p (Specify by Circling)
 
-.col-md-6
+.col-md-6.well.well-lg
   #pain-location-image1-viewer
   #editor#pain-location-image1
   = hidden_field :submission, :location_image1
