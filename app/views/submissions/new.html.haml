@@ -143,10 +143,6 @@
           .form-group
             = render :partial => "submissions/partials/vte_risk_assessment", :locals => {:f => f}
 
-        #p.tab-pane
-          %h3 Last Page
-          .form-group
-            = render :partial => "submissions/partials/page_9", :locals => {:f => f}
 
           - if !@submission.id.nil?
             = link_to 'Complete the form', submission_complete_form_path(@submission), :class => "btn btn-primary"

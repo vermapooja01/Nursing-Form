@@ -30,7 +30,7 @@
 
 %h3 Glasgow Comma Score
 %hr
-.col-md-4
+.col-md-4.well
   %h4 Best Eye Opening Response
   -# Best Eye Opening response addition system
   .form-group
@@ -41,7 +41,7 @@
   = f.input :best_eye_opening_response, :class => "form-control", :disabled => true, :label => "Best Eye Opening ResponseScore"
   -# ========================
 
-.col-md-4
+.col-md-4.well
   %h4 Best Verbal Response
   -# Best Eye Opening response addition system
   .form-group
@@ -52,7 +52,7 @@
   = f.input :best_verbal_response, :class => "form-control", :disabled => true, :label => "Best Verbal Response Total Score"
 -# ===================================
 
-.col-md-4
+.col-md-4.well
   %h4 Best Motor Response
   -# Best Eye Opening response addition system
   .form-group
@@ -64,12 +64,12 @@
 -# =====================
 
 .col-md-12.has-success
-  .col-md-3.col-md-offset-9
+  .col-md-3.col-md-offset-9.well
     = f.input :patient_total_score, :class => "form-control", :label => "Patient's Total Score"
     = f.hidden_field :patient_total_score, :value => ""
 
 -#grouping elements
-%h4 Comma Score
+
 %hr
 .col-md-4.well
   = f.input :glasgow_coma_score_quality, :collection => [['Alert', 'Alert'], ['Lethargic', 'Lethargic'], ['Confused', 'Confused'], ['Follows Commands', 'Follows Commands'], ['Comatose', 'Comatose'], ['Sedated', 'Sedated'], ['Unable to Assess', 'Unable to Asses']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.glasgow_coma_score_quality
@@ -89,7 +89,7 @@
 .col-md-4.well
   = f.input :tongue, :collection => [['Midline', 'Midline'], ['R', 'R'], ['L', 'L']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.tongue, :class => "form-control"
 
-.col-md-12
+.col-md-12.well
   .table-responsive
     %table.table.table-striped
       %thead
@@ -137,6 +137,6 @@
           %td= f.input :strength_other_rle, :label => false
           %td= f.input :strength_other_lle, :label => false
 
-.col-md-12
+.col-md-12.well
   = f.label :strength_comments, :label => "Comments"
   = f.text_area :strength_comments, :class => "form-control"

@@ -1,4 +1,4 @@
-.col-md-4
+.col-md-4.well
   %h4{:align => "center"}
     %b Sensory Perception
   = f.label :completely_limited, "Completely Limited (1)"
@@ -10,7 +10,7 @@
   = f.label :no_impairment, "No Impairment (4)"
   = f.input :patients_no_impairment_score, :class => "form-control"
 
-.col-md-4
+.col-md-4.well
   %h4{:align => "center"}
     %b Moisture
   = f.label :constantly_moist, "Constantly Moist (1)"
@@ -22,7 +22,7 @@
   = f.label :rarely_moist, "Rarely Moist (4)"
   = f.input :patients_rarely_moist_score, :class => "form-control"
 
-.col-md-4
+.col-md-4.well
   %h4{:align => "center"}
     %b Activity
   = f.label :bedfast, "Bedfast (1)"
@@ -34,7 +34,7 @@
   = f.label :walks_frequently, "Walks Frequently (4)"
   = f.input :patients_walks_frequently_score, :class => "form-control"
 
-.col-md-4
+.col-md-4.well
   %h4{:align => "center"}
     %b Mobility
   = f.label :completely_immobile, "Completely Immobile (1)"
@@ -46,7 +46,7 @@
   = f.label :no_limitations, "No Limitations (4)"
   = f.input :patients_no_limitations_score, :class => "form-control"
 
-.col-md-4
+.col-md-4.well
   %h4{:align => "center"}
     %b Nutrition Score
   = f.label :very_poor, "Very Poor (1)"
@@ -58,7 +58,7 @@
   = f.label :excellent, "Excellant (4)"
   = f.input :patients_excellant_score, :class => "form-control"
 
-.col-md-4
+.col-md-4.well
   %h4{:align => "center"}
     %b Friction and Shear
   = f.label :problem, "Problem (1)"
@@ -71,19 +71,19 @@
   = f.hidden_field :total_score_skin_assessment_screen, :value => ""
   = f.input :total_score_skin_assessment_screen, :class => "form-control", :disabled => true, :label => "Total Score"
 
-.col-md-12
+.col-md-12.well
   %h4 18 or below: Intervention Required
   = f.input :choose_for_information, :collection => [['skin intact', 'Skin Intact'], ['pressure ulcer prevention protocol in place', 'Pressure Ulcer Prevention Protocol in Place'], ['see pressure ulcer documentation form', 'See Pressure Ulcer Documentation Form']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
 
-  %h3 Fall Scale Risk
-.col-md-4
+%h3 Fall Scale Risk
+.col-md-12.well
   %h4{:align => "center"} History of Falling
   = f.label :no_history_of_falling, "No (0)"
   = f.input :patients_no_history_of_falling_score, :class => "form-control"
   = f.label :immediate_or_within_three_months, "Immediate or within 3 months (25)"
   = f.input :patients_immediate_or_within_three_months_score, :class => "form-control"
 
-.col-md-4
+.col-md-12.well
   %h4{:align => "center"} Presence of Secondary Diagnosis: Musculoskeletal Deformities or Myopathy
   Bowel/Bladder Incontinence/Frequent Toileting
   TIA     Stroke     Diabetes     Parkinson’s   CHF     Epilepsy     Constipation     Dementia/Alzheimer’s
@@ -93,7 +93,7 @@
   = f.label :yes_presence_of_secondary_diagnosis, "Yes (15)"
   = f.input :patients_yes_presence_of_secondary_diagnosis_score, :class => "form-control"
 
-.col-md-4
+.col-md-12.well
   %h4{:align => "center"} Ambulatory Aid
   = f.label :none_bedrest_nurse_assist, "None, Bedrest, Nurse, Assist (0)"
   = f.input :patients_none_bedrest_nurse_assist_score, :class => "form-control"
@@ -102,14 +102,14 @@
   = f.label :furniture, "Furniture (30)"
   = f.input :patients_furniture_score, :class => "form-control"
 
-.col-md-4
+.col-md-12.well
   %h4{:align => "center"} IV/Heparin Lock
   = f.label :no_iv_heparin_lock, "No (0)"
   = f.input :patients_no_iv_heparin_lock_score, :class => "form-control"
   = f.label :yes_iv_heparin_lock, "Yes (20)"
   = f.input :patients_yes_iv_heparin_lock_score, :class => "form-control"
 
-.col-md-4
+.col-md-12.well
   %h4{:align => "center"} Gait/ Transferring
   = f.label :normal_bedrest_wheelchair, "Normal, Bedrest, Wheelchair (0)"
   = f.input :patients_normal_bedrest_wheelchair_score, :class => "form-control"
@@ -118,7 +118,7 @@
   = f.label :impaired, "Impaired (20)"
   = f.input :patients_impaired_score, :class => "form-control"
 
-.col-md-4
+.col-md-12.well
   %h4{:align => "center"} Mental Status
   = f.label :oriented_to_own_ability, "Oriented to own Ability (0)"
   = f.input :patients_oriented_to_own_ability_score, :class => "form-control"
@@ -127,11 +127,11 @@
   = f.hidden_field :total_score_fall_scale_risk, :value => ""
   = f.input :total_score_fall_scale_risk, :class => "form-control", :disabled => true, :label => "Total Score"
 
-.col-md-12
+.col-md-12.well
   %h4 >25 Initiate Fall Risk Measures
   = f.input :select_one, :collection => [['patient refuses to wear red slippers in bed', 'Patient Refuses to Wear Red Slippers in Bed'], ['unable to wear slippers due to', 'Unable to Wear Slippers due to'], ['sign on door', 'Sign on Door']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
 
-.col-md-12
+.col-md-12.well
   = f.input :medications, :collection => [['anti seizure meds', 'Anti-Seizure meds'], ['laxatives', 'Laxatives'], ['sedatives hypnotics', 'Sedatives/Hypnotics'], ['benzodiazepines', 'Benzodiazepines'], ['narcotic analgesics', 'narcotic Analgesics'], ['blood thinners', 'Blood Thinners'], ['diuretics', 'Diuretics'], ['psychotropics', 'Psychotropics']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control"
 
 -# = f.input :skin_risk_assessment_screen

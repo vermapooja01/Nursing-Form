@@ -1,10 +1,10 @@
-.col-md-12
+.col-md-12.well
   = f.input :ventilation, :collection => [['spontaneous', 'Spontaneous'], ['mechanical assist', 'Mechanical Assist']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.ventilation, :class => "form-control"
 
-.col-md-12
+.col-md-12.well
   = f.input :pattern, :collection => [['regular', 'Regular'], ['irregular', 'Irregular'], ['shallow', 'Shallow'], ['sob', 'SOB'], ['doe', 'DOE'], ['labored', 'Labored']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.pattern, :class => "form-control"
 
-.col-md-12
+.col-md-12.well
   = f.input :breath_sounds, :collection => [['Clear', 'Clear'], ['Bilateral', 'Bilateral'], ['R', 'R'], ['L', 'L'], ['Diminished', 'Diminished']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => @submission.breath_sounds, :class => "form-control"
 
   -# = f.input :diminished
@@ -25,31 +25,32 @@
   = f.input :ronchi, :class => "form-control"
   = f.input :ronchi_where, :class => "form-control"
 
-.col-md-12
+.col-md-12.well
   = f.input :cough, :collection => [['N/A', 'N/A'], ['Dry', 'Dry'], ['Productive', 'Productive']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.cough, :class => "form-control"
 
-.col-md-12
+.col-md-12.well
   = f.input :sputum, :collection => [['na', 'NA']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.sputum, :class => "form-control"
 
-.col-md-12
+.col-md-12.well
   = f.input :respiratory_color, :collection => [['clear', 'Clear'], ['white', 'White'], ['yellow', 'Yellow'], ['green', 'Green'], ['bloody', 'Bloody']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.respiratory_color, :class => "form-control"
   = f.input :other_color, :class => "form-control"
 
-.col-md-12
+.col-md-12.well
   = f.input :consistency, :collection => [['thick', 'Thick'], ['thin', 'Thin']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.consistency, :class => "form-control"
   = f.input :other_consistency, :class => "form-control"
 
-.col-md-12
+.col-md-12.well
   = f.input :amount, :collection => [['scant', 'Scant'], ['mod', 'Mod'], ['copious', 'Copious']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.amount, :class => "form-control"
   = f.input :amount_comments, :class => "form-control"
 
-.col-md-12
+.col-md-12.well
   = f.input :o2_protocol_in_place, :collection => [['ra', 'RA'], ['nc', 'NC']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.o2_protocol_in_place, :class => "form-control"
-  = f.input :o2_nc, :collection => [['nc', 'NC']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.o2_nc, :class => "form-control"
-  = f.input :o2_mask, :collection => [['mask', 'Mask']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.o2_mask, :class => "form-control"
+  = f.input :o2_nc, :class => "form-control"
+  = f.input :o2_mask, :class => "form-control"
 
-.col-md-12
-  %h1 Ventilator Settings
+.col-md-12.well
+  %h5
+    %b Ventilator Settings
   = f.input :mode, :class => "form-control"
   = f.input :tv, :class => "form-control"
   = f.input :fio2, :class => "form-control"
@@ -59,26 +60,27 @@
   = f.input :peak_airway_pressure, :class => "form-control"
   = f.input :other_settings, :class => "form-control"
 
-.col-md-12
+.col-md-12.well
   = f.input :ett_placement, :class => "form-control"
 
-.col-md-12
-  %h1 Trach
+.col-md-12.well
+  %h5
+    %b Trach
   = f.input :trach_not_applicable, :collection => [['na', 'NA']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.trach_not_applicable, :class => "form-control"
   = f.input :trach_type, :class => "form-control"
   = f.input :trach_size, :class => "form-control"
 
-.col-md-12
+.col-md-12.well
   = f.input :chest_tube, :collection => [['na', 'NA'], ['r', 'R'], ['l', 'L'], ['location', 'Location']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.chest_tube, :class => "form-control"
   = f.input :location_where, :class => "form-control"
 
-.col-md-12
-  %h1 Suction
-  = f.input :trach_type, :class => "form-control"
+.col-md-12.well
+  %h5
+  %b Suction
   = f.input :suction_type, :collection => [['air leak', 'Air Leak'], ['sub q emphysema', 'Sub Q Emphysema']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.suction_type, :class => "form-control"
   = f.input :emphysema_where, :class => "form-control"
 
-.col-md-12
+.col-md-12.well
   = f.input :chest_tube_comments, :class => "form-control"
 
 

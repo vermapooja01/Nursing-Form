@@ -1,22 +1,22 @@
-.col-md-4.well
+.col-md-12.well
   = f.input :marital_status, :collection => [['single', 'Single'], ['partnered', 'Partnered'], ['married', 'Married'], ['separated', 'Separated'], ['divorced', 'Divorced'], ['widowed', 'Widowed']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
 
-.col-md-4.well
+.col-md-12.well
   = f.input :affect, :collection => [['Pleasant', 'Pleasant'], ['Calm', 'Calm'], ['Talkative', 'Talkative'], ['Angry', 'Angry'], ['Anxious', 'Anxious'], ['Withdrawn', 'Withdrawn'], ['Crying', 'Crying'], ['Depressed', 'Depressed'], ['Agitated', 'Agitated'], ['ETT/Trach', 'ETT/Trach']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => @submission.affect, :class => "form-control"
 
-.col-md-4.well
+.col-md-12.well
   = f.input :spiritual_needs, :collection => [['roman catholic', 'Roman Catholic'], ['protestant', 'Protestant'], ['jewish', 'Jewish'], ['islam', 'Islam'], ['buddhist', 'Buddhist'], ['hindu', 'Hindu'], ['other', 'Other']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.spiritual_needs
   = f.input :other_spiritual_needs, :class => "form-control col-md-6"
 
-.col-md-6.well
+.col-md-12.well
   = f.input :bereaving_support_given, :class => "form-control", :checked => @submission.bereaving_support_given
   = f.input :hospice_care, :collection => [['Yes', 'Yes'], ['No', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.hospice_care
 
-.col-md-8.well
+.col-md-12.well
   = f.input :substance_abuse_history, :checked => @submission.substance_abuse_history
   = f.input :substance_abuse_history_type, :class => "form-control"
 
-.col-md-6.well
+.col-md-12.well
   = f.input :social_support, :collection => [['Family', 'Family'], ['Spouse', 'Spouse'], ['Significant Other', 'Significant Other']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.social_support
   = f.input :other_social_support, :class => "form-control"
 
@@ -26,23 +26,23 @@
 .col-md-12.well
   = f.input :resuscitation_status, :collection => [['Full Code', 'Full Code'], ['DNR', 'DNR']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => @submission.resuscitation_status, :class => "form-control"
 
-.col-md-6.well
+.col-md-12.well
   = f.input :other_resuscitation_status, :class => "form-control"
   = f.input :resuscitation_comments, :class => "form-control"
 
-.col-md-6.well
+.col-md-12.well
   = f.input :movement, :class => "form-control"
 
 .col-md-12.well
   = f.input :gait, :class => "form-control"
 
-.col-md-6.well
+.col-md-12.well
   = f.input :grip, :collection => [['strong', 'Strong'], ['equal', 'Equal'], ['weak', 'Weak']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.grip, :class => "form-control"
 
-.col-md-6.well
+.col-md-12.well
   = f.input :icp_device, :collection => [['ventriculostomy', 'Ventriculostomy'], ['fiberoptic cath', 'Fiberoptic Cath'], ['subarachnoid bolt', 'Subarachnoid Bolt'], ['epidural cath', 'Epidural Cath'], ['epiduaral sensor', 'Epiduaral Sensor']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.icp_device, :class => "form-control", :label => "ICP Device"
   = f.input :prescribed_level, :class => "form-control"
 
-.col-md-6.well
+.col-md-12.well
   = f.input :monitor, :collection => [['regular', 'Regular'], ['camino', 'Camino'], ['codman', 'Codman']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.monitor, :class => "form-control"
   = f.input :other_resuscitation_status, :class => "form-control"

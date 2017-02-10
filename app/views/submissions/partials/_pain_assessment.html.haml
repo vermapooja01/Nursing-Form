@@ -1,25 +1,25 @@
-%h4{:align => "center"} PAIN ASSESSMENT
+%h4{:align => "center"} Choose Appropriate Parameter for Pain Assessment
 
-.col-md-4
+.col-md-12.well
   = f.input :verbal, :collection => [['dull', 'Dull'], ['sharp', 'Sharp'], ['burning', 'Burning'], ['ache', 'Ache'], ['throbbing', 'Throbbing'], ['none', 'None']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.verbal
 
-.col-md-4
+.col-md-12.well
   = f.input :non_verbal, :collection => [['use flacc', 'Use FLACC']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.non_verbal
 
-.col-md-4
+.col-md-12.well
   = f.input :scale_used, :collection => [['numeric', 'Numeric'], ['faces', 'Faces'], ['flacc', 'FLACC'], ['cpot', 'CPOT']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.scale_used
 
-.col-md-4
+.col-md-12.well
   = f.input :other_symptoms_present, :collection => [['sob', 'SOB'], ['vomiting', 'Vomiting'], ['guarding', 'Guarding'], ['paresthesia', 'Paresthesia'], ['none', 'None']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.other_symptoms_present
 
-.col-md-4
+.col-md-12.well
   = f.input :additional_measures, :collection => [['remedicate', 'Remedicate'], ['notify md', 'Notify MD'], ['ice', 'ice'], ['heat', 'Heat'], ['relaxation distraction imagery', 'Relaxation Distraction Imagery'], ['patient declines', 'Patient Declines']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.additional_measures
 
-.col-md-12
+.col-md-12.well
   %h4{:style => "margin-bottom: 50px;"} Pain Scale
   = f.input :pain_scale, :class => 'form-control', :input_html => {"data-slider-id" => "painScaleSlider", "data-slider-max" => "10", "data-slider-min" => "0", "data-slider-step" => "1", "data-slider-value" => @submission.pain_scale}, :label => false
 
-.col-md-12
+.col-md-12.well
   %h4{:style => "margin-bottom: 50px;"} Pain Scale
   - if @submission.pain_scale_rating_scale.nil?
     = f.input :pain_scale_rating_scale, :class => 'form-control', :input_html => {"data-slider-id" => "painScaleSlider", "data-slider-max" => "5", "data-slider-min" => "0", "data-slider-step" => "1", "data-slider-value" => "0"}, :label => false
@@ -27,7 +27,7 @@
     = f.input :pain_scale_rating_scale, :class => 'form-control', :input_html => {"data-slider-id" => "painScaleSlider", "data-slider-max" => "5", "data-slider-min" => "0", "data-slider-step" => "1", "data-slider-value" => @submission.pain_scale_rating_scale}, :label => false
 
 
-.col-md-12
+.col-md-12.well
   %h4{:align => "center"} FLACC SCALE (For Non-Verbal Patients)
   .table-responsive
     %table.table.table-striped.cardiovascular-table
@@ -108,7 +108,7 @@
             = f.text_field("flacc_total_score", class: "form-control calculated_total_field", disabled: true, value: @submission.flacc_scale_total_score)
 
 
-.col-md-12
+.col-md-12.well
   %h4{:align => "center"} Critical Care Pain Observation Tool (CPOT)(Document "Ventilator Compliance" or "Vocalization", but not both)
   .table-responsive
     %table.table.table-striped.cardiovascular-table
