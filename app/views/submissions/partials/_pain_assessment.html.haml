@@ -42,68 +42,68 @@
         %tr
           %th{:scope => "row"} Face
           %td
-            = f.check_box :flacc_scale_face_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_face_0}, 0
+            = f.check_box :flacc_scale_face_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_face_0 == 0, :default => 5}, 0
             = label_tag 'No particular expression or smile'
           %td
-            = f.check_box :flacc_scale_face_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_face_1}, 1
+            = f.check_box :flacc_scale_face_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_face_1 == 1}, 1
             = label_tag 'occasional grimace or frown, withdrawn, uninterested'
           %td
-            = f.check_box :flacc_scale_face_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_face_2}, 2
+            = f.check_box :flacc_scale_face_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_face_2 == 2}, 2
             = label_tag 'Frequent to constant quivering chin, clenched jaw'
         %tr
           %th{:scope => "row"} Legs
           %td
-            = f.check_box :flacc_scale_legs_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_legs_0}, 0
+            = f.check_box :flacc_scale_legs_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_legs_0 == 0}, 0
             = label_tag 'Normal Position or Relaxed'
           %td
-            = f.check_box :flacc_scale_legs_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_legs_1}, 1
+            = f.check_box :flacc_scale_legs_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_legs_1 == 1}, 1
             = label_tag 'Uneasy, Restless, Tense'
           %td
-            = f.check_box :flacc_scale_legs_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_legs_2}, 2
+            = f.check_box :flacc_scale_legs_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_legs_2 == 2}, 2
             = label_tag 'Kicking, or legs drawn up'
 
         %tr
           %th{:scope => "row"} Activity
           %td
-            = f.check_box :flacc_scale_activity_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_activity_0}, 0
+            = f.check_box :flacc_scale_activity_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_activity_0 == 0}, 0
             = label_tag 'Lying Quietly, normal position, moves easily'
           %td
-            = f.check_box :flacc_scale_activity_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_activity_1}, 1
+            = f.check_box :flacc_scale_activity_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_activity_1 == 1}, 1
             = label_tag 'Squirming, shifting back and forth, tense'
 
           %td
-            = f.check_box :flacc_scale_activity_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_activity_2}, 2
+            = f.check_box :flacc_scale_activity_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_activity_2 == 2}, 2
             = label_tag 'Arched, Rigid or jerking'
 
         %tr
           %th{:scope => "row"} Cry
           %td
-            = f.check_box :flacc_scale_cry_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_cry_0}, 0
+            = f.check_box :flacc_scale_cry_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_cry_0 == 0}, 0
             = label_tag 'No cry (awake or asleep)'
           %td
-            = f.check_box :flacc_scale_cry_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_cry_1}, 1
+            = f.check_box :flacc_scale_cry_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_cry_1 == 1}, 1
             = label_tag 'Moans or Whimpers; occasional complaint'
           %td
-            = f.check_box :flacc_scale_cry_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_cry_2}, 2
+            = f.check_box :flacc_scale_cry_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_cry_2 == 2}, 2
             = label_tag 'Crying steadily, screams or sobs, frequent complaints'
 
         %tr
           %th{:scope => "row"} Consolability
           %td
-            = f.check_box :flacc_scale_consolability_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_consolability_0}, 0
+            = f.check_box :flacc_scale_consolability_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_consolability_0 == 0}, 0
             = label_tag 'Content, relaxed'
           %td
-            = f.check_box :flacc_scale_consolability_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_consolability_1}, 1
+            = f.check_box :flacc_scale_consolability_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_consolability_1 == 1}, 1
             = label_tag 'Reassured by occasional touching, hugging or being talked to, distractible'
           %td
-            = f.check_box :flacc_scale_consolability_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_consolability_2}, 2
+            = f.check_box :flacc_scale_consolability_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_consolability_2 == 2}, 2
             = label_tag 'Difficult to consgiole or comfort'
         %tr
           %th
           %td
           %td
           %td
-            = f.hidden_field :flacc_scale_total_score, :value => "", :class => "calculated_total_field"
+            = f.hidden_field :flacc_scale_total_score, :value => @submission.flacc_scale_total_score, :class => "calculated_total_field"
             = label_tag 'Total Score'
             = f.text_field("flacc_total_score", class: "form-control calculated_total_field", disabled: true, value: @submission.flacc_scale_total_score)
 
