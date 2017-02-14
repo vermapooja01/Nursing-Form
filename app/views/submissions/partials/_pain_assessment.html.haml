@@ -42,61 +42,61 @@
         %tr
           %th{:scope => "row"} Face
           %td
-            = f.check_box :flacc_scale_face_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_face_0 == 0, :default => 5}, 0
+            = f.check_box :flacc_scale_face_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_face_0}, 1
             = label_tag 'No particular expression or smile'
           %td
-            = f.check_box :flacc_scale_face_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_face_1 == 1}, 1
+            = f.check_box :flacc_scale_face_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_face_1}, 2
             = label_tag 'occasional grimace or frown, withdrawn, uninterested'
           %td
-            = f.check_box :flacc_scale_face_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_face_2 == 2}, 2
+            = f.check_box :flacc_scale_face_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_face_2}, 3
             = label_tag 'Frequent to constant quivering chin, clenched jaw'
         %tr
           %th{:scope => "row"} Legs
           %td
-            = f.check_box :flacc_scale_legs_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_legs_0 == 0}, 0
+            = f.check_box :flacc_scale_legs_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_legs_0}, 1
             = label_tag 'Normal Position or Relaxed'
           %td
-            = f.check_box :flacc_scale_legs_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_legs_1 == 1}, 1
+            = f.check_box :flacc_scale_legs_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_legs_1}, 2
             = label_tag 'Uneasy, Restless, Tense'
           %td
-            = f.check_box :flacc_scale_legs_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_legs_2 == 2}, 2
+            = f.check_box :flacc_scale_legs_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_legs_2}, 3
             = label_tag 'Kicking, or legs drawn up'
 
         %tr
           %th{:scope => "row"} Activity
           %td
-            = f.check_box :flacc_scale_activity_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_activity_0 == 0}, 0
+            = f.check_box :flacc_scale_activity_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_activity_0}, 1
             = label_tag 'Lying Quietly, normal position, moves easily'
           %td
-            = f.check_box :flacc_scale_activity_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_activity_1 == 1}, 1
+            = f.check_box :flacc_scale_activity_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_activity_1}, 2
             = label_tag 'Squirming, shifting back and forth, tense'
 
           %td
-            = f.check_box :flacc_scale_activity_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_activity_2 == 2}, 2
+            = f.check_box :flacc_scale_activity_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_activity_2}, 3
             = label_tag 'Arched, Rigid or jerking'
 
         %tr
           %th{:scope => "row"} Cry
           %td
-            = f.check_box :flacc_scale_cry_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_cry_0 == 0}, 0
+            = f.check_box :flacc_scale_cry_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_cry_0 == 0}, 1
             = label_tag 'No cry (awake or asleep)'
           %td
-            = f.check_box :flacc_scale_cry_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_cry_1 == 1}, 1
+            = f.check_box :flacc_scale_cry_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_cry_1 == 1}, 2
             = label_tag 'Moans or Whimpers; occasional complaint'
           %td
-            = f.check_box :flacc_scale_cry_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_cry_2 == 2}, 2
+            = f.check_box :flacc_scale_cry_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_cry_2 == 2}, 3
             = label_tag 'Crying steadily, screams or sobs, frequent complaints'
 
         %tr
           %th{:scope => "row"} Consolability
           %td
-            = f.check_box :flacc_scale_consolability_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_consolability_0 == 0}, 0
+            = f.check_box :flacc_scale_consolability_0, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_consolability_0 == 0}, 1
             = label_tag 'Content, relaxed'
           %td
-            = f.check_box :flacc_scale_consolability_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_consolability_1 == 1}, 1
+            = f.check_box :flacc_scale_consolability_1, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_consolability_1 == 1}, 2
             = label_tag 'Reassured by occasional touching, hugging or being talked to, distractible'
           %td
-            = f.check_box :flacc_scale_consolability_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_consolability_2 == 2}, 2
+            = f.check_box :flacc_scale_consolability_2, {:class => "calculable_checkbox", :checked => @submission.flacc_scale_consolability_2 == 2}, 3
             = label_tag 'Difficult to consgiole or comfort'
         %tr
           %th
@@ -123,61 +123,61 @@
         %tr
           %th{:scope => "row"} Facial Expression
           %td
-            = f.check_box :cpot_score_facial_expression_0, {:class => "calculable_checkbox", :checked => @submission.cpot_score_facial_expression_0}, 0
+            = f.check_box :cpot_score_facial_expression_0, {:checked => @submission.cpot_score_facial_expression_0}, 0
             = label_tag 'Relaxed; neutral'
           %td
-            = f.check_box :cpot_score_facial_expression_1, {:class => "calculable_checkbox", :checked => @submission.cpot_score_facial_expression_1}, 1
+            = f.check_box :cpot_score_facial_expression_1, {:checked => @submission.cpot_score_facial_expression_1}, 1
             = label_tag 'Tense'
           %td
-            = f.check_box :cpot_score_facial_expression_2, {:class => "calculable_checkbox", :checked => @submission.cpot_score_facial_expression_2}, 2
+            = f.check_box :cpot_score_facial_expression_2, {:checked => @submission.cpot_score_facial_expression_2}, 2
             = label_tag 'Grimacing'
         %tr
           %th{:scope => "row"} Body Movements
           %td
-            = f.check_box :cpot_score_body_movements_0, {:class => "calculable_checkbox", :checked => @submission.cpot_score_body_movements_0}, 0
+            = f.check_box :cpot_score_body_movements_0, {:checked => @submission.cpot_score_body_movements_0}, 0
             = label_tag 'Absence of movements'
           %td
-            = f.check_box :cpot_score_body_movements_1, {:class => "calculable_checkbox", :checked => @submission.cpot_score_body_movements_1}, 1
+            = f.check_box :cpot_score_body_movements_1, {:checked => @submission.cpot_score_body_movements_1}, 1
             = label_tag 'Protection'
           %td
-            = f.check_box :cpot_score_body_movements_2, {:class => "calculable_checkbox", :checked => @submission.cpot_score_body_movements_2}, 2
+            = f.check_box :cpot_score_body_movements_2, {:checked => @submission.cpot_score_body_movements_2}, 2
             = label_tag 'Restlessness'
 
         %tr
           %th{:scope => "row"} Ventilator Compliance (Intubated Patients)
           %td
-            = f.check_box :cpot_score_ventilator_compliance_0, {:class => "calculable_checkbox", :checked => @submission.cpot_score_ventilator_compliance_0}, 0
+            = f.check_box :cpot_score_ventilator_compliance_0, {:checked => @submission.cpot_score_ventilator_compliance_0}, 0
             = label_tag 'Tolerating ventilator'
           %td
-            = f.check_box :cpot_score_ventilator_compliance_1, {:class => "calculable_checkbox", :checked => @submission.cpot_score_ventilator_compliance_1}, 1
+            = f.check_box :cpot_score_ventilator_compliance_1, {:checked => @submission.cpot_score_ventilator_compliance_1}, 1
             = label_tag 'Coughing but tolerating the ventilator'
 
           %td
-            = f.check_box :cpot_score_ventilator_compliance_2, {:class => "calculable_checkbox", :checked => @submission.cpot_score_ventilator_compliance_2}, 2
+            = f.check_box :cpot_score_ventilator_compliance_2, {:checked => @submission.cpot_score_ventilator_compliance_2}, 2
             = label_tag 'Fighting ventilator'
 
         %tr
           %th{:scope => "row"} Vocalization (extubated patients)
           %td
-            = f.check_box :cpot_score_vocalization_0, {:class => "calculable_checkbox", :checked => @submission.cpot_score_vocalization_0}, 0
+            = f.check_box :cpot_score_vocalization_0, {:checked => @submission.cpot_score_vocalization_0}, 0
             = label_tag 'Talking in normal tone'
           %td
-            = f.check_box :cpot_score_vocalization_1, {:class => "calculable_checkbox", :checked => @submission.cpot_score_vocalization_1}, 1
+            = f.check_box :cpot_score_vocalization_1, {:checked => @submission.cpot_score_vocalization_1}, 1
             = label_tag 'Sighing; moaning'
           %td
-            = f.check_box :cpot_score_vocalization_2, {:class => "calculable_checkbox", :checked => @submission.cpot_score_vocalization_2}, 2
+            = f.check_box :cpot_score_vocalization_2, {:checked => @submission.cpot_score_vocalization_2}, 2
             = label_tag 'Fighting Ventilator'
 
         %tr
           %th{:scope => "row"} Muscle Tension
           %td
-            = f.check_box :cpot_score_muscle_tension_0, {:class => "calculable_checkbox", :checked => @submission.cpot_score_muscle_tension_0}, 0
+            = f.check_box :cpot_score_muscle_tension_0, {:checked => @submission.cpot_score_muscle_tension_0}, 0
             = label_tag 'Relaxed; neutral'
           %td
-            = f.check_box :cpot_score_muscle_tension_1, {:class => "calculable_checkbox", :checked => @submission.cpot_score_muscle_tension_1}, 1
+            = f.check_box :cpot_score_muscle_tension_1, {:checked => @submission.cpot_score_muscle_tension_1}, 1
             = label_tag 'Tense; rigid'
           %td
-            = f.check_box :cpot_score_muscle_tension_2, {:class => "calculable_checkbox", :checked => @submission.cpot_score_muscle_tension_2}, 2
+            = f.check_box :cpot_score_muscle_tension_2, {:checked => @submission.cpot_score_muscle_tension_2}, 2
             = label_tag 'Very tense; rigid'
         %tr
           %th
@@ -188,12 +188,3 @@
             = f.hidden_field :cpot_total_score, :value => "", :class => "calculated_total_field"
             = label_tag 'Total Score'
             = f.text_field("cpot_total_score", class: "form-control calculated_total_field", disabled: true, value: @submission.cpot_total_score)
--# %h2 FLACC SCALE (For Non-Verbal Patients)
--# .col-md-4
--#   = f.input :criteria, :collection => [['face', 'Face'], ['legs', 'Legs'], ['activity', 'Activity'], ['cry', 'Cry'], ['consolability', 'Consolability']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
--#
--# .col-md-4
--#   = f.input :flacc_score_0, :collection => [['no particular expression or smile', 'No Particular Expression or Smile'], ['normal position or relaxed', 'Normal Position or Relaxed'], ['lying quietly, normal position, moves easily', 'Lying Quietly, Normal Position, Moves Easily'], ['no cry(awake or asleep)', 'No cry(awake or asleep)'], ['content, relaxed', 'Content, Relaxed']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
--#
--# .col-md-4
--#   = f.input :flacc_score_1, :collection => [['occasional grimace or frown, withdrawn, uninterested', 'Occasional grimace or frown, withdrawn, uninterested'], ['uneasy, restless, tense', 'Uneasy, Restless, Tense'], ['squirming, shifting back and forth, tense', 'Squirming, Shifting back and forth, Tense'], ['moans or whimpers; occasional complaint', 'Moans or Whimpers; occasional complaint'], ['reassured by occasional touching, hugging or being talked to, distractible', 'Reassured by occasional touching, hugging or being talked to, distractible']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.marital_status
