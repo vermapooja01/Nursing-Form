@@ -111,7 +111,7 @@
 .col-md-12.well
   %h4{:align => "center"} Critical Care Pain Observation Tool (CPOT)(Document "Ventilator Compliance" or "Vocalization", but not both)
   .table-responsive
-    %table.table.table-striped.cardiovascular-table
+    %table.table.table-striped.cardiovascular-table#cpot-calculation
       %thead
         %tr
           %th Indicator
@@ -123,61 +123,61 @@
         %tr
           %th{:scope => "row"} Facial Expression
           %td
-            = f.check_box :cpot_score_facial_expression_0, {:checked => @submission.cpot_score_facial_expression_0}, 0
+            = f.check_box :cpot_score_facial_expression_0, {:class => "cpot_calculable_checkbox", :checked => @submission.cpot_score_facial_expression_0}, 1
             = label_tag 'Relaxed; neutral'
           %td
-            = f.check_box :cpot_score_facial_expression_1, {:checked => @submission.cpot_score_facial_expression_1}, 1
+            = f.check_box :cpot_score_facial_expression_1, {:class => "cpot_calculable_checkbox", :checked => @submission.cpot_score_facial_expression_1}, 2
             = label_tag 'Tense'
           %td
-            = f.check_box :cpot_score_facial_expression_2, {:checked => @submission.cpot_score_facial_expression_2}, 2
+            = f.check_box :cpot_score_facial_expression_2, {:class => "cpot_calculable_checkbox", :checked => @submission.cpot_score_facial_expression_2}, 3
             = label_tag 'Grimacing'
         %tr
           %th{:scope => "row"} Body Movements
           %td
-            = f.check_box :cpot_score_body_movements_0, {:checked => @submission.cpot_score_body_movements_0}, 0
+            = f.check_box :cpot_score_body_movements_0, {:class => "cpot_calculable_checkbox", :checked => @submission.cpot_score_body_movements_0}, 1
             = label_tag 'Absence of movements'
           %td
-            = f.check_box :cpot_score_body_movements_1, {:checked => @submission.cpot_score_body_movements_1}, 1
+            = f.check_box :cpot_score_body_movements_1, {:class => "cpot_calculable_checkbox", :checked => @submission.cpot_score_body_movements_1}, 2
             = label_tag 'Protection'
           %td
-            = f.check_box :cpot_score_body_movements_2, {:checked => @submission.cpot_score_body_movements_2}, 2
+            = f.check_box :cpot_score_body_movements_2, {:class => "cpot_calculable_checkbox", :checked => @submission.cpot_score_body_movements_2}, 3
             = label_tag 'Restlessness'
 
         %tr
           %th{:scope => "row"} Ventilator Compliance (Intubated Patients)
           %td
-            = f.check_box :cpot_score_ventilator_compliance_0, {:checked => @submission.cpot_score_ventilator_compliance_0}, 0
+            = f.check_box :cpot_score_ventilator_compliance_0, {:class => "cpot_calculable_checkbox", :checked => @submission.cpot_score_ventilator_compliance_0}, 1
             = label_tag 'Tolerating ventilator'
           %td
-            = f.check_box :cpot_score_ventilator_compliance_1, {:checked => @submission.cpot_score_ventilator_compliance_1}, 1
+            = f.check_box :cpot_score_ventilator_compliance_1, {:class => "cpot_calculable_checkbox", :checked => @submission.cpot_score_ventilator_compliance_1}, 2
             = label_tag 'Coughing but tolerating the ventilator'
 
           %td
-            = f.check_box :cpot_score_ventilator_compliance_2, {:checked => @submission.cpot_score_ventilator_compliance_2}, 2
+            = f.check_box :cpot_score_ventilator_compliance_2, {:class => "cpot_calculable_checkbox", :checked => @submission.cpot_score_ventilator_compliance_2}, 3
             = label_tag 'Fighting ventilator'
 
         %tr
           %th{:scope => "row"} Vocalization (extubated patients)
           %td
-            = f.check_box :cpot_score_vocalization_0, {:checked => @submission.cpot_score_vocalization_0}, 0
+            = f.check_box :cpot_score_vocalization_0, {:class => "cpot_calculable_checkbox", :checked => @submission.cpot_score_vocalization_0}, 1
             = label_tag 'Talking in normal tone'
           %td
-            = f.check_box :cpot_score_vocalization_1, {:checked => @submission.cpot_score_vocalization_1}, 1
+            = f.check_box :cpot_score_vocalization_1, {:class => "cpot_calculable_checkbox", :checked => @submission.cpot_score_vocalization_1}, 2
             = label_tag 'Sighing; moaning'
           %td
-            = f.check_box :cpot_score_vocalization_2, {:checked => @submission.cpot_score_vocalization_2}, 2
+            = f.check_box :cpot_score_vocalization_2, {:class => "cpot_calculable_checkbox", :checked => @submission.cpot_score_vocalization_2}, 3
             = label_tag 'Fighting Ventilator'
 
         %tr
           %th{:scope => "row"} Muscle Tension
           %td
-            = f.check_box :cpot_score_muscle_tension_0, {:checked => @submission.cpot_score_muscle_tension_0}, 0
+            = f.check_box :cpot_score_muscle_tension_0, {:class => "cpot_calculable_checkbox", :checked => @submission.cpot_score_muscle_tension_0}, 1
             = label_tag 'Relaxed; neutral'
           %td
-            = f.check_box :cpot_score_muscle_tension_1, {:checked => @submission.cpot_score_muscle_tension_1}, 1
+            = f.check_box :cpot_score_muscle_tension_1, {:class => "cpot_calculable_checkbox", :checked => @submission.cpot_score_muscle_tension_1}, 2
             = label_tag 'Tense; rigid'
           %td
-            = f.check_box :cpot_score_muscle_tension_2, {:checked => @submission.cpot_score_muscle_tension_2}, 2
+            = f.check_box :cpot_score_muscle_tension_2, {:class => "cpot_calculable_checkbox", :checked => @submission.cpot_score_muscle_tension_2}, 3
             = label_tag 'Very tense; rigid'
         %tr
           %th
@@ -185,6 +185,6 @@
           %td
           -# %td= f.input :flacc_scale_total_score
           %td
-            = f.hidden_field :cpot_total_score, :value => "", :class => "calculated_total_field"
+            = f.hidden_field :cpot_total_score, :value => @submission.cpot_total_score, :class => "calculated_total_field"
             = label_tag 'Total Score'
-            = f.text_field("cpot_total_score", class: "form-control calculated_total_field", disabled: true, value: @submission.cpot_total_score)
+            = f.text_field("total_score", class: "form-control calculated_total_field", disabled: true, value: @submission.cpot_total_score)
