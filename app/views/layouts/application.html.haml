@@ -13,4 +13,8 @@
     = render "layouts/header"
     %div{:style => "margin-top:100px;"}
     .container
+      %a#scroll{:href => "#", :style => "display: none;", :title => "Scroll to Top"}
+        Top
+        %span
+
       = yield

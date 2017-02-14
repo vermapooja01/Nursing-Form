@@ -30,3 +30,4 @@
 //= require submissions
 //= require comma_score_calculation
 //= require score_calculation
+//= require scrolltotop

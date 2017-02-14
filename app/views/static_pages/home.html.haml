@@ -1,13 +1,16 @@
-%h1
-  Welcome
-  = current_user.first_name
-  !
-%hr
-%h3 In-Progress
-- if !@submissions_in_progress.empty?
-  %p You have the following submissions in progress:
+- if logged_in?
+  %h1
+    Welcome
+    = current_user.first_name
+    !
   %hr
-  - @submissions_in_progress.each do |submission|
-    = link_to "Submission for " + submission.patient_initials, edit_submission_path(submission)
-%hr
-= link_to 'New Submssion', new_submission_path
+  %h3 In-Progress
+  - if !@submissions_in_progress.empty?
+    %p You have the following submissions in progress:
+    %hr
+    - @submissions_in_progress.each do |submission|
+      = link_to "Submission for " + submission.patient_initials, edit_submission_path(submission)
+  %hr
+  = link_to 'New Submssion', new_submission_path
+
+  %h1 Please log in

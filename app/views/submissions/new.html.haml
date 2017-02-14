@@ -51,8 +51,7 @@
         %a{"data-toggle" => "tab", :href => "#n"} Skin Risk Assessment Screen
       %li
         %a{"data-toggle" => "tab", :href => "#o"} VTE Risk Assessment
-      %li
-        %a{"data-toggle" => "tab", :href => "#p"} Last Page
+      
 
   .col-sm-9
     = simple_form_for @submission, html: {class: ''} do |f|
@@ -62,16 +61,16 @@
           %h2 Basic Information
           = f.hidden_field :user_id, :value => current_user.id
           .col-md-4
-            = f.input :patient_initials, :class => "form-control"
+            = f.input :patient_initials, :class => "form-control", required: true
           .col-md-2
-            = f.input :age
+            = f.input :age, required: true
           .col-md-12.gender-selector
-            = f.input :gender, :collection => [['Male', 'Male'], ['Female', 'Female']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.gender, :class => "form-control"
+            = f.input :gender, :collection => [['Male', 'Male'], ['Female', 'Female']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.gender, :class => "form-control", required: true
           .col-md-12
-            = f.label :admitting_primary_medical_diagnosis
+            = f.label :admitting_primary_medical_diagnosis, required: true
             = f.text_area :admitting_primary_medical_diagnosis, :placeholder => "Enter text here...", :class => "tinymce form-control", :rows => 4, :cols => 120
           .col-md-6.date-selector
-            = f.input :week, :class => "daterange-picker", :as => :string
+            = f.input :week, :class => "daterange-picker", :as => :string, required: true
 
         #b.tab-pane
           %h2 Neurological/Muscular

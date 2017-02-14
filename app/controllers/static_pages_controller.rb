@@ -1,6 +1,8 @@
 class StaticPagesController < ApplicationController
   def home
-    @submissions_in_progress = current_user.submissions.where(:completed => false)
+    if current_user
+      @submissions_in_progress = current_user.submissions.where(:completed => false)
+    end
   end
   def aboutus
   end
