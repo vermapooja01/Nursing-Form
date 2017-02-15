@@ -1,5 +1,5 @@
 class SubmissionsController < ApplicationController
-  before_action :set_submission, only: [:show, :edit, :update, :destroy]
+  before_action :set_submission, :logged_in_user, only: [:show, :edit, :update, :destroy]
 
   # GET /submissions
   # GET /submissions.json
@@ -53,6 +53,7 @@ class SubmissionsController < ApplicationController
   # PATCH/PUT /submissions/1.json
   def update
     respond_to do |format|
+      byebug
       if @submission.update(submission_params)
         format.html { redirect_to edit_submission_path(@submission, :tab => params[:selected_tab]), notice: 'Submission was successfully updated.' }
         format.json { render :show, status: :ok, location: @submission }
@@ -368,6 +369,8 @@ class SubmissionsController < ApplicationController
         :cpot_score_muscle_tension_2,
         :cpot_total_score,
 
+
+        :step_id,
         best_eye_opening_response_values:[],
         best_verbal_response_values:[],
         best_motor_response_values:[],
