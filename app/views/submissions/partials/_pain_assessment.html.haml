@@ -4,27 +4,27 @@
   = f.input :verbal, :collection => [['dull', 'Dull'], ['sharp', 'Sharp'], ['burning', 'Burning'], ['ache', 'Ache'], ['throbbing', 'Throbbing'], ['none', 'None']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.verbal
 
 .col-md-12.well
-  = f.input :non_verbal, :collection => [['use flacc', 'Use FLACC']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.non_verbal
+  = f.input :non_verbal, :collection => [['use flacc', 'Use FLACC']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.non_verbal, :label => "Non Verbal"
 
 .col-md-12.well
-  = f.input :scale_used, :collection => [['numeric', 'Numeric'], ['faces', 'Faces'], ['flacc', 'FLACC'], ['cpot', 'CPOT']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.scale_used
+  = f.input :scale_used, :collection => [['numeric', 'Numeric'], ['faces', 'Faces'], ['flacc', 'FLACC'], ['cpot', 'CPOT']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.scale_used, :label => "Scale Used"
 
 .col-md-12.well
-  = f.input :other_symptoms_present, :collection => [['sob', 'SOB'], ['vomiting', 'Vomiting'], ['guarding', 'Guarding'], ['paresthesia', 'Paresthesia'], ['none', 'None']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.other_symptoms_present
+  = f.input :other_symptoms_present, :collection => [['sob', 'SOB'], ['vomiting', 'Vomiting'], ['guarding', 'Guarding'], ['paresthesia', 'Paresthesia'], ['none', 'None']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.other_symptoms_present, :label => "Other Symptoms Present"
 
 .col-md-12.well
-  = f.input :additional_measures, :collection => [['remedicate', 'Remedicate'], ['notify md', 'Notify MD'], ['ice', 'ice'], ['heat', 'Heat'], ['relaxation distraction imagery', 'Relaxation Distraction Imagery'], ['patient declines', 'Patient Declines']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.additional_measures
+  = f.input :additional_measures, :collection => [['remedicate', 'Remedicate'], ['notify md', 'Notify MD'], ['ice', 'ice'], ['heat', 'Heat'], ['relaxation distraction imagery', 'Relaxation Distraction Imagery'], ['patient declines', 'Patient Declines']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.additional_measures, :label => "Additional Measures"
 
 .col-md-12.well
   %h4{:style => "margin-bottom: 50px;"} Pain Scale
-  = f.input :pain_scale, :class => 'form-control', :input_html => {"data-slider-id" => "painScaleSlider", "data-slider-max" => "10", "data-slider-min" => "0", "data-slider-step" => "1", "data-slider-value" => @submission.pain_scale}, :label => false
+  = f.input :pain_scale, :class => 'form-control', :input_html => {"data-slider-id" => "painScaleSlider", "data-slider-max" => "10", "data-slider-min" => "0", "data-slider-step" => "1", "data-slider-value" => @submission.pain_scale}, :label => false, :label => "Pain Scale"
 
 .col-md-12.well
   %h4{:style => "margin-bottom: 50px;"} Pain Scale
   - if @submission.pain_scale_rating_scale.nil?
-    = f.input :pain_scale_rating_scale, :class => 'form-control', :input_html => {"data-slider-id" => "painScaleSlider", "data-slider-max" => "5", "data-slider-min" => "0", "data-slider-step" => "1", "data-slider-value" => "0"}, :label => false
+    = f.input :pain_scale_rating_scale, :class => 'form-control', :input_html => {"data-slider-id" => "painScaleSlider", "data-slider-max" => "5", "data-slider-min" => "0", "data-slider-step" => "1", "data-slider-value" => "0"}, :label => false, :label => "Pain Scale Rating Scale"
   - else
-    = f.input :pain_scale_rating_scale, :class => 'form-control', :input_html => {"data-slider-id" => "painScaleSlider", "data-slider-max" => "5", "data-slider-min" => "0", "data-slider-step" => "1", "data-slider-value" => @submission.pain_scale_rating_scale}, :label => false
+    = f.input :pain_scale_rating_scale, :class => 'form-control', :input_html => {"data-slider-id" => "painScaleSlider", "data-slider-max" => "5", "data-slider-min" => "0", "data-slider-step" => "1", "data-slider-value" => @submission.pain_scale_rating_scale}, :label => false, :label => "Pain Scale Rating Scale"
 
 
 .col-md-12.well
