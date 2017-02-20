@@ -30,6 +30,21 @@
   z-index: 0;
 }
 
+#pain-location-image2 {
+  width: 400px;
+  height: 356px;
+  background-image: url("/assets/3.PNG");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+#pain-location-image2-viewer {
+  position: absolute;
+  width: 400px;
+  height: 356px;
+  z-index: 0;
+}
+
 
 .nursing-form-card {
   height: 700px;

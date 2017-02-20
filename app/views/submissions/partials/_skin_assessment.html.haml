@@ -61,12 +61,17 @@
         %td
           = f.input :periwound_surrounding_skin, :collection => [['intact', 'Intact'], ['induration', 'Induration'], ['erythema', 'Erythema'], ['maceration', 'Maceration'], ['pale', 'Pale'], ['dark purle', 'Dark Purple']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.periwound_surrounding_skin, :label => "Periwound Surrounding Skin"
 
-%h3 Location
+%h3 Specify Pain Location
 %p (Specify by Circling)
 
-.col-md-6.well.well-lg
+.col-md-12.well.well-lg
   #pain-location-image1-viewer
   #editor#pain-location-image1
   = hidden_field :submission, :location_image1
 
-.col-md-6 Hello
+
+
+.col-md-12.well.well-lg
+  #pain-location-image2-viewer
+  #editor#pain-location-image2
+  = hidden_field :submission, :location_image2
