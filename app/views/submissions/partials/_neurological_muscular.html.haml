@@ -89,7 +89,7 @@
 .col-md-4.well
   = f.input :tongue, :collection => [['Midline', 'Midline'], ['R', 'R'], ['L', 'L']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.tongue, :class => "form-control"
 
-.col-md-12.well
+.col-md-12.well.strength-table
   .table-responsive
     %table.table.table-striped
       %thead

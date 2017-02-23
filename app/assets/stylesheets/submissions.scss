@@ -10,9 +10,11 @@
 
 .slider.slider-horizontal {
   width: 100% !important;
+
 }
 .block-container {
   display: block;
+
 }
 
 #pain-location-image1 {
@@ -28,6 +30,7 @@
   width: 400px;
   height: 356px;
   z-index: 0;
+  background-color: #ffa07a;
 }
 
 #pain-location-image2 {
@@ -67,7 +70,7 @@
       font-weight: bold;
       line-height: 45px;
       margin-right: 10px;
-      background-color: #eeeeee;
+
     }
     input {
       // visibility: hidden;
@@ -84,6 +87,7 @@
 
 .pager-buttons {
   height: 50px;
+
   // position: fixed;
   // right: 143px;
   // z-index: 1;
@@ -92,6 +96,15 @@
   position: fixed;
   right: 140px;
   z-index: 10;
+}
+.button-save {
+  background-color: #aed6f1;
+}
+.button-next {
+  background-color: #aed6f1;
+}
+.button-previous {
+  background-color: #aed6f1;
 }
 
 i.fa {
@@ -152,4 +165,9 @@ tbody.flacc-scoring {
   td {
     width: 200px;
   }
+}
+
+
+.well {
+  background-color: #f4decb;
 }
