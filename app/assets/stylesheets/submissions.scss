@@ -30,7 +30,7 @@
   width: 400px;
   height: 356px;
   z-index: 0;
-  background-color: #ffa07a;
+
 }
 
 #pain-location-image2 {
@@ -170,4 +170,22 @@ tbody.flacc-scoring {
 
 .well {
   background-color: #f4decb;
+}
+
+table.skin-striped {
+  thead {
+    th {
+      text-align: center;
+    }
+  }
+  tbody {
+    tr {
+      th {
+        vertical-align: middle;
+      }
+      td {
+        text-align: center;
+      }
+    }
+  }
 }

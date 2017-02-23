@@ -1,65 +1,67 @@
-%h4{:align => "center"}
-  %b Wound Assessment
-  %p
-    %b (Click on appropriate parameters)
-.table-responsive
-  %table.table.table-striped
-    %thead
-      %tr
-        %th Stage
-        %th Other Wounds
-        %th Size (L X W)
-        %th Depth (cm only)
-        %th Undermining
-        %th Drainage
-        %th Amount
-        %th Color of Wound
-        %th Periwound Surrounding Skin
-    %tbody
-      %tr
-        %td
-          = f.input :stage, :collection => [['i', 'I'], ['ii', 'II'], ['iii', 'III'], ['iv', 'IV'], ['unable to determine', 'Unable to Determine'], ['deep tissue injury', 'Deep Tissue Injury']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.stage
-        %td
-          = f.input :other_wounds, :collection => [['venous ulcer', 'Venous Ulcer'], ['burn', 'Burn'], ['maceration', 'Maceration'], ['excoriation', 'Excoriation'], ['diabetic ulcer', 'Diabetic Ulcer'], ['arterial ulcer', 'Arterial Ulcer'], ['incision', 'Incision'], ['scar', 'Scar'], ['skin tears', 'Skin Tears']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.other_wounds, :label => "Other Wounds"
-        %td
-          = f.input :venous_ulcer, :collection => [['L', 'L'], ['X', 'X'], ['W', 'W']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.venous_ulcer, :class => "form-control", :label => "Venous Ulcer"
+.col-md-12.well
+  %h4{:align => "center"}
+    %b Wound Assessment
+    %p
+      %b (Click on appropriate parameters)
 
-          = f.input :burn, :collection => [['L', 'L'], ['X', 'X'], ['W', 'W']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.burn, :class => "form-control"
+  .table-responsive
+    %table.table.table-striped.skin-table
+      %thead
+        %tr
+          %th Stage
+          %th Other Wounds
+          %th Size (L X W)
+          %th Depth (cm only)
+          %th Undermining
+          %th Drainage
+          %th Amount
+          %th Color of Wound
+          %th Periwound Surrounding Skin
+      %tbody
+        %tr
+          %td
+            = f.input :stage, :collection => [['i', 'I'], ['ii', 'II'], ['iii', 'III'], ['iv', 'IV'], ['unable to determine', 'Unable to Determine'], ['deep tissue injury', 'Deep Tissue Injury']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.stage
+          %td
+            = f.input :other_wounds, :collection => [['venous ulcer', 'Venous Ulcer'], ['burn', 'Burn'], ['maceration', 'Maceration'], ['excoriation', 'Excoriation'], ['diabetic ulcer', 'Diabetic Ulcer'], ['arterial ulcer', 'Arterial Ulcer'], ['incision', 'Incision'], ['scar', 'Scar'], ['skin tears', 'Skin Tears']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.other_wounds, :label => "Other Wounds"
+          %td
+            = f.input :venous_ulcer, :collection => [['L', 'L'], ['X', 'X'], ['W', 'W']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.venous_ulcer, :class => "form-control", :label => "Venous Ulcer"
 
-          = f.input :maceration, :collection => [['L', 'L'], ['X', 'X'], ['W', 'W']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.maceration, :class => "form-control"
+            = f.input :burn, :collection => [['L', 'L'], ['X', 'X'], ['W', 'W']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.burn, :class => "form-control"
 
-          = f.input :excoriation, :collection => [['L', 'L'], ['X', 'X'], ['W', 'W']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.excoriation, :class => "form-control"
+            = f.input :maceration, :collection => [['L', 'L'], ['X', 'X'], ['W', 'W']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.maceration, :class => "form-control"
 
-          = f.input :diabetic_ulcer, :collection => [['L', 'L'], ['X', 'X'], ['W', 'W']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.diabetic_ulcer, :class => "form-control", :label => "Diabetic Ulcer"
+            = f.input :excoriation, :collection => [['L', 'L'], ['X', 'X'], ['W', 'W']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.excoriation, :class => "form-control"
 
-          = f.input :arterial_ulcer, :collection => [['L', 'L'], ['X', 'X'], ['W', 'W']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.arterial_ulcer, :class => "form-control", :label => "Arterial Ulcer"
+            = f.input :diabetic_ulcer, :collection => [['L', 'L'], ['X', 'X'], ['W', 'W']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.diabetic_ulcer, :class => "form-control", :label => "Diabetic Ulcer"
 
-          = f.input :incision, :collection => [['L', 'L'], ['X', 'X'], ['W', 'W']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.incision, :class => "form-control"
+            = f.input :arterial_ulcer, :collection => [['L', 'L'], ['X', 'X'], ['W', 'W']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.arterial_ulcer, :class => "form-control", :label => "Arterial Ulcer"
 
-          = f.input :scar, :collection => [['L', 'L'], ['X', 'X'], ['W', 'W']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.scar, :class => "form-control"
+            = f.input :incision, :collection => [['L', 'L'], ['X', 'X'], ['W', 'W']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.incision, :class => "form-control"
 
-          = f.input :skin_tears, :collection => [['L', 'L'], ['X', 'X'], ['W', 'W']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.skin_tears, :class => "form-control", :label => "Skin Tears"
-        %td
-          = f.input :venous_ulcer_depth, :class => "form-control", :label => "Venous Ulcer Depth"
-          = f.input :burn_depth, :class => "form-control", :label => "Burn Depth"
-          = f.input :maceration_depth, :class => "form-control", :label => "Maceration Depth"
-          = f.input :excoriation_depth, :class => "form-control", :label => "Excoriation Depth"
-          = f.input :diabetic_ulcer_depth, :class => "form-control", :label => "Diabetic Ulcer Depth"
-          = f.input :arterial_ulcer_depth, :class => "form-control", :label => "Arterial Ulcer Depth"
-          = f.input :incision_depth, :class => "form-control", :label => "Incision Depth"
-          = f.input :scar_depth, :class => "form-control", :label => "Scar Depth"
-          = f.input :skin_tears_depth, :class => "form-control", :label => "Skin Tears Depth"
-        %td
-          = f.input :undermining, :collection => [['present', 'Present'], ['absent', 'Absent'], ['unable to determine', 'Unable to Determine']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.undermining
-        %td
-          = f.input :drainage, :collection => [['none', 'None'], ['serous', 'Serous'], ['serosanguinous', 'Serosanguinous'], ['sanguineous', 'Sanguineous'], ['purulent', 'Purulent'], ['other', 'Other']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.drainage
-          = f.input :other_drainage, :class => "form-control", :label => "Other Drainage"
-        %td
-          = f.input :wound_amount, :collection => [['scant', 'Scant'], ['moderate', 'Moderate'], ['copious', 'Copious']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.wound_amount, :label => "Wound Amount"
-        %td
-          = f.input :color_of_wound, :collection => [['red', 'Red'], ['pink', 'Pink'], ['yellow slough', 'Yellow Slough'], ['black escar', 'Black Escar']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.color_of_wound, :label => "Color of Wound"
-        %td
-          = f.input :periwound_surrounding_skin, :collection => [['intact', 'Intact'], ['induration', 'Induration'], ['erythema', 'Erythema'], ['maceration', 'Maceration'], ['pale', 'Pale'], ['dark purle', 'Dark Purple']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.periwound_surrounding_skin, :label => "Periwound Surrounding Skin"
+            = f.input :scar, :collection => [['L', 'L'], ['X', 'X'], ['W', 'W']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.scar, :class => "form-control"
+
+            = f.input :skin_tears, :collection => [['L', 'L'], ['X', 'X'], ['W', 'W']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.skin_tears, :class => "form-control", :label => "Skin Tears"
+          %td
+            = f.input :venous_ulcer_depth, :class => "form-control", :label => "Venous Ulcer Depth"
+            = f.input :burn_depth, :class => "form-control", :label => "Burn Depth"
+            = f.input :maceration_depth, :class => "form-control", :label => "Maceration Depth"
+            = f.input :excoriation_depth, :class => "form-control", :label => "Excoriation Depth"
+            = f.input :diabetic_ulcer_depth, :class => "form-control", :label => "Diabetic Ulcer Depth"
+            = f.input :arterial_ulcer_depth, :class => "form-control", :label => "Arterial Ulcer Depth"
+            = f.input :incision_depth, :class => "form-control", :label => "Incision Depth"
+            = f.input :scar_depth, :class => "form-control", :label => "Scar Depth"
+            = f.input :skin_tears_depth, :class => "form-control", :label => "Skin Tears Depth"
+          %td
+            = f.input :undermining, :collection => [['present', 'Present'], ['absent', 'Absent'], ['unable to determine', 'Unable to Determine']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.undermining
+          %td
+            = f.input :drainage, :collection => [['none', 'None'], ['serous', 'Serous'], ['serosanguinous', 'Serosanguinous'], ['sanguineous', 'Sanguineous'], ['purulent', 'Purulent'], ['other', 'Other']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.drainage
+            = f.input :other_drainage, :class => "form-control", :label => "Other Drainage"
+          %td
+            = f.input :wound_amount, :collection => [['scant', 'Scant'], ['moderate', 'Moderate'], ['copious', 'Copious']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.wound_amount, :label => "Wound Amount"
+          %td
+            = f.input :color_of_wound, :collection => [['red', 'Red'], ['pink', 'Pink'], ['yellow slough', 'Yellow Slough'], ['black escar', 'Black Escar']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.color_of_wound, :label => "Color of Wound"
+          %td
+            = f.input :periwound_surrounding_skin, :collection => [['intact', 'Intact'], ['induration', 'Induration'], ['erythema', 'Erythema'], ['maceration', 'Maceration'], ['pale', 'Pale'], ['dark purle', 'Dark Purple']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :class => "form-control", :checked => @submission.periwound_surrounding_skin, :label => "Periwound Surrounding Skin"
 
 %h3 Specify Pain Location
 %p (Specify by Circling)
