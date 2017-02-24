@@ -19,5 +19,6 @@ $(document).on('turbolinks:load', function () {
     }
     // Render the new value
     $('input#submission_cpot_total_score').val(total_score_cpot.toString());
-    $('input#submission_cpot_total_score').val(total_score_cpot.toString());
+    $('input#submission_total_score').val(total_score_cpot.toString());
   }
+});

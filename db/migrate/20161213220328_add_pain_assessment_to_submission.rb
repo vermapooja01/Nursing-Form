@@ -9,6 +9,14 @@ class AddPainAssessmentToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :pain_scale, :string, :default => 0
     add_column :submissions, :pain_scale_rating_scale, :string, :default => 0
 
+    # flacc Score Calculation
+    add_column :submissions, :flacc_score_zero_values, :json
+    add_column :submissions, :flacc_score_one_values, :json
+    add_column :submissions, :flacc_score_two_values, :json
+    add_column :submissions, :flacc_score_zero, :string
+    add_column :submissions, :flacc_score_one, :string
+    add_column :submissions, :flacc_score_two, :string
+
     # Score 0
     add_column :submissions, :flacc_scale_face_0, :integer
     add_column :submissions, :flacc_scale_legs_0, :integer
@@ -49,7 +57,7 @@ class AddPainAssessmentToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :cpot_score_vocalization_2, :integer
     add_column :submissions, :cpot_score_muscle_tension_2, :integer
     # Total Score
-    add_column :submissions, :cpot_total_score, :float
+    add_column :submissions, :cpot_total_score, :integer, :default => 0
     # -----------------------------------------------------------------------------
   end
 end

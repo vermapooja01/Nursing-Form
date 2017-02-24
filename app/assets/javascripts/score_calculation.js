@@ -9,7 +9,7 @@ $(document).on('turbolinks:load', function () {
   // Get a function that sums the values
   function calculate_sum(object) {
     // Create empty var that stores a total score value
-    var total_score = parseInt($('input#submission_flacc_total_score').val());
+   var total_score = parseInt($('input#submission_flacc_total_score').val());
     // Check what operation to do based on the status of the checkbox
     if (object.target.checked) {
       total_score = total_score + parseInt(object.target.value);

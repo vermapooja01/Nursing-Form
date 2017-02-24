@@ -51,14 +51,14 @@
 #nursing-school-seal {
   width: 400px;
   height: 356px;
-  align: center;
+  align: left;
   background-image: url("/assets/nursing_seal.gif");
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 2;
 }
 #nursing-school-seal-viewer {
-  position: absolute;
+  position: left;
   width: 400px;
   height: 356px;
   z-index: 0;
@@ -129,8 +129,6 @@ i.fa {
 }
 .left-tabs {
   min-height: 10px;
-  background-color: #aed6f1;
-  border: 1;
 }
 // .tabs-left > li.active > a, .tabs-left > li.active > a:focus, .tabs-left > li.active > a:hover {
 //   border: none;
@@ -212,4 +210,12 @@ table.skin-striped {
 .navbar-fixed-top {
     background-color: #f7882f;
     text-align: center;
+}
+
+.navbar-brand {
+
+  background-color: #000000;
+}
+.navbar-nav {
+  background-color: #000000;
 }
