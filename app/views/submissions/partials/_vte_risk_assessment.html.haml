@@ -10,9 +10,13 @@
 .col-md-12.well
   = f.input :each_risk_factor_represents_five_point, :collection => [['stroke', 'Stroke'], ['multiple trauma (<1 month)', 'Multiple Trauma ( < 1 month)'], ['hip pelvis or leg fracture ( <1 month) acute spinal cord injury (< 1 month)', 'Hip, pelvis or leg fracture ( < 1 month) Acute spinal cord injury ( < 1 month)'], ['elective major lower extremity arthroplasty', 'Elective major lower extremity arthroplasty']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control", :label => "Each Risk Factor Represents Five Points"
 
-.col-md-12.well
-  = f.input :patients_total_score, :collection => [['low risk 0-1', 'Low risk 0-1'], ['moderate risk: 2', 'Moderate Risk: 2'], ['high risk :3 or >', 'High Risk : 3 or >'], ['Already on prophylaxis', 'Already on prophylaxis']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control", :label => "Patient's Total Score"
+.col-md-12.has-success
+  .col-md-3.col-md-offset-9.well
+    = f.input :patient_total_score, :class => "form-control", :label => "Patient's Total Score"
+    = f.hidden_field :patient_total_score, :value => ""
 
+.col-md-12.well
+  = f.input :patients_total_score, :collection => [['low risk 0-1', 'Low risk 0-1'], ['moderate risk: 2', 'Moderate Risk: 2'], ['high risk :3 or >', 'High Risk : 3 or >'], ['Already on prophylaxis', 'Already on prophylaxis']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control", :label => "Patient's Total Score (Risk)"
 
 
 
