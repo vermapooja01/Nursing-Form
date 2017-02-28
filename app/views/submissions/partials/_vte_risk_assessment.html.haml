@@ -1,19 +1,23 @@
 .col-md-12.well
-  = f.input :each_risk_factor_represents_one_point, :collection => [['age 41-60', 'Age 41-60'], ['abesity(bmi>30)', 'Obesity (BMI > 30)'], ['acute mi (< 1 month)', 'Acute MI (< 1 Month)'], ['chf (<1  month)', 'CHF ( < 1 month)'], ['sepsis (<1 month)', 'Sepsis (< 1 month)'], ['lung disease, including pneumonia (< 1 month)', 'Lung Disease, including pneumonia (< 1 month)'], ['medical patient currently on bedrest', 'Medical patient currently on bedrest'], ['leg plaster cast or brace', 'Leg Plaster cast or brace'], ['oral contraceptives or hormone replacement therapy', 'Oral Contraceptives or hormone replacement therapy'], ['pregnancy or postpartum', 'Pregnancy or postpartum']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control", :label => "Each Risk Factor Represents One Point"
-
+  = f.input :risk_factor_one_values, :collection => [[1, 'Age 41-60'], [1, 'Obesity (BMI > 30)'], [1, 'Acute MI (< 1 Month)'], [1, 'CHF ( < 1 month)'], [1, 'Sepsis (< 1 month)'], [1, 'Lung Disease, including pneumonia (< 1 month)'], [1, 'Medical patient currently on bedrest'], [1, 'Leg Plaster cast or brace'], [1, 'Oral Contraceptives or hormone replacement therapy'], [1, 'Pregnancy or postpartum']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control", :label => "Each Risk Factor Represents One Point"
+  = f.hidden_field :risk_factor_one, :value => ""
+  = f.input :risk_factor_one, :class => "form-control", :disabled => true, :label => "Risk Factor One Score"
 .col-md-12.well
-  = f.input :each_risk_factor_represents_two_point, :collection => [['age 61-74', 'Age 61-74'], ['morbid obesity (bmi >40)', 'Morbid Obesity (BMI > 40)'], ['central venous access', 'Central Venous Access'], ['surgical procedure (>30 minutes) requiring inhospital stay (>24 hours) post op', 'Surgical procedure ( > 30 minutes) requiring inhospital stay ( > 24 hours) post op'], ['previous cancer malignancy', 'Previous Cancer/Malignancy']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control", :label => "Each Risk Factor Represents Two Points"
-
+  = f.input :risk_factor_two_values, :collection => [[2, 'Age 61-74'], [2, 'Morbid Obesity (BMI > 40)'], [2, 'Central Venous Access'], [2, 'Surgical procedure ( > 30 minutes) requiring inhospital stay ( > 24 hours) post op'], [2, 'Previous Cancer/Malignancy']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control", :label => "Each Risk Factor Represents Two Points"
+  = f.hidden_field :risk_factor_two, :value => ""
+  = f.input :risk_factor_two, :class => "form-control", :disabled => true, :label => "Risk Factor two Score"
 .col-md-12.well
-  = f.input :each_risk_factor_represents_three_point, :collection => [['age over 75', 'Age over 75'], ['bmi >75', 'BMI > 75'], ['history of dvt pe', 'History of DVT/PE'], ['present cancer malignancy and chemotherapy', 'Present Cancer/Malignancy and/or chemotherapy'], ['hypercoaguable states: factor v leiden mutation antithrombin iii deficiency protein c or protein s deficiency antiphospholipid antibodies lupus anticoagulant', 'Hypercoaguable states: Factor V leiden mutation, Antithrombin III deficiency, Protein C or Protein S deficiency, Antiphospholipid antibodies, Lupus anticoagulant']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control", :label => "Each Risk Factor Represents Three Points"
-
+  = f.input :risk_factor_three_values, :collection => [[3, 'Age over 75'], [3, 'BMI > 75'], [3, 'History of DVT/PE'], [3, 'Present Cancer/Malignancy and/or chemotherapy'], [3, 'Hypercoaguable states: Factor V leiden mutation, Antithrombin III deficiency, Protein C or Protein S deficiency, Antiphospholipid antibodies, Lupus anticoagulant']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control", :label => "Each Risk Factor Represents Three Points"
+  = f.hidden_field :risk_factor_three, :value => ""
+  = f.input :risk_factor_three, :class => "form-control", :disabled => true, :label => "Risk Factor three Score"
 .col-md-12.well
-  = f.input :each_risk_factor_represents_five_point, :collection => [['stroke', 'Stroke'], ['multiple trauma (<1 month)', 'Multiple Trauma ( < 1 month)'], ['hip pelvis or leg fracture ( <1 month) acute spinal cord injury (< 1 month)', 'Hip, pelvis or leg fracture ( < 1 month) Acute spinal cord injury ( < 1 month)'], ['elective major lower extremity arthroplasty', 'Elective major lower extremity arthroplasty']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control", :label => "Each Risk Factor Represents Five Points"
-
+  = f.input :risk_factor_five_values, :collection => [[5, 'Stroke'], [5, 'Multiple Trauma ( < 1 month)'], [5, 'Hip, pelvis or leg fracture ( < 1 month) Acute spinal cord injury ( < 1 month)'], [5, 'Elective major lower extremity arthroplasty']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control", :label => "Each Risk Factor Represents Five Points"
+  = f.hidden_field :risk_factor_five, :value => ""
+  = f.input :risk_factor_five, :class => "form-control", :disabled => true, :label => "Risk Factor five Score"
 .col-md-12.has-success
   .col-md-3.col-md-offset-9.well
-    = f.input :patient_total_score, :class => "form-control", :label => "Patient's Total Score"
-    = f.hidden_field :patient_total_score, :value => ""
+    = f.input :vte_total_score, :class => "form-control", :label => "Patient's Total Score"
+    = f.hidden_field :vte_total_score, :value => ""
 
 .col-md-12.well
   = f.input :patients_total_score, :collection => [['low risk 0-1', 'Low risk 0-1'], ['moderate risk: 2', 'Moderate Risk: 2'], ['high risk :3 or >', 'High Risk : 3 or >'], ['Already on prophylaxis', 'Already on prophylaxis']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control", :label => "Patient's Total Score (Risk)"
