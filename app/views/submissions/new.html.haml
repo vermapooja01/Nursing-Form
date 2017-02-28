@@ -51,7 +51,9 @@
         %a{"data-toggle" => "tab", :href => "#n"} Skin Risk Assessment Screen
       %li
         %a{"data-toggle" => "tab", :href => "#o"} VTE Risk Assessment
-      
+      %li
+        %a{"data-toggle" => "tab", :href => "#p"} Review and Submit
+
 
   .col-sm-9
     = simple_form_for @submission, html: {class: ''} do |f|
@@ -141,6 +143,10 @@
           %h3 VTE Risk Assessment
           .form-group
             = render :partial => "submissions/partials/vte_risk_assessment", :locals => {:f => f}
+        #p.tab-pane
+          %h3 Submit your Form
+          .form-group
+            = render :partial => "submissions/partials/review.html.haml", :locals => {:f => f}
 
 
           - if !@submission.id.nil?

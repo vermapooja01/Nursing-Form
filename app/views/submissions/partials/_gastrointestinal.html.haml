@@ -1,26 +1,26 @@
 .col-md-12.well
   = f.input :abdomen, :collection => [['soft', 'Soft'], ['flat', 'Flat'], ['firm', 'Firm'], ['distended', 'Distended'], ['tender', 'Tender'], ['other', 'Other']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.abdomen, :class => "form-control"
-  = f.input :other_abdomen_type, :class => "form-control"
+  = f.input :other_abdomen_type, :class => "form-control", :label => "Other Abdomen Type"
 
 .col-md-12.well
-  = f.input :bowel_sounds, :collection => [['present', 'Present'], ['absent', 'Absent'], ['hypo', 'Hypo'], ['hyper', 'Hyper'], ['flatus', 'Flatus']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.bowel_sounds, :class => "form-control"
-  = f.input :last_bm, :class => "form-control"
-  = f.input :bowel_control_problems, :collection => [['diarrhea', 'Diarrhea'], ['incontinent', 'Incontinent'], ['colostomy', 'Colostomy'], ['ileostomy', 'Ileostomy'], ['flex-iseal', 'Flex-iseal'], ['rectal tube', 'Rectal Tube'], ['other', 'Other']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.bowel_control_problems, :class => "form-control"
-  = f.input :other_bowel_control_problem, :class => "form-control"
+  = f.input :bowel_sounds, :collection => [['present', 'Present'], ['absent', 'Absent'], ['hypo', 'Hypo'], ['hyper', 'Hyper'], ['flatus', 'Flatus']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.bowel_sounds, :class => "form-control", :label => "Bowel Sounds"
+  = f.input :last_bm, :class => "form-control", :label => "Last BM"
+  = f.input :bowel_control_problems, :collection => [['diarrhea', 'Diarrhea'], ['incontinent', 'Incontinent'], ['colostomy', 'Colostomy'], ['ileostomy', 'Ileostomy'], ['flex-iseal', 'Flex-iseal'], ['rectal tube', 'Rectal Tube'], ['other', 'Other']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.bowel_control_problems, :class => "form-control", :label => "Bowel Control Movements"
+  = f.input :other_bowel_control_problem, :class => "form-control", :label => "Other Bowel Control Problem"
 
 .col-md-12.well
-  = f.input :feeding_method, :collection => [['ngt', 'NGT'], ['gastrostomy', 'Gastrostomy'], ['jejunostomy', 'Jejunostomy'], ['feeding tube', 'Feeding Tube']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.feeding_method, :class => "form-control"
-  = f.input :feeding_tube_type, :class => "form-control"
-  = f.input :feeding_tube_size, :class => "form-control"
+  = f.input :feeding_method, :collection => [['ngt', 'NGT'], ['gastrostomy', 'Gastrostomy'], ['jejunostomy', 'Jejunostomy'], ['feeding tube', 'Feeding Tube']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.feeding_method, :class => "form-control", :label => "Feeding Method"
+  = f.input :feeding_tube_type, :class => "form-control", :label => "Feeding Tube Type"
+  = f.input :feeding_tube_size, :class => "form-control", :label => "Feeding Tube Size"
 
 .col-md-12.well
   = f.input :position, :collection => [['r nare', 'R Nare'], ['l nare', 'L Nare'], ['orogastric', 'Orogastric'], ['other', 'Other']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.position, :class => "form-control"
-  = f.input :other_position, :class => "form-control"
+  = f.input :other_position, :class => "form-control", :label => "Other Position"
 
 .col-md-12.well
-  = f.input :other_feeding_method, :collection => [['suction', 'Suction'], ['gd', 'GD'], ['clamped', 'Clamped'], ['enternal feeding', 'Enternal Feeding']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.other_feeding_method, :class => "form-control"
-  = f.input :drainage_color, :class => "form-control"
-  = f.input :drainage_color_comments, :class => "form-control"
+  = f.input :other_feeding_method, :collection => [['suction', 'Suction'], ['gd', 'GD'], ['clamped', 'Clamped'], ['enternal feeding', 'Enternal Feeding']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.other_feeding_method, :class => "form-control", :label => "Other Feeding Method"
+  = f.input :drainage_color, :class => "form-control", :label => "Drainage Color"
+  = f.input :drainage_color_comments, :class => "form-control", :label => "Drainage Color Comments"
 
 -# = f.input :abdomen
 -# = f.input :bowel_sounds

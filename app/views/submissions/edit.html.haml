@@ -53,7 +53,7 @@
         %li
           %a{"data-toggle" => "tab", :href => "#o"} VTE Risk Assessment
         %li
-          %a{"data-toggle" => "tab", :href => "#p"} Last Page
+          %a{"data-toggle" => "tab", :href => "#p"} Review and Submit
 
     .col-sm-9
       = simple_form_for @submission, html: {class: ''} do |f|
@@ -64,16 +64,16 @@
           #a.tab-pane.active
             %h3 Basic Information
             .col-md-4
-              = f.input :patient_initials, :class => "form-control"
+              = f.input :patient_initials, :class => "form-control", required: true
             .col-md-2
-              = f.input :age
+              = f.input :age, required: true
             .col-md-12.gender-selector
-              = f.input :gender, :collection => [['Male', 'Male'], ['Female', 'Female']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.gender, :class => "form-control"
+              = f.input :gender, :collection => [['Male', 'Male'], ['Female', 'Female']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.gender, :class => "form-control", required: true
             .col-md-12
               = f.label :admitting_primary_medical_diagnosis
               = f.text_area :admitting_primary_medical_diagnosis, :placeholder => "Enter text here...", :class => "tinymce form-control", :rows => 4, :cols => 120
             .col-md-6.date-selector
-              = f.input :week, :class => "daterange-picker", :as => :string
+              = f.input :week, :class => "daterange-picker", :as => :string, required:true
 
           #b.tab-pane
             %h3 Neurological/Muscular
@@ -146,9 +146,9 @@
               = render :partial => "submissions/partials/vte_risk_assessment", :locals => {:f => f}
 
           #p.tab-pane
-            %h3 Last Page
+            %h3 Review and Submit
             .form-group
-              = render :partial => "submissions/partials/page_9", :locals => {:f => f}
+              = render :partial => "submissions/partials/review", :locals => {:f => f}
 
             - if !@submission.id.nil?
               = link_to 'Complete the form', submission_complete_form_path(@submission), :class => "btn btn-primary"

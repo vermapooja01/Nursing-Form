@@ -43,6 +43,22 @@ $(document).on('turbolinks:load', function () {
 
   }
 
+  if ($('#submission_location_image2').val() != "") {
+    try {
+      var strokes = JSON.parse($("#submission_location_image2").val());
+
+      var sketchpad_view = Raphael.sketchpad("pain-location-image2-viewer", {
+        width: 400,
+        height: 356,
+        strokes: strokes,
+        editing: false
+      });
+    }
+    catch(err) {
+        console.log("There was an error with the JSON, please draw something" + " " + err);
+    }
+  }
+
   if ($('#pain-location-image2').length) {
     var sketchpad = Raphael.sketchpad("pain-location-image2", {
        width: 400,
@@ -51,7 +67,7 @@ $(document).on('turbolinks:load', function () {
      });
     // When the sketchpad changes, update the input field.
     sketchpad.change(function() {
-      $("#submission_location_image1").val(sketchpad.json());
+      $("#submission_location_image2").val(sketchpad.json());
     });
 
   }

@@ -1,5 +1,5 @@
 class SubmissionsController < ApplicationController
-  before_action :set_submission, :logged_in_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_submission, :signed_in?, only: [:show, :edit, :update, :destroy]
 
   # GET /submissions
   # GET /submissions.json
@@ -30,7 +30,7 @@ class SubmissionsController < ApplicationController
     @submission.save
     # Redirect to the logged in home with notice of success
     respond_to do |format|
-      format.html { redirect_to submissions_path, notice: 'You have successfully completed the entry form!' }
+      format.html { redirect_to submissions_path, notice: "You have successfully completed the entry form!" }
     end
   end
 
@@ -53,7 +53,6 @@ class SubmissionsController < ApplicationController
   # PATCH/PUT /submissions/1.json
   def update
     respond_to do |format|
-      byebug
       if @submission.update(submission_params)
         format.html { redirect_to edit_submission_path(@submission, :tab => params[:selected_tab]), notice: 'Submission was successfully updated.' }
         format.json { render :show, status: :ok, location: @submission }

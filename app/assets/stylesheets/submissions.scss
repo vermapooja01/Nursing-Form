@@ -10,9 +10,11 @@
 
 .slider.slider-horizontal {
   width: 100% !important;
+
 }
 .block-container {
   display: block;
+
 }
 
 #pain-location-image1 {
@@ -28,7 +30,40 @@
   width: 400px;
   height: 356px;
   z-index: 0;
+
 }
+
+#pain-location-image2 {
+  width: 400px;
+  height: 356px;
+  background-image: url("/assets/3.PNG");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+#pain-location-image2-viewer {
+  position: absolute;
+  width: 400px;
+  height: 356px;
+  z-index: 0;
+}
+
+#nursing-school-seal {
+  width: 400px;
+  height: 356px;
+  align: left;
+  background-image: url("/assets/nursing_seal.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+#nursing-school-seal-viewer {
+  position: left;
+  width: 400px;
+  height: 356px;
+  z-index: 0;
+}
+
 
 
 .nursing-form-card {
@@ -52,7 +87,7 @@
       font-weight: bold;
       line-height: 45px;
       margin-right: 10px;
-      background-color: #eeeeee;
+
     }
     input {
       // visibility: hidden;
@@ -69,6 +104,7 @@
 
 .pager-buttons {
   height: 50px;
+
   // position: fixed;
   // right: 143px;
   // z-index: 1;
@@ -78,12 +114,21 @@
   right: 140px;
   z-index: 10;
 }
+.button-save {
+  background-color: #aed6f1;
+}
+.button-next {
+  background-color: #aed6f1;
+}
+.button-previous {
+  background-color: #aed6f1;
+}
 
 i.fa {
   line-height: 20px;
 }
 .left-tabs {
-  min-height: 2500px;
+  min-height: 10px;
 }
 // .tabs-left > li.active > a, .tabs-left > li.active > a:focus, .tabs-left > li.active > a:hover {
 //   border: none;
@@ -137,4 +182,40 @@ tbody.flacc-scoring {
   td {
     width: 200px;
   }
+}
+
+
+.well {
+  background-color: #f4decb;
+}
+
+table.skin-striped {
+  thead {
+    th {
+      text-align: center;
+    }
+  }
+  tbody {
+    tr {
+      th {
+        vertical-align: middle;
+      }
+      td {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.navbar-fixed-top {
+    background-color: #f7882f;
+    text-align: center;
+}
+
+.navbar-brand {
+
+  background-color: #000000;
+}
+.navbar-nav {
+  background-color: #000000;
 }
