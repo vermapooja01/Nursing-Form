@@ -1,24 +1,24 @@
-%p#notice= notice
+.col-md-12.well
+  %p#notice= notice
 
-%p
-  %b Patient initials:
-  = @submission.patient_initials
-%p
-  %b Age:
-  = @submission.age
-%p
-  %b Gender:
-  = @submission.gender
-%p
-  %b Admitting primary medical diagnosis:
-  = @submission.admitting_primary_medical_diagnosis
-%p
-  %b User:
-  = @submission.user.first_name
-%p
-  %b week:
-  = @submission.week
+  %p
+    %b Patient Initials:
+    = @submission.patient_initials
+  %p
+    %b Age:
+    = @submission.age
+  %p
+    %b Gender:
+    = @submission.gender
+  %p
+    %b Admitting Primary Medical Diagnosis:
+    = @submission.admitting_primary_medical_diagnosis
+  %p
+    %b User:
+    = @submission.user.first_name
+  %p
+    %b Week:
+    = @submission.week
 
-= link_to 'Edit', edit_submission_path(@submission)
-\|
-= link_to 'Back', submissions_path
+  = link_to 'Edit', edit_submission_path(@submission), :class => "btn btn-primary"
+  = link_to 'Back', submissions_path, :class => "btn btn-primary"

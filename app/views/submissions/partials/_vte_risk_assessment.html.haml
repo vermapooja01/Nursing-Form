@@ -1,19 +1,19 @@
 .col-md-12.well
   = f.input :risk_factor_one_values, :collection => [[1, 'Age 41-60'], [1, 'Obesity (BMI > 30)'], [1, 'Acute MI (< 1 Month)'], [1, 'CHF ( < 1 month)'], [1, 'Sepsis (< 1 month)'], [1, 'Lung Disease, including pneumonia (< 1 month)'], [1, 'Medical patient currently on bedrest'], [1, 'Leg Plaster cast or brace'], [1, 'Oral Contraceptives or hormone replacement therapy'], [1, 'Pregnancy or postpartum']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control", :label => "Each Risk Factor Represents One Point"
   = f.hidden_field :risk_factor_one, :value => ""
-  = f.input :risk_factor_one, :class => "form-control", :disabled => true, :label => "Risk Factor One Score"
+  = f.input :risk_factor_one, :class => "form-control", :disabled => true, :label => "Total Score for Risk Point One"
 .col-md-12.well
   = f.input :risk_factor_two_values, :collection => [[2, 'Age 61-74'], [2, 'Morbid Obesity (BMI > 40)'], [2, 'Central Venous Access'], [2, 'Surgical procedure ( > 30 minutes) requiring inhospital stay ( > 24 hours) post op'], [2, 'Previous Cancer/Malignancy']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control", :label => "Each Risk Factor Represents Two Points"
   = f.hidden_field :risk_factor_two, :value => ""
-  = f.input :risk_factor_two, :class => "form-control", :disabled => true, :label => "Risk Factor two Score"
+  = f.input :risk_factor_two, :class => "form-control", :disabled => true, :label => "Total Score for Risk Point Two"
 .col-md-12.well
   = f.input :risk_factor_three_values, :collection => [[3, 'Age over 75'], [3, 'BMI > 75'], [3, 'History of DVT/PE'], [3, 'Present Cancer/Malignancy and/or chemotherapy'], [3, 'Hypercoaguable states: Factor V leiden mutation, Antithrombin III deficiency, Protein C or Protein S deficiency, Antiphospholipid antibodies, Lupus anticoagulant']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control", :label => "Each Risk Factor Represents Three Points"
   = f.hidden_field :risk_factor_three, :value => ""
-  = f.input :risk_factor_three, :class => "form-control", :disabled => true, :label => "Risk Factor three Score"
+  = f.input :risk_factor_three, :class => "form-control", :disabled => true, :label => "Total Score for Risk Point Three"
 .col-md-12.well
   = f.input :risk_factor_five_values, :collection => [[5, 'Stroke'], [5, 'Multiple Trauma ( < 1 month)'], [5, 'Hip, pelvis or leg fracture ( < 1 month) Acute spinal cord injury ( < 1 month)'], [5, 'Elective major lower extremity arthroplasty']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => true, :class => "form-control", :label => "Each Risk Factor Represents Five Points"
   = f.hidden_field :risk_factor_five, :value => ""
-  = f.input :risk_factor_five, :class => "form-control", :disabled => true, :label => "Risk Factor five Score"
+  = f.input :risk_factor_five, :class => "form-control", :disabled => true, :label => "Total Score for Risk Point Five"
 .col-md-12.has-success
   .col-md-3.col-md-offset-9.well
     = f.input :vte_total_score, :class => "form-control", :label => "Patient's Total Score"

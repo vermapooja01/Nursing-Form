@@ -8,35 +8,49 @@
 - if !current_user.submissions.empty?
   %p You have the following submissions in progress:
 
-%h3 Completed Forms
-%p Completed forms
 
-%table
-  %thead
-    %tr
-      %th Patient initials
-      %th Age
-      %th Gender
-      %th Admitting primary medical diagnosis
-      %th User
-      %th Week
-      %th
-      %th
-      %th
+.col-md-8.well
+  %h3 Completed Forms
+  .table-responsive
+    %table.table-hover.completed-table
+      %thead
+        %tr
+          %th{:align => 'center'}
+            Patient Initials
 
-  %tbody
-    - @submissions.each do |submission|
-      %tr
-        %td= submission.patient_initials
-        %td= submission.age
-        %td= submission.gender
-        %td= submission.admitting_primary_medical_diagnosis
-        %td= submission.user_id
-        %td= submission.week
-        %td= link_to 'Show', submission
-        %td= link_to 'Edit', edit_submission_path(submission)
-        %td= link_to 'Destroy', submission, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          %th{:scope => 'col'}
+            Age
+
+          %th{:scope => 'col'}
+            Gender
+
+          %th{:scope => 'col'}
+            Admitting Primary Medical Diagnosis
+
+          %th{:scope => 'col'}
+            User
+
+          %th{:scope => 'col'}
+            Week
+
+          %th
+          %th
+          %th
+
+      %tbody
+        - @submissions.each do |submission|
+          %tr
+            %td= submission.patient_initials
+            %td= submission.age
+            %td= submission.gender
+            %td= submission.admitting_primary_medical_diagnosis
+            %td= submission.user_id
+            %td= submission.week
+            %td= link_to 'Show', submission, :class => "btn btn-primary"
+            %td= link_to 'Edit', edit_submission_path(submission), :class => "btn btn-primary"
+            %td= link_to 'Destroy', submission, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
+
 
 %br
-
-= link_to 'New Submission', new_submission_path
+.col-md-8.well
+  = link_to 'New Submission', new_submission_path, :class => "btn btn-primary"

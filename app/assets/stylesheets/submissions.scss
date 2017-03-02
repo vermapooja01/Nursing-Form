@@ -219,3 +219,17 @@ table.skin-striped {
 .navbar-nav {
   background-color: #000000;
 }
+
+
+
+
+table.completed-table {
+  thead{
+    th{
+      border: 1px;
+      border-style: solid;
+      background-color: #f7882f;
+      text-align: center;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 class SubmissionsController < ApplicationController
-  before_action :set_submission, :signed_in?, only: [:show, :edit, :update, :destroy]
+  before_action :set_submission, only: [:show, :edit, :update, :destroy]
 
   # GET /submissions
   # GET /submissions.json
@@ -30,9 +30,10 @@ class SubmissionsController < ApplicationController
     @submission.save
     # Redirect to the logged in home with notice of success
     respond_to do |format|
-      format.html { redirect_to submissions_path, notice: "You have successfully completed the entry form!" }
+      format.html { redirect_to submissions_url, notice: 'You have successfully completed the entry form!' }
     end
   end
+
 
   # POST /submissions
   # POST /submissions.json
@@ -368,8 +369,6 @@ class SubmissionsController < ApplicationController
         :cpot_score_muscle_tension_2,
         :cpot_total_score,
 
-
-        :step_id,
         best_eye_opening_response_values:[],
         best_verbal_response_values:[],
         best_motor_response_values:[],
