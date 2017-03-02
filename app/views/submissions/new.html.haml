@@ -55,23 +55,23 @@
         %a{"data-toggle" => "tab", :href => "#p"} Review and Submit
 
 
-  .col-sm-9.well
+  .col-sm-9
     = simple_form_for @submission, html: {class: ''} do |f|
       .tab-content
 
         #a.tab-pane.active
           %h2 Basic Information
           = f.hidden_field :user_id, :value => current_user.id
-          .col-md-4
+          .col-md-6.well
             = f.input :patient_initials, :class => "form-control", required: true
-          .col-md-2
+          .col-md-6.well
             = f.input :age, required: true
-          .col-md-12.gender-selector
+          .col-md-12.gender-selector.well
             = f.input :gender, :collection => [['Male', 'Male'], ['Female', 'Female']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.gender, :class => "form-control", required: true
-          .col-md-12
+          .col-md-12.well
             = f.label :admitting_primary_medical_diagnosis, required: true
             = f.text_area :admitting_primary_medical_diagnosis, :placeholder => "Enter text here...", :class => "tinymce form-control", :rows => 4, :cols => 120
-          .col-md-6.date-selector
+          .col-md-12.date-selector.well
             = f.input :week, :class => "daterange-picker", :as => :string, required: true
 
         #b.tab-pane
