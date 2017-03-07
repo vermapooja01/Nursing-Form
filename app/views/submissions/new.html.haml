@@ -54,7 +54,9 @@
       %li
         %a{"data-toggle" => "tab", :href => "#p"} Peripheral IV Documentation
       %li
-        %a{"data-toggle" => "tab", :href => "#q"} Review and Submit
+        %a{"data-toggle" => "tab", :href => "#q"} Indwelling Urinary Catheter Documentation
+      %li
+        %a{"data-toggle" => "tab", :href => "#r"} Review and Submit
 
 
   .col-sm-9
@@ -150,6 +152,10 @@
           .form-group
             = render :partial => "submissions/partials/peripheral_iv_documentation", :locals => {:f => f}
         #q.tab-pane
+          %h3 Indwelling Urinary Catheter Documentation
+          .form-group
+            = render :partial => "submissions/partials/indwelling_urinary_catheter_documentation", :locals => {:f => f}
+        #r.tab-pane
           %h3 Submit your Form
           .form-group
             = render :partial => "submissions/partials/review.html.haml", :locals => {:f => f}
