@@ -52,7 +52,9 @@
       %li
         %a{"data-toggle" => "tab", :href => "#o"} VTE Risk Assessment
       %li
-        %a{"data-toggle" => "tab", :href => "#p"} Review and Submit
+        %a{"data-toggle" => "tab", :href => "#p"} Peripheral IV Documentation
+      %li
+        %a{"data-toggle" => "tab", :href => "#q"} Review and Submit
 
 
   .col-sm-9
@@ -144,6 +146,10 @@
           .form-group
             = render :partial => "submissions/partials/vte_risk_assessment", :locals => {:f => f}
         #p.tab-pane
+          %h3 Peripheral IV Documentation
+          .form-group
+            = render :partial => "submissions/partials/peripheral_iv_documentation", :locals => {:f => f}
+        #q.tab-pane
           %h3 Submit your Form
           .form-group
             = render :partial => "submissions/partials/review.html.haml", :locals => {:f => f}

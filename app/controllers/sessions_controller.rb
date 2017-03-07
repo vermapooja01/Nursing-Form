@@ -28,5 +28,4 @@ class SessionsController < ApplicationController
     @current_user = nil
   end
 
-  
 end
