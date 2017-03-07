@@ -36,6 +36,7 @@
           %th
           %th
           %th
+          %th
 
       %tbody
         - @submissions.each do |submission|
@@ -49,6 +50,7 @@
             %td= link_to 'Show', submission, :class => "btn btn-primary"
             %td= link_to 'Edit', edit_submission_path(submission), :class => "btn btn-primary"
             %td= link_to 'Destroy', submission, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
+            %td= link_to 'Submit', submission, :method => :submit, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 
 
 %br

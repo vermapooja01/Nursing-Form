@@ -14,7 +14,13 @@
       - else
         = link_to "Submission for " + submission.patient_initials, edit_submission_path(submission, :tab => submission.step_id)
   %hr
-  = link_to 'New Submssion', new_submission_path
+  = link_to 'New Submssion', new_submission_path, :class => "btn btn-primary"
 
 - else
-  %h1 Please login
+  %h1 Please Login
+
+-#%h1 New user
+
+-#= render 'form'
+
+-#= link_to 'Sign Up', users_path, :class => "btn btn-primary"
