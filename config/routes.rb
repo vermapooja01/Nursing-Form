@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   get "/create_session", to: "sessions#create"
   get "/sign_out", to: "sessions#destroy"
   #get "/form", to: "users#signup"
-
+  get "/complete_the_form", to: "submissions#complete_submission"
 end
