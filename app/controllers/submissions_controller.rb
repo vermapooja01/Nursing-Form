@@ -4,7 +4,8 @@ class SubmissionsController < ApplicationController
   # GET /submissions
   # GET /submissions.json
   def index
-    @submissions = Submission.all
+    @unfinished_submissions = Submission.where(completed:false)
+    @finished_submissions = Submission.where(completed:true)
   end
 
   # GET /submissions/1

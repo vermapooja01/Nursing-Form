@@ -162,4 +162,4 @@
               = render :partial => "submissions/partials/review", :locals => {:f => f}
 
             - if !@submission.id.nil?
-              = link_to 'Complete the form', submission_complete_form_path(@submission), :class => "btn btn-primary"
+              = link_to 'Complete the form', submission_complete_the_form_path(@submission), :class => "btn btn-primary"
