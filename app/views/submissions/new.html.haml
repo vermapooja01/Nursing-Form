@@ -56,7 +56,9 @@
       %li
         %a{"data-toggle" => "tab", :href => "#q"} Indwelling Urinary Catheter Documentation
       %li
-        %a{"data-toggle" => "tab", :href => "#r"} Review and Submit
+        %a{"data-toggle" => "tab", :href => "#r"} Vital Signs Documentation
+      %li
+        %a{"data-toggle" => "tab", :href => "#s"} Review and Submit
 
 
   .col-sm-9
@@ -156,10 +158,15 @@
           .form-group
             = render :partial => "submissions/partials/indwelling_urinary_catheter_documentation", :locals => {:f => f}
         #r.tab-pane
+          %h3 Vital Signs Documentation
+          .form-group
+            = render :partial => "submissions/partials/vital_signs_documentation", :locals => {:f => f}
+
+        #s.tab-pane
           %h3 Submit your Form
           .form-group
             = render :partial => "submissions/partials/review.html.haml", :locals => {:f => f}
 
 
           - if !@submission.id.nil?
-            = link_to 'Complete the form', submission_complete_form_path(@submission), :class => "btn btn-primary"
+            = link_to 'Complete the form', submission_complete_the_form_path(@submission), :class => "btn btn-primary"
