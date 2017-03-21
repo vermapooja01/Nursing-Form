@@ -49,7 +49,7 @@
   = f.input :o2_mask, :class => "form-control", :label => "O2 Mask"
 
 .col-md-12.well
-  %h5
+  %h4
     %b Ventilator Settings
   = f.input :mode, :class => "form-control", :label => "Mode"
   = f.input :tv, :class => "form-control", :label => "TV"
@@ -64,7 +64,7 @@
   = f.input :ett_placement, :class => "form-control", :label => "ETT Placement"
 
 .col-md-12.well
-  %h5
+  %h4
     %b Trach
   = f.input :trach_not_applicable, :collection => [['na', 'NA']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.trach_not_applicable, :class => "form-control", :label => "Trach not Applicable"
   = f.input :trach_type, :class => "form-control", :label => "Trach Type"
@@ -75,8 +75,8 @@
   = f.input :location_where, :class => "form-control", :label => "Location Where"
 
 .col-md-12.well
-  %h5
-  %b Suction
+  %h4
+    %b Suction
   = f.input :suction_type, :collection => [['air leak', 'Air Leak'], ['sub q emphysema', 'Sub Q Emphysema']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.suction_type, :class => "form-control", :label => "Suction Type"
   = f.input :emphysema_where, :class => "form-control", :label => "Emphysema Where"
 
