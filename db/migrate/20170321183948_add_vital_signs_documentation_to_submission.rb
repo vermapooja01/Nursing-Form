@@ -14,7 +14,7 @@ class AddVitalSignsDocumentationToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :i_vital_signs, :string
     add_column :submissions, :o_vital_signs, :string
     add_column :submissions, :other_ct_ngt_drains_vital_signs, :string
-    add_column :submissions, :titrated_meds_or_meds_treatment_based_on_patients_condition_vital_signs, :string
+    add_column :submissions, :titrated_meds_or_meds_treatment_based_on_patients_condition_vit, :string
     add_column :submissions, :other_relevant_notes_vital_signs, :string
   end
 end

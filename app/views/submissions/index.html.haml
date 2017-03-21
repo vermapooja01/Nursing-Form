@@ -1,100 +1,105 @@
 = render partial: "layouts/flash_messages", flash: notice
 %h1
   Welcome
-  = current_user.first_name
-  !
+  - if logged_in?
+    = current_user.first_name
+    !
 %hr
-%h3 In-Progress
-- if !current_user.submissions.empty?
-  %p You have the following submissions in progress:
+- if logged_in?
+  %h3 In-Progress
+  - if !current_user.submissions.empty?
+    %p You have the following submissions in progress:
 
-.col-md-8.well
-  .table-responsive
-    %table.table-hover.completed-table
-      %thead
-        %tr
-          %th{:align => 'center'}
-            Patient Initials
-
-          %th{:scope => 'col'}
-            Age
-
-          %th{:scope => 'col'}
-            Gender
-
-          %th{:scope => 'col'}
-            Admitting Primary Medical Diagnosis
-
-          %th{:scope => 'col'}
-            User
-
-          %th{:scope => 'col'}
-            Week
-
-          %th
-          %th
-          %th
-          %th
-
-      %tbody
-        - @unfinished_submissions.each do |submission|
+- if logged_in?
+  .col-md-8.well
+    .table-responsive
+      %table.table-hover.completed-table
+        %thead
           %tr
-            %td= submission.patient_initials
-            %td= submission.age
-            %td= submission.gender
-            %td= submission.admitting_primary_medical_diagnosis
-            %td= submission.user_id
-            %td= submission.week
-            %td= link_to 'Show', submission, :class => "btn btn-primary"
-            %td= link_to 'Edit', edit_submission_path(submission), :class => "btn btn-primary"
-            %td= link_to 'Destroy', submission, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
-            %td= link_to 'Complete Submission', complete_the_form_path(submission_id: submission.id), :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
+            %th{:align => 'center'}
+              Patient Initials
+
+            %th{:scope => 'col'}
+              Age
+
+            %th{:scope => 'col'}
+              Gender
+
+            %th{:scope => 'col'}
+              Admitting Primary Medical Diagnosis
+
+            %th{:scope => 'col'}
+              User
+
+            %th{:scope => 'col'}
+              Week
+
+            %th
+            %th
+            %th
+            %th
+
+        %tbody
+          - @unfinished_submissions.each do |submission|
+            %tr
+              %td= submission.patient_initials
+              %td= submission.age
+              %td= submission.gender
+              %td= submission.admitting_primary_medical_diagnosis
+              %td= submission.user_id
+              %td= submission.week
+              %td= link_to 'Show', submission, :class => "btn btn-primary"
+              %td= link_to 'Edit', edit_submission_path(submission), :class => "btn btn-primary"
+              %td= link_to 'Destroy', submission, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
+              %td= link_to 'Complete Submission', complete_the_form_path(submission_id: submission.id), :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 
 
 
-.col-md-8.well
-  %h3 Completed Forms
-  .table-responsive
-    %table.table-hover.completed-table
-      %thead
-        %tr
-          %th{:align => 'center'}
-            Patient Initials
-
-          %th{:scope => 'col'}
-            Age
-
-          %th{:scope => 'col'}
-            Gender
-
-          %th{:scope => 'col'}
-            Admitting Primary Medical Diagnosis
-
-          %th{:scope => 'col'}
-            User
-
-          %th{:scope => 'col'}
-            Week
-
-          %th
-          %th
-          %th
-          %th
-
-      %tbody
-        - @finished_submissions.each do |submission|
+  .col-md-8.well
+    %h3 Completed Forms
+    .table-responsive
+      %table.table-hover.completed-table
+        %thead
           %tr
-            %td= submission.patient_initials
-            %td= submission.age
-            %td= submission.gender
-            %td= submission.admitting_primary_medical_diagnosis
-            %td= submission.user_id
-            %td= submission.week
-            %td= link_to 'Show', submission, :class => "btn btn-primary"
-            %td= link_to 'Edit', edit_submission_path(submission), :class => "btn btn-primary"
-            %td= link_to 'Destroy', submission, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
+            %th{:align => 'center'}
+              Patient Initials
+
+            %th{:scope => 'col'}
+              Age
+
+            %th{:scope => 'col'}
+              Gender
+
+            %th{:scope => 'col'}
+              Admitting Primary Medical Diagnosis
+
+            %th{:scope => 'col'}
+              User
+
+            %th{:scope => 'col'}
+              Week
+
+            %th
+            %th
+            %th
+            %th
+
+        %tbody
+          - @finished_submissions.each do |submission|
+            %tr
+              %td= submission.patient_initials
+              %td= submission.age
+              %td= submission.gender
+              %td= submission.admitting_primary_medical_diagnosis
+              %td= submission.user_id
+              %td= submission.week
+              %td= link_to 'Show', submission, :class => "btn btn-primary"
+              %td= link_to 'Edit', edit_submission_path(submission), :class => "btn btn-primary"
+              %td= link_to 'Destroy', submission, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 
 
-%br
-.col-md-8.well
-  = link_to 'New Submission', new_submission_path, :class => "btn btn-primary"
+  %br
+  .col-md-8.well
+    = link_to 'New Submission', new_submission_path, :class => "btn btn-primary"
+- else
+  Please Login
