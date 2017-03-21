@@ -2,7 +2,7 @@ class AddRespiratoryO2therapyToSubmission < ActiveRecord::Migration[5.0]
   def change
     add_column :submissions, :ventilation, :string
     add_column :submissions, :pattern, :string
-    add_column :submissions, :breath_sounds, :string
+    add_column :submissions, :breath_sounds, :json
     add_column :submissions, :diminished, :boolean
     add_column :submissions, :diminished_where, :string
     add_column :submissions, :absent, :boolean

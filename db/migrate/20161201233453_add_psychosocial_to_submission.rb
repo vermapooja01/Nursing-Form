@@ -8,7 +8,7 @@ class AddPsychosocialToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :hospice_care, :string
     add_column :submissions, :substance_abuse_history, :boolean
     add_column :submissions, :substance_abuse_history_type, :string
-    add_column :submissions, :social_support, :string
+    add_column :submissions, :social_support, :json
     add_column :submissions, :other_social_support, :string
     add_column :submissions, :advanced_directive, :string
     add_column :submissions, :resuscitation_status, :json
