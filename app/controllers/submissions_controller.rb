@@ -230,7 +230,6 @@ class SubmissionsController < ApplicationController
         :posterior_tibialis_full,
         :posterior_tibialis_bounding,
         :posterior_tibialis_dp_doppler,
-        :heart_sounds,
         :edema,
         :edema_where,
         :capillary_refill,
@@ -287,9 +286,7 @@ class SubmissionsController < ApplicationController
         :current_iv_insertion_date_and_time,
         :therapy_type,
         :dressing_change_date_and_time,
-        :iv_site,
         :other_iv_site,
-        :condition,
         :start_change,
         :gauge,
         :number_of_attempts,
@@ -298,7 +295,6 @@ class SubmissionsController < ApplicationController
         :suprapubic_type,
         :suprapubic_size,
         :insertion_date,
-        :color,
         :dialysis,
         :dialysis_location,
         :venous_ulcer,
@@ -321,6 +317,7 @@ class SubmissionsController < ApplicationController
         :skin_tears_depth,
         :other_drainage,
         :location_image1,
+        :location_image2,
 
         :pain_scale,
         :pain_scale_rating_scale,
@@ -388,7 +385,11 @@ class SubmissionsController < ApplicationController
         non_verbal:[],
         scale_used:[],
         other_symptoms_present:[],
-        additional_measures:[]
+        additional_measures:[],
+        heart_sounds: [],
+        iv_site: [],
+        condition: [],
+        color: []
       )
     end
 end

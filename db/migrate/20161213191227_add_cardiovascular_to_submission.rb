@@ -42,7 +42,7 @@ class AddCardiovascularToSubmission < ActiveRecord::Migration[5.0]
     add_column :submissions, :posterior_tibialis_bounding, :string
     add_column :submissions, :posterior_tibialis_dp_doppler, :string
 
-    add_column :submissions, :heart_sounds, :string
+    add_column :submissions, :heart_sounds, :json
     add_column :submissions, :edema, :string
     add_column :submissions, :edema_where, :string
     add_column :submissions, :capillary_refill, :string

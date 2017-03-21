@@ -13,23 +13,32 @@ $(document).on('turbolinks:load', function () {
    }
   })();
 
-  if ($('#submission_location_image1').val() != "") {
+
+
+
+  // Raphael Pain Sketchers
+
+  // Pain location =====================
+  if ($('#submission_location_image1').val() != "[]") {
     try {
       var strokes = JSON.parse($("#submission_location_image1").val());
 
-      var sketchpad_view = Raphael.sketchpad("pain-location-image1-viewer", {
+      var painLocationSketcher = Raphael.sketchpad("pain-location-image1-viewer", {
         width: 400,
         height: 356,
         strokes: strokes,
         editing: false
       });
+      // When the sketchpad changes, update the input field.
+      painLocationSketcher.change(function() {
+        $("#submission_location_image1").val(painLocationSketcher.json());
+      });
     }
     catch(err) {
         console.log("There was an error with the JSON, please draw something" + " " + err);
     }
+
   }
-
-
   if ($('#pain-location-image1').length) {
     var sketchpad = Raphael.sketchpad("pain-location-image1", {
        width: 400,
@@ -42,7 +51,9 @@ $(document).on('turbolinks:load', function () {
     });
 
   }
+  // =====================================
 
+  // Foot pain location
   if ($('#submission_location_image2').val() != "") {
     try {
       var strokes = JSON.parse($("#submission_location_image2").val());
@@ -71,6 +82,13 @@ $(document).on('turbolinks:load', function () {
     });
 
   }
+  // =======================================================
+
+  // ===================================================
+
+
+
+
 
   $('#submission_week').daterangepicker();
 

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :signed_in?
-  before_action :is_admin?
+  before_action :logged_in_user
+  before_action :admin_user
 
   # GET /users
   # GET /users.json
@@ -63,7 +63,7 @@ class UsersController < ApplicationController
     end
   end
   def form
-    
+
   end
 
   private

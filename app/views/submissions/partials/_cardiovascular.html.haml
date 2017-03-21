@@ -58,7 +58,7 @@
 
 
 .col-md-6.well
-  = f.input :heart_sounds, :collection => [['s1', 'S1'], ['s2', 'S2'], ['s3', 'S3'], ['s4', 'S4'], ['regular', 'Regular'], ['irregular', 'Irregular'], ['distant', 'Distant'], ['murmur', 'Murmur'], ['rub', 'Rub']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => @submission.heart_sounds, :class => "form-control", :label => "Heart Sounds"
+  = f.input :heart_sounds, :collection => [['S1', 'S1'], ['S2', 'S2'], ['S3', 'S3'], ['S4', 'S4'], ['Regular', 'Regular'], ['Irregular', 'Irregular'], ['Distant', 'Distant'], ['Murmur', 'Murmur'], ['Rub', 'Rub']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => @submission.heart_sounds, :class => "form-control", :label => "Heart Sounds"
 
 .col-md-6.well
   = f.input :edema, :collection => [['na', 'NA'], ['pitting', 'Pitting'], ['non pitting', 'Non Pitting']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.edema, :class => "form-control"
