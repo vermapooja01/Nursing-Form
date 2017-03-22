@@ -4,7 +4,7 @@
 .col-md-12.well
   = f.input :turgor, :collection => [['adequate', 'Adequate'], ['decreased', 'Decreased']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.turgor, :class => "form-control"
 
-  = f.input :turgor_comments, :class => "form-control", :label => "Turgor Comments"
+  = f.input :turgor_comments, :class => "form-control", :label => "Comments"
 
 
 

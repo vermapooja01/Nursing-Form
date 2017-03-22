@@ -20,7 +20,7 @@
 .col-md-12.well
   = f.input :other_feeding_method, :collection => [['suction', 'Suction'], ['gd', 'GD'], ['clamped', 'Clamped'], ['enternal feeding', 'Enternal Feeding']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.other_feeding_method, :class => "form-control", :label => "Other Feeding Method"
   = f.input :drainage_color, :class => "form-control", :label => "Drainage Color"
-  = f.input :drainage_color_comments, :class => "form-control", :label => "Drainage Color Comments"
+  = f.input :drainage_color_comments, :class => "form-control", :label => "Comments"
 
 -# = f.input :abdomen
 -# = f.input :bowel_sounds

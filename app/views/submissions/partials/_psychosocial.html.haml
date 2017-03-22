@@ -26,7 +26,7 @@
 .col-md-12.well
   = f.input :resuscitation_status, :collection => [['Full Code', 'Full Code'], ['DNR', 'DNR']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => @submission.resuscitation_status, :class => "form-control", :label => "Resuscitation Status"
   = f.input :other_resuscitation_status, :class => "form-control", :label => "Other Resuscitation Status"
-  = f.input :resuscitation_comments, :class => "form-control", :label => "Resuscitation Comments"
+  = f.input :resuscitation_comments, :class => "form-control", :label => "Comments"
 
 .col-md-12.well
   = f.input :movement, :class => "form-control"
@@ -43,4 +43,4 @@
 
 .col-md-12.well
   = f.input :monitor, :collection => [['regular', 'Regular'], ['camino', 'Camino'], ['codman', 'Codman']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.monitor, :class => "form-control"
-  = f.input :monitor_comments, :class => "form-control", :label => "Monitor Comments"
+  = f.input :monitor_comments, :class => "form-control", :label => "Comments"

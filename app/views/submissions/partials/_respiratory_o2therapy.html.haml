@@ -8,22 +8,22 @@
   = f.input :breath_sounds, :collection => [['Clear', 'Clear'], ['Bilateral', 'Bilateral'], ['R', 'R'], ['L', 'L'], ['Diminished', 'Diminished']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => @submission.breath_sounds, :class => "form-control", :label => "Breath Sounds"
 
   -# = f.input :diminished
-  = f.input :diminished_where, :class => "form-control", :label => "Diminished Where"
+  = f.input :diminished_where, :class => "form-control", :label => "(If) Diminished Where"
 
   = f.input :absent, :class => "form-control"
-  = f.input :absent_where, :class => "form-control", :label => "Absent Where"
+  = f.input :absent_where, :class => "form-control", :label => "(If) Absent Where"
 
   = f.input :crackles, :class => "form-control"
-  = f.input :crackles_where, :class => "form-control", :label => "Crackles Where"
+  = f.input :crackles_where, :class => "form-control", :label => "(If) Crackles Where"
 
   = f.input :wheezes, :class => "form-control"
-  = f.input :wheezes_where, :class => "form-control", :label => "Wheezes Where"
+  = f.input :wheezes_where, :class => "form-control", :label => "(If) Wheezes Where"
 
   = f.input :stridor, :class => "form-control"
-  = f.input :stridor_where, :class => "form-control", :label => "Stridor Where"
+  = f.input :stridor_where, :class => "form-control", :label => "(If) Stridor Where"
 
   = f.input :ronchi, :class => "form-control"
-  = f.input :ronchi_where, :class => "form-control", :label => "Ronchi Where"
+  = f.input :ronchi_where, :class => "form-control", :label => "(If) Ronchi Where"
 
 .col-md-12.well
   = f.input :cough, :collection => [['N/A', 'N/A'], ['Dry', 'Dry'], ['Productive', 'Productive']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.cough, :class => "form-control"
@@ -41,7 +41,7 @@
 
 .col-md-12.well
   = f.input :amount, :collection => [['scant', 'Scant'], ['mod', 'Mod'], ['copious', 'Copious']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.amount, :class => "form-control"
-  = f.input :amount_comments, :class => "form-control", :label => "Amount Comments"
+  = f.input :amount_comments, :class => "form-control", :label => "Comments"
 
 .col-md-12.well
   = f.input :o2_protocol_in_place, :collection => [['ra', 'RA'], ['nc', 'NC']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.o2_protocol_in_place, :class => "form-control", :label => "O2 Protocol in Place"
@@ -72,16 +72,16 @@
 
 .col-md-12.well
   = f.input :chest_tube, :collection => [['na', 'NA'], ['r', 'R'], ['l', 'L'], ['location', 'Location']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.chest_tube, :class => "form-control", :label => "Chest Tube"
-  = f.input :location_where, :class => "form-control", :label => "Location Where"
+  = f.input :location_where, :class => "form-control", :label => "Specify Location"
 
 .col-md-12.well
   %h4
     %b Suction
   = f.input :suction_type, :collection => [['air leak', 'Air Leak'], ['sub q emphysema', 'Sub Q Emphysema']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.suction_type, :class => "form-control", :label => "Suction Type"
-  = f.input :emphysema_where, :class => "form-control", :label => "Emphysema Where"
+  = f.input :emphysema_where, :class => "form-control", :label => "Specify Emphysema"
 
 .col-md-12.well
-  = f.input :chest_tube_comments, :class => "form-control", :label => "Chest Tube Comments"
+  = f.input :chest_tube_comments, :class => "form-control", :label => "Comments"
 
 
 

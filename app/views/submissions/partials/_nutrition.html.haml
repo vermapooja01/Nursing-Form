@@ -22,7 +22,7 @@
 .col-md-12.well
   = f.input :placement, :collection => [['stomach', 'Stomach'], ['duodenum', 'Duodenum'], ['other', 'Other']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.placement, :class => "form-control"
   = f.input :other_placement, :class => "form-control", :label => "Other Placement"
-  = f.input :placement_comments, :class => "form-control", :label => "Placement Comments"
+  = f.input :placement_comments, :class => "form-control", :label => "Comments"
 
 
 -# = f.input :diet

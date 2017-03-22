@@ -9,7 +9,7 @@
 
 .col-md-12.well
   = f.input :dialysis, :collection => [['na', 'NA'], ['hemo', 'Hemo'], ['capd', 'CAPD'], ['catheter', 'Catheter'], ['fistula', 'Fistula'], ['shunt', 'Shunt'], ['bruit', 'Bruit'], ['thrill', 'Thrill']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.dialysis, :class => "form-control"
-  = f.input :dialysis_location, :class => "form-control", :label => "Dialysis Location"
+  = f.input :dialysis_location, :class => "form-control", :label => "Location of Dialysis"
 
 
 
