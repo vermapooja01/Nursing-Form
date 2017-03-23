@@ -29,7 +29,7 @@ $(document).on('turbolinks:load', function () {
 
     for (i =0; i < $('.submission_risk_factor_one_values input.check_boxes').length; i++) {
       if ($('.submission_risk_factor_one_values input.check_boxes')[i].checked) {
-        sumone = sumone + parseInt($('.submission_risk_factor_one_values input.check_boxes')[i].value);
+        sumone = sumone + parseInt($('.submission_risk_factor_one_values input.check_boxes')[i].value) - i;
       }
     }
 
@@ -43,7 +43,7 @@ $(document).on('turbolinks:load', function () {
 
     for (i=0; i < $('.submission_risk_factor_two_values input.check_boxes').length; i++) {
       if ($('.submission_risk_factor_two_values input.check_boxes')[i].checked) {
-        sumtwo = sumtwo + parseInt($('.submission_risk_factor_two_values input.check_boxes')[i].value);
+        sumtwo = sumtwo + parseInt($('.submission_risk_factor_two_values input.check_boxes')[i].value) - i;
       }
     }
     $('input#submission_risk_factor_two').val(sumtwo.toString());
@@ -56,7 +56,7 @@ $(document).on('turbolinks:load', function () {
 
     for (i=0; i < $('.submission_risk_factor_three_values input.check_boxes').length; i++) {
       if ($('.submission_risk_factor_three_values input.check_boxes')[i].checked) {
-        sumthree = sumthree + parseInt($('.submission_risk_factor_three_values input.check_boxes')[i].value);
+        sumthree = sumthree + parseInt($('.submission_risk_factor_three_values input.check_boxes')[i].value) - i;
       }
     }
     $('input#submission_risk_factor_three').val(sumthree.toString());
@@ -69,7 +69,7 @@ $(document).on('turbolinks:load', function () {
 
     for (i=0; i < $('.submission_risk_factor_five_values input.check_boxes').length; i++) {
       if ($('.submission_risk_factor_five_values input.check_boxes')[i].checked) {
-        sumfive = sumfive + parseInt($('.submission_risk_factor_five_values input.check_boxes')[i].value);
+        sumfive = sumfive + parseInt($('.submission_risk_factor_five_values input.check_boxes')[i].value) - i;
       }
     }
     $('input#submission_risk_factor_five').val(sumfive.toString());

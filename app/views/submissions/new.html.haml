@@ -66,6 +66,7 @@
       .tab-content
 
         #a.tab-pane.active
+          .col-md-12.well
           %h2 Basic Information
           = f.hidden_field :user_id, :value => current_user.id
           .col-md-6.well
@@ -81,91 +82,113 @@
             = f.input :week, :class => "daterange-picker", :as => :string, required: true
 
         #b.tab-pane
-          %h2 Neurological/Muscular
+          .col-md-12.well
+            %h3{:align => "center"} Neurological/Muscular
           .form-group
             = render :partial => "submissions/partials/neurological_muscular", :locals => {:f => f}
 
+
         #c.tab-pane
-          %h2 Psychosocial
+          .col-md-12.well
+            %h3{:align => "center"} Psychosocial
           .form-group
             = render :partial => "submissions/partials/psychosocial", :locals => {:f => f}
 
         #d.tab-pane
-          %h2 Respiratory/O2 Therapy
+          .col-md-12.well
+            %h3{:align => "center"} Respiratory/O2 Therapy
           .form-group
             = render :partial => "submissions/partials/respiratory_o2therapy", :locals => {:f => f}
 
         #e.tab-pane
-          %h2 Cardiovascular
+          .col-md-12.well
+            %h3{:align => "center"} Cardiovascular
           .form-group
             = render :partial => "submissions/partials/cardiovascular", :locals => {:f => f}
 
         #f.tab-pane
-          %h3 Gastrointestinal
+          .col-md-12.well
+            %h3{:align => "center"} Gastrointestinal
           .form-group
             = render :partial => "submissions/partials/gastrointestinal", :locals => {:f => f}
 
         #g.tab-pane
-          %h3 Nutrition
+          .col-md-12.well
+            %h3{:align => "center"} Nutrition
           .form-group
             = render :partial => "submissions/partials/nutrition", :locals => {:f => f}
 
         #h.tab-pane
-          %h3 Skin/Mucuous Membranes
+          .col-md-12.well
+            %h3{:align => "center"} Skin/Mucuous Membranes
           .form-group
             = render :partial => "submissions/partials/skin_mucuous_membrane", :locals => {:f => f}
 
         #i.tab-pane
-          %h3 IV Therapy
+          .col-md-12.well
+            %h3{:align => "center"} IV Therapy
           .form-group
             = render :partial => "submissions/partials/iv_therapy", :locals => {:f => f}
 
         #j.tab-pane
-          %h3 Genitourinary
+          .col-md-12.well
+            %h3{:align => "center"} Genitourinary
           .form-group
             = render :partial => "submissions/partials/genitourinary", :locals => {:f => f}
 
         #k.tab-pane
-          %h3 Skin Assessment
+          .col-md-12.well
+            %h3{:align => "center"} Skin Assessment
           .form-group
             = render :partial => "submissions/partials/skin_assessment", :locals => {:f => f}
 
         #l.tab-pane
-          %h3 Pain Assessment
+          .col-md-12.well
+            %h3{:align => "center"} Pain Assessment
           .form-group
             = render :partial => "submissions/partials/pain_assessment", :locals => {:f => f}
 
         #m.tab-pane
-          %h3 ADL Flowsheet
+          .col-md-12.well
+            %h3{:align => "center"} ADL Flowsheet
           .form-group
             = render :partial => "submissions/partials/adl_flowsheet", :locals => {:f => f}
 
         #n.tab-pane
-          %h3 Skin Risk Assessment Screen
+          .col-md-12.well
+            %h3{:align => "center"} Skin Risk Assessment Screen
           .form-group
             = render :partial => "submissions/partials/skin_risk_assessment_screen", :locals => {:f => f}
 
         #o.tab-pane
-          %h3 VTE Risk Assessment
+          .col-md-12.well
+            %h3{:align => "center"} VTE Risk Assessment
           .form-group
             = render :partial => "submissions/partials/vte_risk_assessment", :locals => {:f => f}
+
         #p.tab-pane
-          %h3 Peripheral IV Documentation
+          .col-md-12.well
+            %h3{:align => "center"} Peripheral IV Documentation
           .form-group
             = render :partial => "submissions/partials/peripheral_iv_documentation", :locals => {:f => f}
+
         #q.tab-pane
-          %h3 Indwelling Urinary Catheter Documentation
+          .col-md-12.well
+            %h3{:align => "center"} Indwelling Urinary Catheter Documentation
           .form-group
             = render :partial => "submissions/partials/indwelling_urinary_catheter_documentation", :locals => {:f => f}
+
         #r.tab-pane
-          %h3 Vital Signs Documentation
+          .col-md-12.well
+            %h3{:align => "center"} Vital Signs Documentation
           .form-group
             = render :partial => "submissions/partials/vital_signs_documentation", :locals => {:f => f}
 
         #s.tab-pane
-          %h3 Submit your Form
+          .col-md-12.well
+            %h3{:align => "center"} Review and Submit
           .form-group
-            = render :partial => "submissions/partials/review.html.haml", :locals => {:f => f}
+            = render :partial => "submissions/partials/review", :locals => {:f => f}
 
 
           - if !@submission.id.nil?

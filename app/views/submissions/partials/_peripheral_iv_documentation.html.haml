@@ -12,7 +12,7 @@
 
 .col-md-12.well
   = f.input :peripheral_iv_site_assessment_date_and_time, :class => "form-control", :label => "Peripheral IV Site Assessment Date and Time"
-  = f.input :shift, :collection => [['7a-7p', '7A-7P'],['7p-7a', '7P-7A']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.shift, :class => "form-control", :label => "Shift"
+  = f.input :shift, :collection => [['7am-7pm', '7AM-7PM'],['7pm-7am', '7PM-7AM']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.shift, :class => "form-control", :label => "Shift"
   = f.input :iv_patent, :collection => [['yes', 'Yes'], ['no', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.iv_patent, :class => "form-control", :label => "IV Patent"
   = f.input :signs_of_infiltration, :collection => [['yes', 'Yes'], ['no', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.signs_of_infiltration, :class => "form-control", :label => "Signs of Infiltration"
   = f.input :signs_of_infection_or_phlebitis, :collection => [['yes', 'Yes'], ['no', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.signs_of_infection_or_phlebitis, :class => "form-control", :label => "Signs of Infection/Phlebitis"
