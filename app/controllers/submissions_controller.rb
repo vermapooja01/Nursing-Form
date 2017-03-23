@@ -599,6 +599,7 @@ class SubmissionsController < ApplicationController
         risk_factor_two_values:[],    #vte
         risk_factor_three_values:[],  #vte
         risk_factor_five_values:[],   #vte
+        patients_total_score:[]
       )
     end
 end
