@@ -12,10 +12,10 @@ $(document).on('turbolinks:load', function () {
    var total_score = parseInt($('input#submission_flacc_total_score').val());
     // Check what operation to do based on the status of the checkbox
     if (object.target.checked) {
-      total_score = total_score + parseInt(object.target.value);
+      total_score = total_score + parseInt(object.target.value) - 1;
     } else {
       // Substract from the total value
-      total_score = total_score - parseInt(object.target.value);
+      total_score = total_score - parseInt(object.target.value) + 1;
     }
     // Render the new value
     $('input#submission_flacc_scale_total_score').val(total_score.toString());
