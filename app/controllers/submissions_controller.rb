@@ -333,25 +333,47 @@ class SubmissionsController < ApplicationController
         :score_1_cpot,
         :score_2_cpot,
         :total_score_cpot,
+
         :flacc_scale_face_0,
         :flacc_scale_face_1,
         :flacc_scale_face_2,
+
         :flacc_scale_legs_0,
         :flacc_scale_legs_1,
         :flacc_scale_legs_2,
+
         :flacc_scale_activity_0,
         :flacc_scale_activity_1,
         :flacc_scale_activity_2,
-        :flacc_scale_activity_0,
-        :flacc_scale_activity_1,
-        :flacc_scale_activity_2,
+
+        :flacc_scale_cry_0,
+        :flacc_scale_cry_1,
+        :flacc_scale_cry_2,
+
         :flacc_scale_consolability_0,
         :flacc_scale_consolability_1,
         :flacc_scale_consolability_2,
+
         :flacc_scale_total_score,
 
-
+        :cpot_score_facial_expression_0,
+        :cpot_score_facial_expression_1,
+        :cpot_score_facial_expression_2,
+        :cpot_score_body_movements_0,
+        :cpot_score_body_movements_1,
+        :cpot_score_body_movements_2,
+        :cpot_score_ventilator_compliance_0,
+        :cpot_score_ventilator_compliance_1,
+        :cpot_score_ventilator_compliance_2,
+        :cpot_score_vocalization_0,
+        :cpot_score_vocalization_1,
+        :cpot_score_vocalization_2,
+        :cpot_score_muscle_tension_0,
+        :cpot_score_muscle_tension_1,
+        :cpot_score_muscle_tension_2,
         :cpot_total_score,
+
+
 #peripheral iv documentation
         :peripheral_iv_insertion_change_date_and_time,
         :peripheral_iv_insertion_site,
@@ -577,30 +599,6 @@ class SubmissionsController < ApplicationController
         risk_factor_two_values:[],    #vte
         risk_factor_three_values:[],  #vte
         risk_factor_five_values:[],   #vte
-
-        flacc_scale_face_0:[],
-        flacc_scale_legs_0:[],
-        flacc_scale_activity_0:[],
-        flacc_scale_cry_0:[],
-        flacc_scale_consolability_0:[],
-        cpot_score_facial_expression_0:[],
-        cpot_score_body_movements_0:[],
-        cpot_score_ventilator_compliance_0:[],
-        cpot_score_vocalization_0:[],
-        cpot_score_muscle_tension_0:[],
-        cpot_score_facial_expression_1:[],
-        cpot_score_body_movements_1:[],
-        cpot_score_ventilator_compliance_1:[],
-        cpot_score_vocalization_1:[],
-        cpot_score_muscle_tension_1:[],
-        cpot_score_facial_expression_2:[],
-        cpot_score_body_movements_2:[],
-        cpot_score_ventilator_compliance_2:[],
-        cpot_score_vocalization_2:[],
-        cpot_score_muscle_tension_2:[],
-        patients_total_score:[]    #vte
-
-
       )
     end
 end
