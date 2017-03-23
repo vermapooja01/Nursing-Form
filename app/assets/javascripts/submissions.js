@@ -40,14 +40,14 @@ $(document).on('turbolinks:load', function () {
 
   }
   if ($('#pain-location-image1').length) {
-    var sketchpad = Raphael.sketchpad("pain-location-image1", {
+    var painLocationSketcher = Raphael.sketchpad("pain-location-image1", {
        width: 400,
        height: 400,
        editing: true
      });
     // When the sketchpad changes, update the input field.
-    sketchpad.change(function() {
-      $("#submission_location_image1").val(sketchpad.json());
+    painLocationSketcher.change(function() {
+      $("#submission_location_image1").val(painLocationSketcher.json());
     });
 
   }
