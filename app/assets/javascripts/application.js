@@ -33,3 +33,4 @@
 //= require scrolltotop
 //= require cpot_score_calculation
 //= require vte_score
+//= require sidrmenu
