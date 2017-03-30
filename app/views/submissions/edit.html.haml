@@ -21,45 +21,48 @@
 
   .col-md-12{:style => "margin-top:70px;"}
     .col-sm-3.left-tabs
-      %ul.nav.nav-tabs.tabs-left
-        %li.active
-          %a{"data-toggle" => "tab", :href => "#a"} Basic Information
-        %li
-          %a{"data-toggle" => "tab", :href => "#b"} Neurological Muscular
-        %li
-          %a{"data-toggle" => "tab", :href => "#c"} Psychosocial
-        %li
-          %a{"data-toggle" => "tab", :href => "#d"} Respiratory/O2 Therapy
-        %li
-          %a{"data-toggle" => "tab", :href => "#e"} Cardiovascular
-        %li
-          %a{"data-toggle" => "tab", :href => "#f"} Gastrointestinal
-        %li
-          %a{"data-toggle" => "tab", :href => "#g"} Nutrition
-        %li
-          %a{"data-toggle" => "tab", :href => "#h"} Skin/Mucuous Membranes
-        %li
-          %a{"data-toggle" => "tab", :href => "#i"} IV Therapy
-        %li
-          %a{"data-toggle" => "tab", :href => "#j"} Genitourinary
-        %li
-          %a{"data-toggle" => "tab", :href => "#k"} Skin Assessment
-        %li
-          %a{"data-toggle" => "tab", :href => "#l"} Pain Assessment
-        %li
-          %a{"data-toggle" => "tab", :href => "#m"} ADL Flowsheet
-        %li
-          %a{"data-toggle" => "tab", :href => "#n"} Skin Risk Assessment Screen
-        %li
-          %a{"data-toggle" => "tab", :href => "#o"} VTE Risk Assessment
-        %li
-          %a{"data-toggle" => "tab", :href => "#p"} Peripheral IV Documentation
-        %li
-          %a{"data-toggle" => "tab", :href => "#q"} Indwelling Urinary Catheter Documentation
-        %li
-          %a{"data-toggle" => "tab", :href => "#r"} Vital Signs Documentation
-        %li
-          %a{"data-toggle" => "tab", :href => "#s"} Review and Submit
+      %nav.nav-bar
+        .nav-container
+          %a#nav-menu.nav-menu &#9776; Menu
+          %ul#nav.nav-list
+            %li.active
+              %a{"data-toggle" => "tab", :href => "#a"} Basic Information
+            %li
+              %a{"data-toggle" => "tab", :href => "#b"} Neurological Muscular
+            %li
+              %a{"data-toggle" => "tab", :href => "#c"} Psychosocial
+            %li
+              %a{"data-toggle" => "tab", :href => "#d"} Respiratory/O2 Therapy
+            %li
+              %a{"data-toggle" => "tab", :href => "#e"} Cardiovascular
+            %li
+              %a{"data-toggle" => "tab", :href => "#f"} Gastrointestinal
+            %li
+              %a{"data-toggle" => "tab", :href => "#g"} Nutrition
+            %li
+              %a{"data-toggle" => "tab", :href => "#h"} Skin/Mucuous Membranes
+            %li
+              %a{"data-toggle" => "tab", :href => "#i"} IV Therapy
+            %li
+              %a{"data-toggle" => "tab", :href => "#j"} Genitourinary
+            %li
+              %a{"data-toggle" => "tab", :href => "#k"} Skin Assessment
+            %li
+              %a{"data-toggle" => "tab", :href => "#l"} Pain Assessment
+            %li
+              %a{"data-toggle" => "tab", :href => "#m"} ADL Flowsheet
+            %li
+              %a{"data-toggle" => "tab", :href => "#n"} Skin Risk Assessment Screen
+            %li
+              %a{"data-toggle" => "tab", :href => "#o"} VTE Risk Assessment
+            %li
+              %a{"data-toggle" => "tab", :href => "#p"} Peripheral IV Documentation
+            %li
+              %a{"data-toggle" => "tab", :href => "#q"} Indwelling Urinary Catheter Documentation
+            %li
+              %a{"data-toggle" => "tab", :href => "#r"} Vital Signs Documentation
+            %li
+              %a{"data-toggle" => "tab", :href => "#s"} Review and Submit
 
     .col-sm-9
       = simple_form_for @submission, html: {class: ''} do |f|
