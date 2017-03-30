@@ -38,3 +38,7 @@
   .sidenav a {font-size: 18px;}
 
 }
+
+a {
+  cursor:pointer;
+}
