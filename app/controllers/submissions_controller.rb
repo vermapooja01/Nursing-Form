@@ -563,6 +563,22 @@ class SubmissionsController < ApplicationController
         :risk_factor_five,
         :vte_total_score,
 
+#iv insertion
+
+        :iv_insertion_type,
+        :iv_insertion_gauge,
+        :iv_insertion_length,
+        :iv_insertion_site,
+        :iv_insertion_site_other,
+        :iv_insertion_number_of_attempts,
+        :iv_insertion_flush,
+        :iv_insertion_site_of_attempts,
+        :iv_insertion_site_of_attempts_other,
+        :patient_tolerance_of_procedure,
+        :iv_insertion_date_time,
+        :iv_insertion_name,
+
+
         best_eye_opening_response_values:[],
         best_verbal_response_values:[],
         best_motor_response_values:[],

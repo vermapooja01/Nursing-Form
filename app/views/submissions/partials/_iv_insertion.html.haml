@@ -1,0 +1,13 @@
+.col-md-12.well
+  = f.input :iv_insertion_type, :class => "form-control", :label => "Type"
+  = f.input :iv_insertion_gauge, :class => "form-control", :label => "Gauge"
+  = f.input :iv_insertion_length, :class => "form-control", :label => "Length"
+  = f.input :iv_insertion_site, :collection => [['r', 'R'],['l', 'L']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.iv_insertion_site, :class => "form-control", :label => "Site"
+  = f.input :iv_insertion_site_other, :class => "form-control", :label => "Other"
+  = f.input :iv_insertion_number_of_attempts, :class => "form-control", :label => "Number of Attempts"
+  = f.input :iv_insertion_flush, :class => "form-control", :label => "Flush"
+  = f.input :iv_insertion_site_of_attempts, :collection => [['r', 'R'],['l', 'L']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.iv_insertion_site_of_attempts, :class => "form-control", :label => "Site Of Attampts"
+  = f.input :iv_insertion_site_of_attempts_other, :class => "form-control", :label => "Other Site Of Attempts"
+  = f.input :patient_tolerance_of_procedure, :class => "form-control", :label => "Patient Tolerance Of Procedure (Narrative)"
+  = f.input :iv_insertion_date_time, :class => "form-control", :label => "IV Insertion Date and Time"
+  = f.input :iv_insertion_name, :class => "form-control", :label => "Name"

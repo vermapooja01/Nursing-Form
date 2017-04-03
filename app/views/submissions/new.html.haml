@@ -72,7 +72,9 @@
           %li
             %a{"data-toggle" => "tab", :href => "#r"} Vital Signs Documentation
           %li
-            %a{"data-toggle" => "tab", :href => "#s"} Review and Submit
+            %a{"data-toggle" => "tab", :href => "#s"} IV Insertion
+          %li
+            %a{"data-toggle" => "tab", :href => "#t"} Review and Submit
 
 
 
@@ -198,8 +200,13 @@
             %h3{:align => "center"} Vital Signs Documentation
           .form-group
             = render :partial => "submissions/partials/vital_signs_documentation", :locals => {:f => f}
-
         #s.tab-pane
+          .col-md-12.well
+            %h3{:align => "center"} IV Insertion
+          .form-group
+            = render :partial => "submissions/partials/iv_insertion", :locals => {:f => f}
+
+        #t.tab-pane
           .col-md-12.well
             %h3{:align => "center"} Review and Submit
           .form-group
