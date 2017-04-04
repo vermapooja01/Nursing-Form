@@ -74,7 +74,9 @@
           %li
             %a{"data-toggle" => "tab", :href => "#s"} IV Insertion
           %li
-            %a{"data-toggle" => "tab", :href => "#t"} Review and Submit
+            %a{"data-toggle" => "tab", :href => "#t"} Urinary Catheterization
+          %li
+            %a{"data-toggle" => "tab", :href => "#u"} Review and Submit
 
 
 
@@ -205,8 +207,12 @@
             %h3{:align => "center"} IV Insertion
           .form-group
             = render :partial => "submissions/partials/iv_insertion", :locals => {:f => f}
-
         #t.tab-pane
+          .col-md-12.well
+            %h3{:align => "center"} Urinary Catheterization
+          .form-group
+            = render :partial => "submissions/partials/urinary_catheterization", :locals => {:f => f}
+        #u.tab-pane
           .col-md-12.well
             %h3{:align => "center"} Review and Submit
           .form-group

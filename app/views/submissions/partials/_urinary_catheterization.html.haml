@@ -1,0 +1,21 @@
+.col-md-12.well
+  = f.input :pre_insertion, :collection => [['pre-insertion peri care', 'Pre-Insertion Peri Care']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.pre_insertion, :class => "form-control", :label => "Pre-Insertion Peri Care"
+  = f.input :urinary_catheterization_type, :collection => [['straight', 'Straight'], ['indwelling', 'Indwelling'], ['condom', 'Condom'], ['suprapubic', 'Suprapubic']], :label_method => :last, :value_method => :first, :as => :check_boxes, :item_wrapper_class => 'inline', :checked => @submission.urinary_catheterization_type, :class => "form-control", :label => "Type"
+
+.col-md-12.well
+  %h3{:align => "center"} Bladder Scan Urine Volume
+  = f.input :urinary_catheterization_size, :class => "form-control", :label => "Size"
+  = f.input :urinary_catheterization_volume, :class => "form-control", :label => "Volume"
+
+.col-md-12.well
+  %h3{:align => "center"} Urine Characteristics
+  = f.input :urinary_catheterization_color, :collection => [['straw', 'Straw'], ['yellow', 'Yellow'], ['amber', 'Amber'], ['ornage', 'Orange'], ['brown', 'Brown'], ['green', 'Green'], ['pink', 'Pink'], ['red', 'Red']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.urinary_catheterization_color, :class => "form-control", :label => "Color"
+  = f.input :urinary_catheterization_clarity, :collection => [['clear', 'Clear'], ['hazy', 'Hazy'], ['cloudy', 'Cloudy'], ['turbid', 'Turbid'], ['milky', 'Milky'], ['anuric', 'Anuric']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.urinary_catheterization_clarity, :class => "form-control", :label => "Clarity"
+  = f.input :urinary_catheterization_odor, :collection => [['normal', 'Normal'], ['strong', 'Strong'], ['foul', 'Foul'], ['sweet', 'Sweet'], ['musty', 'Musty']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.urinary_catheterization_odor, :class => "form-control", :label => "Odor"
+
+.col-md-12.well
+  = f.input :balloon_water_volume, :class => "form-control", :label => "Balloon Water Volume"
+  = f.input :initial_urine_return, :class => "form-control", :label => "Initial Urine Return"
+  = f.input :patient_tolerance_of_procedure_urinary, :class => "form-control", :label => "Patient Tolerance of Procedure (Narrative)"
+  = f.input :urinary_catheterization_datetime, :class => "form-control", :label => "Date and Time"
+  = f.input :urinary_catheterization_name, :class => "form-control", :label => "Name"

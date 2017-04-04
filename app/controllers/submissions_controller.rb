@@ -578,6 +578,21 @@ class SubmissionsController < ApplicationController
         :iv_insertion_date_time,
         :iv_insertion_name,
 
+#urinary catheterization
+
+        :pre_insertion,
+
+        :urinary_catheterization_size,
+        :urinary_catheterization_volume,
+        :urinary_catheterization_color,
+        :urinary_catheterization_clarity,
+        :urinary_catheterization_odor,
+        :balloon_water_volume,
+        :initial_urine_return,
+        :patient_tolerance_of_procedure_urinary,
+        :urinary_catheterization_datetime,
+        :urinary_catheterization_name,
+
 
         best_eye_opening_response_values:[],
         best_verbal_response_values:[],
@@ -615,7 +630,8 @@ class SubmissionsController < ApplicationController
         risk_factor_two_values:[],    #vte
         risk_factor_three_values:[],  #vte
         risk_factor_five_values:[],   #vte
-        patients_total_score:[]
+        patients_total_score:[],
+        urinary_catheterization_type:[]
       )
     end
 end
