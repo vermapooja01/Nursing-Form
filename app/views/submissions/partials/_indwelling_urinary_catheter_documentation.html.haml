@@ -1,10 +1,10 @@
 
 .col-md-12.well
-  %h4{:align => 'center'} Indwelling urinary Catheter Insertion (Refer to table 'Urine Output Assessment Legend' below)
+  %h3{:align => 'center'} Indwelling urinary Catheter Insertion (Refer to table 'Urine Output Assessment Legend' below)
   = f.input :indwelling_urinary_catheter_insertion_date_and_time, :class => "form-control", :label => "Indwelling Urinary Catheter Insertion Date and Time"
   = f.input :size_of_catheter, :class => "form-control", :label => "Size of Catheter(Fr.)"
   = f.input :number_of_attempts_for_indwelling_urinary_catheter_insertion, :class => "form-control", :label => "Number of Attempts"
-  %h5 Urine Return
+  %h3{:align => "center"} Urine Return
   = f.input :urine_return_amount, :class => "form-control", :label => "Amount(ml)"
   = f.input :urine_return_color, :class => "form-control", :label => "Color"
   = f.input :urine_return_clarity, :class => "form-control", :label => "Clarity"
@@ -15,7 +15,7 @@
 
 
 .col-md-12.well
-  %h4{:align => 'center'} Urine Output Assessment (Refer to table 'Urine Output Assessment Legend' below)
+  %h3{:align => 'center'} Urine Output Assessment (Refer to table 'Urine Output Assessment Legend' below)
   = f.input :urine_output_assessment_date_and_time, :class => "form-control", :label => "Urine Output Assessment Date and Time"
   = f.input :shift_for_urine_output_assessment, :collection => [['7a-7p', '7A-7P'],['7p-7a', '7P-7A']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.shift, :class => "form-control", :label => "Shift"
   = f.input :urine_output_assessment_color, :class => "form-control", :label => "Color"

@@ -14,8 +14,8 @@
   = f.input :urinary_catheterization_odor, :collection => [['normal', 'Normal'], ['strong', 'Strong'], ['foul', 'Foul'], ['sweet', 'Sweet'], ['musty', 'Musty']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.urinary_catheterization_odor, :class => "form-control", :label => "Odor"
 
 .col-md-12.well
-  = f.input :balloon_water_volume, :class => "form-control", :label => "Balloon Water Volume"
-  = f.input :initial_urine_return, :class => "form-control", :label => "Initial Urine Return"
+  = f.input :balloon_water_volume, :class => "form-control", :label => "Balloon Water Volume (mL)"
+  = f.input :initial_urine_return, :class => "form-control", :label => "Initial Urine Return (mL)"
   = f.input :patient_tolerance_of_procedure_urinary, :class => "form-control", :label => "Patient Tolerance of Procedure (Narrative)"
   = f.input :urinary_catheterization_datetime, :class => "form-control", :label => "Date and Time"
   = f.input :urinary_catheterization_name, :class => "form-control", :label => "Name"

@@ -1,6 +1,7 @@
-%h3 Peripheral IV Insertion
+
 
 .col-md-12.well
+  %h3{:align => "center"} Peripheral IV Insertion
   = f.input :peripheral_iv_insertion_change_date_and_time, :class => "form-control", :label => "Peripheral IV Insertion Date and Time"
   = f.input :peripheral_iv_insertion_site, :class => "form-control", :label => "Peripheral IV Insertion Site"
   = f.input :number_of_attempts_for_peripheral_iv_insertion, :class => "form-control", :label => "Number of Attempts"
@@ -8,9 +9,10 @@
   = f.input :initials, :class => "form-control", :label => "Initials"
   = f.input :narrative_note, :class => "form-control", :label => "Narrative Note"
 
-%h3 Peripheral IV Site Assessment
+
 
 .col-md-12.well
+  %h3{:align => "center"} Peripheral IV Site Assessment
   = f.input :peripheral_iv_site_assessment_date_and_time, :class => "form-control", :label => "Peripheral IV Site Assessment Date and Time"
   = f.input :shift, :collection => [['7am-7pm', '7AM-7PM'],['7pm-7am', '7PM-7AM']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.shift, :class => "form-control", :label => "Shift"
   = f.input :iv_patent, :collection => [['yes', 'Yes'], ['no', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @submission.iv_patent, :class => "form-control", :label => "IV Patent"
