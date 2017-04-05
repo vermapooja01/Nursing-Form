@@ -75,8 +75,9 @@
   %h4 18 or Below: Intervention Required
   = f.input :choose_for_information, :collection => [['skin intact', 'Skin Intact'], ['pressure ulcer prevention protocol in place', 'Pressure Ulcer Prevention Protocol in Place'], ['see pressure ulcer documentation form', 'See Pressure Ulcer Documentation Form']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => true, :class => "form-control", :label => "Choose For Information"
 
-%h3 Fall Scale Risk
+
 .col-md-12.well
+  %h3{:align => "center"} Fall Scale Risk
   %h4{:align => "center"} History of Falling
   = f.label :no_history_of_falling, "No (0)"
   = f.input :patients_no_history_of_falling_score, :class => "form-control", :label => "Patient's No History of Falling Score"
