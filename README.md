@@ -19,3 +19,16 @@ The application can be installed in a Dcokerized environment using Rancher, or i
 
 
 ## Standalone Phusion Passenger Linux Stack
+
+### Apache
+
+_.htaccess file_
+
+```
+PassengerEnabled On
+PassengerLoadShellEnvVars On
+PassengerAppRoot /var/sentora/hostdata/at/public_html/skunkworks_utep_edu/uteppros/current/$
+PassengerRuby /usr/local/rvm/wrappers/ruby-2.2.1/ruby
+```
+
+### Nginx
