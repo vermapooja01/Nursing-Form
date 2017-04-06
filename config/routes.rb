@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :prns
+  resources :orders
+  resources :mars
+  resources :labs
+  resources :histories
+  resources :patients
   resources :users
   resources :submissions do
     get "/complete_the_form", to: "submissions#complete_submission"

@@ -1,0 +1,25 @@
+%h1 Listing prns
+
+%table
+  %thead
+    %tr
+      %th Ordering md
+      %th Date ordered
+      %th Medication
+      %th
+      %th
+      %th
+
+  %tbody
+    - @prns.each do |prn|
+      %tr
+        %td= prn.ordering_md
+        %td= prn.date_ordered
+        %td= prn.medication
+        %td= link_to 'Show', prn
+        %td= link_to 'Edit', edit_prn_path(prn)
+        %td= link_to 'Destroy', prn, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Prn', new_prn_path

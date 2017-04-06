@@ -1,0 +1,9 @@
+= simple_form_for(@lab) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :orders
+    = f.input :date_and_time_drawn
+
+  .form-actions
+    = f.button :submit

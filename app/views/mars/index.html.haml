@@ -1,0 +1,27 @@
+%h1 Listing mars
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Month year
+      %th Mr number
+      %th Allergies
+      %th
+      %th
+      %th
+
+  %tbody
+    - @mars.each do |mar|
+      %tr
+        %td= mar.name
+        %td= mar.month_year
+        %td= mar.mr_number
+        %td= mar.allergies
+        %td= link_to 'Show', mar
+        %td= link_to 'Edit', edit_mar_path(mar)
+        %td= link_to 'Destroy', mar, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Mar', new_mar_path

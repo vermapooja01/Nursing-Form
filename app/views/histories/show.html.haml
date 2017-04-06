@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @history.name
+%p
+  %b Date of admission:
+  = @history.date_of_admission
+%p
+  %b Mr number:
+  = @history.mr_number
+
+= link_to 'Edit', edit_history_path(@history)
+\|
+= link_to 'Back', histories_path

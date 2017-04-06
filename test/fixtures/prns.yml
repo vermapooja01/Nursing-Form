@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ordering_md: MyString
+  date_ordered: 2017-04-06
+  medication: MyString
+
+two:
+  ordering_md: MyString
+  date_ordered: 2017-04-06
+  medication: MyString
