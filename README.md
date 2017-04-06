@@ -10,3 +10,12 @@ Faculty members of the college of Nursing have the ability to add new test cases
 ## Students
 
 Students can create new patient analysis submissions
+
+# How to install app
+
+The application can be installed in a Dcokerized environment using Rancher, or it can be installed on a Phusion Passenger stack with either nginx or apache.
+
+## Dockerized Phusion Passenger Environment
+
+
+## Standalone Phusion Passenger Linux Stack
