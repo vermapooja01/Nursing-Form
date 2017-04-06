@@ -39,7 +39,7 @@ class AddFieldsToLab < ActiveRecord::Migration[5.0]
     add_column :labs, :inr, :integer
     add_column :labs, :alkaline_phos, :integer
     add_column :labs, :albumin, :integer
-    add_column :labs, :bilirubin, :integer
+    add_column :labs, :bilirubin_direct, :integer
     add_column :labs, :bilirubin_total, :integer
     add_column :labs, :ast, :integer
     add_column :labs, :alt, :integer
