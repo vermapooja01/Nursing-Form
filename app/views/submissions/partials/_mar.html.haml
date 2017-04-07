@@ -1,0 +1,23 @@
+%h3{:align => "center"} Medication Administration Record
+.col-md-12.well
+  = f.input :name, :class => "form-control", :label => "Name"
+  = f.input :mr_number, :class => "form-control", :label => "MR#"
+  = f.input :month_year, :class => "form-control", :label => "Month and Year"
+  = f.input :allergies, :class => "form-control", :label => "Allergies"
+
+.col-md-12.well
+  = f.input :medication_mar, :class => "form-control", :label => "Medication"
+  = f.input :prescribed_by, :class => "form-control", :label => "Prescribed By"
+  = f.input :date_and_time, :class => "form-control", :label => "Date and Time"
+
+.col-md-12.well
+  %h3{:align => "center"} One-Time Orders
+  = f.input :order_date, :class => "form-control", :label => "Date of Order"
+  = f.input :order_prescribed_by, :class => "form-control", :label => "Prescribed By"
+  = f.input :order_mars, :class => "form-control", :label => "Order"
+  = f.input :order_date, :class => "form-control", :label => "Date and Time Given"
+  = f.input :prescriber_initials, :class => "form-control", :label => "Initials"
+
+.col-md-12.well
+  = f.input :nurse_signature, :class => "form-control", :label => "Nurse Signature"
+  = f.input :nurse_initials, :class => "form-control", :label => "Nurse Initials"
