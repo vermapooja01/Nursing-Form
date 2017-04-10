@@ -1,0 +1,31 @@
+ul.custom-nav-tabs {
+  border-bottom: none;
+  li {
+    &.active {
+      &.orange {
+        a {
+          background-color: $utep-orange;
+          border: 1px solid #e3e3e3;
+          &:focus {
+            background-color: $utep-orange;
+          }
+        }
+      }
+      a {
+        border: 1px solid #e3e3e3;
+        &:hover {
+          border: 1px solid #e3e3e3;
+          background-color: inherit;
+        }
+        &:focus {
+          border: none;
+        }
+      }
+    }
+    a {
+      background-color: $utep-orange;
+      border-radius: 0;
+      padding: 20px 50px;
+    }
+  }
+}

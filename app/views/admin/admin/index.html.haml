@@ -27,7 +27,7 @@
               .btn-group.btn-group-xs{"aria-label" => "...", :role => "group"}
                 = link_to 'Show Details', admin_patient_path(patient), class: 'btn btn-default'
                 = link_to 'Remove Patient', admin_patient_path(patient), class: 'btn btn-default'
-                = link_to 'Edit Patient', admin_patient_path(patient), class: 'btn btn-default'
+                = link_to 'Edit Patient', edit_admin_patient_path(patient), class: 'btn btn-default'
 
   - else
     %p The patient list is empty
