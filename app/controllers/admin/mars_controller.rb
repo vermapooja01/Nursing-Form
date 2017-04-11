@@ -1,12 +1,13 @@
 class Admin::MarsController < Admin::AdminController
   before_action :set_mar, only: [:show, :edit, :update, :destroy]
   before_action :set_patient
+  before_action :set_history
   layout 'admin'
 
   # GET /mars
   # GET /mars.json
   def index
-    @mars = Mar.all
+    @mars = @history.mars
   end
 
   # GET /mars/1
@@ -26,11 +27,11 @@ class Admin::MarsController < Admin::AdminController
   # POST /mars
   # POST /mars.json
   def create
-    @mar = Mar.new(mar_params)
+    @mar = @history.mars.build(mar_params)
 
     respond_to do |format|
       if @mar.save
-        format.html { redirect_to @mar, notice: 'Mar was successfully created.' }
+        format.html { redirect_to admin_patient_history_mar_path(@patient, @history, @mar), notice: 'MAR was successfully created.' }
         format.json { render :show, status: :created, location: @mar }
       else
         format.html { render :new }
@@ -71,6 +72,10 @@ class Admin::MarsController < Admin::AdminController
 
     def set_patient
       @patient = Patient.find(params[:patient_id])
+    end
+
+    def set_history
+      @history = History.find(params[:history_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

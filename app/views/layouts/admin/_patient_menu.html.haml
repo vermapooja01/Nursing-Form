@@ -1,5 +1,9 @@
 %ul.nav.nav-pills
-  %li.active
+  %li{:class => "#{'active' if params[:controller] == 'admin/labs'}"}
     = link_to 'Labs', admin_patient_history_labs_path(patient, history)
-  %li
-    = link_to 'Labs', admin_patient_history_labs_path(patient, history)
+  %li{:class => "#{'active' if params[:controller] == 'admin/mars'}"}
+    = link_to 'MARs', admin_patient_history_mars_path(patient, history)
+  %li{:class => "#{'active' if params[:controller] == 'admin/orders'}"}
+    = link_to 'Orders', admin_patient_history_orders_path(patient, history)
+  %li{:class => "#{'active' if params[:controller] == 'admin/prns'}"}
+    = link_to 'PRNs', admin_patient_history_prns_path(patient, history)

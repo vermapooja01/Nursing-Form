@@ -1,0 +1,1 @@
+json.partial! "prns/prn", prn: @prn

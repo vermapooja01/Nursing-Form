@@ -1,0 +1,11 @@
+= simple_form_for(@mar) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :month_year
+    = f.input :mr_number
+    = f.input :allergies
+
+  .form-actions
+    = f.button :submit

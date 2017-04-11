@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Ordering md:
+  = @prn.ordering_md
+%p
+  %b Date ordered:
+  = @prn.date_ordered
+%p
+  %b Medication:
+  = @prn.medication
+
+= link_to 'Edit', edit_prn_path(@prn)
+\|
+= link_to 'Back', prns_path
