@@ -1,0 +1,33 @@
+.admin-page-wrapper
+  %h1 Dasboard
+  %p Select your desired action
+
+  .row.dashboard-options
+    = link_to new_admin_patient_path do
+      .col-sm-4.option.orange
+        Add New Patient
+      .col-sm-4.option.blue
+        View Reports
+  %hr
+
+  %h1 Active Patients
+  - if @patients
+    %p The current patient list
+    %table.table.datatable
+      %thead
+        %tr
+          %th Patient Name
+          %th Actions
+
+      %tbody
+        - @patients.each do |patient|
+          %tr
+            %td= patient.name
+            %td
+              .btn-group.btn-group-xs{"aria-label" => "...", :role => "group"}
+                = link_to 'Show Details', admin_patient_path(patient), class: 'btn btn-default'
+                = link_to 'Remove Patient', admin_patient_path(patient), class: 'btn btn-default'
+                = link_to 'Edit Patient', edit_admin_patient_path(patient), class: 'btn btn-default'
+
+  - else
+    %p The patient list is empty

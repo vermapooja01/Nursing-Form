@@ -1,0 +1,25 @@
+.admin-page-wrapper
+
+  .col-md-4.information-block
+    %h2 Patient Details
+    = render "admin/patient_block"
+
+  .col-md-8.history-information
+    %h2 Histories
+    = link_to 'New History +', new_admin_patient_history_url(@patient), class: "btn btn-success"
+    %hr
+
+    %table.table.datatable
+      %thead
+        %tr
+          %th Date
+          %th Labs
+          %th
+
+      %tbody
+        - @histories.each do |history|
+          %tr
+            %td= history.created_at
+            %td= history.labs.count
+            %td
+              = link_to 'View History', admin_patient_history_labs_path(@patient, history), :class => "btn btn-default btn-xs"

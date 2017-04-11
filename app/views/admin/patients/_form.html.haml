@@ -1,0 +1,10 @@
+= simple_form_for(@patient) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :age
+    = f.collection_radio_buttons :gender, [['male', 'Male'] ,['female', 'Female']], :first, :last, checked: @patient.gender
+
+  .form-actions
+    = f.button :submit

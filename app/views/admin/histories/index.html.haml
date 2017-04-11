@@ -1,0 +1,25 @@
+%h1 Listing histories
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Date of admission
+      %th Mr number
+      %th
+      %th
+      %th
+
+  %tbody
+    - @histories.each do |history|
+      %tr
+        %td= history.name
+        %td= history.date_of_admission
+        %td= history.mr_number
+        %td= link_to 'Show', history
+        %td= link_to 'Edit', edit_history_path(history)
+        %td= link_to 'Destroy', history, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New History', new_history_path

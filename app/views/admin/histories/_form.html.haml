@@ -1,0 +1,10 @@
+= simple_form_for([:admin, @patient, @history]) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :date_of_admission
+    = f.input :mr_number
+
+  .form-actions
+    = f.button :submit

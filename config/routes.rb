@@ -10,7 +10,24 @@ Rails.application.routes.draw do
     get "/complete_the_form", to: "submissions#complete_submission"
   end
 
+
   root to: "submissions#index"
+
+  # Admin Namespace
+  namespace :admin do
+    root to: "admin#index"
+    resources :patients do
+      resources :histories do
+        resources :prns
+        resources :orders
+        resources :mars
+        resources :labs
+      end
+    end
+
+    resources :users
+  end
+
   # Route for the about Us
   get "aboutus", to: "static_pages#aboutus"
   #routes for sso

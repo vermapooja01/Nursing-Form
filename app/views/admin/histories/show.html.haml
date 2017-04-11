@@ -1,0 +1,10 @@
+.admin-page-wrapper
+
+  .col-md-8.history-information
+    = render "layouts/admin/patient_menu", :patient => @patient, :history => @history
+    %hr
+
+
+  .col-md-4.information-block
+    %h2 Patient Details
+    = render "admin/patient_block"
