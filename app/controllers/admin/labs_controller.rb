@@ -1,12 +1,13 @@
 class Admin::LabsController < Admin::AdminController
   before_action :set_lab, only: [:show, :edit, :update, :destroy]
   before_action :set_patient
+  before_action :set_history
   layout 'admin'
 
   # GET /labs
   # GET /labs.json
   def index
-    @labs = @patient.labs
+    @labs = @history.labs
   end
 
   # GET /labs/1
@@ -16,7 +17,7 @@ class Admin::LabsController < Admin::AdminController
 
   # GET /labs/new
   def new
-    @lab = @patient.labs.build
+    @lab = @history.labs.build
   end
 
   # GET /labs/1/edit
@@ -26,7 +27,7 @@ class Admin::LabsController < Admin::AdminController
   # POST /labs
   # POST /labs.json
   def create
-    @lab = @patient.labs.build(lab_params)
+    @lab = @history.labs.build(lab_params)
 
     respond_to do |format|
       if @lab.save
@@ -71,6 +72,10 @@ class Admin::LabsController < Admin::AdminController
 
     def set_patient
       @patient = Patient.find(params[:patient_id])
+    end
+
+    def set_history
+      @history = History.find(params[:history_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

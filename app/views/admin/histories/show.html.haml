@@ -1,15 +1,10 @@
-%p#notice= notice
+.admin-page-wrapper
 
-%p
-  %b Name:
-  = @history.name
-%p
-  %b Date of admission:
-  = @history.date_of_admission
-%p
-  %b Mr number:
-  = @history.mr_number
+  .col-md-8.history-information
+    = render "layouts/admin/patient_menu", :patient => @patient, :history => @history
+    %hr
 
-= link_to 'Edit', edit_history_path(@history)
-\|
-= link_to 'Back', histories_path
+
+  .col-md-4.information-block
+    %h2 Patient Details
+    = render "admin/patient_block"

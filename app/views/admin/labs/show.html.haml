@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Orders:
+  = @lab.orders
+%p
+  %b Date and time drawn:
+  = @lab.date_and_time_drawn
+
+= link_to 'Edit', edit_lab_path(@lab)
+\|
+= link_to 'Back', labs_path

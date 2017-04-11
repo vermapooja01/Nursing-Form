@@ -1,3 +1,5 @@
 %ul.nav.nav-pills
-  %li.active{:role => "presentation"}
-    = link_to 'History', admin_patient_histories_path(patient)
+  %li.active
+    = link_to 'Labs', admin_patient_history_labs_path(patient, history)
+  %li
+    = link_to 'Labs', admin_patient_history_labs_path(patient, history)
