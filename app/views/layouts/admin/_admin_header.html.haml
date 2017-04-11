@@ -1,0 +1,25 @@
+%nav.navbar.navbar-inverse.navbar-fixed-top
+  .container
+    .navbar-header
+
+      %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "#"} Patient Intake
+    #navbar.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.active
+          = link_to 'Home', '/admin'
+        - if !logged_in?
+          %li
+            = link_to 'Log In', signin_path
+        - else
+          %li
+            = link_to 'Log Out', sign_out_path
+
+
+    -#  %ul.nav.navbar-nav
+        %li.active
+          = link_to 'Sign Up', new_users_path

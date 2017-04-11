@@ -1,24 +1,33 @@
 .admin-page-wrapper
-  %h1 Editing Patient
 
-  / Nav tabs
-  %ul.nav.nav-tabs.custom-nav-tabs{:role => "tablist"}
-    %li.active.orange{:role => "presentation"}
-      %a{"aria-controls" => "home", "data-toggle" => "tab", :href => "#histories", :role => "tab"} Histories
-    %li{:role => "presentation"}
-      %a{"aria-controls" => "profile", "data-toggle" => "tab", :href => "#profile", :role => "tab"} Orders
-    %li{:role => "presentation"}
-      %a{"aria-controls" => "messages", "data-toggle" => "tab", :href => "#messages", :role => "tab"} Messages
-    %li{:role => "presentation"}
-      %a{"aria-controls" => "settings", "data-toggle" => "tab", :href => "#settings", :role => "tab"} Settings
+  .col-md-4.information-block
+    %h2 Patient Details
+    = render "admin/patient_block"
 
-  / Tab panes
-  .tab-content
-    #histories.tab-pane.active{:role => "tabpanel"}
-      = render 'form'
-    #profile.tab-pane{:role => "tabpanel"} Orders
-    #messages.tab-pane{:role => "tabpanel"} ...
-    #settings.tab-pane{:role => "tabpanel"} ...
+  .col-md-8.history-information
+
+    = render "layouts/admin/patient_menu", :patient => @patient
+
+    %h2 Histories
+    = link_to 'New History', new_admin_patient_history_url(@patient), class: "btn btn-success"
+    %hr
+
+    %table.table.datatable
+      %thead
+        %tr
+          %th Date
+          %th Labs
+          %th
+
+      %tbody
+        %tr
+          %td August 22, 1939
+          %td 2
+          %td
+            = link_to 'View History', root_url, :class => "btn btn-default btn-xs"
+
+
+
 
 
 

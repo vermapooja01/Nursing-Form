@@ -1,4 +1,4 @@
-class Admin::PatientsController < ApplicationController
+class Admin::PatientsController < Admin::AdminController
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
   layout 'admin'
 

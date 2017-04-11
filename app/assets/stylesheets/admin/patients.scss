@@ -29,3 +29,23 @@ ul.custom-nav-tabs {
     }
   }
 }
+
+.information-block {
+  .title {
+    font-weight: bold;
+    font-size: 18px;
+    color: $utep-blue;
+  }
+  .block {
+    padding: 20px 30px;
+    border-radius: 5px;
+    background-color: #fbfbfb;
+    h1 {
+      color: #1A399A;
+      font-size: 30px;
+    }
+    p {
+      color: $utep-blue;
+    }
+  }
+}
