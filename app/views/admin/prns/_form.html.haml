@@ -1,0 +1,10 @@
+= simple_form_for(@prn) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :ordering_md
+    = f.input :date_ordered
+    = f.input :medication
+
+  .form-actions
+    = f.button :submit

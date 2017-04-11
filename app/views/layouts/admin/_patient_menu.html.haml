@@ -6,4 +6,4 @@
   %li{:class => "#{'active' if params[:controller] == 'admin/orders'}"}
     = link_to 'Orders', admin_patient_history_orders_path(patient, history)
   %li{:class => "#{'active' if params[:controller] == 'admin/prns'}"}
-    = link_to 'PRNs', admin_patient_history_labs_path(patient, history)
+    = link_to 'PRNs', admin_patient_history_prns_path(patient, history)

@@ -1,0 +1,1 @@
+json.array! @prns, partial: 'prns/prn', as: :prn

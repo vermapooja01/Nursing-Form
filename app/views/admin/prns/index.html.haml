@@ -3,8 +3,8 @@
   .col-md-8.history-information
     = render "layouts/admin/patient_menu", :patient => @patient, :history => @history
     %hr
-    %h1 Orders
-    = link_to 'Add Order +', new_admin_patient_history_order_url(@patient, @history), class: "btn btn-success"
+    %h1 PRNs
+    = link_to 'Add PRN +', new_admin_patient_history_prn_url(@patient, @history), class: "btn btn-success"
     %hr
     %table.table.datatable
       %caption Optional table caption.
