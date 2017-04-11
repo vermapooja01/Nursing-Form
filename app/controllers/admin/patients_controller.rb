@@ -20,6 +20,7 @@ class Admin::PatientsController < Admin::AdminController
 
   # GET /patients/1/edit
   def edit
+    @histories = @patient.histories
   end
 
   # POST /patients

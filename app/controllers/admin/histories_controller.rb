@@ -6,7 +6,7 @@ class Admin::HistoriesController < Admin::AdminController
   # GET /histories
   # GET /histories.json
   def index
-    @histories = History.all
+    @histories = @patient.histories
   end
 
   # GET /histories/1
@@ -26,13 +26,14 @@ class Admin::HistoriesController < Admin::AdminController
   # POST /histories
   # POST /histories.json
   def create
-    @history = History.new(history_params)
+    @history = @patient.histories.build(history_params)
 
     respond_to do |format|
       if @history.save
-        format.html { redirect_to @history, notice: 'History was successfully created.' }
+        format.html { redirect_to admin_patient_history_path(@patient, @history), notice: 'Patient history was successfully created.' }
         format.json { render :show, status: :created, location: @history }
       else
+        byebug
         format.html { render :new }
         format.json { render json: @history.errors, status: :unprocessable_entity }
       end
@@ -44,7 +45,7 @@ class Admin::HistoriesController < Admin::AdminController
   def update
     respond_to do |format|
       if @history.update(history_params)
-        format.html { redirect_to @history, notice: 'History was successfully updated.' }
+        format.html { redirect_to admin_patient_history_path(@patient, @history), notice: 'History was successfully updated.' }
         format.json { render :show, status: :ok, location: @history }
       else
         format.html { render :edit }
@@ -58,7 +59,7 @@ class Admin::HistoriesController < Admin::AdminController
   def destroy
     @history.destroy
     respond_to do |format|
-      format.html { redirect_to histories_url, notice: 'History was successfully destroyed.' }
+      format.html { redirect_to admin_patient_histories, notice: 'History was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

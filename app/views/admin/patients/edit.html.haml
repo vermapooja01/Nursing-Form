@@ -5,11 +5,8 @@
     = render "admin/patient_block"
 
   .col-md-8.history-information
-
-    = render "layouts/admin/patient_menu", :patient => @patient
-
     %h2 Histories
-    = link_to 'New History', new_admin_patient_history_url(@patient), class: "btn btn-success"
+    = link_to 'New History +', new_admin_patient_history_url(@patient), class: "btn btn-success"
     %hr
 
     %table.table.datatable
@@ -20,11 +17,12 @@
           %th
 
       %tbody
-        %tr
-          %td August 22, 1939
-          %td 2
-          %td
-            = link_to 'View History', root_url, :class => "btn btn-default btn-xs"
+        - @histories.each do |history|
+          %tr
+            %td= history.created_at
+            %td= history.labs.count
+            %td
+              = link_to 'View History', admin_patient_history_path(@patient, history), :class => "btn btn-default btn-xs"
 
 
 

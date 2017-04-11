@@ -17,13 +17,14 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "admin#index"
     resources :patients do
-      resources :prns
-      resources :orders
-      resources :mars
-      resources :labs
-      resources :histories
+      resources :histories do
+        resources :prns
+        resources :orders
+        resources :mars
+        resources :labs
+      end
     end
-    
+
     resources :users
   end
 
