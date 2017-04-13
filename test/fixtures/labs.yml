@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  orders: MyString
-  date_and_time_drawn: 2017-04-06 13:01:43
-
-two:
-  orders: MyString
-  date_and_time_drawn: 2017-04-06 13:01:43

@@ -3,7 +3,10 @@
 
   .form-inputs
     = f.input :orders
-    = f.input :date_and_time_drawn
+    #date_and_time_drawn_picker
+      - if @lab.date_and_time_drawn.nil?
+        = f.hidden_field :date_and_time_drawn, :value => DateTime.now
+    -# = f.input :date_and_time_drawn
 
   .form-actions
     = f.button :submit
