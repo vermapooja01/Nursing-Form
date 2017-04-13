@@ -16,10 +16,10 @@
         %td= patient.name
         %td= patient.age
         %td= patient.gender
-        %td= link_to 'Show', patient
-        %td= link_to 'Edit', edit_patient_path(patient)
-        %td= link_to 'Destroy', patient, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Show', patient, :class => "btn btn-primary"
+        %td= link_to 'Edit', edit_patient_path(patient), :class => "btn btn-primary"
+        %td= link_to 'Destroy', patient, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 
 %br
 
-= link_to 'New Patient', new_patient_path
+= link_to 'New Patient', new_patient_path, :class => "btn btn-primary"
