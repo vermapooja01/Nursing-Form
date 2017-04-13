@@ -4,7 +4,9 @@
   .form-inputs
     .col-md-12.well
       = f.input :orders, :class => "form-control", :label => "Orders"
-      = f.input :date_and_time_drawn, :class => "form-control", :label => "Date and Time Drawn"
+      #date_and_time_drawn_picker
+        - if @lab.date_and_time_drawn.nil?
+          = f.hidden_field :date_and_time_drawn, :value => DateTime.now
       %h3{:align => "center"} Questions Regarding Labs
       = f.input :coagulation_therapy, :collection => [['yes', 'Yes'],['no', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @lab.coagulation_therapy, :class => "form-control", :label => "Is the Patient currently on Coagulation Therapy"
       = f.input :patient_fasting, :collection => [['yes', 'Yes'],['no', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @lab.patient_fasting, :class => "form-control", :label => "Is the Patient Fasting"
