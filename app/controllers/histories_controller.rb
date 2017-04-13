@@ -69,6 +69,39 @@ class HistoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def history_params
-      params.require(:history).permit(:name, :date_of_admission, :mr_number)
+      params.require(:history).permit(
+        :name,
+        :date_of_admission,
+        :mr_number,
+        :service,
+        :date_of_birth,
+        :marital_status_history,
+        :address,
+        :phone,
+        :height,
+        :weight,
+        :occupation,
+        :religion,
+        :allergies,
+        :cultural_spiritual_practice,
+        :code_status,
+        :language,
+        :advance_directive,
+        :barriers_to_communication,
+        :admitting_diagonosis,
+        :isolation_precaution,
+        :medical_history,
+        :surgical_history,
+        :current_medications,
+        :diet_history,
+        :tobacco_use,
+        :alcohol_drug_use,
+        :immunizations,
+        :family_history,
+        :living_arrangements,
+        :social_hx,
+        :hobbies,
+        :daily_weekly_routine,
+      )
     end
 end

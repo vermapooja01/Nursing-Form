@@ -2,9 +2,38 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :name
-    = f.input :date_of_admission
-    = f.input :mr_number
+    = f.input :name, :label => "Patient Name"
+    = f.input :date_of_admission, :label => "Date of Admission"
+    = f.input :mr_number, :label => "MR Number"
+    = f.input :service, :label => "Service"
+    = f.input :date_of_birth, :label => "Date of Birth"
+    = f.input :marital_status_history, :label => "Marital Status"
+    = f.input :address, :label => "Address"
+    = f.input :phone, :label => "Phone"
+    = f.input :height, :label => "Height"
+    = f.input :weight, :label => "Weight"
+    = f.input :occupation, :label => "Occupation"
+    = f.input :religion, :label => "Religion"
+    = f.input :allergies, :label => "Allergies"
+    = f.input :cultural_spiritual_practice, :label => "Cultural/Spiritual Practice"
+    = f.input :code_status, :label => "Code Status"
+    = f.input :language, :label => "Language"
+    = f.input :advance_directive, :label => "Advanced Directive"
+    = f.input :barriers_to_communication, :label => "Barriers to Communication"
+    = f.input :admitting_diagonosis, :label => "Admitting Diagonosis"
+    = f.input :isolation_precaution, :label => "Isolation Precaution"
+    = f.input :medical_history, :label => "Medical History"
+    = f.input :surgical_history, :label => "Surgical HIstory"
+    = f.input :current_medications, :label => "Current Medications"
+    = f.input :diet_history, :label => "Diet"
+    = f.input :tobacco_use, :label => "Tobacco Use"
+    = f.input :alcohol_drug_use, :label => "Alcohol Drug Use"
+    = f.input :immunizations, :label => "Immunizations"
+    = f.input :family_history, :label => "Family History"
+    = f.input :living_arrangements, :label => "Living Arrangements"
+    = f.input :social_hx, :label => "Social Hx"
+    = f.input :hobbies, :label => "Hobbies"
+    = f.input :daily_weekly_routine, :label => "Daily Weekly Routine"
 
   .form-actions
     = f.button :submit
