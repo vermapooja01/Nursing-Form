@@ -2,9 +2,16 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :date_time
-    = f.input :orders
-    = f.input :verification
+    .col-md-12.well
+      = f.input :date_time, :class => "form-control", :label => "Date and Time"
+      = f.input :orders, :class => "form-control", :label => "Orders"
+      = f.input :ordered_by, :class => "form-control", :label => "Ordered By"
+      %h3{:align => "center"} Verification
+      = f.input :verification_date_and_time, :class => "form-control", :label => "Verification Date and Time"
+      = f.input :verifier_name, :class => "form-control", :label => "Verifier Name"
+      %h3{:align => "center"} Patient Details
+      = f.input :patient_name_order, :class => "form-control", :label => "Patient"
+
 
   .form-actions
     = f.button :submit
