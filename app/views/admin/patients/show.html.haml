@@ -12,14 +12,17 @@
     %table.table.datatable
       %thead
         %tr
-          %th Date and Time
-          %th Labs
+          %th Date of Admission
+          %th MR #
+          %th Service
           %th
 
       %tbody
         - @histories.each do |history|
           %tr
-            %td.date-object= history.created_at
-            %td= history.labs.count
+            %td.date-object= history.date_of_admission
+            %td= history.mr_number
+            %td= history.service
             %td
-              = link_to 'View History', admin_patient_history_labs_path(@patient, history), :class => "btn btn-default btn-xs"
+              = link_to 'View', admin_patient_history_labs_path(@patient, history), :class => "btn btn-default btn-xs"
+              = link_to 'Delete', admin_patient_history_path(@patient, history), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-default btn-xs'
