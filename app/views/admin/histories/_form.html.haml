@@ -6,7 +6,7 @@
       %hr
       #date_of_admission_picker
         - if @history.date_of_admission.nil?
-          = f.input_field :date_of_admission, as: :string, hidden: true
+          = f.hidden_field :date_of_admission
       -# = f.input :date_of_admission, :class => "form-control", :label => "Date of Admission"
       = f.input :mr_number, :class => "form-control", :label => "MR #"
       = f.input :service, :class => "form-control", :label => "Service"
