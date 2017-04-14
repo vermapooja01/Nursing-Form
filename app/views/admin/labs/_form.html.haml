@@ -1,4 +1,4 @@
-= simple_form_for(@lab) do |f|
+= simple_form_for([:admin, @patient, @history, @lab]) do |f|
   = f.error_notification
 
   .form-inputs

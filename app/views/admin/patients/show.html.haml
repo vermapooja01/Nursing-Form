@@ -12,14 +12,14 @@
     %table.table.datatable
       %thead
         %tr
-          %th Date
+          %th Date and Time
           %th Labs
           %th
 
       %tbody
         - @histories.each do |history|
           %tr
-            %td= history.created_at
+            %td.date-object= history.created_at
             %td= history.labs.count
             %td
               = link_to 'View History', admin_patient_history_labs_path(@patient, history), :class => "btn btn-default btn-xs"

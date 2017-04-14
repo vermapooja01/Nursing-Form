@@ -39,3 +39,4 @@
 //= require datatable-init
 
 //= require admin/labs
+//= require admin/patients

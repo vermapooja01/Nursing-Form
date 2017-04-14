@@ -13,7 +13,7 @@
   %h1 Active Patients
   - if @patients
     %p The current patient list
-    %table.table.datatable
+    %table.table.table-striped.datatable
       %thead
         %tr
           %th Patient Name
@@ -26,8 +26,8 @@
             %td
               .btn-group.btn-group-xs{"aria-label" => "...", :role => "group"}
                 = link_to 'Show Details', admin_patient_path(patient), class: 'btn btn-default'
-                = link_to 'Remove Patient', admin_patient_path(patient), class: 'btn btn-default'
                 = link_to 'Edit Patient', edit_admin_patient_path(patient), class: 'btn btn-default'
+                = link_to 'Remove Patient', admin_patient_path(patient), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-default'
 
   - else
     %p The patient list is empty

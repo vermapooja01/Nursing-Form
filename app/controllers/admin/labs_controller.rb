@@ -17,7 +17,7 @@ class Admin::LabsController < Admin::AdminController
 
   # GET /labs/new
   def new
-    @lab = @history.labs.build
+    @lab = Lab.new
   end
 
   # GET /labs/1/edit
@@ -31,7 +31,7 @@ class Admin::LabsController < Admin::AdminController
 
     respond_to do |format|
       if @lab.save
-        format.html { redirect_to @lab, notice: 'Lab was successfully created.' }
+        format.html { redirect_to admin_patient_history_labs_path(@patient, @history), notice: 'Lab was successfully created.' }
         format.json { render :show, status: :created, location: @lab }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class Admin::LabsController < Admin::AdminController
   def update
     respond_to do |format|
       if @lab.update(lab_params)
-        format.html { redirect_to @lab, notice: 'Lab was successfully updated.' }
+        format.html { redirect_to admin_patient_history_labs_path(@patient, @history), notice: 'Lab was successfully updated.' }
         format.json { render :show, status: :ok, location: @lab }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class Admin::LabsController < Admin::AdminController
   def destroy
     @lab.destroy
     respond_to do |format|
-      format.html { redirect_to labs_url, notice: 'Lab was successfully destroyed.' }
+      format.html { redirect_to admin_patient_history_labs_path(@patient, @history), notice: 'Lab was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -80,6 +80,75 @@ class Admin::LabsController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lab_params
-      params.require(:lab).permit(:orders, :date_and_time_drawn)
+      params.require(:lab).permit(
+        :orders,
+        :date_and_time_drawn,
+        :orders,
+        :date_and_time_drawn,
+        :history_id,
+        :coagulation_therapy,
+        :patient_fasting,
+        :ventilator,
+        :urinalysis,
+        :wbc,
+        :rbc,
+        :hgb,
+        :hct,
+        :plt,
+        :glucose,
+        :bun,
+        :co2,
+        :chloride,
+        :creatinine,
+        :sodium,
+        :potassium,
+        :magnesium,
+        :phosphorus,
+        :calcium,
+        :appearance,
+        :sp_gravity,
+        :color_ua,
+        :ph,
+        :protein,
+        :glucose_ua,
+        :ketones,
+        :bilirubin,
+        :occult_blood,
+        :wbc_ua,
+        :rbc_ua,
+        :ck,
+        :ck_mb,
+        :trop,
+        :myoglobin,
+        :pt,
+        :ptt,
+        :inr,
+        :alkaline_phos,
+        :albumin,
+        :bilirubin_direct,
+        :bilirubin_total,
+        :ast,
+        :alt,
+        :cholesterol,
+        :triglycerides,
+        :hdl,
+        :ldl,
+        :digoxin,
+        :dilantin,
+        :gentamicin,
+        :gentamicin_trough,
+        :vancomycin,
+        :vancomycin_trough,
+        :ph_abg,
+        :pco2,
+        :hco3,
+        :po2,
+        :fio2,
+        :lactic_acid,
+        :bnp,
+        :patient_lab_name,
+        :mr_number_lab,
+        :room_number
+      )
     end
 end
