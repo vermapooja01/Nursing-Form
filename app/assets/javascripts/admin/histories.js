@@ -7,7 +7,6 @@ $(document).on('turbolinks:load', function () {
   $("#date_of_admission_picker").on("dp.change", function (e) {
     // Conversion to momentjs data object
     var browserDate = moment(e.date._d).format();
-    console.log(browserDate)
     $('#history_date_of_admission').val(String(browserDate));
   });
 
