@@ -20,14 +20,44 @@
 
 
 $(document).on('turbolinks:load', function () {
-  // Date Time Picker
-  $('.date_and_time_picker').datetimepicker({
-    inline: true,
-    sideBySide: true
+  // Generalized Date Time Picker JS functions
+  // Get all the objects that are datetime pickers
+  var dateTimePickerObjects = $('.date_and_time_picker');
+  // Execute a loop on all the objects
+  dateTimePickerObjects.each(function(index) {
+    // Initialize on each date time picker the datetime function
+    $(this).datetimepicker({
+      inline: true,
+      sideBySide: true,
+      defaultDate: getDefaultDate(this)
+    });
   });
-  $('.date_and_time_picker').on('dp.change', function (e) {
+
+  // Set up event listeners for the objects
+  $(this).on('dp.change', function (e) {
     // Conversion to momentjs data object
     var browserDate = moment(e.date._d).format();
-    $(e.target).children().find('input[type="hidden"]').val(String(browserDate));
+    // Convert the date object into a string
+    var dateString = String(browserDate);
+    // Get the object that is in charge of setting the value for the date
+    var dateSetter = $(e.target).children('input[type="hidden"]');
+    // Set the value of the object.
+    dateSetter.val(dateString);
   });
+
+  function getDefaultDate(dateTimeObject) {
+    // Get the children of the object that has datetime
+    var defaultDateField = $(dateTimeObject).children('input[type="hidden"]');
+    // Declare empty variable that stores the date that was set through the form IF it was set
+    var defaultDate = "";
+    // Check to see if the default date is not nil
+    if (defaultDateField.val() != null) {
+      defaultDate = defaultDateField.val();
+    }
+    else {
+      // Do nothing
+    }
+    // Return the default date
+    return defaultDate;
+  }
 });
