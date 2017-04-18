@@ -45,7 +45,7 @@ class Admin::MarsController < Admin::AdminController
   def update
     respond_to do |format|
       if @mar.update(mar_params)
-        format.html { redirect_to admin_patient_history_mar_path(@patient, @history, @mar), notice: 'MAR was successfully updated.' }
+        format.html { redirect_to edit_admin_patient_history_mar_path(@patient, @history, @mar), notice: 'MAR was successfully updated.' }
         format.json { render :show, status: :ok, location: @mar }
       else
         format.html { render :edit }

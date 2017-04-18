@@ -14,9 +14,10 @@
       %tbody
         - @mars.each do |mar|
           %tr
-            %td= mar.date_and_time
+            %td.date-object= mar.date_and_time
             %td
-              = link_to 'View Details', admin_patient_history_lab_path(@patient, @history, mar), :class => "btn btn-default btn-xs"
+              = link_to 'View', admin_patient_history_mar_path(@patient, @history, mar), :class => "btn btn-default btn-xs"
+              = link_to 'Edit', edit_admin_patient_history_mar_path(@patient, @history, mar), :class => "btn btn-default btn-xs"
 
   .col-md-4.information-block
     %h2 Patient Details
