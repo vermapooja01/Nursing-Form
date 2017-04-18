@@ -4,10 +4,9 @@
   .form-inputs
     .col-md-8.well
       = f.input :orders, :class => "form-control", :label => "Orders"
-      #date_and_time_drawn_picker
+
+      .date_and_time_picker
         %h3 Date Taken
-        - if @lab.date_and_time_drawn.nil?
-          = f.hidden_field :date_and_time_drawn, :value => DateTime.now
         = f.hidden_field :date_and_time_drawn, :value => @lab.date_and_time_drawn
 
       %h3{:align => "center"} Questions Regarding Labs
