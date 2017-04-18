@@ -4,25 +4,25 @@ class AddFieldsToLab < ActiveRecord::Migration[5.0]
     add_column :labs, :patient_fasting, :string
     add_column :labs, :ventilator, :string
     add_column :labs, :urinalysis, :string
-    add_column :labs, :wbc, :integer
-    add_column :labs, :rbc, :integer
-    add_column :labs, :hgb, :integer
-    add_column :labs, :hct, :integer
-    add_column :labs, :plt, :integer
-    add_column :labs, :glucose, :integer
-    add_column :labs, :bun, :integer
-    add_column :labs, :co2, :integer
-    add_column :labs, :chloride, :integer
-    add_column :labs, :creatinine, :integer
-    add_column :labs, :sodium, :integer
-    add_column :labs, :potassium, :integer
-    add_column :labs, :magnesium, :integer
-    add_column :labs, :phosphorus, :integer
-    add_column :labs, :calcium, :integer
+    add_column :labs, :wbc, :float
+    add_column :labs, :rbc, :float
+    add_column :labs, :hgb, :float
+    add_column :labs, :hct, :float
+    add_column :labs, :plt, :float
+    add_column :labs, :glucose, :float
+    add_column :labs, :bun, :float
+    add_column :labs, :co2, :float
+    add_column :labs, :chloride, :float
+    add_column :labs, :creatinine, :float
+    add_column :labs, :sodium, :float
+    add_column :labs, :potassium, :float
+    add_column :labs, :magnesium, :float
+    add_column :labs, :phosphorus, :float
+    add_column :labs, :calcium, :float
     add_column :labs, :appearance, :string
-    add_column :labs, :sp_gravity, :integer
+    add_column :labs, :sp_gravity, :float
     add_column :labs, :color_ua, :string
-    add_column :labs, :ph, :integer
+    add_column :labs, :ph, :float
     add_column :labs, :protein, :string
     add_column :labs, :glucose_ua, :string
     add_column :labs, :ketones, :string
@@ -30,36 +30,36 @@ class AddFieldsToLab < ActiveRecord::Migration[5.0]
     add_column :labs, :occult_blood, :string
     add_column :labs, :wbc_ua, :string
     add_column :labs, :rbc_ua, :string
-    add_column :labs, :ck, :integer
-    add_column :labs, :ck_mb, :integer
-    add_column :labs, :trop, :integer
-    add_column :labs, :myoglobin, :integer
-    add_column :labs, :pt, :integer
-    add_column :labs, :ptt, :integer
-    add_column :labs, :inr, :integer
-    add_column :labs, :alkaline_phos, :integer
-    add_column :labs, :albumin, :integer
-    add_column :labs, :bilirubin_direct, :integer
-    add_column :labs, :bilirubin_total, :integer
-    add_column :labs, :ast, :integer
-    add_column :labs, :alt, :integer
-    add_column :labs, :cholesterol, :integer
-    add_column :labs, :triglycerides, :integer
-    add_column :labs, :hdl, :integer
-    add_column :labs, :ldl, :integer
-    add_column :labs, :digoxin, :integer
-    add_column :labs, :dilantin, :integer
-    add_column :labs, :gentamicin, :integer
-    add_column :labs, :gentamicin_trough, :integer
-    add_column :labs, :vancomycin, :integer
-    add_column :labs, :vancomycin_trough, :integer
-    add_column :labs, :ph_abg, :integer
-    add_column :labs, :pco2, :integer
-    add_column :labs, :hco3, :integer
-    add_column :labs, :po2, :integer
-    add_column :labs, :fio2, :integer
-    add_column :labs, :lactic_acid, :integer
-    add_column :labs, :bnp, :integer
+    add_column :labs, :ck, :float
+    add_column :labs, :ck_mb, :float
+    add_column :labs, :trop, :float
+    add_column :labs, :myoglobin, :float
+    add_column :labs, :pt, :float
+    add_column :labs, :ptt, :float
+    add_column :labs, :inr, :float
+    add_column :labs, :alkaline_phos, :float
+    add_column :labs, :albumin, :float
+    add_column :labs, :bilirubin_direct, :float
+    add_column :labs, :bilirubin_total, :float
+    add_column :labs, :ast, :float
+    add_column :labs, :alt, :float
+    add_column :labs, :cholesterol, :float
+    add_column :labs, :triglycerides, :float
+    add_column :labs, :hdl, :float
+    add_column :labs, :ldl, :float
+    add_column :labs, :digoxin, :float
+    add_column :labs, :dilantin, :float
+    add_column :labs, :gentamicin, :float
+    add_column :labs, :gentamicin_trough, :float
+    add_column :labs, :vancomycin, :float
+    add_column :labs, :vancomycin_trough, :float
+    add_column :labs, :ph_abg, :float
+    add_column :labs, :pco2, :float
+    add_column :labs, :hco3, :float
+    add_column :labs, :po2, :float
+    add_column :labs, :fio2, :float
+    add_column :labs, :lactic_acid, :float
+    add_column :labs, :bnp, :float
     add_column :labs, :patient_lab_name, :string
     add_column :labs, :mr_number_lab, :integer
     add_column :labs, :room_number, :integer
