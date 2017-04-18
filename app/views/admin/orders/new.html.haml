@@ -1,5 +1,22 @@
 %h1 New Order
 
+%h1
+.alert.alert-info{:role => "alert"} Make sure to save your changes periodically
+.col-md-12.pager-buttons.no-padding
+  %div{:style => "float:right"}
+    = render("autosave")
+
+    %button.btn.btn-default.button-save{:type => "button"}
+      %i.fa.fa-floppy-o{"aria-hidden" => "true"}
+    %button.btn.btn-default.button-next{:type => "button"}
+      %i.fa.fa-arrow-right.pull-right{"aria-hidden" => "true"}
+      Next
+
+  %div{:style => "float:left"}
+    %button.btn.btn-default.button-previous{:type => "button"}
+      %i.fa.fa-arrow-left.pull-left{"aria-hidden" => "true"}
+      Previous
+
 = render 'form'
 
 = link_to 'Back', orders_path
