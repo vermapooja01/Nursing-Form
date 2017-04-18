@@ -16,7 +16,8 @@
           %tr
             %td.date-object= lab.date_and_time_drawn
             %td
-              = link_to 'View Details', admin_patient_history_lab_path(@patient, @history, lab), :class => "btn btn-default btn-xs"
+              = link_to 'View', admin_patient_history_lab_path(@patient, @history, lab), :class => "btn btn-default btn-xs"
+              = link_to 'Edit', edit_admin_patient_history_lab_path(@patient, @history, lab), :class => "btn btn-default btn-xs"
               = link_to 'Delete', admin_patient_history_lab_path(@patient, @history, lab), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-default btn-xs'
 
 

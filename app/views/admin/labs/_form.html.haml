@@ -2,23 +2,34 @@
   = f.error_notification
 
   .form-inputs
-    .col-md-12.well
+    .col-md-8.well
       = f.input :orders, :class => "form-control", :label => "Orders"
       #date_and_time_drawn_picker
+        %h3 Date Taken
         - if @lab.date_and_time_drawn.nil?
           = f.hidden_field :date_and_time_drawn, :value => DateTime.now
+        = f.hidden_field :date_and_time_drawn, :value => @lab.date_and_time_drawn
+
       %h3{:align => "center"} Questions Regarding Labs
-      = f.input :coagulation_therapy, :collection => [['yes', 'Yes'],['no', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @lab.coagulation_therapy, :class => "form-control", :label => "Is the Patient currently on Coagulation Therapy"
-      = f.input :patient_fasting, :collection => [['yes', 'Yes'],['no', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @lab.patient_fasting, :class => "form-control", :label => "Is the Patient Fasting"
-      = f.input :ventilator, :collection => [['yes', 'Yes'],['no', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @lab.ventilator, :class => "form-control", :label => "Ventilator ABGs"
-      = f.input :urinalysis, :collection => [['cath', 'Cath'],['clean cath', 'Clean Cath']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @lab.urinalysis, :class => "form-control", :label => "Method of Collection for Urinalysis"
-      %h3{:align => "center"}Hematology
+      .col-md-12
+        .col-md-3
+          = f.input :coagulation_therapy, :collection => [['yes', 'Yes'],['no', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @lab.coagulation_therapy, :class => "form-control", :label => "Is the Patient currently on Coagulation Therapy"
+        .col-md-3
+          = f.input :patient_fasting, :collection => [['yes', 'Yes'],['no', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @lab.patient_fasting, :class => "form-control", :label => "Is the Patient Fasting"
+        .col-md-3
+          = f.input :ventilator, :collection => [['yes', 'Yes'],['no', 'No']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @lab.ventilator, :class => "form-control", :label => "Ventilator ABGs"
+        .col-md-3
+          = f.input :urinalysis, :collection => [['cath', 'Cath'],['clean cath', 'Clean Cath']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @lab.urinalysis, :class => "form-control", :label => "Method of Collection for Urinalysis"
+      %hr
+
+      %h3{:align => "center"} Hematology
       = f.input :wbc, :class => "form-control", :label => "WBC (3.2 - 10.6)"
       = f.input :rbc, :class => "form-control", :label => "RBC (3.88 - 6.07)"
       = f.input :hgb, :class => "form-control", :label => "HGB (12 - 17.2)"
       = f.input :hct, :class => "form-control", :label => "HCT (35 - 50)"
       = f.input :plt, :class => "form-control", :label => "PLT (150 - 450)"
-      %h3{:align => "center"}Chemistry Panel
+
+      %h3{:align => "center"} Chemistry Panel
       = f.input :glucose, :class => "form-control", :label => "Glucose(<110)"
       = f.input :bun, :class => "form-control", :label => "BUN(7-30)"
       = f.input :co2, :class => "form-control", :label => "CO2(20-32)"
@@ -29,7 +40,8 @@
       = f.input :magnesium, :class => "form-control", :label => "Magnesium(1.5-2.4)"
       = f.input :phosphorus, :class => "form-control", :label => "Phosphorus(2.5-4.5)"
       = f.input :calcium, :class => "form-control", :label => "Calcium (8.5 - 10.3)"
-      %h3{:align => "center"}UA
+
+      %h3{:align => "center"} UA
       = f.input :appearance, :class => "form-control", :label => "Appearance"
       = f.input :sp_gravity, :class => "form-control", :label => "Sp. Gravity (1.001 - 1.035)"
       = f.input :color_ua, :class => "form-control", :label => "Color"
@@ -41,7 +53,8 @@
       = f.input :occult_blood, :class => "form-control", :label => "Occult Blood (neg)"
       = f.input :wbc_ua, :class => "form-control", :label => "WBC(</=5)"
       = f.input :rbc_ua, :class => "form-control", :label => "RBC(</=3)"
-      %h3{:align => "center"}Cardiac Panel
+
+      %h3{:align => "center"} Cardiac Panel
       = f.input :ck, :class => "form-control", :label => "CK (108-564)"
       = f.input :ck_mb, :class => "form-control", :label => "CK-MB(0-3)"
       = f.input :trop, :class => "form-control", :label => "Trop (0-0.4)"
@@ -79,10 +92,16 @@
       = f.input :lactic_acid, :class => "form-control", :label => "Lactic Acid(1-1.8)"
       = f.input :bnp, :class => "form-control", :label => "BNP(<100)"
 
-    .col-md-12.well
-      = f.input :patient_lab_name, :class => "form-control", :label => "Patient"
-      = f.input :mr_number_lab, :class => "form-control", :label => "MR#"
-      = f.input :room_number, :class => "form-control", :label => "Room#"
+    .col-md-4
+      %h2 Patient Details
+      .block
+        %h1
+          %span.label.label-info.blue
+            = @patient.name
+        %h3
+          MR#
+          = @history.mr_number
 
-  .form-actions
-    = f.button :submit
+
+      .form-actions
+        = f.button :submit

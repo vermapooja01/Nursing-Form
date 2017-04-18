@@ -45,7 +45,7 @@ class Admin::LabsController < Admin::AdminController
   def update
     respond_to do |format|
       if @lab.update(lab_params)
-        format.html { redirect_to admin_patient_history_labs_path(@patient, @history), notice: 'Lab was successfully updated.' }
+        format.html { redirect_to edit_admin_patient_history_lab_path(@patient, @history, @lab), notice: 'Lab was successfully updated.' }
         format.json { render :show, status: :ok, location: @lab }
       else
         format.html { render :edit }
