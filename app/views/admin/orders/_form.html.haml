@@ -2,15 +2,32 @@
   = f.error_notification
 
   .form-inputs
-    .col-md-12.well
-      = f.input :date_time, :class => "form-control", :label => "Date and Time"
-      = f.input :orders, :class => "form-control", :label => "Orders"
-      = f.input :ordered_by, :class => "form-control", :label => "Ordered By"
-      %h3{:align => "center"} Verification
-      = f.input :verification_date_and_time, :class => "form-control", :label => "Verification Date and Time"
-      = f.input :verifier_name, :class => "form-control", :label => "Verifier Name"
-      %h3{:align => "center"} Patient Details
-      = f.input :patient_name_order, :class => "form-control", :label => "Patient"
+    .row
+      .col-md-8.well
+        .date_and_time_picker
+          %h3 Date Taken
+          = f.hidden_field :date_time, :value => @order.date_time
+        = f.input :orders, :class => "form-control", :label => "Orders"
+        = f.input :ordered_by, :class => "form-control", :label => "Ordered By"
+
+        %h3{:align => "center"} Verification
+        .date_and_time_picker
+          %h3 Date Taken
+          = f.hidden_field :verification_date_and_time, :value => @order.verification_date_and_time
+
+        = f.input :verifier_name, :class => "form-control", :label => "Verifier Name"
+        %h3{:align => "center"} Patient Details
+        = f.input :patient_name_order, :class => "form-control", :label => "Patient"
+        
+      .col-md-4
+        %h2 Patient Details
+        .block
+          %h1
+            %span.label.label-info.blue
+              = @patient.name
+          %h3
+            MR#
+            = @history.mr_number
 
 
   .form-actions

@@ -7,29 +7,18 @@
     = link_to 'Add Order +', new_admin_patient_history_order_url(@patient, @history), class: "btn btn-success"
     %hr
     %table.table.datatable
-      %caption Optional table caption.
       %thead
         %tr
-          %th #
-          %th First Name
-          %th Last Name
-          %th Username
+          %th Date and Time
+          %th
       %tbody
-        %tr
-          %th{:scope => "row"} 1
-          %td Mark
-          %td Otto
-          %td @mdo
-        %tr
-          %th{:scope => "row"} 2
-          %td Jacob
-          %td Thornton
-          %td @fat
-        %tr
-          %th{:scope => "row"} 3
-          %td Larry
-          %td the Bird
-          %td @twitter
+        - @orders.each do |order|
+          %tr
+            %td.date-object= order.date_time
+            %td
+              = link_to 'View', admin_patient_history_order_path(@patient, @history, order), :class => "btn btn-default btn-xs"
+              = link_to 'Edit', edit_admin_patient_history_order_path(@patient, @history, order), :class => "btn btn-default btn-xs"
+              = link_to 'Delete', admin_patient_history_order_path(@patient, @history, order), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-default btn-xs'
 
   .col-md-4.information-block
     %h2 Patient Details

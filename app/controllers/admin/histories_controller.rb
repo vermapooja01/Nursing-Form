@@ -27,7 +27,6 @@ class Admin::HistoriesController < Admin::AdminController
   # POST /histories.json
   def create
     @history = @patient.histories.build(history_params)
-    byebug
 
     respond_to do |format|
       if @history.save

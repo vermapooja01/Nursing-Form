@@ -80,6 +80,21 @@ class Admin::PrnsController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prn_params
-      params.require(:prn).permit(:ordering_md, :date_ordered, :medication)
+      params.require(:prn).permit(
+        :ordering_md,
+        :date_ordered,
+        :medication,
+        :patient_name_prn,
+        :mr_number_prn,
+        :month_year_prn,
+        :allergies_prn,
+        :medication_name,
+        :medication_dose,
+        :medication_route,
+        :medication_date_and_time,
+        :medication_by,
+        :nurse_signature_prn,
+        :nurse_initials_prn
+      )
     end
 end

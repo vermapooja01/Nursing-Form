@@ -2,30 +2,42 @@
   = f.error_notification
 
   .form-inputs
-    .col-md-12.well
-      = f.input :patient_name_prn, :class => "form-control", :label => "Patient Name"
-      = f.input :month_year_prn, :class => "form-control", :label => "Month and Year"
-      = f.input :mr_number_prn, :class => "form-control", :label => "MR#"
-      = f.input :allergies_prn, :class => "form-control", :label => "Allergies"
+    .row
+      .col-md-8
+        -# .col-md-12.well
+        -#   = f.input :patient_name_prn, :class => "form-control", :label => "Patient Name"
+        -#   = f.input :month_year_prn, :class => "form-control", :label => "Month and Year"
+        -#   = f.input :mr_number_prn, :class => "form-control", :label => "MR#"
+        -#   = f.input :allergies_prn, :class => "form-control", :label => "Allergies"
 
-    .col-md-12.well
-      = f.input :ordering_md, :class => "form-control", :label => "Ordering MD"
-      = f.input :date_ordered, :class => "form-control", :label => "Date Ordered"
+        .col-md-12.well
+          = f.input :ordering_md, :class => "form-control", :label => "Ordering MD"
+          = f.input :date_ordered, :class => "form-control", :label => "Date Ordered"
 
-    .col-md-12.well
-      %h3{:align => "center"} Medication
-      = f.input :medication_name, :class => "form-control", :label => "Medication Name"
-      = f.input :medication_dose, :class => "form-control", :label => "Medication Dose"
-      = f.input :medication_route, :class => "form-control", :label => "Medication Route"
+        .col-md-12.well
+          %h3{:align => "center"} Medication
+          = f.input :medication_name, :class => "form-control", :label => "Medication Name"
+          = f.input :medication_dose, :class => "form-control", :label => "Medication Dose"
+          = f.input :medication_route, :class => "form-control", :label => "Medication Route"
 
-    .col-md-12.well
-      %h3{:align => "center"} Date, Time, By
-      = f.input :medication_date_and_time, :class => "form-control", :label => "Medication Date and Time"
-      = f.input :medication_by, :class => "form-control", :label => "Medication By"
+        .col-md-12.well
+          %h3{:align => "center"} Date, Time, By
+          = f.input :medication_date_and_time, :class => "form-control", :label => "Medication Date and Time"
+          = f.input :medication_by, :class => "form-control", :label => "Medication By"
 
-    .col-md-12.well
-      = f.input :nurse_signature_prn, :class => "form-control", :label => "Nurse Signature"
-      = f.input :nurse_initials_prn, :class => "form-control", :label => "Nurse Initials"
+        .col-md-12.well
+          = f.input :nurse_signature_prn, :class => "form-control", :label => "Nurse Signature"
+          = f.input :nurse_initials_prn, :class => "form-control", :label => "Nurse Initials"
+
+      .col-md-4
+        %h2 Patient Details
+        .block
+          %h1
+            %span.label.label-info.blue
+              = @patient.name
+          %h3
+            MR#
+            = @history.mr_number
 
 
   .form-actions
