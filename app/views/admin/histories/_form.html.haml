@@ -1,10 +1,13 @@
 = simple_form_for([:admin, @patient, @history]) do |f|
   = f.error_notification
-
-  .form-inputs
-    .col-md-12.well
-      = f.input :patient_name_history, :class => "form-control", :label => "Name"
-      = f.input :date_of_admission, :class => "form-control", :label => "Date of Admission"
+  .row
+    .col-md-8.well
+      = render "admin/patient_block"
+      %hr
+      #date_of_admission_picker
+        - if @history.date_of_admission.nil?
+          = f.hidden_field :date_of_admission
+      -# = f.input :date_of_admission, :class => "form-control", :label => "Date of Admission"
       = f.input :mr_number, :class => "form-control", :label => "MR #"
       = f.input :service, :class => "form-control", :label => "Service"
       = f.input :date_of_birth, :class => "form-control", :label => "DOB"

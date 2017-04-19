@@ -6,7 +6,7 @@
     %h1 Labs
     = link_to 'Add Lab +', new_admin_patient_history_lab_url(@patient, @history), class: "btn btn-success"
     %hr
-    %table.table.datatable
+    %table.table.table-striped.datatable
       %thead
         %tr
           %th Date and Time Drawn
@@ -14,9 +14,11 @@
       %tbody
         - @labs.each do |lab|
           %tr
-            %td= lab.date_and_time_drawn
+            %td.date-object= lab.date_and_time_drawn
             %td
-              = link_to 'View Details', admin_patient_history_lab_path(@patient, history, lab), :class => "btn btn-default btn-xs"
+              = link_to 'View', admin_patient_history_lab_path(@patient, @history, lab), :class => "btn btn-default btn-xs"
+              = link_to 'Edit', edit_admin_patient_history_lab_path(@patient, @history, lab), :class => "btn btn-default btn-xs"
+              = link_to 'Delete', admin_patient_history_lab_path(@patient, @history, lab), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-default btn-xs'
 
 
   .col-md-4.information-block
