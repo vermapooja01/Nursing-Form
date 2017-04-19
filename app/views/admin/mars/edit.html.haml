@@ -1,7 +1,4 @@
 %h1 Editing mar
-
+.btn-group
+  = link_to 'Back', admin_patient_history_mars_path(@patient, @history), class: "btn btn-default"
 = render 'form'
-
-= link_to 'Show', @mar
-\|
-= link_to 'Back', mars_path

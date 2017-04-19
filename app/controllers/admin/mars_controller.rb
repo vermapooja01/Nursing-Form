@@ -31,7 +31,7 @@ class Admin::MarsController < Admin::AdminController
 
     respond_to do |format|
       if @mar.save
-        format.html { redirect_to admin_patient_history_mar_path(@patient, @history, @mar), notice: 'MAR was successfully created.' }
+        format.html { redirect_to admin_patient_history_mars_path(@patient, @history), notice: 'MAR was successfully created.' }
         format.json { render :show, status: :created, location: @mar }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class Admin::MarsController < Admin::AdminController
   def update
     respond_to do |format|
       if @mar.update(mar_params)
-        format.html { redirect_to @mar, notice: 'Mar was successfully updated.' }
+        format.html { redirect_to edit_admin_patient_history_mar_path(@patient, @history, @mar), notice: 'MAR was successfully updated.' }
         format.json { render :show, status: :ok, location: @mar }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class Admin::MarsController < Admin::AdminController
   def destroy
     @mar.destroy
     respond_to do |format|
-      format.html { redirect_to mars_url, notice: 'Mar was successfully destroyed.' }
+      format.html { redirect_to admin_patient_history_mars_path(@patient, @history), notice: 'MAR was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -80,6 +80,20 @@ class Admin::MarsController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mar_params
-      params.require(:mar).permit(:name, :month_year, :mr_number, :allergies)
+      params.require(:mar).permit(
+        :name,
+        :month_year,
+        :mr_number,
+        :allergies,
+        :medication_mar,
+        :prescribed_by,
+        :date_and_time,
+        :order_date,
+        :order_mars,
+        :order_prescribed_by,
+        :prescriber_initials,
+        :nurse_signature,
+        :nurse_initials,
+      )
     end
 end
