@@ -1,5 +1,7 @@
 class HistoriesController < ApplicationController
   before_action :set_history, only: [:show, :edit, :update, :destroy]
+  before_action :set_patient
+  
 
   # GET /histories
   # GET /histories.json
@@ -67,6 +69,9 @@ class HistoriesController < ApplicationController
       @history = History.find(params[:id])
     end
 
+    def set_patient
+      @patient = Patient.find(params[:patient_id])
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def history_params
       params.require(:history).permit(

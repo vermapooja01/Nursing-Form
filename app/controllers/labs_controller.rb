@@ -1,6 +1,7 @@
 class LabsController < ApplicationController
   before_action :set_lab, only: [:show, :edit, :update, :destroy]
 
+
   # GET /labs
   # GET /labs.json
   def index
@@ -67,8 +68,78 @@ class LabsController < ApplicationController
       @lab = Lab.find(params[:id])
     end
 
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def lab_params
-      params.require(:lab).permit(:orders, :date_and_time_drawn)
+      params.require(:lab).permit(
+      :orders,
+      :date_and_time_drawn,
+      :name,
+      :age,
+      :gender,
+      :coagulation_therapy,
+      :patient_fasting,
+      :ventilator,
+      :urinalysis,
+      :wbc,
+      :rbc,
+      :hgb,
+      :hct,
+      :plt,
+      :glucose,
+      :bun,
+      :co2,
+      :chloride,
+      :creatinine,
+      :sodium,
+      :potassium,
+      :magnesium,
+      :phosphorus,
+      :calcium,
+      :appearance,
+      :sp_gravity,
+      :color_ua,
+      :ph,
+      :protein,
+      :glucose_ua,
+      :ketones,
+      :bilirubin,
+      :occult_blood,
+      :wbc_ua,
+      :rbc_ua,
+      :ck,
+      :ck_mb,
+      :trop,
+      :myoglobin,
+      :pt,
+      :ptt,
+      :inr,
+      :alkaline_phos,
+      :albumin,
+      :bilirubin_direct,
+      :bilirubin_total,
+      :ast,
+      :alt,
+      :cholesterol,
+      :triglycerides,
+      :hdl,
+      :ldl,
+      :digoxin,
+      :dilantin,
+      :gentamicin,
+      :gentamicin_trough,
+      :vancomycin,
+      :vancomycin_trough,
+      :ph_abg,
+      :pco2,
+      :hco3,
+      :po2,
+      :fio2,
+      :lactic_acid,
+      :bnp,
+      :patient_lab_name,
+      :mr_number_lab,
+      :room_number
+    )
     end
 end
