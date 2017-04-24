@@ -18,7 +18,7 @@
             %li
               %a{"data-toggle" => "tab", :href => "#aa"} PRN MAR
 
-%h1 Listing histories
+%h1 Listing Histories
 
 .col-md-8.well
   .table-responsive
@@ -26,11 +26,14 @@
       %thead
         %tr
           %th Name
-          %th Date of admission
-          %th Mr number
+          %th Date of Admission
+          %th MR Number
           %th
           %th
           %th
+          %th
+          %th
+          %th 
 
       %tbody
         - @histories.each do |history|
@@ -38,7 +41,10 @@
             %td= history.patient.name
             %td= history.date_of_admission
             %td= history.mr_number
-            %td= link_to 'Show', patient_history_labs_path(@patient, history), :class => "btn btn-primary"
+            %td= link_to 'Show Labs', patient_history_labs_path(@patient, history), :class => "btn btn-primary"
+            %td= link_to 'Show Orders', patient_history_orders_path(@patient, history), :class => "btn btn-primary"
+            %td= link_to 'Show MAR', patient_history_mars_path(@patient, history), :class => "btn btn-primary"
+            %td= link_to 'Show PRN', patient_history_prns_path(@patient, history), :class => "btn btn-primary"
             %td= link_to 'Edit', edit_history_path(history), :class => "btn btn-primary"
             %td= link_to 'Destroy', history, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 

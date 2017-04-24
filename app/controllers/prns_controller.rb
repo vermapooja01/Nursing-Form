@@ -1,6 +1,6 @@
 class PrnsController < ApplicationController
   before_action :set_prn, only: [:show, :edit, :update, :destroy]
-  before_action :set_history
+
 
   # GET /prns
   # GET /prns.json
@@ -68,9 +68,7 @@ class PrnsController < ApplicationController
       @prn = Prn.find(params[:id])
     end
 
-    def set_history
-      @history = History.find(params[:id])
-    end
+    
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prn_params
