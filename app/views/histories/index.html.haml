@@ -33,7 +33,7 @@
           %th
           %th
           %th
-          %th 
+          %th
 
       %tbody
         - @histories.each do |history|
@@ -50,4 +50,4 @@
 
     %br
     .col-md-8.well
-      = link_to 'New History', new_history_path, :class => "btn btn-primary"
+      = link_to 'New History', new_patient_history_path, :class => "btn btn-primary"
