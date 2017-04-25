@@ -1,7 +1,7 @@
 class HistoriesController < ApplicationController
   before_action :set_history, only: [:show, :edit, :update, :destroy]
   before_action :set_patient
-  
+
 
   # GET /histories
   # GET /histories.json
