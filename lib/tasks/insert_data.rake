@@ -38,7 +38,7 @@ task :insert_patients_histories => :environment do
         # Execute a function to insert the data
         history_object.add_data_to_history_object(row)
         # Save the history object that was created
-        byebug
+
         history_object.save
       else
         # Do nothing
@@ -68,7 +68,7 @@ task :insert_patients_labs => :environment do
     patient = Patient.find_or_initialize_by(name: (first_name + " " + last_name))
     # Save the patient object
     patient.save
-    byebug
+
 
     # Go inside directory and obtain the history excel file
     location_of_files = data_directory + '/'+ directory + "/"
@@ -82,20 +82,20 @@ task :insert_patients_labs => :environment do
     sheet = xlsx.sheet(0)
     # Get the headers from the file
     headers = sheet.row(1)
-    byebug
+
     (2..sheet.last_row).each do |i|
       # Get the headers from the file
 			row = Hash[[headers, sheet.row(i)].transpose]
-      byebug
+
       # Create a history object to insert data into
 			lab_object = patient.histories.last.labs.find_or_initialize_by(mr_number_lab: row['mr_number_lab'])
-      byebug
+
       # Check to see if the obeject was found
       if lab_object.id.nil?
         # Execute a function to insert the data
         lab_object.add_data_to_lab_object(row)
         # Save the history object that was created
-        byebug
+
         lab_object.save
       else
         # Do nothing
