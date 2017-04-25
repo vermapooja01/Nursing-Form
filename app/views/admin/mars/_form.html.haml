@@ -56,16 +56,16 @@
 
       -# = f.input :name, :class => "form-control"
       = f.input :month_year, as: :string, :class => "form-control", input_html: { "data-toggle" => "datepicker" }
-      = f.input :allergies, :class => "form-control"
-      = f.input :medication_mar, :class => "form-control"
-      = f.input :prescribed_by, :class => "form-control"
+      -# = f.input :allergies, :class => "form-control"
+      = f.input :medication_mar, :class => "form-control", :label => "Medication Name"
+      = f.input :prescribed_by, :class => "form-control", :label => "Medication Perscribed By"
       .date_and_time_picker
-        %h3 Date Taken
+        %h3 Medication Date
         = f.hidden_field :date_and_time, :value => @mar.date_and_time
-
-      .date_and_time_picker
-        %h3 Order Date
-        = f.hidden_field :order_date, :value => @mar.order_date
+      -# 
+      -# .date_and_time_picker
+      -#   %h3 Order Date
+      -#   = f.hidden_field :order_date, :value => @mar.order_date
 
       = f.input :order_mars, :class => "form-control"
       = f.input :order_prescribed_by, :class => "form-control"
