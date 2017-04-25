@@ -1,23 +1,25 @@
 %h1 Listing labs
 
-%table
-  %thead
-    %tr
-      %th Orders
-      %th Date and time drawn
-      %th
-      %th
-      %th
+.col-md-8.well
+  .table-responsive
+    %table.table-hover.completed-table
+      %thead
+        %tr
+          %th Orders
+          %th Date and time drawn
+          %th
+          %th
+          %th
 
-  %tbody
-    - @labs.each do |lab|
-      %tr
-        %td= lab.orders
-        %td= lab.date_and_time_drawn
-        %td= link_to 'Show', lab
-        %td= link_to 'Edit', edit_lab_path(lab)
-        %td= link_to 'Destroy', lab, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %tbody
+        - @labs.each do |lab|
+          %tr
+            %td= lab.orders
+            %td= lab.date_and_time_drawn
+            %td= link_to 'Show', lab, :class => "btn btn-primary"
+            %td= link_to 'Edit', edit_lab_path(lab), :class => "btn btn-primary"
+            %td= link_to 'Destroy', lab, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 
-%br
-
-= link_to 'New Lab', new_lab_path
+    %br
+    .col-md-8.well
+      = link_to 'New Lab', new_lab_path, :class => "btn btn-primary"

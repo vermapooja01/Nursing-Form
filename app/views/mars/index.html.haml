@@ -1,27 +1,29 @@
 %h1 Listing mars
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Month year
-      %th Mr number
-      %th Allergies
-      %th
-      %th
-      %th
+.col-md-8.well
+  .table-responsive
+    %table.table-hover.completed-table
+      %thead
+        %tr
+          %th Name
+          %th Month year
+          %th Mr number
+          %th Allergies
+          %th
+          %th
+          %th
 
-  %tbody
-    - @mars.each do |mar|
-      %tr
-        %td= mar.name
-        %td= mar.month_year
-        %td= mar.mr_number
-        %td= mar.allergies
-        %td= link_to 'Show', mar
-        %td= link_to 'Edit', edit_mar_path(mar)
-        %td= link_to 'Destroy', mar, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %tbody
+        - @mars.each do |mar|
+          %tr
+            %td= mar.name
+            %td= mar.month_year
+            %td= mar.mr_number
+            %td= mar.allergies
+            %td= link_to 'Show', mar, :class => "btn btn-primary"
+            %td= link_to 'Edit', edit_mar_path(mar), :class => "btn btn-primary"
+            %td= link_to 'Destroy', mar, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 
-%br
-
-= link_to 'New Mar', new_mar_path
+    %br
+    .col-md-8.well
+      = link_to 'New Mar', new_mar_path, :class => "btn btn-primary"

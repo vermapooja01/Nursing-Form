@@ -1,25 +1,27 @@
 %h1 Listing prns
 
-%table
-  %thead
-    %tr
-      %th Ordering md
-      %th Date ordered
-      %th Medication
-      %th
-      %th
-      %th
+.col-md-8.well
+  .table-responsive
+    %table.table-hover.completed-table
+      %thead
+        %tr
+          %th Ordering md
+          %th Date ordered
+          %th Medication
+          %th
+          %th
+          %th
 
-  %tbody
-    - @prns.each do |prn|
-      %tr
-        %td= prn.ordering_md
-        %td= prn.date_ordered
-        %td= prn.medication
-        %td= link_to 'Show', prn
-        %td= link_to 'Edit', edit_prn_path(prn)
-        %td= link_to 'Destroy', prn, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %tbody
+        - @prns.each do |prn|
+          %tr
+            %td= prn.ordering_md
+            %td= prn.date_ordered
+            %td= prn.medication
+            %td= link_to 'Show', prn, :class => "btn btn-primary"
+            %td= link_to 'Edit', edit_prn_path(prn), :class => "btn btn-primary"
+            %td= link_to 'Destroy', prn, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 
-%br
-
-= link_to 'New Prn', new_prn_path
+    %br
+    .col-md-8.well
+      = link_to 'New Prn', new_prn_path, :class => "btn btn-primary"

@@ -1,6 +1,7 @@
 class PrnsController < ApplicationController
   before_action :set_prn, only: [:show, :edit, :update, :destroy]
 
+
   # GET /prns
   # GET /prns.json
   def index
@@ -66,6 +67,8 @@ class PrnsController < ApplicationController
     def set_prn
       @prn = Prn.find(params[:id])
     end
+
+    
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prn_params

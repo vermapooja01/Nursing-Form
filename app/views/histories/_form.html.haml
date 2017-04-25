@@ -2,9 +2,41 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :name
-    = f.input :date_of_admission
-    = f.input :mr_number
+    -#= f.input :name
+    -#= f.input :date_of_admission
+    -#= f.input :mr_number
+    = f.input :patient_name_history, :class => "form-control", :label => "Name"
+    = f.input :date_of_admission, :class => "form-control", :label => "Date of Admission"
+    = f.input :mr_number, :class => "form-control", :label => "MR #"
+    = f.input :service, :class => "form-control", :label => "Service"
+    = f.input :date_of_birth, :class => "form-control", :label => "DOB"
+    = f.input :marital_status_history, :class => "form-control", :label => "Marital Status"
+    = f.input :address, :class => "form-control", :label => "Address"
+    = f.input :phone, :class => "form-control", :label => "Phone"
+    = f.input :height, :class => "form-control", :label => "Height"
+    = f.input :weight, :class => "form-control", :label => "Weight"
+    = f.input :occupation, :class => "form-control", :label => "Occupation"
+    = f.input :religion, :class => "form-control", :label => "Religion"
+    = f.input :allergies, :class => "form-control", :label => "Allergies"
+    = f.input :cultural_spiritual_practice, :class => "form-control", :label => "Cultural/Spiritual Practice"
+    = f.input :code_status, :class => "form-control", :label => "Code Status"
+    = f.input :language, :class => "form-control", :label => "Language"
+    = f.input :advance_directive, :class => "form-control", :label => "Advance Directive"
+    = f.input :barriers_to_communication, :class => "form-control", :label => "Barriers to Communication"
+    = f.input :admitting_diagonosis, :class => "form-control", :label => "Admitting Diagnosis"
+    = f.input :isolation_precaution, :class => "form-control", :label => "Isolation Precaution"
+    = f.input :medical_history, :class => "form-control", :label => "Medical History"
+    = f.input :surgical_history, :class => "form-control", :label => "Surgical History"
+    = f.input :current_medications, :class => "form-control", :label => "Current_Medications"
+    = f.input :diet_history, :class => "form-control", :label => "Diet"
+    = f.input :tobacco_use, :class => "form-control", :label => "Tobacco Use"
+    = f.input :alcohol_drug_use, :class => "form-control", :label => "Alcohol/Drug Use"
+    = f.input :immunizations, :class => "form-control", :label => "Immunizations"
+    = f.input :family_history, :class => "form-control", :label => "Family History"
+    = f.input :living_arrangements, :class => "form-control", :label => "Living Arrangements"
+    = f.input :social_hx, :class => "form-control", :label => "Social Hx"
+    = f.input :hobbies, :class => "form-control", :label => "Hobbies"
+    = f.input :daily_weekly_routine, :class => "form-control", :label => "Daily/Weekly Routine"
 
   .form-actions
     = f.button :submit

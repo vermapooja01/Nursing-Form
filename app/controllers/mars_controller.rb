@@ -67,6 +67,8 @@ class MarsController < ApplicationController
       @mar = Mar.find(params[:id])
     end
 
+    
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def mar_params
       params.require(:mar).permit(:name, :month_year, :mr_number, :allergies)

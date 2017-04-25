@@ -1,25 +1,27 @@
 %h1 Listing orders
 
-%table
-  %thead
-    %tr
-      %th Date time
-      %th Orders
-      %th Verification
-      %th
-      %th
-      %th
+.col-md-8.well
+  .table-responsive
+    %table.table-hover.completed-table
+      %thead
+        %tr
+          %th Date time
+          %th Orders
+          %th Verification
+          %th
+          %th
+          %th
 
-  %tbody
-    - @orders.each do |order|
-      %tr
-        %td= order.date_time
-        %td= order.orders
-        %td= order.verification
-        %td= link_to 'Show', order
-        %td= link_to 'Edit', edit_order_path(order)
-        %td= link_to 'Destroy', order, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %tbody
+        - @orders.each do |order|
+          %tr
+            %td= order.date_time
+            %td= order.orders
+            %td= order.verification
+            %td= link_to 'Show', order, :class => "btn btn-primary"
+            %td= link_to 'Edit', edit_order_path(order), :class => "btn btn-primary"
+            %td= link_to 'Destroy', order, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 
-%br
-
-= link_to 'New Order', new_order_path
+    %br
+    .col-md-8.well
+      = link_to 'New Order', new_order_path, :class => "btn btn-primary"
