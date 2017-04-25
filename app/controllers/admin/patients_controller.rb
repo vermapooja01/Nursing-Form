@@ -45,7 +45,7 @@ class Admin::PatientsController < Admin::AdminController
   def update
     respond_to do |format|
       if @patient.update(patient_params)
-        format.html { redirect_to admin_patient_histories(@patient), notice: 'Patient was successfully updated.' }
+        format.html { redirect_to admin_patient_histories_path(@patient), notice: 'Patient was successfully updated.' }
         format.json { render :show, status: :ok, location: @patient }
       else
         format.html { render :edit }

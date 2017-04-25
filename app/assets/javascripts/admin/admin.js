@@ -11,6 +11,7 @@
 //= require daterangepicker
 //= require bootstrap-datetimepicker
 //= require datepicker/datepicker.min
+//= require froala_editor.min.js
 
 //= require admin/time_zones
 //= require admin/labs
@@ -60,4 +61,9 @@ $(document).on('turbolinks:load', function () {
     // Return the default date
     return defaultDate;
   }
+
+  // Froala Editor Intialization
+  $('.froala-editor').froalaEditor();
+  // Remove the unlicensed editor notice
+  $(".order_orders div:contains('Unlicensed Froala Editor')").last().css({ zIndex: "0" });
 });

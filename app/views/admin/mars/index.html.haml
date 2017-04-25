@@ -9,11 +9,13 @@
     %table.table.table-striped.datatable
       %thead
         %tr
-          %th Name
+          %th Medication
+          %th Date Taken
           %th
       %tbody
         - @mars.each do |mar|
           %tr
+            %td= mar.medication_mar
             %td.date-object= mar.date_and_time
             %td
               = link_to 'View', admin_patient_history_mar_path(@patient, @history, mar), :class => "btn btn-default btn-xs"
