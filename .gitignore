@@ -23,3 +23,5 @@
 .DS_Store
 db/schema.rb
 .ruby-version
+
+/lib/assets/patients
