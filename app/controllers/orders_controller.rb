@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_history
+  before_action :set_patient
 
 
   # GET /orders
@@ -67,11 +69,25 @@ class OrdersController < ApplicationController
     def set_order
       @order = Order.find(params[:id])
     end
+    def set_history
+      @history = History.find(params[:history_id])
+    end
 
-    
+    def set_patient
+      @patient = Patient.find(params[:patient_id])
+    end
+
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:date_time, :orders, :verification)
+      params.require(:order).permit(
+        :date_time,
+        :orders,
+        :ordered_by,
+        :verification_date_and_time,
+        :verifier_name,
+        :patient_name_order
+      )
     end
 end

@@ -18,10 +18,10 @@
             %td= prn.ordering_md
             %td= prn.date_ordered
             %td= prn.medication
-            %td= link_to 'Show', prn, :class => "btn btn-primary"
-            %td= link_to 'Edit', edit_prn_path(prn), :class => "btn btn-primary"
-            %td= link_to 'Destroy', prn, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
+            %td= link_to 'Show', patient_history_prn_path(@patient, @history, prn), :class => "btn btn-primary"
+            %td= link_to 'Edit', edit_patient_history_prn_path(@patient, @history, prn), :class => "btn btn-primary"
+            %td= link_to 'Destroy', patient_history_prn_path(@patient, @history, prn), :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 
     %br
     .col-md-8.well
-      = link_to 'New Prn', new_prn_path, :class => "btn btn-primary"
+      = link_to 'New PRN', new_patient_history_prn_path, :class => "btn btn-primary"

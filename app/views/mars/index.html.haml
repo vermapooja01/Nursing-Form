@@ -20,10 +20,10 @@
             %td= mar.month_year
             %td= mar.mr_number
             %td= mar.allergies
-            %td= link_to 'Show', mar, :class => "btn btn-primary"
-            %td= link_to 'Edit', edit_mar_path(mar), :class => "btn btn-primary"
-            %td= link_to 'Destroy', mar, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
+            %td= link_to 'Show', patient_history_mar_path(@patient, @history, mar), :class => "btn btn-primary"
+            %td= link_to 'Edit', edit_patient_history_mar_path(@patient, @history, mar), :class => "btn btn-primary"
+            %td= link_to 'Destroy', patient_history_mar_path(@patient, @history, mar), :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 
     %br
     .col-md-8.well
-      = link_to 'New Mar', new_mar_path, :class => "btn btn-primary"
+      = link_to 'New Mar',new_patient_history_mar_path, :class => "btn btn-primary"

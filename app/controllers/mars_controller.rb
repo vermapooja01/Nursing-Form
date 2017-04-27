@@ -1,6 +1,7 @@
 class MarsController < ApplicationController
   before_action :set_mar, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_history
+  before_action :set_patient
   # GET /mars
   # GET /mars.json
   def index
@@ -66,11 +67,31 @@ class MarsController < ApplicationController
     def set_mar
       @mar = Mar.find(params[:id])
     end
+    def set_history
+      @history = History.find(params[:history_id])
+    end
 
-    
+    def set_patient
+      @patient = Patient.find(params[:patient_id])
+    end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mar_params
-      params.require(:mar).permit(:name, :month_year, :mr_number, :allergies)
+      params.require(:mar).permit(
+        :name,
+        :month_year,
+        :mr_number,
+        :allergies,
+        :medication_mar,
+        :prescribed_by,
+        :date_and_time,
+        :order_date,
+        :order_mars,
+        :order_prescribed_by,
+        :prescriber_initials,
+        :nurse_signature,
+        :nurse_initials
+    )
     end
 end

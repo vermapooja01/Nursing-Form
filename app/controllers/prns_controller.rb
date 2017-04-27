@@ -1,6 +1,7 @@
 class PrnsController < ApplicationController
   before_action :set_prn, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_history
+  before_action :set_patient
 
   # GET /prns
   # GET /prns.json
@@ -67,11 +68,34 @@ class PrnsController < ApplicationController
     def set_prn
       @prn = Prn.find(params[:id])
     end
+    def set_history
+      @history = History.find(params[:history_id])
+    end
 
-    
+    def set_patient
+      @patient = Patient.find(params[:patient_id])
+    end
+
+
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prn_params
-      params.require(:prn).permit(:ordering_md, :date_ordered, :medication)
+      params.require(:prn).permit(
+        :ordering_md,
+        :date_ordered,
+        :medication,
+        :patient_name_prn,
+        :mr_number_prn,
+        :month_year_prn,
+        :allergies_prn,
+        :medication_name,
+        :medication_dose,
+        :medication_route,
+        :medication_date_and_time,
+        :medication_by,
+        :nurse_signature_prn,
+        :nurse_initials_prn
+    )
     end
 end
