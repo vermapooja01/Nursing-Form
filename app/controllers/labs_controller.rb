@@ -1,5 +1,7 @@
 class LabsController < ApplicationController
   before_action :set_lab, only: [:show, :edit, :update, :destroy]
+  before_action :set_history
+  before_action :set_patient
 
 
   # GET /labs
@@ -67,12 +69,19 @@ class LabsController < ApplicationController
     def set_lab
       @lab = Lab.find(params[:id])
     end
+    def set_history
+      @history = History.find(params[:history_id])
+    end
 
+    def set_patient
+      @patient = Patient.find(params[:patient_id])
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lab_params
       params.require(:lab).permit(
       :orders,
+      :history_id,
       :date_and_time_drawn,
       :name,
       :age,

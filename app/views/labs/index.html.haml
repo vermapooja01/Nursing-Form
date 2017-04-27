@@ -16,10 +16,11 @@
           %tr
             %td= lab.orders
             %td= lab.date_and_time_drawn
-            %td= link_to 'Show', lab, :class => "btn btn-primary"
-            %td= link_to 'Edit', edit_lab_path(lab), :class => "btn btn-primary"
-            %td= link_to 'Destroy', lab, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
+            %td= link_to 'Show', patient_history_lab_path(@patient, @history, lab), :class => "btn btn-primary"
+            %td= link_to 'Edit', edit_patient_history_lab_path(@patient, @history, lab), :class => "btn btn-primary"
+            %td= link_to 'Destroy', patient_history_lab_path(@patient, @history, lab), :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 
     %br
     .col-md-8.well
-      = link_to 'New Lab', new_lab_path, :class => "btn btn-primary"
+      -#= link_to 'New Lab', new_patient_history_lab_path, :class => "btn btn-primary"
+      = link_to 'New Lab', new_patient_history_lab_path, :class => "btn btn-primary"

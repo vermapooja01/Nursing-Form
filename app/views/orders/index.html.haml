@@ -18,10 +18,10 @@
             %td= order.date_time
             %td= order.orders
             %td= order.verification
-            %td= link_to 'Show', order, :class => "btn btn-primary"
-            %td= link_to 'Edit', edit_order_path(order), :class => "btn btn-primary"
-            %td= link_to 'Destroy', order, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
+            %td= link_to 'Show', patient_history_order_path(@patient, @history, order), :class => "btn btn-primary"
+            %td= link_to 'Edit', edit_patient_history_order_path(@patient, @history, order), :class => "btn btn-primary"
+            %td= link_to 'Destroy', patient_history_orders_path(@patient, @history, order), :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 
     %br
     .col-md-8.well
-      = link_to 'New Order', new_order_path, :class => "btn btn-primary"
+      = link_to 'New Order', new_patient_history_order_path, :class => "btn btn-primary"
