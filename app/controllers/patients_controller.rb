@@ -10,6 +10,7 @@ class PatientsController < ApplicationController
   # GET /patients/1
   # GET /patients/1.json
   def show
+    @histories = @patient.histories
   end
 
   # GET /patients/new

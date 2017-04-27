@@ -6,6 +6,27 @@
     !
 %hr
 - if logged_in?
+
+  .col-md-12
+    %h3 Patients
+    .patient-list
+      .table-responsive
+        %table.table.table-hover.table-bordered
+          %thead
+            %tr
+              %th Name
+              %th
+              %th Actions
+          %tbody
+            - @patients.each do |patient|
+              %tr
+                %td
+                  = link_to patient_path(patient) do
+                    = patient.name
+                %td
+                %td
+                  = link_to 'New Submission for Patient', new_patient_submission_path(patient), :class => "btn btn-primary"
+
   %h3 In-Progress
   - if !current_user.submissions.empty?
     %p You have the following submissions in progress:

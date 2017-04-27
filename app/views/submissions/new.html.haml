@@ -76,13 +76,14 @@
 
 
   .col-sm-9
-    = simple_form_for @submission, html: {class: ''} do |f|
+    = simple_form_for [:patient, @submission], html: {class: ''} do |f|
       .tab-content
 
         #a.tab-pane.active
           .col-md-12.well
             %h2{:align => "center"} Basic Information
           = f.hidden_field :user_id, :value => current_user.id
+          = f.hidden_field :patient_id, :value => params[:patient_id]
           .col-md-6.well
             = f.input :patient_initials, :class => "form-control", required: true
           .col-md-6.well

@@ -4,6 +4,7 @@
     = current_user.first_name
     !
   %hr
+
   %h3 In-Progress
   - if !@submissions_in_progress.empty?
     %p You have the following submissions in progress:
@@ -14,6 +15,7 @@
       - else
         = link_to "Submission for " + submission.patient_initials, edit_submission_path(submission, :tab => submission.step_id)
   %hr
+
   = link_to 'New Submssion', new_submission_path, :class => "btn btn-primary"
 
 - else

@@ -1,11 +1,13 @@
 class SubmissionsController < ApplicationController
   before_action :set_submission, only: [:show, :edit, :update, :destroy]
+  before_action :set_patient, only: [:new, :create]
 
   # GET /submissions
   # GET /submissions.json
   def index
     @unfinished_submissions = Submission.where(completed:false)
     @finished_submissions = Submission.where(completed:true)
+    @patients = Patient.all
   end
 
   # GET /submissions/1
@@ -23,18 +25,6 @@ class SubmissionsController < ApplicationController
   def edit
   end
 
-  def complete_submission
-    @submission = Submission.find(params[:submission_id])
-    # Set the submission to be completed
-    @submission.completed = true;
-    # Save the submission
-    @submission.save
-    # Redirect to the logged in home with notice of success
-    respond_to do |format|
-      format.html { redirect_to submissions_url, notice: 'You have successfully completed the entry form!' }
-    end
-  end
-
 
   # POST /submissions
   # POST /submissions.json
@@ -42,9 +32,11 @@ class SubmissionsController < ApplicationController
     @submission = Submission.new(submission_params)
     respond_to do |format|
       if @submission.save
+        byebug
         format.html { redirect_to edit_submission_path(@submission, :tab => params[:selected_tab]), notice: 'Submission was successfully created.' }
         format.json { render :show, status: :created, location: @submission }
       else
+        byebug
         format.html { render :new }
         format.json { render json: @submission.errors, status: :unprocessable_entity }
       end
@@ -75,15 +67,32 @@ class SubmissionsController < ApplicationController
     end
   end
 
+  def complete_submission
+    @submission = Submission.find(params[:submission_id])
+    # Set the submission to be completed
+    @submission.completed = true;
+    # Save the submission
+    @submission.save
+    # Redirect to the logged in home with notice of success
+    respond_to do |format|
+      format.html { redirect_to submissions_url, notice: 'You have successfully completed the entry form!' }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_submission
       @submission = Submission.find(params[:id])
     end
 
+    def set_patient
+      @patient = Patient.find(params[:patient_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def submission_params
       params.require(:submission).permit(
+        :patient_id,
         :patient_initials,
         :user_id,
         :age,
@@ -318,6 +327,9 @@ class SubmissionsController < ApplicationController
         :other_drainage,
         :location_image1,
         :location_image2,
+        :resuscitation_comments,
+        :monitor_comments,
+        :IABP_number_of_days,
 
         :pain_scale,
         :pain_scale_rating_scale,
