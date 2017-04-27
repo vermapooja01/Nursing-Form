@@ -2,10 +2,37 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :name
-    = f.input :month_year
-    = f.input :mr_number
-    = f.input :allergies
+    .col-md-8.well
+
+      -# = f.input :name, :class => "form-control"
+      = f.input :month_year, as: :string, :class => "form-control", input_html: { "data-toggle" => "datepicker" }
+      -# = f.input :allergies, :class => "form-control"
+      = f.input :medication_mar, :class => "form-control", :label => "Medication Name"
+      = f.input :prescribed_by, :class => "form-control", :label => "Medication Perscribed By"
+      .date_and_time_picker
+        %h3 Medication Date
+        = f.hidden_field :date_and_time, :value => @mar.date_and_time
+      -#
+      -# .date_and_time_picker
+      -#   %h3 Order Date
+      -#   = f.hidden_field :order_date, :value => @mar.order_date
+
+      = f.input :order_mars, :class => "form-control"
+      = f.input :order_prescribed_by, :class => "form-control"
+      = f.input :prescriber_initials, :class => "form-control"
+      = f.input :nurse_signature, :class => "form-control"
+      = f.input :nurse_initials, :class => "form-control"
+
+    .col-md-4
+      %h2 Patient Details
+      .block
+        %h1
+          %span.label.label-info.blue
+            = @patient.name
+        %h3
+          MR#
+          = @history.mr_number
+
 
   .form-actions
     = f.button :submit
