@@ -35,7 +35,7 @@ $(document).on('turbolinks:load', function () {
       });
     }
     catch(err) {
-        console.log("There was an error with the JSON, please draw something" + " " + err);
+        // console.log("There was an error with the JSON, please draw something" + " " + err);
     }
 
   }
