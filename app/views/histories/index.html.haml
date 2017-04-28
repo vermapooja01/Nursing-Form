@@ -45,7 +45,7 @@
             %td= link_to 'Show Orders', patient_history_orders_path(@patient, history), :class => "btn btn-primary"
             %td= link_to 'Show MAR', patient_history_mars_path(@patient, history), :class => "btn btn-primary"
             %td= link_to 'Show PRN', patient_history_prns_path(@patient, history), :class => "btn btn-primary"
-            %td= link_to 'Edit', edit_history_path(history), :class => "btn btn-primary"
+            %td= link_to 'Edit', edit_patient_history_path(@patient, history), :class => "btn btn-primary"
             %td= link_to 'Destroy', history, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 
     %br
