@@ -20,5 +20,5 @@
     %b Week:
     = @submission.week
 
-  = link_to 'Edit', edit_submission_path(@submission), :class => "btn btn-primary"
+  = link_to 'Edit', edit_patient_submission_path(@submission.patient, @submission), :class => "btn btn-primary"
   = link_to 'Back', submissions_path, :class => "btn btn-primary"
