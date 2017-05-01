@@ -16,7 +16,7 @@
         - @orders.each do |order|
           %tr
             %td= order.date_time
-            %td= order.orders
+            %td= order.orders.html_safe
             %td= order.verification
             %td= link_to 'Show', patient_history_order_path(@patient, @history, order), :class => "btn btn-primary"
             %td= link_to 'Edit', edit_patient_history_order_path(@patient, @history, order), :class => "btn btn-primary"

@@ -19,8 +19,9 @@
         %i.fa.fa-arrow-left.pull-left{"aria-hidden" => "true"}
         Previous
 
-    %div{:style => "float:left"}
-      = link_to root_url, target: "_blank" do
+    %div{:style => "float:right"}
+      = link_to patient_path(@patient), target: "_blank", class: "btn btn-default" do
+        %i.fa.fa-list.pull-left{"aria-hidden" => "true"}
         View Patient History
 
 

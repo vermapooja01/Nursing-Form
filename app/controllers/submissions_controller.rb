@@ -1,6 +1,6 @@
 class SubmissionsController < ApplicationController
   before_action :set_submission, only: [:show, :edit, :update, :destroy]
-  before_action :set_patient, only: [:new, :create]
+  before_action :set_patient, only: [:new, :create, :edit]
 
   # GET /submissions
   # GET /submissions.json
@@ -75,7 +75,7 @@ class SubmissionsController < ApplicationController
     @submission.save
     # Redirect to the logged in home with notice of success
     respond_to do |format|
-      format.html { redirect_to submissions_url, notice: 'You have successfully completed the entry form!' }
+      format.html { redirect_to root_url, notice: 'You have successfully completed the entry form!' }
     end
   end
 

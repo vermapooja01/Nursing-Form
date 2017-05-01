@@ -19,6 +19,11 @@
           %i.fa.fa-arrow-left.pull-left{"aria-hidden" => "true"}
           Previous
 
+      %div{:style => "float:right"}
+        = link_to patient_path(@patient), target: "_blank", class: "btn btn-default" do
+          %i.fa.fa-list.pull-left{"aria-hidden" => "true"}
+          View Patient History
+
   .col-md-12{:style => "margin-top:70px;"}
     .col-sm-3.left-tabs
       %nav.nav-bar

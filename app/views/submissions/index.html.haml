@@ -67,9 +67,9 @@
               %td= submission.admitting_primary_medical_diagnosis
               %td= submission.user_id
               %td= submission.week
-              %td= link_to 'Show', submission, :class => "btn btn-primary"
-              %td= link_to 'Edit', edit_submission_path(submission), :class => "btn btn-primary"
-              %td= link_to 'Destroy', submission, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
+              %td= link_to 'Show', patient_submission_path(submission.patient.id, submission), :class => "btn btn-primary"
+              %td= link_to 'Edit', edit_patient_submission_path(submission.patient.id, submission), :class => "btn btn-primary"
+              %td= link_to 'Destroy', patient_submission_path(submission.patient.id, submission), :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
               %td= link_to 'Complete Submission', complete_the_form_path(submission_id: submission.id), :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 
 
