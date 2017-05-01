@@ -1,27 +1,23 @@
 %h1 Listing prns
 
-.col-md-8.well
-  .table-responsive
-    %table.table-hover.completed-table
-      %thead
+.col-md-8.history-information
+  = render "layouts/patient_menu", :patient => @patient, :history => @history
+  %hr
+  %h1 PRNs
+  %hr
+  %table.table.datatable
+    %thead
+      %tr
+        %th Date Ordered
+        %th Ordering M.D
+
+    %tbody
+      - @prns.each do |lab|
         %tr
-          %th Ordering md
-          %th Date ordered
-          %th Medication
-          %th
-          %th
-          %th
+          %th= lab.date_ordered
+          %td= lab.ordering_md
 
-      %tbody
-        - @prns.each do |prn|
-          %tr
-            %td= prn.ordering_md
-            %td= prn.date_ordered
-            %td= prn.medication
-            %td= link_to 'Show', patient_history_prn_path(@patient, @history, prn), :class => "btn btn-primary"
-            %td= link_to 'Edit', edit_patient_history_prn_path(@patient, @history, prn), :class => "btn btn-primary"
-            %td= link_to 'Destroy', patient_history_prn_path(@patient, @history, prn), :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 
-    %br
-    .col-md-8.well
-      = link_to 'New PRN', new_patient_history_prn_path, :class => "btn btn-primary"
+.col-md-4.information-block
+  %h2 Patient Details
+  = render "admin/patient_block"

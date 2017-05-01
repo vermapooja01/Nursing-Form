@@ -5,11 +5,7 @@
   = @order.date_time
 %p
   %b Orders:
-  = @order.orders
+  = @order.orders.html_safe
 %p
   %b Verification:
   = @order.verification
-
-= link_to 'Edit', edit_order_path(@order)
-\|
-= link_to 'Back', orders_path

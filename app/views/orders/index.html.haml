@@ -1,27 +1,22 @@
 %h1 Listing orders
 
-.col-md-8.well
-  .table-responsive
-    %table.table-hover.completed-table
-      %thead
+.col-md-8.history-information
+  = render "layouts/patient_menu", :patient => @patient, :history => @history
+  %hr
+  %h1 Orders
+  %hr
+  %table.table.datatable
+    %thead
+      %tr
+        %th Date and Time
+        %th
+    %tbody
+      - @orders.each do |order|
         %tr
-          %th Date time
-          %th Orders
-          %th Verification
-          %th
-          %th
-          %th
+          %td.date-object= order.date_time
+          %td
+            = link_to 'View', patient_history_order_path(@patient, @history, order), :class => "btn btn-default btn-xs"
 
-      %tbody
-        - @orders.each do |order|
-          %tr
-            %td= order.date_time
-            %td= order.orders.html_safe
-            %td= order.verification
-            %td= link_to 'Show', patient_history_order_path(@patient, @history, order), :class => "btn btn-primary"
-            %td= link_to 'Edit', edit_patient_history_order_path(@patient, @history, order), :class => "btn btn-primary"
-            %td= link_to 'Destroy', patient_history_orders_path(@patient, @history, order), :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
-
-    %br
-    .col-md-8.well
-      = link_to 'New Order', new_patient_history_order_path, :class => "btn btn-primary"
+.col-md-4.information-block
+  %h2 Patient Details
+  = render "admin/patient_block"

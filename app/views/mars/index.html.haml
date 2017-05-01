@@ -1,29 +1,24 @@
 %h1 Listing mars
 
-.col-md-8.well
-  .table-responsive
-    %table.table-hover.completed-table
-      %thead
+.col-md-8.history-information
+  = render "layouts/patient_menu", :patient => @patient, :history => @history
+  %hr
+  %h1 MARs
+  %hr
+  %table.table.table-striped.datatable
+    %thead
+      %tr
+        %th Medication
+        %th Date Taken
+        %th
+    %tbody
+      - @mars.each do |mar|
         %tr
-          %th Name
-          %th Month year
-          %th Mr number
-          %th Allergies
-          %th
-          %th
-          %th
+          %td= mar.medication_mar
+          %td.date-object= mar.date_and_time
+          %td
+            = link_to 'View', patient_history_mar_path(@patient, @history, mar), :class => "btn btn-default btn-xs"
 
-      %tbody
-        - @mars.each do |mar|
-          %tr
-            %td= mar.name
-            %td= mar.month_year
-            %td= mar.mr_number
-            %td= mar.allergies
-            %td= link_to 'Show', patient_history_mar_path(@patient, @history, mar), :class => "btn btn-primary"
-            %td= link_to 'Edit', edit_patient_history_mar_path(@patient, @history, mar), :class => "btn btn-primary"
-            %td= link_to 'Destroy', patient_history_mar_path(@patient, @history, mar), :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
-
-    %br
-    .col-md-8.well
-      = link_to 'New MAR',new_patient_history_mar_path, :class => "btn btn-primary"
+.col-md-4.information-block
+  %h2 Patient Details
+  = render "admin/patient_block"
