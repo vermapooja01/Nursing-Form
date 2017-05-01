@@ -27,6 +27,7 @@
 //= require daterangepicker
 //= require bootstrap-datetimepicker
 //= require slider/bootstrap-slider.min
+//= require tether/tether.min
 
 
 //= require submissions
