@@ -21,7 +21,7 @@
           = f.input :urinalysis, :collection => [['cath', 'Cath'],['clean cath', 'Clean Cath']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @lab.urinalysis, :class => "form-control", :label => "Method of Collection for Urinalysis"
       %hr
 
-      %h3{:align => "center"} Hematology
+      %h3{:align => "center", :style => "color: #0000ff"} Hematology
       = f.input :wbc, :class => "form-control", :label => "WBC (3.2 - 10.6)"
       = f.input :rbc, :class => "form-control", :label => "RBC (3.88 - 6.07)"
       = f.input :hgb, :class => "form-control", :label => "HGB (12 - 17.2)"
