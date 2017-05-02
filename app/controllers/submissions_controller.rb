@@ -46,7 +46,7 @@ class SubmissionsController < ApplicationController
   def update
     respond_to do |format|
       if @submission.update(submission_params)
-        format.html { redirect_to edit_submission_path(@submission, :tab => params[:selected_tab]), notice: 'Submission was successfully updated.' }
+        format.html { redirect_to edit_patient_submission_path(@patient, @submission, :tab => params[:selected_tab]), notice: 'Submission was successfully updated.' }
         format.json { render :show, status: :ok, location: @submission }
       else
         format.html { render :edit }
