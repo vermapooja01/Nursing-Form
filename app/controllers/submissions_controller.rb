@@ -1,6 +1,6 @@
 class SubmissionsController < ApplicationController
   before_action :set_submission, only: [:show, :edit, :update, :destroy]
-  before_action :set_patient, only: [:new, :create, :edit]
+  before_action :set_patient, only: [:new, :create, :edit, :update]
 
   # GET /submissions
   # GET /submissions.json
@@ -46,7 +46,7 @@ class SubmissionsController < ApplicationController
   def update
     respond_to do |format|
       if @submission.update(submission_params)
-        format.html { redirect_to edit_patient_submission_path(@patient, @submission, :tab => params[:selected_tab]), notice: 'Submission was successfully updated.' }
+        format.html { redirect_to edit_patient_submission_path(@patient.id, @submission.id, :tab => params[:selected_tab]), notice: 'Submission was successfully updated.' }
         format.json { render :show, status: :ok, location: @submission }
       else
         format.html { render :edit }
