@@ -74,7 +74,7 @@
               %a{"data-toggle" => "tab", :href => "#u"} Review and Submit
 
     .col-sm-9
-      = simple_form_for @submission, html: {class: ''} do |f|
+      = simple_form_for [@patient, @submission], html: {class: ''} do |f|
         = hidden_field_tag(:selected_tab, params[:tab])
         = f.input :step_id, :as => :hidden, :input_html => { :value => params[:tab] }
         .tab-content
