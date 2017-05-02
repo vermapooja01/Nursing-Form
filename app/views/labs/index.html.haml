@@ -1,26 +1,46 @@
 %h1 Listing labs
 
-.col-md-8.well
-  .table-responsive
-    %table.table-hover.completed-table
-      %thead
+.col-md-8.history-information
+  = render "layouts/patient_menu", :patient => @patient, :history => @history
+  %hr
+  %h1 Labs
+  %hr
+  %table.table.table-striped.datatable
+    %thead
+      %tr
+        %th Date and Time Drawn
+        %th
+    %tbody
+      - @labs.each do |lab|
         %tr
-          %th Orders
-          %th Date and time drawn
-          %th
-          %th
-          %th
+          %td.date-object= lab.date_and_time_drawn
+          %td
+            = link_to 'View', patient_history_lab_path(@patient, @history, lab), :class => "btn btn-default btn-xs"
 
-      %tbody
-        - @labs.each do |lab|
-          %tr
-            %td= lab.orders
-            %td= lab.date_and_time_drawn
-            %td= link_to 'Show', patient_history_lab_path(@patient, @history, lab), :class => "btn btn-primary"
-            %td= link_to 'Edit', edit_patient_history_lab_path(@patient, @history, lab), :class => "btn btn-primary"
-            %td= link_to 'Destroy', patient_history_lab_path(@patient, @history, lab), :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 
-    %br
-    .col-md-8.well
-      -#= link_to 'New Lab', new_patient_history_lab_path, :class => "btn btn-primary"
-      = link_to 'New Lab', new_patient_history_lab_path, :class => "btn btn-primary"
+.col-md-4.information-block
+  %h2 Patient Details
+  = render "admin/patient_block"
+
+-# .col-md-8.well
+-#   .table-responsive
+-#     %table.table-hover.completed-table
+-#       %thead
+-#         %tr
+-#           %th Orders
+-#           %th Date and time drawn
+-#           %th
+-#           %th
+-#           %th
+-#
+-#       %tbody
+-#         - @labs.each do |lab|
+-#           %tr
+-#             %td= lab.orders
+-#             %td= lab.date_and_time_drawn
+-#             %td= link_to 'Show', patient_history_lab_path(@patient, @history, lab), :class => "btn btn-primary"
+-#
+-#     %br
+-#     .col-md-8.well
+-#       -#= link_to 'New Lab', new_patient_history_lab_path, :class => "btn btn-primary"
+-#       = link_to 'New Lab', new_patient_history_lab_path, :class => "btn btn-primary"
