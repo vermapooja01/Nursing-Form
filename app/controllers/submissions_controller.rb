@@ -32,11 +32,9 @@ class SubmissionsController < ApplicationController
     @submission = Submission.new(submission_params)
     respond_to do |format|
       if @submission.save
-        byebug
-        format.html { redirect_to edit_submission_path(@submission, :tab => params[:selected_tab]), notice: 'Submission was successfully created.' }
+        format.html { redirect_to edit_patient_submission_path(@patient, @submission, :tab => params[:selected_tab]), notice: 'Submission was successfully created.' }
         format.json { render :show, status: :created, location: @submission }
       else
-        byebug
         format.html { render :new }
         format.json { render json: @submission.errors, status: :unprocessable_entity }
       end
