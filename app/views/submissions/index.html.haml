@@ -24,10 +24,10 @@
                     = patient.name
                 %td
                   = link_to '+ New Submission for Patient', new_patient_submission_path(patient), :class => "btn btn-success"
-
-  %h3 In-Progress
-  - if !current_user.submissions.empty?
-    %p You have the following submissions in progress:
+  .col-md-8.well
+    %h3 In-Progress
+    - if !current_user.submissions.empty?
+      %p You have the following submissions in progress:
 
 - if logged_in?
   .col-md-8.well
@@ -117,4 +117,4 @@
               %td= link_to 'Destroy', submission, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 
 - else
-  Please Login
+  %h3 Please Login
