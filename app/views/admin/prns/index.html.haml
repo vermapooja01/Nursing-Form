@@ -6,17 +6,22 @@
     %h1 PRNs
     = link_to 'Add PRN +', new_admin_patient_history_prn_url(@patient, @history), class: "btn btn-success"
     %hr
-    %table.table.datatable
+    %table.table.table-striped.datatable
       %thead
         %tr
           %th Date Ordered
           %th Ordering M.D
-          
+          %th
+
       %tbody
-        - @prns.each do |lab|
+        - @prns.each do |prn|
           %tr
-            %th= lab.date_ordered
-            %td= lab.ordering_md
+            %th= prn.date_ordered
+            %td= prn.ordering_md
+            %td
+              = link_to 'View', admin_patient_history_prn_path(@patient, @history, prn), :class => "btn btn-default btn-xs"
+              = link_to 'Edit', edit_admin_patient_history_prn_path(@patient, @history, prn), :class => "btn btn-default btn-xs"
+
 
 
   .col-md-4.information-block
