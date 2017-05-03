@@ -1,4 +1,4 @@
-%h1 Listing prns
+%h1 Listing PRNs
 
 .col-md-8.history-information
   = render "layouts/patient_menu", :patient => @patient, :history => @history
@@ -10,12 +10,15 @@
       %tr
         %th Date Ordered
         %th Ordering M.D
+        %th
 
     %tbody
-      - @prns.each do |lab|
+      - @prns.each do |prn|
         %tr
-          %th= lab.date_ordered
-          %td= lab.ordering_md
+          %th= prn.date_ordered
+          %td= prn.ordering_md
+          %td
+            = link_to 'View', patient_history_prn_path(@patient, @history, prn), :class => "btn btn-default btn-xs"
 
 
 .col-md-4.information-block
