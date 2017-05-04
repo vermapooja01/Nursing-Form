@@ -1,12 +1,24 @@
+.col-md-4
+  %h2 Patient Details
+  .block
+    %h1
+      %span.label.label-info.blue
+        = @patient.name
+    %h3
+      MR#
+      = @history.mr_number
+
+%h1 New Lab
 = simple_form_for([:admin, @patient, @history, @lab]) do |f|
   = f.error_notification
+
 
   .form-inputs
     .col-md-8.well
       = f.input :orders, :class => "form-control", :label => "Orders"
 
       .date_and_time_picker
-        %h3 Date Taken
+        %h3{:align => "center"} Date Taken
         = f.hidden_field :date_and_time_drawn, :value => @lab.date_and_time_drawn
 
       %h3{:align => "center"} Questions Regarding Labs
@@ -106,16 +118,7 @@
         = f.input :lactic_acid, :class => "form-control", :label => "Lactic Acid  (1-1.8)"
         = f.input :bnp, :class => "form-control", :label => "BNP  (<100)"
 
-    .col-md-4
-      %h2 Patient Details
-      .block
-        %h1
-          %span.label.label-info.blue
-            = @patient.name
-        %h3
-          MR#
-          = @history.mr_number
 
 
       .form-actions
-        = f.button :submit
+        = f.button :submit, class: "btn btn-success"
