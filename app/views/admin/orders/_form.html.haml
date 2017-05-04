@@ -6,14 +6,14 @@
 
       .col-md-12
         .block
-          %h4
+          %h1
             %span.label.label-info.blue
               = @patient.name
-          %p
+          %h3
             MR#
             = @history.mr_number
         %hr
-
+      %h1 New Order
       .col-md-8.well
         .date_and_time_picker
           %h3 Date Taken
@@ -33,4 +33,4 @@
 
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, class: "btn btn-success"

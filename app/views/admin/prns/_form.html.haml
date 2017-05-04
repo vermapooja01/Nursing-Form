@@ -1,3 +1,14 @@
+.col-md-4
+  %h2 Patient Details
+  .block
+    %h1
+      %span.label.label-info.blue
+        = @patient.name
+    %h3
+      MR#
+      = @history.mr_number
+
+%h1 New PRN
 = simple_form_for(@prn) do |f|
   = f.error_notification
 
@@ -29,16 +40,8 @@
           = f.input :nurse_signature_prn, :class => "form-control", :label => "Nurse Signature"
           = f.input :nurse_initials_prn, :class => "form-control", :label => "Nurse Initials"
 
-      .col-md-4
-        %h2 Patient Details
-        .block
-          %h1
-            %span.label.label-info.blue
-              = @patient.name
-          %h3
-            MR#
-            = @history.mr_number
+
 
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, :class => "btn btn-success"
