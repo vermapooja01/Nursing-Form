@@ -10,6 +10,8 @@
   %b Medication:
   = @prn.medication
 
-= link_to 'Edit', edit_prn_path(@prn)
-\|
-= link_to 'Back', prns_path
+= link_to 'Edit', edit_admin_patient_history_prn_path(@prn), class: "btn btn-success"
+
+= link_to 'Back', admin_patient_history_orders_path(@patient, @history), class: "btn btn-primary"
+-#\|
+-#= link_to 'Back', prns_path

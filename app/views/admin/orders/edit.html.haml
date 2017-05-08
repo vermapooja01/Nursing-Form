@@ -1,7 +1,11 @@
-%h1 Editing order
+%h1 Editing Order
 
+.btn-group
+  = link_to 'Back', admin_patient_history_orders_path(@patient, @history), class: "btn btn-default"
 = render 'form'
 
-= link_to 'Show', @order
-\|
-= link_to 'Back', orders_path
+-#= render 'form'
+
+-#= link_to 'Show', @order
+-#\|
+-#= link_to 'Back', orders_path

@@ -7,6 +7,8 @@
   %b Date and time drawn:
   = @lab.date_and_time_drawn
 
-= link_to 'Edit', edit_admin_patient_history_lab_path(@lab)
-\|
-= link_to 'Back', labs_path
+= link_to 'Edit', edit_admin_patient_history_lab_path(@lab), class: "btn btn-success"
+
+= link_to 'Back', admin_patient_history_orders_path(@patient, @history), class: "btn btn-primary"
+-#\|
+-#= link_to 'Back', labs_path
