@@ -1,14 +1,56 @@
-%p#notice= notice
+.row
+  .col-md-4
+    %h1 Upper Rio Grande Simulation Hospital
+  .col-md-8
+    %h1 Medication Administration Record
+    .col-md-6.no-padding
+      %p
+        Name:
+        = @mar.patient.name
+      %p
+        Month:
+        = @mar.history.date_of_admission.strftime("%B")
+      %p
+        Year:
+        = @mar.history.date_of_admission.strftime("%Y")
+    .col-md-6.no-padding
+      %p
+        MR:
+        = @mar.history.mr_number
+      %p
+        Allergies:
+        = @mar.history.allergies
 
-%p
-  %b Name:
-  = @mar.name
-%p
-  %b Month year:
-  = @mar.month_year
-%p
-  %b Mr number:
-  = @mar.mr_number
-%p
-  %b Allergies:
-  = @mar.allergies
+%hr
+%table.table.table-bordered
+  %thead
+    %tr
+      %th Medication
+      %th Date and Time
+  %tbody
+    %tr
+      %td
+        = @mar.medication_mar
+        = @mar.prescribed_by
+      %td
+        = @mar.date_and_time
+
+%h1 One Time Orders
+%hr
+%table.table.table-bordered
+  %thead
+    %tr
+      %th Date
+      %th Perscribed
+      %th Order
+      %th Date and Time Given
+      %th Initials
+      %th Nurse Signature
+  %tbody
+    %tr
+      %td= @mar.order_date
+      %td= @mar.order_prescribed_by
+      %td= @mar.order_mars
+      %td
+      %td= @mar.nurse_initials
+      %td= @mar.nurse_signature

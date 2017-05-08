@@ -31,7 +31,7 @@ class Admin::PatientsController < Admin::AdminController
 
     respond_to do |format|
       if @patient.save
-        format.html { redirect_to new_admin_patient_history_path(@patient), notice: 'Patient was successfully created.' }
+        format.html { redirect_to new_admin_patient_path(@patient), notice: 'Patient was successfully created.' }
         format.json { render :show, status: :created, location: @patient }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class Admin::PatientsController < Admin::AdminController
   def update
     respond_to do |format|
       if @patient.update(patient_params)
-        format.html { redirect_to admin_patient_histories_path(@patient), notice: 'Patient was successfully updated.' }
+        format.html { redirect_to admin_patient_path(@patient), notice: 'Patient was successfully updated.' }
         format.json { render :show, status: :ok, location: @patient }
       else
         format.html { render :edit }
@@ -72,6 +72,11 @@ class Admin::PatientsController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_params
-      params.require(:patient).permit(:name)
+      params.require(:patient).permit(
+      :name,
+      :age,
+      :gender,
+      :semester
+      )
     end
 end
