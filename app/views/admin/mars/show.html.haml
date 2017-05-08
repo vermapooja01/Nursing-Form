@@ -13,6 +13,8 @@
   %b Allergies:
   = @mar.allergies
 
-= link_to 'Edit', edit_mar_path(@mar)
-\|
-= link_to 'Back', mars_path
+= link_to 'Edit', edit_admin_patient_history_mar_path(@mar), class: "btn btn-success"
+
+= link_to 'Back', admin_patient_history_orders_path(@patient, @history), class: "btn btn-primary"
+-#\|
+-#= link_to 'Back', mars_path

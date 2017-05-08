@@ -1,7 +1,12 @@
-%h1 Editing lab
+%h1 Editing Lab
 
+.btn-group
+  = link_to 'Back', admin_patient_history_labs_path(@patient, @history), class: "btn btn-default"
 = render 'form'
 
-= link_to 'Show', @lab
-\|
-= link_to 'Back', labs_path
+
+-#= render 'form'
+
+-#= link_to 'Show', @lab
+-#\|
+-#= link_to 'Back', labs_path
