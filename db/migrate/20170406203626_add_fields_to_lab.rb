@@ -28,8 +28,8 @@ class AddFieldsToLab < ActiveRecord::Migration[5.0]
     add_column :labs, :ketones, :string
     add_column :labs, :bilirubin, :string
     add_column :labs, :occult_blood, :string
-    add_column :labs, :wbc_ua, :string
-    add_column :labs, :rbc_ua, :string
+    add_column :labs, :wbc_ua, :float
+    add_column :labs, :rbc_ua, :float
     add_column :labs, :ck, :float
     add_column :labs, :ck_mb, :float
     add_column :labs, :trop, :float

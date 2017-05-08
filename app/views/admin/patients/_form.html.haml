@@ -2,7 +2,10 @@
   = f.error_notification
 
   .form-group.form-group-lg
-    = f.input :name
+    = f.input :name, :class => "form-control", :label => "Name"
+    = f.input :age, :class => "form-control", :label => "Age"
+    = f.input :gender, :collection => [['male', 'Male'], ['female', 'Female']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @patient.gender, :class => "form-control", :label => "Gender"
+    = f.input :semester, :collection => [['spring', 'Spring'], ['fall', 'Fall'], ['summer', 'Summer']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @patient.semester, :class => "form-control", :label => "Semester"
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, class: "btn btn-success"
