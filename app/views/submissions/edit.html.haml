@@ -93,8 +93,6 @@
               = f.label :admitting_primary_medical_diagnosis
               = f.text_area :admitting_primary_medical_diagnosis, :placeholder => "Enter text here...", :class => "tinymce form-control", :rows => 4, :cols => 120
             .col-md-12.well
-              -# = f.label :week, :label => "Current Date"
-              -# = f.input :week, :as => :string, required:true, :label => false, :value => DateTime.now
               #current-time-for-submission
               - if @submission.week.nil?
                 = f.hidden_field :week, :value => DateTime.now

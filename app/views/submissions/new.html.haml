@@ -94,8 +94,12 @@
           .col-md-12.well
             = f.label :admitting_primary_medical_diagnosis, required: true
             = f.text_area :admitting_primary_medical_diagnosis, :placeholder => "Enter text here...", :class => "tinymce form-control", :rows => 4, :cols => 120
-          .col-md-12.date-selector.well
-            = f.input :week, :class => "daterange-picker", :as => :string, required: true
+          .col-md-12.well
+            #current-time-for-submission
+            - if @submission.week.nil?
+              = f.hidden_field :week, :value => DateTime.now
+            - else
+              = f.hidden_field :week, :value => @submission.week
 
         #b.tab-pane
           .col-md-12.well
