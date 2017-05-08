@@ -113,8 +113,7 @@
               %td= submission.user_id
               %td= submission.week
               %td= link_to 'Show', submission, :class => "btn btn-primary"
-              %td= link_to 'Edit', edit_submission_path(submission), :class => "btn btn-primary"
-              %td= link_to 'Destroy', submission, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
+              -# %td= link_to 'Destroy', submission, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 
 - else
   %h3 Please Login

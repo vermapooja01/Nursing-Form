@@ -88,9 +88,20 @@ $(document).on('turbolinks:load', function () {
 
 
 
+  $('#current-time-for-submission').datetimepicker({
+    inline: true,
+    sideBySide: true,
+    defaultDate: $('#submission_week').val()
+  });
 
 
-  $('#submission_week').daterangepicker();
+  $("#current-time-for-submission").on("dp.change", function (e) {
+    // Conversion to momentjs data object
+    var browserDate = moment(e.date._d);
+    var mountain = browserDate.tz('America/Denver').format();
+    $('#submission_week').val(mountain)
+  });
+
 
   // Function to save the form whenever the save button is clicked
   $("button.button-save").click(function() {
