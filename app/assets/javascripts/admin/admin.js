@@ -18,6 +18,7 @@
 //= require admin/patients
 //= require admin/histories
 //= require admin/mars
+//= require scrolltotop
 
 
 $(document).on('turbolinks:load', function () {
