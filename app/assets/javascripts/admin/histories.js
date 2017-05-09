@@ -7,7 +7,8 @@ $( document ).ready(function() {
   });
   $("#date_of_admission_picker").on("dp.change", function (e) {
     // Conversion to momentjs data object
-    var browserDate = moment(e.date._d).format();
+    var browserDate = moment(e.date._d).toISOString();
+    console.log(browserDate);
     $('#history_date_of_admission').val(String(browserDate));
   });
 

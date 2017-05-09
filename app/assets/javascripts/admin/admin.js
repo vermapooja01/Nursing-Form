@@ -38,7 +38,7 @@ $( document ).ready(function() {
   // Set up event listeners for the objects
   $(this).on('dp.change', function (e) {
     // Conversion to momentjs data object
-    var browserDate = moment(e.date._d).format();
+    var browserDate = moment(e.date._d).toISOString();
     // Convert the date object into a string
     var dateString = String(browserDate);
     // Get the object that is in charge of setting the value for the date
