@@ -1,0 +1,216 @@
+-#.row
+  .col-md-12
+    %h1{:align => "center"} Intake and Output Flowsheet
+
+-#%hr
+
+-#.col-md-12.well
+
+  = f.input :intake_time, :class => "form-control", :label => "Time"
+  = f.input :ivf_one, :class => "form-control", :label => "IVF 1 (0.9% NS)"
+  = f.input :ivf_two, :class => "form-control", :label => "IVF 2 (Heparin)"
+  = f.input :ivf_three, :class => "form-control", :label => "IVF 3 (Nicardipine)"
+  = f.input :ivf_four, :class => "form-control", :label => "IVF 4 (NTG)"
+  = f.input :ivf_five, :class => "form-control", :label => "IVF 5"
+  = f.input :iv_medications, :class => "form-control", :label => "IV Medications"
+  = f.input :tube_feeding, :class => "form-control", :label => "Tube Feeding"
+  = f.input :po, :class => "form-control", :label => "PO"
+  = f.input :intake_other, :class => "form-control", :label => "Other"
+  = f.input :total_hourly_intake, :class => "form-control", :label => "Total Hourly Intake"
+  = f.input :uo, :class => "form-control", :label => "UO"
+  = f.input :ct, :class => "form-control", :label => "CT"
+  = f.input :drains_jp, :class => "form-control", :label => "Drains JP"
+  = f.input :output_ngt, :class => "form-control", :label => "NGT"
+  = f.input :output_other, :class => "form-control", :label => "Other"
+  = f.input :total_hourly_output, :class => "form-control", :label => "Total Hourly Output"
+-#.row
+  .col-md-12
+    %hr
+    %table.table.table-bordered
+      %tbody
+        %tr
+          %th{:scope => "row"} Time
+          %th{:scope => "row"} IVF 1 (0.9% NS)
+          %th{:scope => "row"} IVF 2 (Heparin)
+          %th{:scope => "row"} IVF 3 (Nicardipine)
+          %th{:scope => "row"} IVF 4 (NTG)
+          %th{:scope => "row"} IVF 5
+          %th{:scope => "row"} IV Medications
+          %th{:scope => "row"} Tube Feeding
+          %th{:scope => "row"} PO
+          %th{:scope => "row"} Other
+          %th{:scope => "row"} Total Hourly Intake
+          %th{:scope => "row"} UO
+          %th{:scope => "row"} CT
+          %th{:scope => "row"} Drains JP
+          %th{:scope => "row"} NGT
+          %th{:scope => "row"} Other
+          %th{:scope => "row"} Total Hourly Output
+
+        %tr
+          %td= @submission.intake_time
+          %td= @submission.ivf_one
+          %td= @submission.ivf_two
+          %td= @submission.ivf_three
+          %td= @submission.ivf_four
+          %td= @submission.ivf_five
+          %td= @submission.iv_medications
+          %td= @submission.tube_feeding
+          %td= @submission.po
+          %td= @submission.intake_other
+          %td= @submission.total_hourly_intake
+          %td= @submission.uo
+          %td= @submission.ct
+          %td= @submission.drains_jp
+          %td= @submission.output_ngt
+          %td= @submission.output_other
+          %td= @submission.total_hourly_output
+
+
+
+
+
+
+.col-md-12.well
+  %h3{:align => "center"}Intake Flowsheet
+  .table-responsive
+    %table.table.table-striped.cardiovascular-table
+      %thead
+        %tr
+          %th Time
+          %th IVF 1 (0.9% NS)
+          %th IVF 2 (Heparin)
+          %th IVF 3 (Nicardipine)
+          %th IVF 4 (NTG)
+          %th IVF 5
+          %th IV Medications
+          %th Tube Feeding
+          %th PO
+          %th Other
+          %th Total Hourly Intake
+
+
+      %tbody
+        %tr
+          %td= f.input :intake_time, :label => false
+          %td= f.input :ivf_one, :label => false
+          %td= f.input :ivf_two, :label => false
+          %td= f.input :ivf_three, :label => false
+          %td= f.input :ivf_four, :label => false
+          %td= f.input :ivf_five, :label => false
+          %td= f.input :iv_medications, :label => false
+          %td= f.input :tube_feeding, :label => false
+          %td= f.input :po, :label => false
+          %td= f.input :intake_other, :label => false
+          %td= f.input :total_hourly_intake, :label => false
+
+        %tr
+          %td= f.input :intake_time, :label => false
+          %td= f.input :ivf_one, :label => false
+          %td= f.input :ivf_two, :label => false
+          %td= f.input :ivf_three, :label => false
+          %td= f.input :ivf_four, :label => false
+          %td= f.input :ivf_five, :label => false
+          %td= f.input :iv_medications, :label => false
+          %td= f.input :tube_feeding, :label => false
+          %td= f.input :po, :label => false
+          %td= f.input :intake_other, :label => false
+          %td= f.input :total_hourly_intake, :label => false
+
+        %tr
+          %td= f.input :intake_time, :label => false
+          %td= f.input :ivf_one, :label => false
+          %td= f.input :ivf_two, :label => false
+          %td= f.input :ivf_three, :label => false
+          %td= f.input :ivf_four, :label => false
+          %td= f.input :ivf_five, :label => false
+          %td= f.input :iv_medications, :label => false
+          %td= f.input :tube_feeding, :label => false
+          %td= f.input :po, :label => false
+          %td= f.input :intake_other, :label => false
+          %td= f.input :total_hourly_intake, :label => false
+
+        %tr
+          %td= f.input :intake_time, :label => false
+          %td= f.input :ivf_one, :label => false
+          %td= f.input :ivf_two, :label => false
+          %td= f.input :ivf_three, :label => false
+          %td= f.input :ivf_four, :label => false
+          %td= f.input :ivf_five, :label => false
+          %td= f.input :iv_medications, :label => false
+          %td= f.input :tube_feeding, :label => false
+          %td= f.input :po, :label => false
+          %td= f.input :intake_other, :label => false
+          %td= f.input :total_hourly_intake, :label => false
+
+        %tr
+          %td= f.input :intake_time, :label => false
+          %td= f.input :ivf_one, :label => false
+          %td= f.input :ivf_two, :label => false
+          %td= f.input :ivf_three, :label => false
+          %td= f.input :ivf_four, :label => false
+          %td= f.input :ivf_five, :label => false
+          %td= f.input :iv_medications, :label => false
+          %td= f.input :tube_feeding, :label => false
+          %td= f.input :po, :label => false
+          %td= f.input :intake_other, :label => false
+          %td= f.input :total_hourly_intake, :label => false
+.col-md-4.well
+  = f.input :intake_running_total, :class => "form-control", :label => "Intake Running Total"
+
+
+.col-md-12.well
+  %h3{:align => "center"}Output Flowsheet
+  .table-responsive
+    %table.table.table-striped.cardiovascular-table
+      %thead
+        %tr
+          %th UO
+          %th CT
+          %th Drains JP
+          %th NGT
+          %th Other
+          %th Total Hourly Output
+
+      %tbody
+        %tr
+          %td= f.input :uo, :label => false
+          %td= f.input :ct, :label => false
+          %td= f.input :drains_jp, :label => false
+          %td= f.input :output_ngt, :label => false
+          %td= f.input :output_other, :label => false
+          %td= f.input :total_hourly_output, :label => false
+
+          %tr
+            %td= f.input :uo, :label => false
+            %td= f.input :ct, :label => false
+            %td= f.input :drains_jp, :label => false
+            %td= f.input :output_ngt, :label => false
+            %td= f.input :output_other, :label => false
+            %td= f.input :total_hourly_output, :label => false
+          %tr
+            %td= f.input :uo, :label => false
+            %td= f.input :ct, :label => false
+            %td= f.input :drains_jp, :label => false
+            %td= f.input :output_ngt, :label => false
+            %td= f.input :output_other, :label => false
+            %td= f.input :total_hourly_output, :label => false
+
+          %tr
+            %td= f.input :uo, :label => false
+            %td= f.input :ct, :label => false
+            %td= f.input :drains_jp, :label => false
+            %td= f.input :output_ngt, :label => false
+            %td= f.input :output_other, :label => false
+            %td= f.input :total_hourly_output, :label => false
+
+          %tr
+            %td= f.input :uo, :label => false
+            %td= f.input :ct, :label => false
+            %td= f.input :drains_jp, :label => false
+            %td= f.input :output_ngt, :label => false
+            %td= f.input :output_other, :label => false
+            %td= f.input :total_hourly_output, :label => false
+
+.col-md-4.well
+  = f.input :output_running_total, :class => "form-control", :label => "Output Running Total"

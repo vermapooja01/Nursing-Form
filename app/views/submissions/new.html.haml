@@ -68,11 +68,13 @@
           %li
             %a{"data-toggle" => "tab", :href => "#r"} Vital Signs Documentation
           %li
-            %a{"data-toggle" => "tab", :href => "#s"} IV Insertion
+            %a{"data-toggle" => "tab", :href => "#s"} Intake and Output Flowsheet
           %li
-            %a{"data-toggle" => "tab", :href => "#t"} Urinary Catheterization
+            %a{"data-toggle" => "tab", :href => "#t"} IV Insertion
           %li
-            %a{"data-toggle" => "tab", :href => "#u"} Review and Submit
+            %a{"data-toggle" => "tab", :href => "#u"} Urinary Catheterization
+          %li
+            %a{"data-toggle" => "tab", :href => "#v"} Review and Submit
 
 
 
@@ -205,15 +207,20 @@
             = render :partial => "submissions/partials/vital_signs_documentation", :locals => {:f => f}
         #s.tab-pane
           .col-md-12.well
+            %h3{:align => "center"} Intake and Output Flowsheet
+          .form-group
+            = render :partial => "submissions/partials/intake_and_output_flowsheet", :locals => {:f => f}
+        #t.tab-pane
+          .col-md-12.well
             %h3{:align => "center"} IV Insertion
           .form-group
             = render :partial => "submissions/partials/iv_insertion", :locals => {:f => f}
-        #t.tab-pane
+        #u.tab-pane
           .col-md-12.well
             %h3{:align => "center"} Urinary Catheterization
           .form-group
             = render :partial => "submissions/partials/urinary_catheterization", :locals => {:f => f}
-        #u.tab-pane
+        #v.tab-pane
           .col-md-12.well
             %h3{:align => "center"} Review and Submit
           .form-group
