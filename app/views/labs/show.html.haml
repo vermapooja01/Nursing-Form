@@ -1,8 +1,124 @@
-%p#notice= notice
+.row
+  .col-md-4
+    %h1 Upper Rio Grande Simulation Hospital
+  .col-md-8
+    %h1 Medication Administration Record
+    .col-md-6.no-padding
+      %p
+        Stat:
+        = @lab.orders
+      %p
+        Date and Time Drawn:
+        = @lab.date_and_time_drawn.strftime("%B %d, %Y")
 
-%p
-  %b Orders:
-  = @lab.orders
-%p
-  %b Date and time drawn:
-  = @lab.date_and_time_drawn
+      %h4 Questions regarding labs:
+      %p
+        Is the patient currently on coagulation therapy:
+        = @lab.coagulation_therapy
+      %p
+        Is the patient fasting:
+        = @lab.patient_fasting
+      %p
+        Ventilator ABGs:
+        = @lab.ventilator
+      %p
+        Method of Collection for Urinalysis:
+        = @lab.urinalysis
+
+%hr
+.row
+  .col-md-4
+    %h1 Hematology
+    %hr
+    %table.table.table-bordered
+      %tbody
+        %tr
+          %th{:scope => "row"} WBC (3.2 - 10.6)
+          %td= @lab.wbc
+        %tr
+          %th{:scope => "row"} RBC (3.88 - 6.07)
+          %td= @lab.rbc
+        %tr
+          %th{:scope => "row"} HGB (12 - 17.2)
+          %td= @lab.hgb
+        %tr
+          %th{:scope => "row"} HCT (35 - 50)
+          %td= @lab.hct
+        %tr
+          %th{:scope => "row"} PLT (150 - 450)
+          %td= @lab.plt
+
+  .col-md-4
+    %h1 Chemistry Panel
+    %hr
+    %table.table.table-bordered
+      %tbody
+        %tr
+          %th{:scope => "row"} Glucose(<110)
+          %td= @lab.glucose
+        %tr
+          %th{:scope => "row"} BUN(7-30)
+          %td= @lab.bun
+        %tr
+          %th{:scope => "row"} CO2(20-32)
+          %td= @lab.co2
+        %tr
+          %th{:scope => "row"} Chloride(95-108)
+          %td= @lab.chloride
+        %tr
+          %th{:scope => "row"} Creatinine(0.7-1.4)
+          %td= @lab.creatinine
+        %tr
+          %th{:scope => "row"} Sodium (135-145)
+          %td= @lab.sodium
+        %tr
+          %th{:scope => "row"} Potassium(3.5-5)
+          %td= @lab.potassium
+        %tr
+          %th{:scope => "row"} Magnesium(1.5-2.4)
+          %td= @lab.magnesium
+        %tr
+          %th{:scope => "row"} Phosphorus(2.5-4.5)
+          %td= @lab.phosphorus
+        %tr
+          %th{:scope => "row"} Calcium (8.5 - 10.3)
+          %td= @lab.calcium
+
+  .col-md-4
+    %h1 UA
+    %hr
+    %table.table.table-bordered
+      %tbody
+        %tr
+          %th{:scope => "row"} Appearance
+          %td= @lab.appearance
+        %tr
+          %th{:scope => "row"} Sp. Gravity (1.001 - 1.035)
+          %td= @lab.sp_gravity
+        %tr
+          %th{:scope => "row"} Color
+          %td= @lab.color_ua
+        %tr
+          %th{:scope => "row"} pH(4.6-8)
+          %td= @lab.ph
+        %tr
+          %th{:scope => "row"} Protein(neg)
+          %td= @lab.protein
+        %tr
+          %th{:scope => "row"} Glucose (neg)
+          %td= @lab.glucose_ua
+        %tr
+          %th{:scope => "row"} Ketones(neg)
+          %td= @lab.ketones
+        %tr
+          %th{:scope => "row"} Bilirubin(neg)
+          %td= @lab.bilirubin
+        %tr
+          %th{:scope => "row"} Occult Blood (neg)
+          %td= @lab.occult_blood
+        %tr
+          %th{:scope => "row"} WBC(</=5)
+          %td= @lab.wbc_ua
+        %tr
+          %th{:scope => "row"} RBC(</=3)
+          %td= @lab.rbc_ua

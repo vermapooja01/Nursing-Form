@@ -1,5 +1,6 @@
 class Lab < ApplicationRecord
   belongs_to :history
+  has_one :patient, through: :history
 
   def add_data_to_lab_object(data)
     self.orders = data["orders"]
