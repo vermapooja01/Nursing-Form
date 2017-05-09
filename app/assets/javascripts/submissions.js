@@ -1,5 +1,5 @@
 // $(document).on('turbolinks:load', function () {
-$( document ).ready(function() {
+$(document).ready(function() {
   // Open up the tab
   var selectedTab = $('#selected_tab').val();
   $("a[href=" + "'" + selectedTab + "'" + "]").tab('show')
@@ -105,7 +105,7 @@ $( document ).ready(function() {
 
 
   // Function to save the form whenever the save button is clicked
-  $("button.button-save").click(function() {
+$("button.button-save").click(function() {
     $("form#new_submission").submit();
     $("form.simple_form").submit();
   });
