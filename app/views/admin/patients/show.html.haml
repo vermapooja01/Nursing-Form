@@ -24,5 +24,6 @@
             %td= history.mr_number
             %td= history.service
             %td
-              = link_to 'View', admin_patient_history_labs_path(@patient, history), :class => "btn btn-default btn-xs"
+              = link_to 'View Data', admin_patient_history_labs_path(@patient, history), :class => "btn btn-default btn-xs"
+              = link_to 'View History', edit_admin_patient_history_path(@patient, history), :class => "btn btn-default btn-xs"
               = link_to 'Delete', admin_patient_history_path(@patient, history), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-default btn-xs'

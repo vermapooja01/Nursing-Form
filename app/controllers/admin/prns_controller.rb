@@ -28,7 +28,7 @@ class Admin::PrnsController < Admin::AdminController
   # POST /prns.json
   def create
     @prn = @history.prns.build(prn_params)
-
+    byebug
     respond_to do |format|
       if @prn.save
         format.html { redirect_to admin_patient_history_prns_path(@patient, @history), notice: 'Prn was successfully created.' }
