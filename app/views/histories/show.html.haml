@@ -1,15 +1,128 @@
-%p#notice= notice
+-#%p#notice= notice
 
-%p
+-#%p
   %b Name:
   = @history.name
-%p
+-#%p
   %b Date of admission:
   = @history.date_of_admission
-%p
+-#%p
   %b Mr number:
   = @history.mr_number
 
-= link_to 'Edit', edit_history_path(@history)
-\|
-= link_to 'Back', histories_path
+-#= link_to 'Edit', edit_history_path(@history)
+-#\|
+-#= link_to 'Back', histories_path
+
+
+.row
+  .col-md-12
+    %h1{:align => "center"} Upper Rio Grande Regional Simulation Hospital
+
+  %hr
+  .row
+    .col-md-4
+      %hr
+      %table.table.table-bordered
+        %tbody
+          %tr
+            %th{:scope => "row"} Name
+            %td= @history.patient_name_history
+          %tr
+            %th{:scope => "row"} MR#
+            %td= @history.mr_number
+          %tr
+            %th{:scope => "row"} Date of Birth
+            %td= @history.date_of_birth
+          %tr
+            %th{:scope => "row"} Address
+            %td= @history.address
+          %tr
+            %th{:scope => "row"} Height
+            %td= @history.height
+          %tr
+            %th{:scope => "row"} Occupation
+            %td= @history.occupation
+          %tr
+            %th{:scope => "row"} Allergies
+            %td= @history.allergies
+          %tr
+            %th{:scope => "row"} Code Status
+            %td= @history.code_status
+          %tr
+            %th{:scope => "row"} Advance Directive
+            %td= @history.advance_directive
+          %tr
+            %th{:scope => "row"} Medical History
+            %td= @history.medical_history
+          %tr
+            %th{:scope => "row"} Current Medications
+            %td= @history.current_medications
+
+          %tr
+            %th{:scope => "row"} Family History
+            %td= @history.family_history
+          %tr
+            %th{:scope => "row"} Social Hx
+            %td= @history.social_hx
+          %tr
+            %th{:scope => "row"} Daily Weekly Routine
+            %td= @history.daily_weekly_routine
+
+%hr
+.row
+  .col-md-4
+    %hr
+    %table.table.table-bordered
+      %tbody
+        %tr
+          %th{:scope => "row"} Date of Admission
+          %td= @history.date_of_admission
+        %tr
+          %th{:scope => "row"} Service
+          %td= @history.service
+        %tr
+          %th{:scope => "row"} Marital Status
+          %td= @history.marital_status_history
+        %tr
+          %th{:scope => "row"} Phone
+          %td= @history.phone
+        %tr
+          %th{:scope => "row"} Weight
+          %td= @history.weight
+        %tr
+          %th{:scope => "row"} Religion
+          %td= @history.religion
+        %tr
+          %th{:scope => "row"} Cultural/Spiritual Practice
+          %td= @history.cultural_spiritual_practice
+        %tr
+          %th{:scope => "row"} Language
+          %td= @history.language
+        %tr
+          %th{:scope => "row"} Barriers to Communication
+          %td= @history.barriers_to_communication
+        %tr
+          %th{:scope => "row"} Isolation Precaution
+          %td= @history.isolation_precaution
+        %tr
+          %th{:scope => "row"} Surgical History
+          %td= @history.surgical_history
+        %tr
+          %th{:scope => "row"} Diet
+          %td= @history.diet_history
+        %tr
+          %th{:scope => "row"} Tobacco Use
+          %td= @history.tobacco_use
+        %tr
+          %th{:scope => "row"} Alcohol/Drug Use
+          %td= @history.alcohol_drug_use
+        %tr
+          %th{:scope => "row"} Immunizations
+          %td= @history.immunizations
+        %tr
+          %th{:scope => "row"} Living Arrangements
+          %td= @history.living_arrangements
+        %tr
+          %th{:scope => "row"} Hobbies
+          %td= @history.hobbies
