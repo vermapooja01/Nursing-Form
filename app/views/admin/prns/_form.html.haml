@@ -9,7 +9,7 @@
       = @history.mr_number
 
 %h1 New PRN
-= simple_form_for(@prn) do |f|
+= simple_form_for([:admin, @patient, @history, @prn]) do |f|
   = f.error_notification
 
   .form-inputs

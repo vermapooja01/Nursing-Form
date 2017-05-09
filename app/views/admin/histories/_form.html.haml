@@ -10,7 +10,7 @@
       -# = f.input :date_of_admission, :class => "form-control", :label => "Date of Admission"
       = f.input :mr_number, :class => "form-control", :label => "MR #"
       = f.input :service, :class => "form-control", :label => "Service"
-      = f.input :date_of_birth, :class => "form-control", :label => "Date of Birth"
+      = f.input :date_of_birth, :class => "form-control", :label => "Date of Birth", as: :string, input_html: {"data-toggle" => "datepicker"}
       = f.input :marital_status_history, :class => "form-control", :label => "Marital Status"
       = f.input :address, :class => "form-control", :label => "Address"
       = f.input :phone, :class => "form-control", :label => "Phone", :type => "tel"
