@@ -1,4 +1,4 @@
-%p#notice= notice
+-#%p#notice= notice
 
 %p
   %b Ordering md:
@@ -9,3 +9,45 @@
 %p
   %b Medication:
   = @prn.medication
+
+
+.row
+  .col-md-12
+    %h1{:align => "center"} Upper Rio Grande Regional Simulation Hospital
+    %h1{:align => "center"} PRN Medication Administration Record
+
+  .col-md-6
+    %p
+      Patient:
+      = @lab.patient.name
+    %p
+      Stat:
+      = @lab.history.mr_number
+
+%hr
+.row
+  .col-md-12
+    %hr
+    %table.table.table-bordered
+      %tbody
+        %tr
+          %th{:scope => "row"} Ordering MD
+          %th{:scope => "row"} Date Ordered
+          %th{:scope => "row"} Medication Name
+          %th{:scope => "row"} Medication Dose
+          %th{:scope => "row"} Medication Route
+          %th{:scope => "row"} Medication Date and Time
+          %th{:scope => "row"} Medication By
+          %th{:scope => "row"} Nurse Signature
+          %th{:scope => "row"} Nurse Initials
+
+        %tr
+          %td= @prn.ordering_md
+          %td= @prn.date_ordered
+          %td= @prn.medication_name
+          %td= @prn.medication_dose
+          %td= @prn.medication_route
+          %td= @prn.medication_date_and_time
+          %td= @prn.medication_by
+          %td= @prn.nurse_signature_prn
+          %td= @prn.nurse_initials_prn
