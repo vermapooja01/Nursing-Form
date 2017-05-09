@@ -1,4 +1,5 @@
 class PatientsController < ApplicationController
+  before_action :logged_in_user
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
 
   # GET /patients

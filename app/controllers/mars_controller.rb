@@ -1,4 +1,5 @@
 class MarsController < ApplicationController
+  before_action :logged_in_user
   before_action :set_mar, only: [:show, :edit, :update, :destroy]
   before_action :set_history
   before_action :set_patient
