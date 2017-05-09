@@ -1,4 +1,5 @@
 class HistoriesController < ApplicationController
+  before_action :logged_in_user
   before_action :set_history, only: [:show, :edit, :update, :destroy]
   before_action :set_patient
 

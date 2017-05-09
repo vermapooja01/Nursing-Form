@@ -1,4 +1,5 @@
 class SubmissionsController < ApplicationController
+  before_action :logged_in_user
   before_action :set_submission, only: [:show, :edit, :update, :destroy]
   before_action :set_patient, only: [:new, :create, :edit, :update]
 
