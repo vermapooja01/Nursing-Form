@@ -1,14 +1,47 @@
 %p#notice= notice
 
-%p
+-#%p
   %b Date time:
   = @order.date_time
-%p
+-#%p
   %b Orders:
   = @order.orders
-%p
+-#%p
   %b Verification:
   = @order.verification
+
+.row
+  .col-md-12
+    %h1{:align => "center"} Upper Rio Grande Regional Simulation Hospital
+    %h1{:align => "center"} Physician order Form
+
+  -#.col-md-12
+    %h1 Orders
+
+  .col-md-6
+    %p
+      Patient:
+      = @order.patient.name
+    %p
+      MR #:
+      = @order.history.mr_number
+
+%hr
+.row
+  .col-md-12
+    %hr
+    %table.table.table-bordered
+      %tbody
+        %tr
+          %th{:scope => "row"} Date and Time Drawn
+          %th{:scope => "row"} Orders
+          %th{:scope => "row"} Verification
+
+        %tr
+          %td= @order.date_time
+          %td= @order.orders.html_safe
+          %td= @order.verification
+
 
 = link_to 'Edit', edit_admin_patient_history_order_path(@order), class: "btn btn-success"
 

@@ -19,13 +19,13 @@
   -#.col-md-12
     %h1 Orders
 
-  -#.col-md-6
+  .col-md-6
     %p
       Patient:
-      = @lab.patient.name
+      = @order.patient.name
     %p
-      Stat:
-      = @lab.history.mr_number
+      MR #:
+      = @order.history.mr_number
 
 %hr
 .row

@@ -1,11 +1,279 @@
 %p#notice= notice
 
-%p
+-#%p
   %b Orders:
   = @lab.orders
-%p
+-#%p
   %b Date and time drawn:
   = @lab.date_and_time_drawn
+
+.row
+  .col-md-4
+    %h1 Upper Rio Grande Simulation Hospital
+  .col-md-8
+    %h1 Medication Administration Record
+    .col-md-6.no-padding
+      %p
+        Stat:
+        = @lab.orders
+      %p
+        Date and Time Drawn:
+        = @lab.date_and_time_drawn.strftime("%B %d, %Y")
+
+      %h4 Questions regarding labs:
+      %p
+        Is the patient currently on coagulation therapy:
+        = @lab.coagulation_therapy
+      %p
+        Is the patient fasting:
+        = @lab.patient_fasting
+      %p
+        Ventilator ABGs:
+        = @lab.ventilator
+      %p
+        Method of Collection for Urinalysis:
+        = @lab.urinalysis
+    .col-md-6
+      %p
+        Patient:
+        = @lab.patient.name
+      %p
+        Stat:
+        = @lab.history.mr_number
+      %p
+        Room #:
+        = @lab.room_number
+
+%hr
+.row
+  .col-md-4
+    %h1 Hematology
+    %hr
+    %table.table.table-bordered
+      %tbody
+        %tr
+          %th{:scope => "row"} WBC (3.2 - 10.6)
+          %td= @lab.wbc
+        %tr
+          %th{:scope => "row"} RBC (3.88 - 6.07)
+          %td= @lab.rbc
+        %tr
+          %th{:scope => "row"} HGB (12 - 17.2)
+          %td= @lab.hgb
+        %tr
+          %th{:scope => "row"} HCT (35 - 50)
+          %td= @lab.hct
+        %tr
+          %th{:scope => "row"} PLT (150 - 450)
+          %td= @lab.plt
+
+  .col-md-4
+    %h1 Chemistry Panel
+    %hr
+    %table.table.table-bordered
+      %tbody
+        %tr
+          %th{:scope => "row"} Glucose(<110)
+          %td= @lab.glucose
+        %tr
+          %th{:scope => "row"} BUN(7-30)
+          %td= @lab.bun
+        %tr
+          %th{:scope => "row"} CO2(20-32)
+          %td= @lab.co2
+        %tr
+          %th{:scope => "row"} Chloride(95-108)
+          %td= @lab.chloride
+        %tr
+          %th{:scope => "row"} Creatinine(0.7-1.4)
+          %td= @lab.creatinine
+        %tr
+          %th{:scope => "row"} Sodium (135-145)
+          %td= @lab.sodium
+        %tr
+          %th{:scope => "row"} Potassium(3.5-5)
+          %td= @lab.potassium
+        %tr
+          %th{:scope => "row"} Magnesium(1.5-2.4)
+          %td= @lab.magnesium
+        %tr
+          %th{:scope => "row"} Phosphorus(2.5-4.5)
+          %td= @lab.phosphorus
+        %tr
+          %th{:scope => "row"} Calcium (8.5 - 10.3)
+          %td= @lab.calcium
+
+  .col-md-4
+    %h1 UA
+    %hr
+    %table.table.table-bordered
+      %tbody
+        %tr
+          %th{:scope => "row"} Appearance
+          %td= @lab.appearance
+        %tr
+          %th{:scope => "row"} Sp. Gravity (1.001 - 1.035)
+          %td= @lab.sp_gravity
+        %tr
+          %th{:scope => "row"} Color
+          %td= @lab.color_ua
+        %tr
+          %th{:scope => "row"} pH(4.6-8)
+          %td= @lab.ph
+        %tr
+          %th{:scope => "row"} Protein(neg)
+          %td= @lab.protein
+        %tr
+          %th{:scope => "row"} Glucose (neg)
+          %td= @lab.glucose_ua
+        %tr
+          %th{:scope => "row"} Ketones(neg)
+          %td= @lab.ketones
+        %tr
+          %th{:scope => "row"} Bilirubin(neg)
+          %td= @lab.bilirubin
+        %tr
+          %th{:scope => "row"} Occult Blood (neg)
+          %td= @lab.occult_blood
+        %tr
+          %th{:scope => "row"} WBC(</=5)
+          %td= @lab.wbc_ua
+        %tr
+          %th{:scope => "row"} RBC(</=3)
+          %td= @lab.rbc_ua
+
+  .col-md-4
+    %h1 Cardiac Panel
+    %hr
+    %table.table.table-bordered
+      %tbody
+        %tr
+          %th{:scope => "row"} CK (108-564)
+          %td= @lab.ck
+        %tr
+          %th{:scope => "row"} CK-MB(0-3)
+          %td= @lab.ck_mb
+        %tr
+          %th{:scope => "row"} Trop (0-0.4)
+          %td= @lab.trop
+        %tr
+          %th{:scope => "row"} Myoglobin(< 55)
+          %td= @lab.myoglobin
+
+  .col-md-4
+    %h1 Coagulation Panel
+    %hr
+    %table.table.table-bordered
+      %tbody
+        %tr
+          %th{:scope => "row"} PT(9-12.5)
+          %td= @lab.pt
+        %tr
+          %th{:scope => "row"} PTT(20-36)
+          %td= @lab.ptt
+        %tr
+          %th{:scope => "row"} INR(0.9-1.1)
+          %td= @lab.inr
+
+  .col-md-4
+    %h1 Hepatic Function
+    %hr
+    %table.table.table-bordered
+      %tbody
+        %tr
+          %th{:scope => "row"} Alkaline Phos(40-120)
+          %td= @lab.alkaline_phos
+        %tr
+          %th{:scope => "row"} Albumin(3.5-5)
+          %td= @lab.albumin
+        %tr
+          %th{:scope => "row"} Bilirubin(Direct)(< 0.40)
+          %td= @lab.bilirubin_direct
+        %tr
+          %th{:scope => "row"} Bilirubin(Total)(< 1.3)
+          %td= @lab.bilirubin_total
+        %tr
+          %th{:scope => "row"} AST(0-37)
+          %td= @lab.ast
+        %tr
+          %th{:scope => "row"} ALT(0-35)
+          %td= @lab.alt
+
+  .col-md-4
+    %h1 Lipid Profile
+    %hr
+    %table.table.table-bordered
+      %tbody
+        %tr
+          %th{:scope => "row"} Cholesterol(< 200)
+          %td= @lab.cholesterol
+        %tr
+          %th{:scope => "row"} Triglycerides (< 150)
+          %td= @lab.triglycerides
+        %tr
+          %th{:scope => "row"} HDL(> 60)
+          %td= @lab.hdl
+        %tr
+          %th{:scope => "row"} LDL(<100)
+          %td= @lab.ldl
+
+  .col-md-4
+    %h1 Therapeutic Drugs
+    %hr
+    %table.table.table-bordered
+      %tbody
+        %tr
+          %th{:scope => "row"} Digoxin(0.8-2)
+          %td= @lab.digoxin
+        %tr
+          %th{:scope => "row"} Dilantin(10-20)
+          %td= @lab.dilantin
+        %tr
+          %th{:scope => "row"} Gentamicin(Peak)(4-10)
+          %td= @lab.gentamicin
+        %tr
+          %th{:scope => "row"} Gentamicin(Trough)(0.5-2)
+          %td= @lab.gentamicin_trough
+        %tr
+          %th{:scope => "row"} Vancomycin(Peak)(20-40)
+          %td= @lab.vancomycin
+        %tr
+          %th{:scope => "row"} Vancomycin(Trough)(10-20)
+          %td= @lab.vancomycin_trough
+
+  .col-md-4
+    %h1 ABGs
+    %hr
+    %table.table.table-bordered
+      %tbody
+        %tr
+          %th{:scope => "row"} pH(7.35-7.45)
+          %td= @lab.ph_abg
+        %tr
+          %th{:scope => "row"} pCO2(35-45)
+          %td= @lab.pco2
+        %tr
+          %th{:scope => "row"} HCO3(22-26)
+          %td= @lab.hco3
+        %tr
+          %th{:scope => "row"} pO2(80-100)
+          %td= @lab.po2
+        %tr
+          %th{:scope => "row"} FiO2
+          %td= @lab.fio2
+
+  .col-md-4
+    %h1 MISC
+    %hr
+    %table.table.table-bordered
+      %tbody
+        %tr
+          %th{:scope => "row"} Lactic Acid(1-1.8)
+          %td= @lab.lactic_acid
+        %tr
+          %th{:scope => "row"} BNP(<100)
+          %td= @lab.bnp
+
 
 = link_to 'Edit', edit_admin_patient_history_lab_path(@lab), class: "btn btn-success"
 
