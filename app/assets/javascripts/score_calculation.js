@@ -1,4 +1,5 @@
-$(document).on('turbolinks:load', function () {
+// $(document).on('turbolinks:load', function () {
+$( document ).ready(function() {
   // Set the initial value
 
   // Set event listeners

@@ -1,4 +1,5 @@
-$(document).on('turbolinks:load', function () {
+// $(document).on('turbolinks:load', function () {
+$( document ).ready(function() {
   $('#date_of_admission_picker').datetimepicker({
     inline: true,
     sideBySide: true,

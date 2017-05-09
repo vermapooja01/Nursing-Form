@@ -1,4 +1,5 @@
-$(document).on('turbolinks:load', function () {
+// $(document).on('turbolinks:load', function () {
+$( document ).ready(function() {
   var sumE=0;
   var sumV=0;
   var sumM=0;

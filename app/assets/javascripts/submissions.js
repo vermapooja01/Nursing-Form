@@ -1,4 +1,5 @@
-$(document).on('turbolinks:load', function () {
+// $(document).on('turbolinks:load', function () {
+$( document ).ready(function() {
   // Open up the tab
   var selectedTab = $('#selected_tab').val();
   $("a[href=" + "'" + selectedTab + "'" + "]").tab('show')

@@ -1,4 +1,5 @@
-$(document).on('turbolinks:load', function () {
+// $(document).on('turbolinks:load', function () {
+$( document ).ready(function() {
   // Get all the table cells that have dates
   var cellsWithDateTimeString = $('td.date-object')
   // Execute time conversion for all the cells that have dates and times

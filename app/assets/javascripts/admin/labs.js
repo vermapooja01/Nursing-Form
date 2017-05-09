@@ -1,4 +1,5 @@
-// $(document).on('turbolinks:load', function () {
+// $(document).on('turbolinks:load', function () { //delete this one
+// $( document ).ready(function() {
 //   $('#date_and_time_drawn_picker').datetimepicker({
 //     inline: true,
 //     sideBySide: true,

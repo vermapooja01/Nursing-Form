@@ -7,8 +7,8 @@
 
     %title NursingForm | Admin
     = csrf_meta_tags
-    = stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'admin/admin', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'admin', media: 'all'#, 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'admin/admin'#, 'data-turbolinks-track': 'reload'
   %body
     = render "layouts/admin/admin_header"
     %div{:style => "margin-top:100px;"}

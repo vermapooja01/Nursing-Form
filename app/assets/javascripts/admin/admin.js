@@ -2,7 +2,6 @@
 //= require jquery_ujs
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
-//= require turbolinks
 //= require bootstrap-sprockets
 
 // Load Vendor files
@@ -21,7 +20,8 @@
 //= require scrolltotop
 
 
-$(document).on('turbolinks:load', function () {
+// $(document).on('turbolinks:load', function () {
+$( document ).ready(function() {
   // Generalized Date Time Picker JS functions
   // Get all the objects that are datetime pickers
   var dateTimePickerObjects = $('.date_and_time_picker');
