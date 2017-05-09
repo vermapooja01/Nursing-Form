@@ -45,7 +45,7 @@ class Admin::HistoriesController < Admin::AdminController
   def update
     respond_to do |format|
       if @history.update(history_params)
-        format.html { redirect_to admin_patient_history_path(@patient, @history), notice: 'History was successfully updated.' }
+        format.html { redirect_to admin_patient_path(@patient), notice: 'History was successfully updated.' }
         format.json { render :show, status: :ok, location: @history }
       else
         format.html { render :edit }

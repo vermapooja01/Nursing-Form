@@ -4,9 +4,9 @@ class AddFieldsToHistory < ActiveRecord::Migration[5.0]
     add_column :histories, :date_of_birth, :datetime
     add_column :histories, :marital_status_history, :string
     add_column :histories, :address, :string
-    add_column :histories, :phone, :varchar
-    add_column :histories, :height, :integer
-    add_column :histories, :weight, :integer
+    add_column :histories, :phone, :string
+    add_column :histories, :height, :string
+    add_column :histories, :weight, :float
     add_column :histories, :occupation, :string
     add_column :histories, :religion, :string
     add_column :histories, :allergies, :string
