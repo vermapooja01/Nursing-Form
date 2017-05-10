@@ -7,7 +7,7 @@ $( document ).ready(function() {
     // Store the contents of the cell
     var dateString = this.innerHTML;
     // Convert the date using the function
-    var formattedDateTime = formatDate(dateString);
+    //var formattedDateTime = formatDate(dateString);
     // Set the new value of the cell
     this.innerHTML = formattedDateTime;
   });
