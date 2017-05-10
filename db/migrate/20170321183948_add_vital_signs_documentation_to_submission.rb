@@ -1,6 +1,6 @@
 class AddVitalSignsDocumentationToSubmission < ActiveRecord::Migration[5.0]
   def change
-    add_column :submissions, :vital_signs_documentation_time, :datetime
+    add_column :submissions, :vital_signs_documentation_time, :integer
     add_column :submissions, :t_vital_signs, :string
     add_column :submissions, :p_vital_signs, :string
     add_column :submissions, :r_vital_signs, :string
