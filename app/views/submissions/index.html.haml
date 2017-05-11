@@ -8,10 +8,10 @@
 - if logged_in?
 
   .col-md-12
-    %h3 Patients
+    %h3 Patient List
     .patient-list
       .table-responsive
-        %table.table.table-hover.table-bordered
+        %table.table.datatable
           %thead
             %tr
               %th Name
@@ -68,8 +68,6 @@
               %td= submission.user_id
               %td= submission.week
               %td= link_to 'Show', patient_submission_path(submission.patient.id, submission), :class => "btn btn-primary"
-              %td= link_to 'Edit', edit_patient_submission_path(submission.patient.id, submission), :class => "btn btn-primary"
-              %td= link_to 'Destroy', patient_submission_path(submission.patient.id, submission), :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
               %td= link_to 'Complete Submission', complete_the_form_path(submission_id: submission.id), :data => { :confirm => 'Are you sure?' }, :class => "btn btn-primary"
 
 
