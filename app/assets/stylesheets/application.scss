@@ -1,3 +1,4 @@
+@import "colors";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
@@ -12,6 +13,10 @@
 @import "scrolltotop";
 @import "sidermenu";
 @import "froala_style.min.css";
+@import "header";
+@import "footer";
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
 
 .no-padding {
   padding: 0;
@@ -21,4 +26,14 @@ table {
   th {
     padding: 5px;
   }
+}
+
+.nav-bg {
+  background-color: $utep_blue;
+  height: 125px;
+  position: relative;
+}
+.navbar-fixed-top {
+  background-color: transparent;
+  text-align: center;
 }

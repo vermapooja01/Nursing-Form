@@ -1,0 +1,64 @@
+footer {
+  font-family: "Tungsten A", "Tungsten B", "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  background-color: #041B3B;
+  color: #fff;
+}
+footer .footerLogo {
+  background-color: #fff;
+  padding:0;
+}
+footer .requiredLinks {
+  font-size: 20px;
+  padding: 12px 0 0 90px;
+}
+footer .requiredLinks h2 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 48px;
+  font-weight: 600;
+}
+footer .requiredLinks ul {
+  text-transform: uppercase;
+  float: left;
+  padding-left: 0;
+}
+footer .requiredLinks ul li {
+  list-style: none;
+}
+footer .requiredLinks a {
+  color: #fff;
+}
+footer .contact-information-link {
+    display:inline-block;
+}
+footer .requiredLinks ul {
+  padding-right: 80px;
+}
+@media (max-width: 767px) {
+  footer {
+    text-align: center;
+  }
+  footer .requiredLinks {
+      padding: 24px 0;
+  }
+  footer .requiredLinks h2 {
+    font-size: 24px;
+  }
+  footer .requiredLinks ul {
+    float: none;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-right: 0;
+  }
+}
+@media (max-width: 991px) {
+    footer .container {
+      width: 100%;
+      padding: 0;
+    }
+    footer .footerLogo img {
+        margin: 0 auto;
+    }
+}
