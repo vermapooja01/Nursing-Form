@@ -31,6 +31,7 @@ Rails.application.routes.draw do
         resources :prns
         resources :orders
         resources :mars
+        resources :one_time_orders
         resources :labs
       end
     end

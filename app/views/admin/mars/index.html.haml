@@ -5,6 +5,9 @@
     %hr
     %h1 MARs
     = link_to 'Add MAR +', new_admin_patient_history_mar_url(@patient, @history), class: "btn btn-success"
+    = link_to 'Add One-Time Orders', new_admin_patient_history_one_time_order_path(@patient, @history), class: "btn btn-success"
+
+
     %hr
     %table.table.table-striped.datatable
       %thead
@@ -23,6 +26,35 @@
     %hr
 
     %h1 One Time Orders
+    %table.table.table-striped.datatable
+      %thead
+        %tr
+          %th Date
+          %th Perscribed By
+          %th Order
+          %th Date and Time Given
+          %th Initials
+      %tbody
+        - @history.one_time_orders.each do |order|
+          %tr
+            %td= order.order_date
+            %td= order.order_prescribed_by
+            %td= order.order_mars
+            %td= order.order_date
+            %td= order.nurse_initials
+            %td
+              -# = link_to 'View', admin_patient_history_mar_path(@patient, @history, mar), :class => "btn btn-default btn-xs"
+              = link_to 'Edit', edit_admin_patient_history_one_time_order_path(@patient, @history, order), :class => "btn btn-default btn-xs"
+
+    %hr
+
+    %h1 Signatures
+    .col-md-12
+      .nurse-name Nancy Nails, RN
+      .nurse-initialsN.N
+
+
+
 
   .col-md-4.information-block
     %h2 Patient Details

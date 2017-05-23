@@ -1,3 +1,3 @@
 class OneTimeOrder < ApplicationRecord
-  belongs_to :mar
+  belongs_to :history
 end

@@ -4,6 +4,7 @@ class History < ApplicationRecord
   has_many :mars, dependent: :destroy
   has_many :prns, dependent: :destroy
   has_many :orders, dependent: :destroy
+  has_many :one_time_orders, dependent: :destroy
 
   # A function to create a history object from XLSX files
   def add_data_to_history_object(data)

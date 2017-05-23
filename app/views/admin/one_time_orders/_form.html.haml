@@ -1,0 +1,31 @@
+.col-md-4
+  %h2 Patient Details
+  .block
+    %h1
+      %span.label.label-info.blue
+        = @patient.name
+    %h3
+      MR#
+      = @history.mr_number
+
+%h1 New One-Time Order
+= simple_form_for([:admin, @patient, @history, @one_time_order]) do |f|
+  = f.error_notification
+
+  .form-inputs
+    .col-md-8
+      = f.hidden_field :history_id, :value => @history.id
+      = f.input :order_date, :class => "form-control", :label => "Date of Order"
+      = f.input :order_prescribed_by, :class => "form-control", :label => "Prescribed By"
+      = f.input :order_mars, :class => "form-control", :label => "Order"
+      = f.input :order_date, :class => "form-control", :label => "Date and Time Given"
+      = f.input :prescriber_initials, :class => "form-control", :label => "Initials"
+
+    .col-md-12
+      = f.input :nurse_signature, :class => "form-control", :label => "Nurse Signature"
+      = f.input :nurse_initials, :class => "form-control", :label => "Nurse Initials"
+
+
+
+      .form-actions
+        = f.button :submit, class: "btn btn-success"
