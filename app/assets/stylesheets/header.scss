@@ -1,45 +1,48 @@
-.sticky-container {
-  .nav-utep-wrapper {
-    margin-top: -132px;
-  }
-  .nav-bg {
-    z-index: -1;
-  }
-  .utep-logo {
-    float: left;
-    background-color: $utep_orange;
-  }
-  .logo-title {
-    position: absolute;
-    width: 100%;
-    margin: 35px 0 0px 200px;
-    text-align: left;
-    .title-text {
-      color: #fff;
-      font-size: 34px;
-      font-weight: bold;
-      font-family: "Open Sans";
-      text-transform: uppercase;
-    }
-  }
-  .header-menu {
-    position: absolute;
-    width: 100%;
-    margin: 75px 0 0px 174px;
-    text-align: left;
-    ul.navbar-nav {
-      background-color: transparent;
-      li {
-        a {
-          font-size: 16px;
-          font-weight: 500;
-          text-transform: uppercase;
-          color: white;
-        }
-      }
-    }
-    .header-buttons-bg {
-      background-color: transparent;
-    }
-  }
-}
+// .sticky-container {
+//   .nav-utep-wrapper {
+//     margin-top: -132px;
+//   }
+//   .nav-bg {
+//     z-index: -1;
+//   }
+//   .utep-logo {
+//     float: left;
+//     img {
+//       max-width: 100%;
+//       height: auto;
+//     }
+//   }
+//   .logo-title {
+//     position: absolute;
+//     width: 100%;
+//     margin: 35px 0 0px 200px;
+//     text-align: left;
+//     .title-text {
+//       color: #fff;
+//       font-size: 34px;
+//       font-weight: bold;
+//       font-family: "Open Sans";
+//       text-transform: uppercase;
+//     }
+//   }
+//   .header-menu {
+//     position: absolute;
+//     width: 100%;
+//     margin: 75px 0 0px 174px;
+//     text-align: left;
+//     ul.navbar-nav {
+//       background-color: transparent;
+//       li {
+//         a {
+//           font-size: 16px;
+//           font-weight: 500;
+//           text-transform: uppercase;
+//           color: white;
+//         }
+//       }
+//     }
+//     .header-buttons-bg {
+//       background-color: transparent;
+//     }
+//   }
+// }

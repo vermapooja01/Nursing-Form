@@ -28,12 +28,21 @@ table {
   }
 }
 
-.nav-bg {
-  background-color: $utep_blue;
-  height: 125px;
-  position: relative;
+.label-utep {
+  &.orange {
+    background-color: $utep-orange;
+  }
+  &.blue {
+    background-color: $utep-blue;
+  }
 }
-.navbar-fixed-top {
-  background-color: transparent;
-  text-align: center;
-}
+//
+// .nav-bg {
+//   background-color: $utep_blue;
+//   height: 125px;
+//   position: relative;
+// }
+// .navbar-fixed-top {
+//   background-color: transparent;
+//   text-align: center;
+// }

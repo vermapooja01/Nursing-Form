@@ -1,0 +1,36 @@
+.table-responsive
+  %table.table.table-hover.completed-table
+    %thead
+      %tr
+        %th{:align => 'center'}
+          Patient Initials
+
+        %th{:scope => 'col'}
+          Age
+
+        %th{:scope => 'col'}
+          Gender
+
+        %th{:scope => 'col'}
+          Admitting Primary Medical Diagnosis
+
+        %th{:scope => 'col'}
+          User
+
+        %th{:scope => 'col'}
+          Date
+
+        %th
+
+    %tbody
+      - @unfinished_submissions.each do |submission|
+        %tr
+          %td= submission.patient_initials
+          %td= submission.age
+          %td= submission.gender
+          %td= submission.admitting_primary_medical_diagnosis
+          %td= submission.user_id
+          %td= submission.week
+          %td
+            = link_to 'Continue', edit_patient_submission_path(submission.patient.id, submission), :class => "btn btn-default btn-xs"
+            = link_to 'Complete Submission', complete_the_form_path(submission_id: submission.id), :data => { :confirm => 'Are you sure?' }, :class => "btn btn-default btn-xs"

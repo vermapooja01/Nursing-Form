@@ -1,30 +1,57 @@
-.sticky-container
-  %nav.navbar.navbar-inverse.navbar-fixed-top
-    .nav-bg
-    .container.no-padding.nav-utep-wrapper
-      .utep-logo
-        = image_tag('http://www.utep.edu/_colleges-cascade-files/images/UTEP.png')
-      .logo-title
-        .title-text Nursing Form
-      .header-menu
-        .navbar-header
-          .container.header-buttons-bg
-            .navbar-header
-              %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
-                %span.sr-only Toggle navigation
-                %span.icon-bar
-                %span.icon-bar
-                %span.icon-bar
-            #navbar.collapse.navbar-collapse
-              %ul.nav.navbar-nav
-                %li
-                  = link_to 'Home', root_url
-                - if !logged_in?
-                  %li
-                    = link_to 'Log In', signin_path
-                - else
-                  %li
-                    = link_to 'Log Out', sign_out_path
+%nav.navbar.navbar-default
+  .container
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header.col-md-3
+      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#miner-chart-nav", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand.col-md-12{:href => "#{root_url}"}
+        = image_tag('minerChart_logo.svg')
+
+    / Collect the nav links, forms, and other content for toggling
+    #miner-chart-nav.navbar-collapse
+      %ul.nav.navbar-nav
+        %li
+          = link_to 'Home', root_url
+        - if !logged_in?
+          %li
+            = link_to 'Log In', signin_path
+        - else
+          %li
+            = link_to 'Log Out', sign_out_path
+
+
+
+
+
+-# .sticky-container
+-#   %nav.navbar.navbar-inverse.navbar-fixed-top
+-#     .container.no-padding.nav-utep-wrapper
+-#       .utep-logo
+-#         = image_tag('minerChart_logo.svg')
+-#       .logo-title
+-#         .title-text Nursing Form
+-#       .header-menu
+-#         .navbar-header
+-#           .container.header-buttons-bg
+-#             .navbar-header
+-#               %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+-#                 %span.sr-only Toggle navigation
+-#                 %span.icon-bar
+-#                 %span.icon-bar
+-#                 %span.icon-bar
+-#             #navbar.collapse.navbar-collapse
+-#               %ul.nav.navbar-nav
+-#                 %li
+-#                   = link_to 'Home', root_url
+-#                 - if !logged_in?
+-#                   %li
+-#                     = link_to 'Log In', signin_path
+-#                 - else
+-#                   %li
+-#                     = link_to 'Log Out', sign_out_path
 
     -# .container.header-buttons-bg
     -#   .navbar-header

@@ -11,11 +11,12 @@
     = javascript_include_tag 'application'#, 'data-turbolinks-track': 'reload'
   %body
     = render "layouts/header"
-    %div{:style => "margin-top:130px;"}
+    -# %div{:style => "margin-top:130px;"}
     .container
       %a#scroll{:href => "#", :style => "display: none;", :title => "Scroll to Top"}
         Top
         %span
 
       = yield
+      %div{:style => "margin-top:130px;"}
     = render "layouts/footer"
