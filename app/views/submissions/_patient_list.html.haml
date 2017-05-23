@@ -1,0 +1,15 @@
+.patient-list
+  .table-responsive
+    %table.table.datatable
+      %thead
+        %tr
+          %th Name
+          %th Actions
+      %tbody
+        - @patients.each do |patient|
+          %tr
+            %td
+              = link_to patient_path(patient) do
+                = patient.name
+            %td
+              = link_to '+ New Submission', new_patient_submission_path(patient), :class => "btn btn-default"

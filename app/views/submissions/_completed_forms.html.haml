@@ -15,10 +15,10 @@
           Admitting Primary Medical Diagnosis
 
         %th{:scope => 'col'}
-          User
+          Student
 
         %th{:scope => 'col'}
-          Week
+          Date
 
         %th
 
@@ -30,6 +30,6 @@
           %td= submission.age
           %td= submission.gender
           %td= submission.admitting_primary_medical_diagnosis
-          %td= submission.user_id
-          %td= submission.week
+          %td= submission.user.first_name
+          %td= submission.week.strftime("%b %d, %Y")
           %td= link_to 'Show', submission, :class => "btn btn-default btn-xs"

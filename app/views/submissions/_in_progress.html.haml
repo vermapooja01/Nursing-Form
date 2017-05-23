@@ -15,7 +15,7 @@
           Admitting Primary Medical Diagnosis
 
         %th{:scope => 'col'}
-          User
+          Student
 
         %th{:scope => 'col'}
           Date
@@ -29,8 +29,8 @@
           %td= submission.age
           %td= submission.gender
           %td= submission.admitting_primary_medical_diagnosis
-          %td= submission.user_id
-          %td= submission.week
+          %td= submission.user.first_name
+          %td= submission.week.strftime("%b %d, %Y")
           %td
             = link_to 'Continue', edit_patient_submission_path(submission.patient.id, submission), :class => "btn btn-default btn-xs"
-            = link_to 'Complete Submission', complete_the_form_path(submission_id: submission.id), :data => { :confirm => 'Are you sure?' }, :class => "btn btn-default btn-xs"
+            = link_to 'Submit', complete_the_form_path(submission_id: submission.id), :data => { :confirm => 'Are you sure?' }, :class => "btn btn-default btn-xs"

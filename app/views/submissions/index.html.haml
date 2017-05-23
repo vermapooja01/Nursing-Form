@@ -14,30 +14,15 @@
       - if !current_user.submissions.empty?
         = render "in_progress"
 
+      %hr
+
       %h3
         %span.label.label-default.label-utep.blue Completed Forms
       = render "completed_forms"
 
-    %hr
-
     .col-md-5
       %h3 Patient List
-      .patient-list
-        .table-responsive
-          %table.table.datatable
-            %thead
-              %tr
-                %th Name
-                %th Actions
-            %tbody
-              - @patients.each do |patient|
-                %tr
-                  %td
-                    = link_to patient_path(patient) do
-                      = patient.name
-                  %td
-                    = link_to '+ New Submission', new_patient_submission_path(patient), :class => "btn btn-default"
-
+      = render "patient_list"
 
 
 - else
