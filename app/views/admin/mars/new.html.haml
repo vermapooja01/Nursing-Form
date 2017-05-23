@@ -1,5 +1,7 @@
 -#%h1 New MAR Medication Administration Record
-
+.btn-group
+  = link_to 'Back', admin_patient_history_mars_path(@patient, @history), class: "btn btn-default"
+  
 = render 'form'
 
 -#= link_to 'Back', mars_path
