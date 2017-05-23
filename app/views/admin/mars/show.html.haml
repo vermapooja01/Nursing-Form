@@ -50,27 +50,6 @@
       %td
         = @mar.date_and_time
 
-%h1 One Time Orders
-%hr
-%table.table.table-bordered
-  %thead
-    %tr
-      %th Date
-      %th Perscribed
-      %th Order
-      %th Date and Time Given
-      %th Initials
-      %th Nurse Signature
-  %tbody
-    %tr
-      %td= @mar.order_date
-      %td= @mar.order_prescribed_by
-      %td= @mar.order_mars
-      %td
-      %td= @mar.nurse_initials
-      %td= @mar.nurse_signature
-
-
 = link_to 'Edit', edit_admin_patient_history_mar_path(@mar), class: "btn btn-success"
 
 = link_to 'Back', admin_patient_history_orders_path(@patient, @history), class: "btn btn-primary"
