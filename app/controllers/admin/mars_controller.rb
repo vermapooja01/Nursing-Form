@@ -23,6 +23,7 @@ class Admin::MarsController < Admin::AdminController
 
   # GET /mars/1/edit
   def edit
+    @doctors = Doctor.all
   end
 
   # POST /mars
