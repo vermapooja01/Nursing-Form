@@ -1,22 +1,52 @@
-.col-md-8.history-information
-  = render "layouts/patient_menu", :patient => @patient, :history => @history
-  %hr
-  %h1 MARs
-  %hr
-  %table.table.table-striped.datatable
-    %thead
-      %tr
-        %th Medication
-        %th Date Taken
-        %th
-    %tbody
-      - @mars.each do |mar|
-        %tr
-          %td= mar.medication_mar
-          %td.date-object= mar.date_and_time
-          %td
-            = link_to 'View', patient_history_mar_path(@patient, @history, mar), :class => "btn btn-default btn-xs"
+.row
+  .col-md-8.history-information
+    = render "layouts/patient_menu", :patient => @patient, :history => @history
+    %hr
+    -# %table.table.table-striped.datatable
+    -#   %thead
+    -#     %tr
+    -#       %th MedicationN
+    -#       %th Date Taken
+    -#       %th
+    -#   %tbody
+    -#     - @mars.each do |mar|
+    -#       %tr
+    -#         %td= mar.medication_mar
+    -#         %td.date-object= mar.date_and_time
+    -#         %td
+    -#           = link_to 'View', patient_history_mar_path(@patient, @history, mar), :class => "btn btn-default btn-xs"
 
-.col-md-4.information-block
-  %h2 Patient Details
-  = render "admin/patient_block"
+  .col-md-4.information-block
+    %h2 Patient Details
+    = render "admin/patient_block"
+.row
+  .col-xs-4.text-center
+    %h3 Upper Rio Grande Regional Simulation Hospital
+  .col-xs-8
+    %h3 Medication Administration Record (MAR)
+    .row
+      .col-xs-4
+        %p Name:
+        %p Month:
+      .col-xs-4
+        %p &nbsp;
+        %p Year:
+      .col-xs-4
+        %p MR#:
+        %p Allergies:
+%hr
+.row
+  .col-xs-3.p-5
+    %p.text-center.mark
+      %strong Medication
+  .col-xs-1.text-center.mark.p-5 Time
+  .col-xs-8
+    .row
+      .col-xs-12
+        %table
+          %tr
+          - 31.times do |d|
+            %th.monthDay.mark #{d+1}
+
+:css
+  .monthDay {font-weight:normal;padding:5px;}
