@@ -34,6 +34,7 @@ gem "font-awesome-rails"
 gem 'jquery-datatables-rails', '~> 3.4.0'
 gem 'wysiwyg-rails'
 gem "roo", "~> 2.7.0"
+gem 'chosen-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

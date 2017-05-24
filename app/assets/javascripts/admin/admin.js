@@ -11,6 +11,7 @@
 //= require bootstrap-datetimepicker
 //= require datepicker/datepicker.min
 //= require froala_editor.min.js
+//= require chosen-jquery
 
 //= require admin/time_zones
 //= require admin/labs

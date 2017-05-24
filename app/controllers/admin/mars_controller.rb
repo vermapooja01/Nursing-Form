@@ -18,6 +18,7 @@ class Admin::MarsController < Admin::AdminController
   # GET /mars/new
   def new
     @mar = Mar.new
+    @doctors = Doctor.all
   end
 
   # GET /mars/1/edit

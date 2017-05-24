@@ -18,6 +18,7 @@
 //= require sketchpad/raphael.min
 //= require sketchpad/raphael.sketchpad
 //= require bootstrap-sprockets
+//= require chosen-jquery
 
 // Load Vendor files
 //= require moment.js/moment.min

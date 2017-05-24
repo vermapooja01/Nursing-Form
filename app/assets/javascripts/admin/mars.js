@@ -4,4 +4,9 @@ $( document ).ready(function() {
     format: 'mm/yyyy',
     autoHide: true
   });
+
+  $('.chosen-select').chosen({
+    width: 600
+  });
+
 });
