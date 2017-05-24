@@ -66,8 +66,10 @@
       = f.input :work_shift, :collection => [['m', 'Morning'], ['e', 'Evening']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @mar.work_shift, :class => "form-control", :label => "Work Shift"
       -# = f.input :allergies, :class => "form-control"
       = f.input :medication_mar, :class => "form-control", :label => "Medication Name"
+
       %h4 Perscribed By
-      = select_tag "prescribed_by", content_tag(:option, '', :value=>"")+options_from_collection_for_select(@doctors, "name", "name"), :class => "chosen-select", "data-placeholder" => "Medication Perscribed By"
+      = f.input :prescribed_by, collection: @doctors, input_html: {:class => "chosen-select"}, label: false
+
       .date_and_time_picker
         %h3 Day
         = f.hidden_field :date_and_time, :value => @mar.date_and_time
