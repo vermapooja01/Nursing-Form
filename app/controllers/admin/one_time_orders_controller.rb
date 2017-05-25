@@ -1,7 +1,7 @@
 class Admin::OneTimeOrdersController < Admin::AdminController
   before_action :set_patient
   before_action :set_history
-  before_action :set_one_time_order, only: [:show, :edit]
+  before_action :set_one_time_order, only: [:show, :edit, :update]
 
   layout 'admin'
 
