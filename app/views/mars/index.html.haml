@@ -2,20 +2,6 @@
   .col-md-8.history-information
     = render "layouts/patient_menu", :patient => @patient, :history => @history
     %hr
-    -# %table.table.table-striped.datatable
-    -#   %thead
-    -#     %tr
-    -#       %th MedicationN
-    -#       %th Date Taken
-    -#       %th
-    -#   %tbody
-    -#     - @mars.each do |mar|
-    -#       %tr
-    -#         %td= mar.medication_mar
-    -#         %td.date-object= mar.date_and_time
-    -#         %td
-    -#           = link_to 'View', patient_history_mar_path(@patient, @history, mar), :class => "btn btn-default btn-xs"
-
   .col-md-4.information-block
     %h2 Patient Details
     = render "admin/patient_block"
@@ -26,27 +12,57 @@
     %h3 Medication Administration Record (MAR)
     .row
       .col-xs-4
-        %p Name:
-        %p Month:
+        %p Name: #{@patient.name}
+        %p Month: May
       .col-xs-4
         %p &nbsp;
-        %p Year:
+        %p Year: 2017
       .col-xs-4
-        %p MR#:
-        %p Allergies:
+        %p MR#: 123456789
+        %p Allergies: None
 %hr
-.row
-  .col-xs-3.p-5
-    %p.text-center.mark
-      %strong Medication
-  .col-xs-1.text-center.mark.p-5 Time
+.row.mar
+  .col-xs-3.p-5.mark.text-center
+    %strong Medication
+  .col-xs-1.text-center
+    .mark Time
   .col-xs-8
     .row
       .col-xs-12
         %table
           %tr
           - 31.times do |d|
-            %th.monthDay.mark #{d+1}
-
-:css
-  .monthDay {font-weight:normal;padding:5px;}
+            %th.monthDay.mark{ :id => "#{d+1}" } #{d+1}
+.row.mar
+  %table.col-xs-12
+    %tr.row
+      %td.col-xs-3.p-5{:style => "font-size:12px;"} two tequila shots
+      %td.col-xs-1.text-center
+        %table
+          %tr
+            %td{ :style => "font-size:12px;"} morning
+          %tr
+            %td{ :style => "font-size:12px;"} evening
+      %td.col-xs-8
+        %table
+          %tr
+            %td{ :style => "font-size:12px;"} AM
+          %tr
+            %td
+            %td{ :style => "font-size:12px;"} AM
+    %tr.row
+      %td.col-xs-3.p-5{ :style => "font-size:12px;"} two eggs, 2 cups of coffee with one ounce of whisky, one cigarrette, one aspirin, one melox tablet
+      %td.col-xs-1.text-center
+        %table
+          %tr
+            %td{ :style => "font-size:12px;"} morning
+          %tr
+            %td{ :style => "font-size:12px;"} evening
+      %td.col-xs-8
+        %table
+          %tr
+            %td
+            %td{ :style => "font-size:12px;"} AM
+          %tr
+            %td{ :style => "font-size:12px;"} AM
+            %td

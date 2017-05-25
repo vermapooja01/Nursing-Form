@@ -1,3 +1,17 @@
 // Place all the styles related to the Mars controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.monthDay, .mar-time {
+  font-weight:normal;
+  padding-left: 4px !important;
+}
+.mar td {
+  font-size: 10px;
+}
+.mar th {
+  padding-left: 4px !important;
+}
+.mar tr {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
+}
