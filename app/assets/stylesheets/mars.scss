@@ -3,15 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .monthDay, .mar-time {
   font-weight:normal;
-  padding-left: 4px !important;
+  // padding-left: 4px !important;
 }
 .mar td {
-  font-size: 10px;
+  //  font-size: 10px;
+  //  padding-left: 8px;
 }
-.mar th {
-  padding-left: 4px !important;
+td.col-xs-8{
+  border-right: 1px solid #000
 }
-.mar tr {
+.mar tr:first-child, td:nth-of-type(n+1) {
   border-bottom: 1px solid #eee;
-  padding-bottom: 4px;
+}
+.allergies {
+  color: red;
 }

@@ -19,50 +19,66 @@
         %p Year: 2017
       .col-xs-4
         %p MR#: 123456789
-        %p Allergies: None
-%hr
+        %p
+          Allergies:
+          %span.allergies
+            None
 .row.mar
-  .col-xs-3.p-5.mark.text-center
-    %strong Medication
-  .col-xs-1.text-center
-    .mark Time
-  .col-xs-8
-    .row
-      .col-xs-12
-        %table
-          %tr
-          - 31.times do |d|
-            %th.monthDay.mark{ :id => "#{d+1}" } #{d+1}
-.row.mar
-  %table.col-xs-12
-    %tr.row
-      %td.col-xs-3.p-5{:style => "font-size:12px;"} two tequila shots
-      %td.col-xs-1.text-center
-        %table
-          %tr
-            %td{ :style => "font-size:12px;"} morning
-          %tr
-            %td{ :style => "font-size:12px;"} evening
-      %td.col-xs-8
-        %table
-          %tr
-            %td{ :style => "font-size:12px;"} AM
-          %tr
-            %td
-            %td{ :style => "font-size:12px;"} AM
-    %tr.row
-      %td.col-xs-3.p-5{ :style => "font-size:12px;"} two eggs, 2 cups of coffee with one ounce of whisky, one cigarrette, one aspirin, one melox tablet
-      %td.col-xs-1.text-center
-        %table
-          %tr
-            %td{ :style => "font-size:12px;"} morning
-          %tr
-            %td{ :style => "font-size:12px;"} evening
-      %td.col-xs-8
-        %table
-          %tr
-            %td
-            %td{ :style => "font-size:12px;"} AM
-          %tr
-            %td{ :style => "font-size:12px;"} AM
-            %td
+  %table
+    %thead
+      %tr.row
+        %th.col-xs-3.p-5.mark.text-center
+          %strong Medication
+        %th.col-xs-1.text-center
+          .mark Time
+        %th.col-xs-8
+          .row
+            .col-xs-12
+              %table
+                %tr
+                  - 31.times do |d|
+                    %td.monthDay.mark{ :id => "#{d+1}" } #{d+1}
+    %tbody
+      %tr.row
+        %td.col-xs-3.p-5 two tequila shots
+        %td.col-xs-1.text-center
+          %table
+            %tr
+              %td morning
+            %tr
+              %td evening
+        %td.col-xs-8
+          %table
+            %tr
+              %td AM
+            %tr
+              %td.tcell &nbsp;
+              %td.tcell AM
+              %td &nbsp;
+              %td GV
+              %td &nbsp;
+              %td &nbsp;
+              %td &nbsp;
+              %td &nbsp;
+              %td &nbsp;
+              %td &nbsp;
+              %td &nbsp;
+              %td AM
+      %tr.row
+        %td.col-xs-3.p-5 two eggs, 2 cups of coffee with one ounce of whisky, one cigarrette, one aspirin, one melox tablet
+        %td.col-xs-1.text-center
+          %table
+            %tr
+              %td morning
+            %tr
+              %td evening
+        %td.col-xs-8
+          .row
+            .col-xs-12
+              %table
+                %tr
+                  %td &nbsp;
+                  %td AM
+                %tr
+                  - 31.times do |d|
+                    %td.monthDay.mark #{d+1}
