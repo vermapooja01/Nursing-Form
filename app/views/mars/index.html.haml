@@ -23,62 +23,77 @@
           Allergies:
           %span.allergies
             None
-.row.mar
-  %table
-    %thead
-      %tr.row
-        %th.col-xs-3.p-5.mark.text-center
-          %strong Medication
-        %th.col-xs-1.text-center
-          .mark Time
-        %th.col-xs-8
-          .row
-            .col-xs-12
-              %table
-                %tr
-                  - 31.times do |d|
-                    %td.monthDay.mark{ :id => "#{d+1}" } #{d+1}
-    %tbody
-      %tr.row
-        %td.col-xs-3.p-5 two tequila shots
-        %td.col-xs-1.text-center
-          %table
-            %tr
-              %td morning
-            %tr
-              %td evening
-        %td.col-xs-8
-          %table
-            %tr
-              %td AM
-            %tr
-              %td.tcell &nbsp;
-              %td.tcell AM
-              %td &nbsp;
-              %td GV
-              %td &nbsp;
-              %td &nbsp;
-              %td &nbsp;
-              %td &nbsp;
-              %td &nbsp;
-              %td &nbsp;
-              %td &nbsp;
-              %td AM
-      %tr.row
-        %td.col-xs-3.p-5 two eggs, 2 cups of coffee with one ounce of whisky, one cigarrette, one aspirin, one melox tablet
-        %td.col-xs-1.text-center
-          %table
-            %tr
-              %td morning
-            %tr
-              %td evening
-        %td.col-xs-8
-          .row
-            .col-xs-12
-              %table
-                %tr
-                  %td &nbsp;
-                  %td AM
-                %tr
-                  - 31.times do |d|
-                    %td.monthDay.mark #{d+1}
+- 3.times do |d|
+  .row.mar{style: "margin:5px 0;"}
+    .col-xs-2 Medication
+    .col-xs-10
+      .col-xs-12
+        .col-xs-1 First
+        .col-xs-11
+          - 31.times do |d|
+            .mar-item{style: "float:left;width:3.22%;height:20px;background-color:#ff7d23;font-size:8px;text-align:center;padding-top: 5px;"}GV
+      .col-xs-12
+        .col-xs-1 Second
+        .col-xs-11
+          - 31.times do |d|
+            .mar-item{style: "float:left;width:3.22%;height:20px;background-color:#041b3c;"}
+
+-# .row.mar
+-#   %table
+-#     %thead
+-#       %tr.row
+-#         %th.col-xs-3.p-5.mark.text-center
+-#           %strong Medication
+-#         %th.col-xs-1.text-center
+-#           .mark Time
+-#         %th.col-xs-8
+-#           .row
+-#             .col-xs-12
+-#               %table
+-#                 %tr
+-#                   - 31.times do |d|
+-#                     %td.monthDay.mark{ :id => "#{d+1}", :style => "width:90px !important;text-align:center !important;" } #{d+1}
+-#     %tbody
+-#       %tr.row
+-#         %td.col-xs-3.p-5 two tequila shots
+-#         %td.col-xs-1.text-center
+-#           %table
+-#             %tr
+-#               %td morning
+-#             %tr
+-#               %td evening
+-#         %td.col-xs-8
+-#           %table
+-#             %tr
+-#               %td AM
+-#             %tr
+-#               %td.tcell &nbsp;
+-#               %td.tcell AM
+-#               %td &nbsp;
+-#               %td GV
+-#               %td &nbsp;
+-#               %td &nbsp;
+-#               %td &nbsp;
+-#               %td &nbsp;
+-#               %td &nbsp;
+-#               %td &nbsp;
+-#               %td &nbsp;
+-#               %td AM
+-#       %tr.row
+-#         %td.col-xs-3.p-5 two eggs, 2 cups of coffee with one ounce of whisky, one cigarrette, one aspirin, one melox tablet
+-#         %td.col-xs-1.text-center
+-#           %table
+-#             %tr
+-#               %td morning
+-#             %tr
+-#               %td evening
+-#         %td.col-xs-8
+-#           .row
+-#             .col-xs-12
+-#               %table
+-#                 %tr
+-#                   %td &nbsp;
+-#                   %td AM
+-#                 %tr
+-#                   - 31.times do |d|
+-#                     %td.monthDay.mark #{d+1}
