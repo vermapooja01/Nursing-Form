@@ -1,0 +1,25 @@
+.col-md-4
+  %h2 Nursing Activity
+  .block
+    %h1
+      %span.label.label-info.blue
+        = @patient.name
+    %h3
+      MR#
+      = @history.mr_number
+
+%h1 New Nursing Activity
+= simple_form_for([:admin, @patient, @history, @mar, @nurse_activity]) do |f|
+  = f.error_notification
+
+  .form-inputs
+    .col-md-8
+      = f.hidden_field :history_id, :value => @history.id
+      = f.hidden_field :mar_id, :value => @mar.id
+      = f.input :shift_number, :class => "form-control", :label => "Date of Order"
+      = f.input :initials, :class => "form-control", :label => "Initials"
+
+
+
+      .form-actions
+        = f.button :submit, class: "btn btn-success"

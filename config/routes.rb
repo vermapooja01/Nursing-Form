@@ -30,7 +30,10 @@ Rails.application.routes.draw do
       resources :histories do
         resources :prns
         resources :orders
-        resources :mars
+        resources :mars do
+          resources :nurse_activities
+          resources :one_time_orders
+        end
         resources :one_time_orders
         resources :labs
       end
