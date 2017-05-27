@@ -28,7 +28,7 @@ class Admin::NurseActivitiesController < Admin::AdminController
   # POST /mars
   # POST /mars.json
   def create
-    @nursing_activity = NurseActivity(nurse_activity_params)
+    @nursing_activity = NurseActivity.new(nurse_activity_params)
 
     respond_to do |format|
       if @nursing_activity.save
@@ -85,7 +85,8 @@ class Admin::NurseActivitiesController < Admin::AdminController
     def nurse_activity_params
       params.require(:nurse_activity).permit(
         :shift_number,
-        :initials
+        :initials,
+        :mar_id
       )
     end
 end
