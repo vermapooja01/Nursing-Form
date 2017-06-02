@@ -5,6 +5,7 @@ $( document ).ready(function() {
     sideBySide: true,
     defaultDate: $('#date_of_admission').val()
   });
+
   $("#date_of_admission_picker").on("dp.change", function (e) {
     // Conversion to momentjs data object
     var browserDate = moment(e.date._d).toISOString();
@@ -17,4 +18,4 @@ $( document ).ready(function() {
     autoHide: true
   });
 
-});
+});
