@@ -12,4 +12,9 @@ $( document ).ready(function() {
     $('#history_date_of_admission').val(String(browserDate));
   });
 
+  $('[data-toggle="birthday-datepicker"]').datepicker({
+    format: 'dd/mm/yyyy',
+    autoHide: true
+  });
+
 });
