@@ -23,20 +23,21 @@
           Allergies:
           %span.allergies
             None
-- 3.times do |d|
+
+- @mars.each do |mar|
   .row.mar{style: "margin:5px 0;"}
     .col-xs-2 Medication
     .col-xs-10
       .col-xs-12
         .col-xs-1 First
         .col-xs-11
-          - 31.times do |d|
-            .mar-item{style: "float:left;width:3.22%;height:20px;background-color:#ff7d23;font-size:8px;text-align:center;padding-top: 5px;"}GV
+          - mar.nurse_activities.where(shift_number: 1).each do |first_shift_nurse_activity|
+            .mar-item{style: "float:left;width:3.22%;height:20px;background-color:#ff7d23;font-size:8px;text-align:center;padding-top: 5px;"}= first_shift_nurse_activity.initials
       .col-xs-12
         .col-xs-1 Second
         .col-xs-11
-          - 31.times do |d|
-            .mar-item{style: "float:left;width:3.22%;height:20px;background-color:#041b3c;"}
+          - mar.nurse_activities.where(shift_number: 2).each do |second_shift_nurse_activity|
+            .mar-item{style: "float:left;width:3.22%;height:20px;background-color:#041b3c;"}= second_shift_nurse_activity.initials
 
 -# .row.mar
 -#   %table

@@ -3,10 +3,19 @@ class MarsController < ApplicationController
   before_action :set_mar, only: [:show, :edit, :update, :destroy]
   before_action :set_history
   before_action :set_patient
+
   # GET /mars
   # GET /mars.json
   def index
-    @mars = Mar.all
+    # Get the patient's mars
+    @mars = @history.mars
+    # Set up an array to store the mars
+    # mars_array = []
+
+    # @mars.each do |mar|
+    #   mars_array.push(mar)
+    # end
+
   end
 
   # GET /mars/1
