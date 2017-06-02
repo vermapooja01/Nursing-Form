@@ -18,4 +18,4 @@ $( document ).ready(function() {
     autoHide: true
   });
 
-});
+});
