@@ -24,6 +24,7 @@ class Admin::MarsController < Admin::AdminController
   # GET /mars/1/edit
   def edit
     @doctors = Doctor.all
+    @nurse_activities = @mar.nurse_activities
   end
 
   # POST /mars

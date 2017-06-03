@@ -1,52 +1,3 @@
--# = simple_form_for(@mar) do |f|
--#   = f.error_notification
--#
--#   .form-inputs
--#     %h3{:align => "center"} Medication Administration Record
--#     .col-md-12.well
--#       = f.input :name, :class => "form-control", :label => "Name"
--#       = f.input :mr_number, :class => "form-control", :label => "MR#"
--#       = f.input :month_year, :class => "form-control", :label => "Month and Year"
--#       = f.input :allergies, :class => "form-control", :label => "Allergies"
--#
--#     .col-md-12.well
--#       = f.input :medication_mar, :class => "form-control", :label => "Medication"
--#       = f.input :prescribed_by, :class => "form-control", :label => "Prescribed By"
--#       = f.input :date_and_time, :class => "form-control", :label => "Date and Time"
--#
--#     .col-md-12.well
--#       %h3{:align => "center"} One-Time Orders
--#       = f.input :order_date, :class => "form-control", :label => "Date of Order"
--#       = f.input :order_prescribed_by, :class => "form-control", :label => "Prescribed By"
--#       = f.input :order_mars, :class => "form-control", :label => "Order"
--#       = f.input :order_date, :class => "form-control", :label => "Date and Time Given"
--#       = f.input :prescriber_initials, :class => "form-control", :label => "Initials"
--#
--#     .col-md-12.well
--#       = f.input :nurse_signature, :class => "form-control", :label => "Nurse Signature"
--#       = f.input :nurse_initials, :class => "form-control", :label => "Nurse Initials"
--#
--#
--#   .form-actions
--#     = f.button :submit
-
--# name
--# month_year
--# mr_number
--# allergies
--# created_at
--# updated_at
--# history_id
--# medication_mar
--# prescribed_by
--# date_and_time
--# order_date
--# order_mars
--# order_prescribed_by
--# prescriber_initials
--# nurse_signature
--# nurse_initials
-
 .col-md-4
   %h2 Patient Details
   .block
@@ -60,23 +11,24 @@
 %h1 New MAR
 = simple_form_for([:admin, @patient, @history, @mar]) do |f|
   = f.error_notification
-
   .form-inputs
     .col-md-8.well
-      = f.input :work_shift, :collection => [['m', 'Morning'], ['e', 'Evening']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline', :checked => @mar.work_shift, :class => "form-control", :label => "Work Shift"
       -# = f.input :allergies, :class => "form-control"
       = f.input :medication_mar, :class => "form-control", :label => "Medication Name"
 
       %h4 Perscribed By
       = f.input :prescribed_by, collection: @doctors, input_html: {:class => "chosen-select"}, label: false
-
       .date_and_time_picker
         %h3 Day
         = f.hidden_field :date_and_time, :value => @mar.date_and_time
-
-      = f.input :nurse_initials, :class => "form-control"
-
-
-
       .form-actions
         = f.button :submit, class: "btn btn-success"
+
+      .nurse-activities
+        %h3
+          Nurse Activities
+        - @nurse_activities.each do |activity|
+          .col-md-8
+            = activity.initials
+          .col-md-4
+            = activity.created_at.strftime("%m/%d/%Y @ %I:%M %p") unless activity.created_at.nil?            

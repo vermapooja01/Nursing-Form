@@ -2,37 +2,39 @@
   .col-md-8.history-information
     = render "layouts/patient_menu", :patient => @patient, :history => @history
     %hr
-  .col-md-4.information-block
-    %h2 Patient Details
-    = render "admin/patient_block"
 .row
-  .col-xs-4.text-center
-    %h3 Upper Rio Grande Regional Simulation Hospital
   .col-xs-8
     %h3 Medication Administration Record (MAR)
     .row
       .col-xs-4
         %p Name: #{@patient.name}
-      .col-xs-4
-      .col-xs-4
-        %p MR#: 123456789
         %p
           Allergies:
           %span.allergies
-            = "None" if @history.allergies.empty?
-        %hr
+            - if !@history.allergies.empty?
+              = @history.allergies
+            - else
+              = "None"
+      .col-xs-4
+        %p MR#: #{@history.mr_number}
+
+%hr
 
 - @mars.each do |mar|
   %h4
-    Month:
-    = Date::MONTHNAMES[mar.created_at.month]
-  %h4
-    Year:
-    = mar.created_at.year
+    %span.label.label-warning
+      Month:
+      = Date::MONTHNAMES[mar.date_and_time.month] unless mar.date_and_time.nil?
+      |
+      Year:
+      = mar.date_and_time.year unless mar.date_and_time.nil?
 
   .row.mars-wrapper{style: "margin:5px 0;"}
     .col-xs-2
+      %strong
+        Perscription:
       = mar.medication_mar
+
     .col-xs-10
       .col-xs-12
         .col-xs-1{:style => "background-color:#ECE064;"} Shift
@@ -70,63 +72,4 @@
               .mar-item.second-shift
                 .initials
                   = activities[0].initials
-
--# .row.mar
--#   %table
--#     %thead
--#       %tr.row
--#         %th.col-xs-3.p-5.mark.text-center
--#           %strong Medication
--#         %th.col-xs-1.text-center
--#           .mark Time
--#         %th.col-xs-8
--#           .row
--#             .col-xs-12
--#               %table
--#                 %tr
--#                   - 31.times do |d|
--#                     %td.monthDay.mark{ :id => "#{d+1}", :style => "width:90px !important;text-align:center !important;" } #{d+1}
--#     %tbody
--#       %tr.row
--#         %td.col-xs-3.p-5 two tequila shots
--#         %td.col-xs-1.text-center
--#           %table
--#             %tr
--#               %td morning
--#             %tr
--#               %td evening
--#         %td.col-xs-8
--#           %table
--#             %tr
--#               %td AM
--#             %tr
--#               %td.tcell &nbsp;
--#               %td.tcell AM
--#               %td &nbsp;
--#               %td GV
--#               %td &nbsp;
--#               %td &nbsp;
--#               %td &nbsp;
--#               %td &nbsp;
--#               %td &nbsp;
--#               %td &nbsp;
--#               %td &nbsp;
--#               %td AM
--#       %tr.row
--#         %td.col-xs-3.p-5 two eggs, 2 cups of coffee with one ounce of whisky, one cigarrette, one aspirin, one melox tablet
--#         %td.col-xs-1.text-center
--#           %table
--#             %tr
--#               %td morning
--#             %tr
--#               %td evening
--#         %td.col-xs-8
--#           .row
--#             .col-xs-12
--#               %table
--#                 %tr
--#                   %td &nbsp;
--#                   %td AM
--#                 %tr
--#                   - 31.times do |d|
--#                     %td.monthDay.mark #{d+1}
+  %hr

@@ -23,6 +23,9 @@
             %td
               = link_to 'View', admin_patient_history_mar_path(@patient, @history, mar), :class => "btn btn-default btn-xs"
               = link_to 'Edit', edit_admin_patient_history_mar_path(@patient, @history, mar), :class => "btn btn-default btn-xs"
+
+              = link_to 'Delete', admin_patient_history_mar_path(@patient, @history, mar), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-default btn-xs'
+
               = link_to 'New Nurse Activity', new_admin_patient_history_mar_nurse_activity_path(@patient, @history, mar), :class => "btn btn-default btn-xs"
 
     %hr
