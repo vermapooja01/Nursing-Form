@@ -13,18 +13,23 @@
     .row
       .col-xs-4
         %p Name: #{@patient.name}
-        %p Month: May
       .col-xs-4
-        %p &nbsp;
-        %p Year: 2017
       .col-xs-4
         %p MR#: 123456789
         %p
           Allergies:
           %span.allergies
-            None
+            = "None" if @history.allergies.empty?
+        %hr
 
 - @mars.each do |mar|
+  %h4
+    Month:
+    = Date::MONTHNAMES[mar.created_at.month]
+  %h4
+    Year:
+    = mar.created_at.year
+
   .row.mars-wrapper{style: "margin:5px 0;"}
     .col-xs-2
       = mar.medication_mar
