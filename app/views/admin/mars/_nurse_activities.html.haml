@@ -1,0 +1,6 @@
+- if !@nurse_activities.nil?
+  - @nurse_activities.each do |activity|
+    .col-md-8
+      = activity.initials
+    .col-md-4
+      = activity.date_of_activity.strftime("%m/%d/%Y @ %I:%M %p") unless activity.date_of_activity.nil?
