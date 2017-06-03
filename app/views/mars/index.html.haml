@@ -25,19 +25,46 @@
             None
 
 - @mars.each do |mar|
-  .row.mar{style: "margin:5px 0;"}
-    .col-xs-2 Medication
+  .row.mars-wrapper{style: "margin:5px 0;"}
+    .col-xs-2
+      = mar.medication_mar
     .col-xs-10
       .col-xs-12
-        .col-xs-1 First
+        .col-xs-1{:style => "background-color:#ECE064;"} Shift
         .col-xs-11
-          - mar.nurse_activities.where(shift_number: 1).each do |first_shift_nurse_activity|
-            .mar-item{style: "float:left;width:3.22%;height:20px;background-color:#ff7d23;font-size:8px;text-align:center;padding-top: 5px;"}= first_shift_nurse_activity.initials
+          - 31.times do |i|
+            .mar-item-header
+              .day= i+1
+
       .col-xs-12
-        .col-xs-1 Second
+        .col-xs-1 1st
         .col-xs-11
-          - mar.nurse_activities.where(shift_number: 2).each do |second_shift_nurse_activity|
-            .mar-item{style: "float:left;width:3.22%;height:20px;background-color:#041b3c;"}= second_shift_nurse_activity.initials
+          - nurse_activities = mar.nurse_activities.where(shift_number: 1)
+          - 31.times do |i|
+            -if (nurse_activities.select { |x| x.created_at.day == i+1 }).empty?
+              .mar-item.first-shift
+                .initials
+
+            - elsif !(nurse_activities.select { |x| x.created_at.day == i+1 }).empty?
+              - activities = nurse_activities.select { |x| x.created_at.day == i+1 }
+              .mar-item.first-shift
+                .initials
+                  = activities[0].initials
+
+      .col-xs-12
+        .col-xs-1 2nd
+        .col-xs-11
+          - nurse_activities = mar.nurse_activities.where(shift_number: 2)
+          - 31.times do |i|
+            -if (nurse_activities.select { |x| x.created_at.day == i+1 }).empty?
+              .mar-item.second-shift
+                .initials
+
+            - elsif !(nurse_activities.select { |x| x.created_at.day == i+1 }).empty?
+              - activities = nurse_activities.select { |x| x.created_at.day == i+1 }
+              .mar-item.second-shift
+                .initials
+                  = activities[0].initials
 
 -# .row.mar
 -#   %table

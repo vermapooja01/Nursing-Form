@@ -18,3 +18,37 @@ td.col-xs-8{
 .allergies {
   color: red;
 }
+
+.mars-wrapper {
+  .mar-item-header {
+    float:left;
+    width:3.22%;
+    height:13px;
+    border-right: 1px solid #888;
+    font-size:8px;
+    text-align:center;
+    background-color: $utep-blue;
+    color: white;
+  }
+
+  .mar-item {
+    float:left;
+    width:3.22%;
+    height:20px;
+    border-right: 1px solid #888;
+    font-size:8px;
+    text-align:center;
+    padding-top: 5px;
+    .day {
+    }
+    .initials {
+
+    }
+    &.first-shift {
+      background-color: #ECE064;
+    }
+    &.second-shift {
+      background-color: #CACBC3;
+    }
+  }
+}
