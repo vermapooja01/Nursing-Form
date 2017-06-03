@@ -17,7 +17,7 @@
       = f.hidden_field :history_id, :value => @history.id
       = f.hidden_field :mar_id, :value => @mar.id
       = f.input :shift_number, :collection => [[1, "0700 - 1900"], [2, "1900 - 0700"]], :label_method => :last, :value_method => :first, :as => :radio_buttons, :checked => @nurse_activity.shift_number, :class => "form-control", :label => "Shift"
-      
+      = f.input :date_of_activity, :class => "form-control", :label => "Date of Activity", as: :string, input_html: {"data-toggle" => "birthday-datepicker"}
       = f.input :initials, :class => "form-control", :label => "Initials"
 
 

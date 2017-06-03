@@ -48,12 +48,12 @@
         .col-xs-11
           - nurse_activities = mar.nurse_activities.where(shift_number: 1)
           - 31.times do |i|
-            -if (nurse_activities.select { |x| x.created_at.day == i+1 }).empty?
+            -if (nurse_activities.select { |x| x.date_of_activity.day == i+1 }).empty?
               .mar-item.first-shift
                 .initials
 
-            - elsif !(nurse_activities.select { |x| x.created_at.day == i+1 }).empty?
-              - activities = nurse_activities.select { |x| x.created_at.day == i+1 }
+            - elsif !(nurse_activities.select { |x| x.date_of_activity.day == i+1 }).empty?
+              - activities = nurse_activities.select { |x| x.date_of_activity.day == i+1 }
               .mar-item.first-shift
                 .initials
                   = activities[0].initials
@@ -63,12 +63,12 @@
         .col-xs-11
           - nurse_activities = mar.nurse_activities.where(shift_number: 2)
           - 31.times do |i|
-            -if (nurse_activities.select { |x| x.created_at.day == i+1 }).empty?
+            -if (nurse_activities.select { |x| x.date_of_activity.day == i+1 }).empty?
               .mar-item.second-shift
                 .initials
 
-            - elsif !(nurse_activities.select { |x| x.created_at.day == i+1 }).empty?
-              - activities = nurse_activities.select { |x| x.created_at.day == i+1 }
+            - elsif !(nurse_activities.select { |x| x.date_of_activity.day == i+1 }).empty?
+              - activities = nurse_activities.select { |x| x.date_of_activity.day == i+1 }
               .mar-item.second-shift
                 .initials
                   = activities[0].initials

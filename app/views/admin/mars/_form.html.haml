@@ -31,4 +31,4 @@
           .col-md-8
             = activity.initials
           .col-md-4
-            = activity.created_at.strftime("%m/%d/%Y @ %I:%M %p") unless activity.created_at.nil?            
+            = activity.date_of_activity.strftime("%m/%d/%Y @ %I:%M %p") unless activity.date_of_activity.nil?

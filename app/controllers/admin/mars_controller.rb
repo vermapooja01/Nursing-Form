@@ -97,7 +97,8 @@ class Admin::MarsController < Admin::AdminController
         :prescriber_initials,
         :nurse_signature,
         :nurse_initials,
-        :work_shift
+        :work_shift,
+        :date_of_activity
       )
     end
 end

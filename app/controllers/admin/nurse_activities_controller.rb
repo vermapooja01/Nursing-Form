@@ -86,7 +86,8 @@ class Admin::NurseActivitiesController < Admin::AdminController
       params.require(:nurse_activity).permit(
         :shift_number,
         :initials,
-        :mar_id
+        :mar_id,
+        :date_of_activity
       )
     end
 end
