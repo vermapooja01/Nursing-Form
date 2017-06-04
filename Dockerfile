@@ -1,18 +1,33 @@
-FROM ruby:2.3.2
-RUN apt-get update && apt-get install -y \
-  build-essential \
-  nodejs
-RUN mkdir -p /nursing-form
+FROM ruby:2.3.4-slim
 
-WORKDIR /nursing-form
+# Install essential Linux packages
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev postgresql-client
 
-COPY Gemfile Gemfile.lock ./
-RUN rm -f tmp/pids/server.pid
+# Define where our application will live inside the image
+ENV RAILS_ROOT /var/www/nursing-form
 
-RUN gem install bundler && bundle install --jobs 20 --retry 5
+# Create application home. App server will need the pids dir so just create everything in one shot
+RUN mkdir -p $RAILS_ROOT/tmp/pids
 
-COPY . ./
+# Set our working directory inside the image
+WORKDIR $RAILS_ROOT
 
-EXPOSE 3000
+# Use the Gemfiles as Docker cache markers. Always bundle before copying app src.
+# (the src likely changed and we don't want to invalidate Docker's cache too early)
+# http://ilikestuffblog.com/2014/01/06/how-to-skip-bundle-install-when-deploying-a-rails-app-to-docker/
+COPY Gemfile Gemfile
 
-CMD ["rails", "server", "-b", "0.0.0.0"]
+COPY Gemfile.lock Gemfile.lock
+
+# Prevent bundler warnings; ensure that the bundler version executed is >= that which created Gemfile.lock
+RUN gem install bundler
+
+# Finish establishing our Ruby enviornment
+RUN bundle install
+
+# Copy the Rails application into place
+COPY . .
+
+# Define the script we want run once the container boots
+# Use the "exec" form of CMD so our script shuts down gracefully on SIGTERM (i.e. `docker stop`)
+CMD [ "docker-entrypoint.sh" ]
